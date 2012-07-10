@@ -1,4 +1,5 @@
 tmp/
 target/*
+src/document-blx.bib
 *.aux
 !target/choffmeister-ma.pdf

@@ -1,0 +1,89 @@
+\section{Algorithmus zur Berechnung der getwisteten schwachen Ordnung}
+
+Wir wollen nun einen Algorithmus zur Berechnung der getwisteten schwachen
+Ordnung $Wk(\theta)$ einer beliebigen Coxetergruppe $W$ erarbeiten. Also
+Ausgangspunkt werden wir den Algorithmus aus \cite[Algorithm 3.1.1]{haas:twoa}
+verwenden, der im wesentlichen benutzt, dass für jede getwistete Involution $w
+\in \ti{\theta}$ entweder $w \ul s < w$ oder aber $w \ul s > w$ gilt.
+
+\begin{algo}[Algorithmus 1]
+\hfill
+\label{algo:twoa1}
+\begin{algorithmic}[1]
+\Procedure{TwistedWeakOrderingAlgorithm1}{$W$} \Comment{$W$ sei die
+Coxetergruppe}
+\State $V \gets \{(e,0)\}$
+\State $E \gets \{\}$
+
+\For{$k \gets 0 \textbf{ to } k_{\max}$}
+	\ForAll{$(w,k_w) \in V \textbf{ with } k_w = k$}
+		\ForAll{$s \in S \textbf{ with } \nexists (\cdot,w,s) \in E$} \Comment{Nur
+		die $s$, die nicht schon nach $w$ führen} \State $y \gets ws$
+			\State $z \gets \theta(s)y$
+			\If{$z=w$}
+				\State $x \gets y$ \Comment{s operiert ungetwistet auf w}
+				\State $t \gets s$
+			\Else
+				\State $x \gets z$ \Comment{s operiert getwistet auf w}
+				\State $t \gets \ul{s}$
+			\EndIf
+			
+			\State $isNew \gets \textbf{true}$
+			\ForAll{$(w',k_{w'}) \in V \textbf{ with } k_{w'} = k+1$} \Comment{Prüfen,
+			ob $x$ nicht schon in $V$ liegt}
+				\If{$x = w'$}
+					\State $isNew \gets \textbf{false}$
+				\EndIf
+			\EndFor
+			
+			\If{$isNew = \textbf{true}$}
+				\State $V \gets V \cup \{ (x,k+1) \}$
+				\State $E \gets E \cup \{ (w,x,t) \}$
+			\Else
+				\State $E \gets E \cup \{ (w,x,t) \}$
+			\EndIf
+		\EndFor
+	\EndFor
+	\State $k \gets k + 1$
+\EndFor
+
+\State \textbf{return} $(V,E)$\Comment{The poset graph}
+\EndProcedure
+\end{algorithmic}
+\end{algo}
+
+Dieser Algorithmus berechnet alle getwisteten Involutionen und deren getwistete
+Länge $(w,k_w)$ und deren Relationen $(w',w,s)$ bzw. $(w',w,\ul s)$. Zu bemerken
+ist, dass zur Berechnung der getwisteten Involutionen der Länge $k$ nur die
+Knoten aus $V$ benötigt werden, mit der getwisteten Länge $k-1$ und $k$ sowie
+die Kanten aus $E$, die Knoten der Länge $k-2$ und $k-1$ bzw. $k-1$ und $k$
+verbinden. Alle vorherigen Ergebnisse können schon persistiert werden, so dass
+nie das komplette Ergebnis im Speicher gehalten werden muss.
+
+Eine Operation, die hier als elementar angenommen wurde ist der Vergleich von
+Elementen in $W$. Für bestimmte Gruppen wie z.B. die $A_n$, welche je isomorph
+zu $Sym(n+1)$ sind, lässt sich der Vergleich von Element effizient
+implementieren. Will man jedoch mit Coxetergruppen im Allgemeinen arbeiten, so
+liegt $W$ als frei präsentierte Gruppe vor und der Vergleich von Element is eine
+sehr aufwendige Operation. Bei Algorithmus \ref{algo:twoa1} muss jedes
+potentiell neue Element $x$ mit allen schon bekannten $w'$ von gleicher
+getwisteter Länge verglichen werden um zu bestimmen, ob $x$ wirklich ein noch
+nicht bekanntes Element aus $\ti{\theta}$ ist.
+
+\begin{algo}[Algorithmus 2]
+\hfill
+\label{algo:twoa2}
+\begin{algorithmic}[1]
+\Procedure{TwistedWeakOrderingAlgorithm2}{$W$} \Comment{$W$ sei die
+Coxetergruppe}
+\State $V \gets \{(e,0)\}$
+\State $E \gets \{\}$
+
+\For{$k \gets 0 \textbf{ to } k_{\max}$}
+	\State TODO
+\EndFor
+
+\State \textbf{return} $(V,E)$\Comment{The poset graph}
+\EndProcedure
+\end{algorithmic}
+\end{algo}
