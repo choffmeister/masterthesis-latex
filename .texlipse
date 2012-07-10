@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Tue Jul 10 14:00:01 CEST 2012
+markTmpDer=true
+builderNum=2
+outputDir=target/
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=document.tex
+outputFile=choffmeister-ma.pdf
+langSpell=de
+markDer=true
+srcDir=src/

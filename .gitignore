@@ -1,0 +1,4 @@
+tmp/
+target/*
+*.aux
+!target/choffmeister-ma.pdf
