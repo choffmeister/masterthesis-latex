@@ -43,7 +43,7 @@ von $W$. Dann gilt:
   \item \label{verm:max-twocycle-length} Sei $m = \ord (st) < \infty$. Falls
   $w \ul{[st]^n} \neq w$ ist für alle $n \in \nn, n < 2m$, dann gilt $w \ul{(st)^{2m}} = w$.
   \item \label{verm:twocycle-is-convex} In $wC_{\{s,t\}}$ existieren keine drei
-  Element mit derselben getwisteten Länge.
+  Elemente derselben getwisteten Länge.
   \item \label{verm:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
   Falls $s$ einseitig auf $w$ wirkt, dann gilt $w \ul{st} < w \ul{s}$ oder $w
   \ul{t} > w$.
@@ -71,6 +71,23 @@ von $W$. Dann gilt:
 	ein- und beidseitigen Wirkungen achsen- oder punktsymmetrisch verteilt sind.
 \end{anm}
 
+\begin{lemm}[Assumption \ref{verm:twocycle-is-convex}]
+\begin{proof}
+Let $(W,S)$ be a Coxeter system, $w \in W$ with $\rank w = k$, $s, t \in S$ with
+$s \neq t$. Without loss of generality we can choose $w$ such that $w < w \ul s$
+and $w < w \ul t$. Assume the existence of an element $u \in wC_{\{s,t\}}$ with
+$u \ul s < u$ and $u \ul t < u$. Then \cite[Lemma
+3.8]{hultman:comb-twisted-invo} yields $s,t \in D_R(u)$. By using \cite[Lemma
+3.9]{hultman:comb-twisted-invo} we conclude that $w \ul s \leq u$ and $w \ul t
+\leq u$. Hence there cannot exist more than two Elements of same twisted
+length.
+
+If no such $u$ exists, then $wC_{\{s,t\}} = w \ \dot \cup \ \{ w \ul{[st]^n} : n
+\in \nn \} \ \dot \cup \ \{ w \ul{[ts]^n} : n \in \nn \}$ and the assumption
+still holds.
+\end{proof}
+\end{lemm}
+
 \begin{lemm}[Assumption
 \ref{verm:onesided-operations-only-at-top-or-bottom-end-of-twocycle}]
 \begin{proof}
@@ -81,5 +98,6 @@ $w \ul t \leq w$. Since $s$ operates onesided on $w$ it is $s \in D_R(w \ul s)$.
 Lifting property \cite[Proposition 3.10]{hultman:comb-twisted-invo} asserts $w
 \ul {ts} \leq w \ul s$ and equality is impossible due to inequality of $\rho(w
 \ul {ts})$ and $\rho(w \ul s)$.
+%TODO complete
 \end{proof}
 \end{lemm}
