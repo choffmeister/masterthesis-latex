@@ -1,11 +1,14 @@
+%TODO translate
 \section{Zweizykel in der getwisteten schwachen Ordnung}
 
+%TODO translate
 \begin{defi}[Ein- und beidseitige Wirkung]
 Seien $(W,S)$ ein Coxetersystem, $w \in W$ und $s \in S$. Falls $w \ul s =
 \theta(s)ws$ ist, so sagen wir, dass $s$ beidseitig auf $w$ wirkt.
 Andernfalls sagen wir $s$ wirkt einseitig auf $w$.
 \end{defi}
 
+%TODO translate
 \begin{defi}[Ein- und beidseitige endende Gesamtwirkung]
 Seien $(W,S)$ ein Coxetersystem, $w \in W$ und $s_1,\ldots,s_n \in S$. Falls $w
 \ul {s_1 \cdots s_n} = \theta(s_n)(w \ul {s_1 \cdots s_{n-1}}) s_n$ ist, so
@@ -14,6 +17,7 @@ $w$ hat. Andernfalls sagen wir $s_1 \cdots s_n$ hat eine einseitig endende
 Gesamtwirkung auf $w$.
 \end{defi}
 
+%TODO translate
 \begin{defi}
 Seien $(W,S)$ ein Coxetersystem und $s,t \in S$ zwei
 verschiedene Erzeuger. Wir definieren:
@@ -24,12 +28,14 @@ $$[st]^n :=
 \end{cases}$$
 \end{defi}
 
+%TODO translate
 \begin{defi}[Zweizykel]
 Seien $(W,S)$ ein Coxetersystem und $s,t \in S$ zwei verschiedene Erzeuger. Dann
 nennen wir $wC_{\{s,t\}}$  den von $s$ und $t$ erzeugten Zweizykel bezüglich
 $w$.
 \end{defi}
 
+%TODO translate
 \begin{verm}
 Seien $(W,S)$ ein Coxetersystem und $s,t \in S$ zwei verschiedene Erzeuger
 von $W$. Dann gilt:
@@ -45,15 +51,16 @@ von $W$. Dann gilt:
   \nn$. Dann ist $n$ gerade und es gilt eine der beiden folgenden Eigenschaften:
   	\begin{enumerate}
   	  \item Für jedes $m \in \nn$ hat das Element $[st]^m$ genau dann eine
-  	  beidseitig endende Gesamtwirkung auf $w$, wenn $[st]^{n/2+m}$ eine beidseitig endente
+  	  beidseitig endende Gesamtwirkung auf $w$, wenn $[st]^{n/2+m}$ eine beidseitig endende
   	  Gesamtwirkung auf $w$ hat.
   	  \item Für jedes $m \in \nn$ hat das Element $[st]^m$ genau dann eine
-  	  beidseitig endende Gesamtwirkung auf $w$, wenn $[st]^{n-m+1}$ eine beidseitig endente
+  	  beidseitig endende Gesamtwirkung auf $w$, wenn $[st]^{n-m+1}$ eine beidseitig endende
   	  Gesamtwirkung auf $w$ hat.
   	\end{enumerate}
 \end{enumerate}
 \end{verm}
 
+%TODO translate
 \begin{anm}
 	Vermutung \ref{verm:twocycle-is-convex} bedeutet, dass Zweizykel in einem
 	gewissen Sinne konkav sind. Vermutung
@@ -63,3 +70,16 @@ von $W$. Dann gilt:
 	Vermutung \ref{verm:twocycle-symmetry} bedeutet, dass in einem Zweizykel die
 	ein- und beidseitigen Wirkungen achsen- oder punktsymmetrisch verteilt sind.
 \end{anm}
+
+\begin{lemm}[Assumption
+\ref{verm:onesided-operations-only-at-top-or-bottom-end-of-twocycle}]
+\begin{proof}
+Let $(W,S)$ be a Coxeter system, $w \in W$, $s, t \in S$ with $s \neq t$ and
+suppose that $w \ul s = ws$ with $\rho(w) < \rho(ws)$. Further suppose that $w
+\ul t \not > w$, i.e.
+$w \ul t \leq w$. Since $s$ operates onesided on $w$ it is $s \in D_R(w \ul s)$.
+Lifting property \cite[Proposition 3.10]{hultman:comb-twisted-invo} asserts $w
+\ul {ts} \leq w \ul s$ and equality is impossible due to inequality of $\rho(w
+\ul {ts})$ and $\rho(w \ul s)$.
+\end{proof}
+\end{lemm}

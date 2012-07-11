@@ -1,11 +1,14 @@
+%TODO translate
 \section{Algorithmus zur Berechnung der getwisteten schwachen Ordnung}
 
+%TODO translate
 Wir wollen nun einen Algorithmus zur Berechnung der getwisteten schwachen
 Ordnung $Wk(\theta)$ einer beliebigen Coxetergruppe $W$ erarbeiten. Also
 Ausgangspunkt werden wir den Algorithmus aus \cite[Algorithm 3.1.1]{haas:twoa}
 verwenden, der im wesentlichen benutzt, dass für jede getwistete Involution $w
 \in \ti{\theta}$ entweder $w \ul s < w$ oder aber $w \ul s > w$ gilt.
 
+%TODO translate
 \begin{algo}[Algorithmus 1]
 \hfill
 \label{algo:twoa1}
@@ -52,6 +55,7 @@ Coxetergruppe}
 \end{algorithmic}
 \end{algo}
 
+%TODO translate
 Dieser Algorithmus berechnet alle getwisteten Involutionen und deren getwistete
 Länge $(w,k_w)$ und deren Relationen $(w',w,s)$ bzw. $(w',w,\ul s)$. Zu bemerken
 ist, dass zur Berechnung der getwisteten Involutionen der Länge $k$ nur die
@@ -70,6 +74,7 @@ potentiell neue Element $x$ mit allen schon bekannten $w'$ von gleicher
 getwisteter Länge verglichen werden um zu bestimmen, ob $x$ wirklich ein noch
 nicht bekanntes Element aus $\ti{\theta}$ ist.
 
+%TODO translate
 \begin{algo}[Algorithmus 2]
 \hfill
 \label{algo:twoa2}
@@ -88,10 +93,12 @@ Coxetergruppe}
 \end{algorithmic}
 \end{algo}
 
+%TODO translate
 Im Anhang findet sich eine Implementierung der Algorithmen \ref{algo:twoa1} und
 \ref{algo:twoa2} in GAP 4.5.4. Tabelle \ref{tab:benchmark-twoa} zeigt ein
 Benchmark anhand von fünf ausgewählten Coxetergruppen.
 
+%TODO translate
 \begin{table}[h]
 \label{tab:benchmark-twoa}
 \centering
@@ -118,6 +125,7 @@ TWOA2 element compares & 42.156 & 173.356 & 737.313 & 2.347 & 29.687 & 682.227 \
 \caption{Benchmark}
 \end{table}
 
+%TODO translate
 Dabei sind die $A_n$ als
 symmetrische Gruppen implementiert und die $E_n$ als frei präsentierte Gruppen.
 Ausgeführt wurden die Messungen auf einem Intel Core i5-3570k mit vier Kernen
