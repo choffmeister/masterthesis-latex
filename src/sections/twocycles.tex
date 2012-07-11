@@ -1,9 +1,17 @@
 \section{Zweizykel in der getwisteten schwachen Ordnung}
 
-\begin{defi}[Getwistete und ungetwistete Operation]
+\begin{defi}[Ein- und beidseitige Wirkung]
 Seien $(W,S)$ ein Coxetersystem, $w \in W$ und $s \in S$. Falls $w \ul s =
-\theta(s)ws$ ist, so sagen wir, dass $s$ getwistet auf $w$ operiert. Andernfalls
-sagen wir $s$ operiert ungetwistet auf $w$.
+\theta(s)ws$ ist, so sagen wir, dass $s$ beidseitig auf $w$ wirkt.
+Andernfalls sagen wir $s$ wirkt einseitig auf $w$.
+\end{defi}
+
+\begin{defi}[Ein- und beidseitige endende Gesamtwirkung]
+Seien $(W,S)$ ein Coxetersystem, $w \in W$ und $s_1,\ldots,s_n \in S$. Falls $w
+\ul {s_1 \cdots s_n} = \theta(s_n)(w \ul {s_1 \cdots s_{n-1}}) s_n$ ist, so
+sagen wir, dass $s_1 \cdots s_n$ eine beidseitig endende Gesamtwirkung auf
+$w$ hat. Andernfalls sagen wir $s_1 \cdots s_n$ hat eine einseitig endende
+Gesamtwirkung auf $w$.
 \end{defi}
 
 \begin{defi}
@@ -18,30 +26,30 @@ $$[st]^n :=
 
 \begin{defi}[Zweizykel]
 Seien $(W,S)$ ein Coxetersystem und $s,t \in S$ zwei verschiedene Erzeuger. Dann
-definieren wir $\cyc{w}{s}{t} := \{ w \ul{[st]^n} : n \in \nn \} \cup \{ w
-\ul{[ts]^n} : n \in \nn \}$. Diese Menge nennen wir den von $s$ und $t$
-erzeugten Zweizykel bezüglich $w$.
+nennen wir $wC_{\{s,t\}}$  den von $s$ und $t$ erzeugten Zweizykel bezüglich
+$w$.
 \end{defi}
 
 \begin{verm}
 Seien $(W,S)$ ein Coxetersystem und $s,t \in S$ zwei verschiedene Erzeuger
 von $W$. Dann gilt:
 \begin{enumerate}
-  \item \label{verm:max-twocycle-length} Sei $\ord(st) = m < \infty$. Falls $w \ul{[st]^n}
-  \neq w$ ist für alle $n < 2m$, dann gilt $w \ul{(st)^n} = w$.
-  \item \label{verm:twocycle-is-convex} In $\cyc{w}{s}{t}$ existieren keine drei
+  \item \label{verm:max-twocycle-length} Sei $m = \ord (st) < \infty$. Falls
+  $w \ul{[st]^n} \neq w$ ist für alle $n \in \nn, n < 2m$, dann gilt $w \ul{(st)^{2m}} = w$.
+  \item \label{verm:twocycle-is-convex} In $wC_{\{s,t\}}$ existieren keine drei
   Element mit derselben getwisteten Länge.
-  \item \label{verm:untwisted-operations-only-at-top-or-bottom-end-of-twocycle}
-  Falls $s$ ungetwistet of $w$ operiert, dann gilt $w \ul{st} < w \ul{s}$ oder $w \ul{t} > w$.
-  \item \label{verm:twocycle-symmetry} Sei $w \ul{[st]^n} = w$. Dann ist $n$
-  gerade und es gilt eine der beiden folgenden Eigenschaften:
+  \item \label{verm:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
+  Falls $s$ einseitig auf $w$ wirkt, dann gilt $w \ul{st} < w \ul{s}$ oder $w
+  \ul{t} > w$.
+  \item \label{verm:twocycle-symmetry} Sei $w \ul{[st]^n} = w$ für ein $n \in
+  \nn$. Dann ist $n$ gerade und es gilt eine der beiden folgenden Eigenschaften:
   	\begin{enumerate}
-  	  \item Die letzte Operation von $w (\ul{st})^{(m)}$ ist genau dann
-  	  getwisted, wenn die letzte Operation von $w (\ul{st})^{(n/2+m)}$ getwistet
-  	  ist.
-  	  \item Die letzte Operation von $w (\ul{st})^{(m)}$ ist genau dann
-  	  getwisted, wenn die letzte Operation von $w (\ul{st})^{(n-m+1)}$ getwistet
-  	  ist.
+  	  \item Für jedes $m \in \nn$ hat das Element $[st]^m$ genau dann eine
+  	  beidseitig endende Gesamtwirkung auf $w$, wenn $[st]^{n/2+m}$ eine beidseitig endente
+  	  Gesamtwirkung auf $w$ hat.
+  	  \item Für jedes $m \in \nn$ hat das Element $[st]^m$ genau dann eine
+  	  beidseitig endende Gesamtwirkung auf $w$, wenn $[st]^{n-m+1}$ eine beidseitig endente
+  	  Gesamtwirkung auf $w$ hat.
   	\end{enumerate}
 \end{enumerate}
 \end{verm}
@@ -49,9 +57,9 @@ von $W$. Dann gilt:
 \begin{anm}
 	Vermutung \ref{verm:twocycle-is-convex} bedeutet, dass Zweizykel in einem
 	gewissen Sinne konkav sind. Vermutung
-	\ref{verm:untwisted-operations-only-at-top-or-bottom-end-of-twocycle} bedeutet,
-	dass innerhalb eines Zweizykels ungetwistete Operationen ausschließlich am
+	\ref{verm:onesided-operations-only-at-top-or-bottom-end-of-twocycle} bedeutet,
+	dass innerhalb eines Zweizykels einseitige Wirkungen ausschließlich am
 	bzgl. der getwisteten Länge oberen oder unteren Ende auftreten können.
 	Vermutung \ref{verm:twocycle-symmetry} bedeutet, dass in einem Zweizykel die
-	getwisteten und ungetwisteten Operationen achsen- oder punktsymmetrisch verteilt sind.
+	ein- und beidseitigen Wirkungen achsen- oder punktsymmetrisch verteilt sind.
 \end{anm}
