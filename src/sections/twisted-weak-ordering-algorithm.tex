@@ -87,3 +87,46 @@ Coxetergruppe}
 \EndProcedure
 \end{algorithmic}
 \end{algo}
+
+Im Anhang findet sich eine Implementierung der Algorithmen \ref{algo:twoa1} und
+\ref{algo:twoa2} in GAP 4.5.4. Tabelle \ref{tab:benchmark-twoa} zeigt ein
+Benchmark anhand von fünf ausgewählten Coxetergruppen.
+
+\begin{table}[h]
+\label{tab:benchmark-twoa}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$W$ & $A_9$ & $A_{10}$ & $A_{11}$ & $E_6$ & $E_7$ & $E_8$
+\\
+\hline
+$|Wk(\id,W)|$ & 9496 & 35696 & 140152 & 892 & 10208 & 199952 \\
+\hline
+$\max \rho(w)$ & 25 & 30 & 36 & 20 & 35 & 64 \\
+\hline
+TWOA1 & 00:02.180 & 00:31.442 & 11:04.241 & 00:03.044 & 06:11.728 & -- \\
+\hline
+TWOA2 & 00:01.372 & 00:06.276 & 00:29.830 & 00:00.268 & 00:02.840 & 11:03.278 \\
+\hline
+TWOA1 element compares & 13.531.414 & 185.791.174 & 2.778.111.763 & 85.857 &
+7.785.186 & --
+\\
+\hline
+TWOA2 element compares & 42.156 & 173.356 & 737.313 & 2.347 & 29.687 & 682.227 \\
+\hline
+\end{tabular}
+\caption{Benchmark}
+\end{table}
+
+Dabei sind die $A_n$ als
+symmetrische Gruppen implementiert und die $E_n$ als frei präsentierte Gruppen.
+Ausgeführt wurden die Messungen auf einem Intel Core i5-3570k mit vier Kernen
+zu je 3,40 GHz. Der Algorithmus ist dabei aber nur single threaded und kann so
+nur auf einem Kern laufen. Um die Messergebnisse nicht durch Limitierungen des
+Datenspeichers zu beeinflussen, wurden die Daten in diesem Benchmark nicht
+stückweise persistiert sondern ausschließlich berechnet.
+
+Wie zu erwarten ist der Geschwindigkeitsgewinn bei den Coxetergruppen vom Typ
+$E_n$ deutlich größer, da in diesem Fall die Elementvergleiche deutlich
+aufwendiger sind als bei Gruppen vom Typ $A_n$.
+
