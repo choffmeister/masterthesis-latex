@@ -1,5 +1,5 @@
 #TeXlipse project settings
-#Tue Jul 10 14:00:01 CEST 2012
+#Fri Jul 13 23:42:33 CEST 2012
 markTmpDer=true
 builderNum=2
 outputDir=target/
@@ -9,6 +9,6 @@ outputFormat=pdf
 tempDir=tmp
 mainTexFile=document.tex
 outputFile=choffmeister-ma.pdf
-langSpell=de
+langSpell=en
 markDer=true
 srcDir=src/

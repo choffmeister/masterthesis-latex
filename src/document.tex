@@ -6,8 +6,9 @@
   blue,% <orange, green, violet>
   %rgb, <cmyk>
   %mono,
-  %extramargin,
-  %marginleft, <marginright>
+  extramargin,
+  %marginleft,
+  %marginright,
   ]{tubsartcl}
 
 \input{packages}
@@ -25,12 +26,9 @@
 \include{sections/twocycles}
 \include{sections/twisted-weak-ordering-algorithm}
 
-\begin{thebibliography}{A}
-\bibitem[Appe]{appe} Appe
-\end{thebibliography}
-
-%\nocite{*}
-%\bibliographystyle{abbrvnat}
-%\bibliography{bibliography}
+\begin{appendix}
+\include{sections/bibliography}
+\include{sections/sourcecodes}
+\end{appendix}
 
 \end{document}
