@@ -11,7 +11,7 @@ verwenden, der im wesentlichen benutzt, dass für jede getwistete Involution $w
 %TODO translate
 \begin{algo}[Algorithmus 1]
 \hfill
-\label{algo:twoa1}
+\label{twoa1}
 \begin{algorithmic}[1]
 \Procedure{TwistedWeakOrderingAlgorithm1}{$W$} \Comment{$W$ sei die
 Coxetergruppe}
@@ -56,10 +56,10 @@ Coxetergruppe}
 \end{algo}
 
 %TODO translate
-Dieser Algorithmus berechnet alle getwisteten Involutionen und deren getwistete
-Länge $(w,k_w)$ und deren Relationen $(w',w,s)$ bzw. $(w',w,\ul s)$. Zu bemerken
-ist, dass zur Berechnung der getwisteten Involutionen der Länge $k$ nur die
-Knoten aus $V$ benötigt werden, mit der getwisteten Länge $k-1$ und $k$ sowie
+Dieser Algorithmus berechnet alle getwisteten Involutionen und deren
+getwistete Länge $(w,k_w)$ und deren Relationen $(w',w,s)$ bzw. $(w',w,\ul
+s)$. Zu bemerken ist, dass zur Berechnung der ge\-twis\-te\-ten Involutionen der
+Länge $k$ nur die Knoten aus $V$ benötigt werden, mit der getwisteten Länge $k-1$ und $k$ sowie
 die Kanten aus $E$, die Knoten der Länge $k-2$ und $k-1$ bzw. $k-1$ und $k$
 verbinden. Alle vorherigen Ergebnisse können schon persistiert werden, so dass
 nie das komplette Ergebnis im Speicher gehalten werden muss.
@@ -69,7 +69,7 @@ Elementen in $W$. Für bestimmte Gruppen wie z.B. die $A_n$, welche je isomorph
 zu $Sym(n+1)$ sind, lässt sich der Vergleich von Element effizient
 implementieren. Will man jedoch mit Coxetergruppen im Allgemeinen arbeiten, so
 liegt $W$ als frei präsentierte Gruppe vor und der Vergleich von Element is eine
-sehr aufwendige Operation. Bei \algoref{algo:twoa1} muss jedes
+sehr aufwendige Operation. Bei \algoref{twoa1} muss jedes
 potentiell neue Element $x$ mit allen schon bekannten $w'$ von gleicher
 getwisteter Länge verglichen werden um zu bestimmen, ob $x$ wirklich ein noch
 nicht bekanntes Element aus $\ti{\theta}$ ist.
@@ -77,7 +77,7 @@ nicht bekanntes Element aus $\ti{\theta}$ ist.
 %TODO translate
 \begin{algo}[Algorithmus 2]
 \hfill
-\label{algo:twoa2}
+\label{twoa2}
 \begin{algorithmic}[1]
 \Procedure{TwistedWeakOrderingAlgorithm2}{$W$} \Comment{$W$ sei die
 Coxetergruppe}
@@ -94,7 +94,7 @@ Coxetergruppe}
 \end{algo}
 
 \begin{table}
-\label{tab:benchmark-twoa}
+\label{benchmark-twoa}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
@@ -109,19 +109,19 @@ TWOA1 & 00:02.180 & 00:31.442 & 11:04.241 & 00:03.044 & 06:11.728 & -- \\
 \hline
 TWOA2 & 00:01.372 & 00:06.276 & 00:29.830 & 00:00.268 & 00:02.840 & 11:03.278 \\
 \hline
-TWOA1 element compares & 13.531.414 & 185.791.174 & 2.778.111.763 & 85.857 &
+TWOA1 compares & 13.531.414 & 185.791.174 & 2.778.111.763 & 85.857 &
 7.785.186 & --
 \\
 \hline
-TWOA2 element compares & 42.156 & 173.356 & 737.313 & 2.347 & 29.687 & 682.227 \\
+TWOA2 compares & 42.156 & 173.356 & 737.313 & 2.347 & 29.687 & 682.227 \\
 \hline
 \end{tabular}
 \caption{Benchmark}
 \end{table}
 
 %TODO translate
-Im Anhang findet sich eine Implementierung der \algoref{algo:twoa1,algo:twoa2}
-in GAP 4.5.4. \tableref{tab:benchmark-twoa} zeigt ein Benchmark anhand von fünf
+Im Anhang findet sich eine Implementierung der \algoref{twoa1,twoa2}
+in GAP 4.5.4. \tableref{benchmark-twoa} zeigt ein Benchmark anhand von fünf
 ausgewählten Coxetergruppen.
 
 %TODO translate
