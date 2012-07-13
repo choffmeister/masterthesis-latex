@@ -1,0 +1,39 @@
+\section{Misc}
+
+\begin{ques}
+\label{ques:main}
+Let $(W,S)$ be a Coxeter system, $\theta : W \to W$ an automorphism of $W$ with
+$\theta^2 = \id$ and $\theta(K) = K$, and $K \subset S$ a subset of $S$ generating
+a finite subgroup of $W$. Futhermore let $T,S_1,S_2,S_3 \subset S$ be four pairwise
+disjunct sets of generators. For which Coxeter group $W$ does the implication
+\begin{equation}
+\label{equ:main}
+w \in w_K C_{T \cup S_i}, i=1,2,3 \Rightarrow w \in w_K C_T
+\end{equation}
+hold for any possible $K,\theta,T,S_1,S_2,S_3$ and $w$?
+\end{ques}
+
+\begin{prop}
+Let $(W,S)$ be a Coxeter system and $K,T,S_1,S_2,S_3$ be like in \ref{ques:main}.
+Suppose equation \ref{equ:main} does not hold.
+\begin{proof}
+
+Then we have three expressions
+\begin{align*}
+w & = w_K \ul{ a_1 \cdots a_n } \\
+  & = w_K \ul{ b_1 \cdots b_n } \\
+  & = w_K \ul{ c_1 \cdots c_n }
+\end{align*}
+with $a_i \in T \cup S_1$, $b_i \in T \cup S_2$ and $c_i \in T \cup S_3$. Suppose
+at least one generator of $a_n,b_n,c_n$ to be in $T$, for example $a_n \in T$.
+Then we can apply $\ul{a_n}$ to all three expressions. Since $\rho (w \ul{a_n}) < \rho(w)$
+the exchange condition for $\ti{\theta}$ \cite[Proposition 3.10]{hultman:comb-twisted-invo}
+yields
+\begin{align*}
+w \ul{a_n} & = w_K \ul{ a_1 \cdots a_n a_n } = w_K \ul{ a_1 \ldots a_{n-1} } \\
+           & = w_K \ul{ b_1 \cdots b_n a_n } = w_K \ul{ b_1 \ldots \hat b_i \ldots b_n } \\
+           & = w_K \ul{ c_1 \cdots c_n a_n } = w_K \ul{ c_1 \ldots \hat c_j \ldots c_n }
+\end{align*}
+where $\hat \cdot$ means omittision.
+\end{proof}
+\end{prop}

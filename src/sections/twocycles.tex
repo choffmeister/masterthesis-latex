@@ -36,18 +36,18 @@ $w$.
 \end{defi}
 
 %TODO translate
-\begin{verm}
+\begin{assu}
 Seien $(W,S)$ ein Coxetersystem und $s,t \in S$ zwei verschiedene Erzeuger
 von $W$. Dann gilt:
 \begin{enumerate}
-  \item \label{verm:max-twocycle-length} Sei $m = \ord (st) < \infty$. Falls
+  \item \label{assu:max-twocycle-length} Sei $m = \ord (st) < \infty$. Falls
   $w \ul{[st]^n} \neq w$ ist für alle $n \in \nn, n < 2m$, dann gilt $w \ul{(st)^{2m}} = w$.
-  \item \label{verm:twocycle-is-convex} In $wC_{\{s,t\}}$ existieren keine drei
+  \item \label{assu:twocycle-is-convex} In $wC_{\{s,t\}}$ existieren keine drei
   Elemente derselben getwisteten Länge.
-  \item \label{verm:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
+  \item \label{assu:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
   Falls $s$ einseitig auf $w$ wirkt, dann gilt $w \ul{st} < w \ul{s}$ oder $w
   \ul{t} > w$.
-  \item \label{verm:twocycle-symmetry} Sei $w \ul{[st]^n} = w$ für ein $n \in
+  \item \label{assu:twocycle-symmetry} Sei $w \ul{[st]^n} = w$ für ein $n \in
   \nn$. Dann ist $n$ gerade und es gilt eine der beiden folgenden Eigenschaften:
   	\begin{enumerate}
   	  \item Für jedes $m \in \nn$ hat das Element $[st]^m$ genau dann eine
@@ -58,20 +58,20 @@ von $W$. Dann gilt:
   	  Gesamtwirkung auf $w$ hat.
   	\end{enumerate}
 \end{enumerate}
-\end{verm}
+\end{assu}
 
 %TODO translate
-\begin{anm}
-	Vermutung \ref{verm:twocycle-is-convex} bedeutet, dass Zweizykel in einem
+\begin{rema}
+	Vermutung \ref{assu:twocycle-is-convex} bedeutet, dass Zweizykel in einem
 	gewissen Sinne konkav sind. Vermutung
-	\ref{verm:onesided-operations-only-at-top-or-bottom-end-of-twocycle} bedeutet,
+	\ref{assu:onesided-operations-only-at-top-or-bottom-end-of-twocycle} bedeutet,
 	dass innerhalb eines Zweizykels einseitige Wirkungen ausschließlich am
 	bzgl. der getwisteten Länge oberen oder unteren Ende auftreten können.
-	Vermutung \ref{verm:twocycle-symmetry} bedeutet, dass in einem Zweizykel die
+	Vermutung \ref{assu:twocycle-symmetry} bedeutet, dass in einem Zweizykel die
 	ein- und beidseitigen Wirkungen achsen- oder punktsymmetrisch verteilt sind.
-\end{anm}
+\end{rema}
 
-\begin{lemm}[Assumption \ref{verm:twocycle-is-convex}]
+\begin{lemm}[Assumption \ref{assu:twocycle-is-convex}]
 \begin{proof}
 Let $(W,S)$ be a Coxeter system, $w \in W$ with $\rank w = k$, $s, t \in S$ with
 $s \neq t$. Without loss of generality we can choose $w$ such that $w < w \ul s$
