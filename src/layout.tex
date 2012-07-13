@@ -4,7 +4,10 @@
 \logo{Technische Universität Braunschweig\\Institut Computational Mathematics}
 \titlepicture{../resources/twisted-weak-ordering-a4}
 
+\newcounter{theorem}[section]
+\renewcommand{\thetheorem}{\thesection.\arabic{theorem}}
+\setenumerate{ref=\thetheorem.\arabic*}
+
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
-\numberwithin{equation}{section}
-\setenumerate{ref=\thesatz.\arabic*}
+\numberwithin{equation}{theorem}
