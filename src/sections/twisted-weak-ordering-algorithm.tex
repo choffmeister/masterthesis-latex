@@ -69,7 +69,7 @@ Elementen in $W$. Für bestimmte Gruppen wie z.B. die $A_n$, welche je isomorph
 zu $Sym(n+1)$ sind, lässt sich der Vergleich von Element effizient
 implementieren. Will man jedoch mit Coxetergruppen im Allgemeinen arbeiten, so
 liegt $W$ als frei präsentierte Gruppe vor und der Vergleich von Element is eine
-sehr aufwendige Operation. Bei Algorithmus \ref{algo:twoa1} muss jedes
+sehr aufwendige Operation. Bei \algoref{algo:twoa1} muss jedes
 potentiell neue Element $x$ mit allen schon bekannten $w'$ von gleicher
 getwisteter Länge verglichen werden um zu bestimmen, ob $x$ wirklich ein noch
 nicht bekanntes Element aus $\ti{\theta}$ ist.
@@ -93,13 +93,7 @@ Coxetergruppe}
 \end{algorithmic}
 \end{algo}
 
-%TODO translate
-Im Anhang findet sich eine Implementierung der Algorithmen \ref{algo:twoa1} und
-\ref{algo:twoa2} in GAP 4.5.4. Tabelle \ref{tab:benchmark-twoa} zeigt ein
-Benchmark anhand von fünf ausgewählten Coxetergruppen.
-
-%TODO translate
-\begin{table}[h]
+\begin{table}
 \label{tab:benchmark-twoa}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -124,6 +118,11 @@ TWOA2 element compares & 42.156 & 173.356 & 737.313 & 2.347 & 29.687 & 682.227 \
 \end{tabular}
 \caption{Benchmark}
 \end{table}
+
+%TODO translate
+Im Anhang findet sich eine Implementierung der \algoref{algo:twoa1,algo:twoa2}
+in GAP 4.5.4. \tableref{tab:benchmark-twoa} zeigt ein Benchmark anhand von fünf
+ausgewählten Coxetergruppen.
 
 %TODO translate
 Dabei sind die $A_n$ als
