@@ -1,5 +1,7 @@
-tmp/
-target/*
-src/document-blx.bib
+*.log
 *.aux
-!target/choffmeister-ma.pdf
+*.toc
+*.out
+*.bbl
+*.blg
+*~

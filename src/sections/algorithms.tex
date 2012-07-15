@@ -10,49 +10,49 @@ verwenden, der im wesentlichen benutzt, dass für jede getwistete Involution $w
 
 %TODO translate
 \begin{algo}[Algorithmus 1]
-\hfill
-\label{twoa1}
-\begin{algorithmic}[1]
-\Procedure{TwistedWeakOrderingAlgorithm1}{$W$} \Comment{$W$ sei die
-Coxetergruppe}
-\State $V \gets \{(e,0)\}$
-\State $E \gets \{\}$
+	\hfill
+	\label{twoa1}
+	\begin{algorithmic}[1]
+	\Procedure{TwistedWeakOrderingAlgorithm1}{$W$} \Comment{$W$ sei die
+	Coxetergruppe}
+	\State $V \gets \{(e,0)\}$
+	\State $E \gets \{\}$
 
-\For{$k \gets 0 \textbf{ to } k_{\max}$}
-	\ForAll{$(w,k_w) \in V \textbf{ with } k_w = k$}
-		\ForAll{$s \in S \textbf{ with } \nexists (\cdot,w,s) \in E$} \Comment{Nur
-		die $s$, die nicht schon nach $w$ führen} \State $y \gets ws$
-			\State $z \gets \theta(s)y$
-			\If{$z=w$}
-				\State $x \gets y$ \Comment{s operiert ungetwistet auf w}
-				\State $t \gets s$
-			\Else
-				\State $x \gets z$ \Comment{s operiert getwistet auf w}
-				\State $t \gets \ul{s}$
-			\EndIf
-			
-			\State $isNew \gets \textbf{true}$
-			\ForAll{$(w',k_{w'}) \in V \textbf{ with } k_{w'} = k+1$} \Comment{Prüfen,
-			ob $x$ nicht schon in $V$ liegt}
-				\If{$x = w'$}
-					\State $isNew \gets \textbf{false}$
+	\For{$k \gets 0 \textbf{ to } k_{\max}$}
+		\ForAll{$(w,k_w) \in V \textbf{ with } k_w = k$}
+			\ForAll{$s \in S \textbf{ with } \nexists (\cdot,w,s) \in E$} \Comment{Nur
+			die $s$, die nicht schon nach $w$ führen} \State $y \gets ws$
+				\State $z \gets \theta(s)y$
+				\If{$z=w$}
+					\State $x \gets y$ \Comment{s operiert ungetwistet auf w}
+					\State $t \gets s$
+				\Else
+					\State $x \gets z$ \Comment{s operiert getwistet auf w}
+					\State $t \gets \ul{s}$
+				\EndIf
+				
+				\State $isNew \gets \textbf{true}$
+				\ForAll{$(w',k_{w'}) \in V \textbf{ with } k_{w'} = k+1$} \Comment{Prüfen,
+				ob $x$ nicht schon in $V$ liegt}
+					\If{$x = w'$}
+						\State $isNew \gets \textbf{false}$
+					\EndIf
+				\EndFor
+				
+				\If{$isNew = \textbf{true}$}
+					\State $V \gets V \cup \{ (x,k+1) \}$
+					\State $E \gets E \cup \{ (w,x,t) \}$
+				\Else
+					\State $E \gets E \cup \{ (w,x,t) \}$
 				\EndIf
 			\EndFor
-			
-			\If{$isNew = \textbf{true}$}
-				\State $V \gets V \cup \{ (x,k+1) \}$
-				\State $E \gets E \cup \{ (w,x,t) \}$
-			\Else
-				\State $E \gets E \cup \{ (w,x,t) \}$
-			\EndIf
 		\EndFor
+		\State $k \gets k + 1$
 	\EndFor
-	\State $k \gets k + 1$
-\EndFor
 
-\State \textbf{return} $(V,E)$\Comment{The poset graph}
-\EndProcedure
-\end{algorithmic}
+	\State \textbf{return} $(V,E)$\Comment{The poset graph}
+	\EndProcedure
+	\end{algorithmic}
 \end{algo}
 
 %TODO translate
@@ -76,47 +76,47 @@ nicht bekanntes Element aus $\ti{\theta}$ ist.
 
 %TODO translate
 \begin{algo}[Algorithmus 2]
-\hfill
-\label{twoa2}
-\begin{algorithmic}[1]
-\Procedure{TwistedWeakOrderingAlgorithm2}{$W$} \Comment{$W$ sei die
-Coxetergruppe}
-\State $V \gets \{(e,0)\}$
-\State $E \gets \{\}$
+	\hfill
+	\label{twoa2}
+	\begin{algorithmic}[1]
+	\Procedure{TwistedWeakOrderingAlgorithm2}{$W$} \Comment{$W$ sei die
+	Coxetergruppe}
+	\State $V \gets \{(e,0)\}$
+	\State $E \gets \{\}$
 
-\For{$k \gets 0 \textbf{ to } k_{\max}$}
-	\State TODO
-\EndFor
+	\For{$k \gets 0 \textbf{ to } k_{\max}$}
+		\State TODO
+	\EndFor
 
-\State \textbf{return} $(V,E)$\Comment{The poset graph}
-\EndProcedure
-\end{algorithmic}
+	\State \textbf{return} $(V,E)$\Comment{The poset graph}
+	\EndProcedure
+	\end{algorithmic}
 \end{algo}
 
 \begin{table}
-\label{benchmark-twoa}
-\centering
-\begin{tabular}{|c|c|c|r|r|r|r|}
-\hline
-\multicolumn{3}{|c|}{} & \multicolumn{2}{|c|}{Timings} &
-\multicolumn{2}{|c|}{Element compares}\\
-\hline
-W & $|Wk(\id,W)|$ & $\rho(w_0)$ & TWOA1 & TWOA2 & TWOA1 & TWOA2\\
-\hline
-$A_9$ & 9496 & 25 & 00:02.180 & 00:01.372 & 13,531,414 & 42,156\\
-\hline
-$A_{10}$ & 35696 & 30 & 00:31.442 & 00:06.276 & 185,791,174 & 173,356\\
-\hline
-$A_{11}$ & 140152 & 36 & 11:04.241 & 00:29.830 & 2,778,111,763 & 737,313\\
-\hline
-$E_6$ & 892 & 20 & 00:03.044 & 00:00.268 & 85,857 & 2,347\\
-\hline
-$E_7$ & 10208 & 35 & 06:11.728 & 00:02.840 & 7,785,186 & 29,687\\
-\hline
-$E_8$ & 199952 & 64 & -- & 11:03.278 & -- & 682,227\\
-\hline
-\end{tabular}
-\caption{Benchmark}
+	\label{benchmark-twoa}
+	\centering
+	\begin{tabular}{|c|c|c|r|r|r|r|}
+	\hline
+	\multicolumn{3}{|c|}{} & \multicolumn{2}{|c|}{Timings} &
+	\multicolumn{2}{|c|}{Element compares}\\
+	\hline
+	W & $|Wk(\id,W)|$ & $\rho(w_0)$ & TWOA1 & TWOA2 & TWOA1 & TWOA2\\
+	\hline
+	$A_9$ & 9496 & 25 & 00:02.180 & 00:01.372 & 13,531,414 & 42,156\\
+	\hline
+	$A_{10}$ & 35696 & 30 & 00:31.442 & 00:06.276 & 185,791,174 & 173,356\\
+	\hline
+	$A_{11}$ & 140152 & 36 & 11:04.241 & 00:29.830 & 2,778,111,763 & 737,313\\
+	\hline
+	$E_6$ & 892 & 20 & 00:03.044 & 00:00.268 & 85,857 & 2,347\\
+	\hline
+	$E_7$ & 10208 & 35 & 06:11.728 & 00:02.840 & 7,785,186 & 29,687\\
+	\hline
+	$E_8$ & 199952 & 64 & -- & 11:03.278 & -- & 682,227\\
+	\hline
+	\end{tabular}
+	\caption{Benchmark}
 \end{table}
 
 %TODO translate
@@ -136,4 +136,3 @@ stückweise persistiert sondern ausschließlich berechnet.
 Wie zu erwarten ist der Geschwindigkeitsgewinn bei den Coxetergruppen vom Typ
 $E_n$ deutlich größer, da in diesem Fall die Elementvergleiche deutlich
 aufwendiger sind als bei Gruppen vom Typ $A_n$.
-
