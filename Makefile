@@ -1,5 +1,5 @@
 all:
-	pdflatex -file-line-error -interaction=nonstopmode -etex src/main.tex
+	pdflatex -file-line-error -interaction=nonstopmode -synctex=1 -etex src/main.tex
 	bibtex8 main.aux
 
 clean:
@@ -10,3 +10,5 @@ clean:
 	find . -name '*.bbl' -print0 | xargs -0 rm -f
 	find . -name '*.blg' -print0 | xargs -0 rm -f
 	find . -name '*~' -print0 | xargs -0 rm -f
+	find . -name '*.synctex.gz' -print0 | xargs -0 rm -f
+	find . -name '*.synctex.gz(busy)' -print0 | xargs -0 rm -f
