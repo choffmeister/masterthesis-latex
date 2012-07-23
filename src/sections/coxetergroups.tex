@@ -21,7 +21,18 @@ For a arbitrary element $w \in W$, $(W,S)$ a Coxeter system, we call a product $
 
 \begin{defi}[Length function]
 	\label{length-function}
-	Let $(W,S)$ be a Coxeter system and $w \in W$ an element. Then there are some (not neseccarily distince) generators $s_i \in S$ with $s_1 \cdots s_n = w$. We call $n$ the \defword{expression length}. The smallest number $n \in \nn_0$ for that $w$ has an expression of length $n$ is called the \defword{length} of $w$. The map
+	Let $(W,S)$ be a Coxeter system and $w \in W$ an element. Then there are some (not neseccarily distince) generators $s_i \in S$ with $s_1 \cdots s_r = w$. We call $r$ the \defword{expression length}. The smallest number $r \in \nn_0$ for that $w$ has an expression of length $r$ is called the \defword{length} of $w$ and each expression of $w$, that is ob minimal length, is called \defword{reduced expression}. The map
 	$$ l : W \to \nn_0 $$
 	that maps each element in $W$ to its length is calls \defword{length function}.
 \end{defi}
+
+The next theorem yields a way to obtain a reduced expression of an arbitrary element $s_1 \cdots s_r = w \in W$. But first we define what a reflection is. Any element $w \in W$ that is conjugated to an generator $s \in S$ is called \defword{reflection}. Hence the set of all reflections in $W$ is
+$$ T = \bigcup_{w \in W} wSw^{-1}. $$
+
+\begin{theo}[Strong Exchange Condition]
+	Let $(W,S)$ be a Coxeter system, $w \in W$ an arbitrary element and ${s_1 \cdots s_r = w}$ with $s_i \in S$ a not neseccarily reduced expression for $w$. For each reflection $t \in T$ with $l(wt) < l(w)$ there exists an index $i$ for which $wt = s_1 \cdots \hat s_i \cdots s_r$, where $\hat s_i$ means omission. In case we started from an reduced expression, then $i$ is unique.
+
+	\begin{proof}
+		sad
+	\end{proof}
+\end{theo}
