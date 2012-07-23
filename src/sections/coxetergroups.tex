@@ -12,10 +12,12 @@ In this chapter we will compile some basic facts on Coxeter groups. First of all
 	\label{coxeter-system}
 	Let $S = \{ s_1, \ldots, s_n \}$ be a finite set of symbols and
 	$$R = \{ m_{ij} \in \nn \cup \infty : 1 \leq i,j \leq n \}$$
-	a set numbers (or $\infty$) with $m_{ii} = 1$ and $m_{ij} = m_{ji}$. Then the free represented group
+	a set numbers (or $\infty$) with $m_{ii} = 1$, $m_{ij} > 1$ for $i \neq j$ and $m_{ij} = m_{ji}$. Then the free represented group
 	$$W = \langle S \ | \ (s_i s_j)^{m_{ij}} \rangle$$
-	is called a \defword{Coxeter group} and $(W,S)$ the corrosponding \defword{Coxeter system}.
+	is called a \defword{Coxeter group} and $(W,S)$ the corrosponding \defword{Coxeter system}. The cardinality of $S$ is called the \defword{rank} of the Coxeter system (and the Coxeter group).
 \end{defi}
+
+From the definiton we see, that Coxeter groups only depend on the cardinality of $S$ and the relations between the generators in $S$. A common way to visualize this information are \defword{Coxeter graphs}. A Coxeter graph is a graph containing a vertex for each generator in $S$. Let $(s_i s_j)^m = 1$. In case $m = 2$ the two corrosponding vertices have no connecting edge. In case $m = 3$ they are connected by an unlabed edge. For $m > 3$ they have an connecting edge with label $m$.
 
 For a arbitrary element $w \in W$, $(W,S)$ a Coxeter system, we call a product $s_{i_1} \cdots s_{i_n} = w$ of generators $s_{i_1} \ldots s_{i_n} \in S$ an \defword{expression} of $w$. The present relations between the generators of a Coxeter group allow us to rewrite expressions. Hence an element $w \in W$ can have more than one expression. Obviously any element $w \in W$ has infinitly many expressions, since any expression $s_{i_1} \cdots s_{i_n} = w$ can be extended by applying $s_1^2 = 1$ from the right. But there must be a smallest number of generators needed to receive $w$. For example the neutral element $e$ can be expressed by the empty expression. Or each generator $s_i \in S$ can be expressed by itself, but any expression with less factors (i.e. the empty expression) is unequal to $s_i$.
 
@@ -26,13 +28,39 @@ For a arbitrary element $w \in W$, $(W,S)$ a Coxeter system, we call a product $
 	that maps each element in $W$ to its length is calls \defword{length function}.
 \end{defi}
 
-The next theorem yields a way to obtain a reduced expression of an arbitrary element $s_1 \cdots s_r = w \in W$. But first we define what a reflection is. Any element $w \in W$ that is conjugated to an generator $s \in S$ is called \defword{reflection}. Hence the set of all reflections in $W$ is
+\subsection{Exchange and Deletion Condition}
+
+We now obtain a way to get a reduced expression of an arbitrary element $s_1 \cdots s_r = w \in W$. But first we define what a reflection is. Any element $w \in W$ that is conjugated to an generator $s \in S$ is called \defword{reflection}. Hence the set of all reflections in $W$ is
 $$ T = \bigcup_{w \in W} wSw^{-1}. $$
 
-\begin{theo}[Strong Exchange Condition]
+\begin{theo}
 	Let $(W,S)$ be a Coxeter system, $w \in W$ an arbitrary element and ${s_1 \cdots s_r = w}$ with $s_i \in S$ a not neseccarily reduced expression for $w$. For each reflection $t \in T$ with $l(wt) < l(w)$ there exists an index $i$ for which $wt = s_1 \cdots \hat s_i \cdots s_r$, where $\hat s_i$ means omission. In case we started from an reduced expression, then $i$ is unique.
 
 	\begin{proof}
-		sad
+		See \cite[Theorem 5.8]{humphreys:coxeter}.
 	\end{proof}
 \end{theo}
+
+This theorem is called the \defword{Strong Exchange Condition}. The same theorem can be stated for $t \in S$ (since $S \subset T$). This weaker theorem is called \defword{Exchange Condition}. The Exchange Condition immediatly yields another corollary for Coxeter groups:
+
+\begin{coro}
+	Let $(W,S)$ be a Coxeter system, $w \in W$ and $w = s_1 \cdots s_r$ with $s_i \in S$ a unreduced expression of $w$. Then there exist two indices $i,j \in \{1,\cdots,r\}$ with $i < j$, such that $w = s_1 \cdots \hat s_i \cdots \hat s_j \cdots s_r$, where $\hat s_i$ and $\hat s_j$ mean omission.
+
+	\begin{proof}
+		Since the expression is unreduced there must be an index $j$ for that the twisted length shrinks. That means for $w' = s_1 \cdots s_{j-1}$ is $l(w' s_j) < l(w')$. Using the Exchange Condition we get $w' s_j = s_1 \cdots \hat s_i \cdots s_{j-1}$ yielding $w = s_1 \cdots \hat s_i \cdots \hat s_j \cdots s_r$.
+	\end{proof}
+\end{coro}
+
+This corollary is called \defword{Deletion Condition} and allows us to reduce expressions. To explain what is exactly meant by this we need another definition. For an expression $w = s_1 \cdots s_r$ and any subset of indices $S' \subset S$ we call $w' = t_1 \cdots t_r$ with $t_i = \hat s_i$ for $i \in S'$ and $t_i = s_i$ for $i \notin S'$ a \defword{subexpression} of $w$. With this definition we can precisily define the action of reducing expressions. Reducing an unreduced expression means to extract a reduced subexpression. Due to the Deletion Condition any unreduced expression can be reduced by omitting a even number of generators (we just have to apply the Deletion Condition inductively).
+
+Both, the Exchange Condition and the Deletion Condition, are two of the most powerful tools when investigating properties of Coxeter groups.
+
+\subsection{Finite Coxeter groups}
+
+Coxeter groups can be finite and infinite. A simple example for the former category is the following. Let $S = \{ s \}$. Due to definition it must be $s^2 = e$. So $W$ is isomorph to $\zz_2$ and finite. An example for an infinite Coxeter group can be obtained from $S = \{s,t\}$ with $s^2=t^2=e$ and $(st)^\infty = e$ (so we have no relation between $s$ and $t$). Obviously the element $st$ has infinite order forcing $W$ to be infinite. But there are also infinite Coxeter groups without an $\infty$-relation between two generators. An example for this is $W$ obtained from $S=\{s_1,s_2,s_3\}$ with $s_1^2=s_2^2=s_3^2=(s_1 s_2)^3=(s_2 s_3)^3=(s_3 s_1)^3=e$. But how can it be seen that this $W$ is infinite?
+
+It can be easily answered in general, if a Coxeter group is finite or infinite. The first step is to fallback to irreducible Coxeter groups. A Coxeter group (and the Coxeter system) is called \defword{irreducible}, if the corrosponding Coxeter graph is connected. The following lemma shows, why this simplification is valid:
+
+\begin{lemm}
+	Let $(W,S)$ be a reducible Coxeter system. This means that there is a partition of $S$ into $I, J$ with $(s_i s_j)$
+\end{lemm}
