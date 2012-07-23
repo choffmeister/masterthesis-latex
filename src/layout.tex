@@ -21,4 +21,6 @@ basicstyle=\ttfamily\scriptsize}
 %	morestring={[b][\color{red}]"},
 }
 
-\newcommand{\glos}[1]{\textbf{#1}}
+\newgloss{default}{.gls}{\glossname}{glsplain}
+\newcommand{\g}[1]{\gloss{#1}}
+\newcommand{\defword}[1]{\textbf{#1}}

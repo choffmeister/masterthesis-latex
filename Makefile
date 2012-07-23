@@ -1,6 +1,11 @@
-all:
+all: pdf bib
+
+pdf:
 	pdflatex -file-line-error -interaction=nonstopmode -synctex=1 -etex src/main.tex
+
+bib:
 	bibtex8 main.aux
+	bibtex8 main.gls.aux
 
 clean:
 	find . -name '*.log' -print0 | xargs -0 rm -f
