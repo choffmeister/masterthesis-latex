@@ -1,6 +1,7 @@
 \subsection{Bruhat ordering}
+\label{bruhat-ordering}
 
-We now investige ways to partially order the elements of a Coxeter group. Futhermore this ordering should be compatible with the length function. The most useful way to achieve this is the Bruhat ordering \cite[Section 5.9]{humphreys:coxeter}.
+We now investigate ways to partially order the elements of a Coxeter group. Futhermore this ordering should be compatible with the length function. The most useful way to achieve this is the Bruhat ordering \cite[Section 5.9]{humphreys:coxeter}.
 
 \begin{defi}
 	Let $(W,S)$ be a Coxeter system and $T = \cup_{w \in W} wSw^{-1}$ the set of all reflections in $W$. We write $w' \to w$ if there is a $t \in T$ with $w't = w$ and $l(w') < l(w)$. If there is a sequence $w' = w_0 \to w_1 \to \ldots \to w_m = w$ we say $w' < w$. The resulting relation $w' \leq w$ is called \defword{Bruhat ordering}.
@@ -14,8 +15,10 @@ We now investige ways to partially order the elements of a Coxeter group. Futher
 	\end{proof}
 \end{lemm}
 
-What we really want is the Bruhat ordering to be graded with the length function as rank function. By definition we already have $v < w$ iff $l(v) < l(w)$, but its not that obvious that two immediately adjacent elements differ in length by excatly 1. Before lets just mention two other partial orderings, where this property is obvious by definition:
+What we really want is the Bruhat ordering to be graded with the length function as rank function. By definition we already have $v < w$ iff $l(v) < l(w)$, but its not that obvious that two immediately adjacent elements differ in length by exactly 1. Before lets just mention two other partial orderings, where this property is obvious by definition:
 
 \begin{defi}
 	Let $(W,S)$ be a Coxeter system. The ordering $\leq_R$ defined by $u \leq_R w$ iff $uv = w$ for some $u \in W$ with $l(u) + l(v) = l(w)$ is called the \defword{right weak ordering}. The left sided version $u \leq_L w$ iff $vu = w$ is called the \defword{left weak ordering}.
 \end{defi}
+
+So lets ensure that the Bruhat ordering is graded as well. As already hinted the Strong Exchange Condition becomes very handy.
