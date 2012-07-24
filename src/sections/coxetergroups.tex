@@ -76,9 +76,7 @@ Both, the Strong Exchange Condition and the Deletion Condition, are two of the m
 	Let $(W,S)$ be a Coxeter system and $I,J \subset S$ two subsets of generators. Then ${W_I \cap W_J} = W_{I \cap J}$.
 
 	\begin{proof}
-		Let $w \in W_{I \cap J}$. Then $w \in W_I$ and $w \in W_J$. To show the other inclusion we induce over the length $r$. For $r = 0$ we have $w = e$ and so $w \in W_{S'}$ for any $S' \subset S$. So suppose we have proven the assumption for all lengths up to $r$. Let $w \in W_I \cap W_J$ with $l(w) = r+1$. Then we have two reduced expressions $w = s_1 \cdots s_r s_{r+1} = t_1 \cdots t_r t_{r+1}$ with $s_i \in I$ and $t_i \in J$.
-
-		Then there are two reduced expressions of $w = s_1 \cdots s_r = t_1 \cdots t_r$ with $s_i \in I$ and $t_j \in J$. By applying $s_r$ from the right we get $w s_r = s_1 \cdots s_{r-1} = t_1 \cdots t_r s_r$.
+		Let $w \in W_{I \cap J}$. Then $w \in W_I$ and $w \in W_J$. To show the other inclusion we induce over the length $r$. For $r = 0$ we have $w = e$ and so $w \in W_{S'}$ for any $S' \subset S$. So suppose we have proven the assumption for all lengths up to $r-1$. Let $w \in W_I \cap W_J$ with $l(w) = r$. Then we have two reduced expressions $w = s_1 \cdots s_r = t_1 \cdots t_r$ with $s_i \in I$ and $t_i \in J$. By applying $s_r$ from the right we get $w s_r = s_1 \cdots s_{r-1} = t_1 \cdots t_r s_r$. The expression $t_1 \cdots t_r s_r$ is of length $r-1$, so Exchange Condition yields $w s_r = s_1 \cdots s_{r-1} = t_1 \cdots \hat t_i \cdots t_r$, hence $w s_r \in W_I \cap W_J$. Due to induction we know that $w s_r \in W_{I \cap J}$. TODO
 	\end{proof}
 \end{lemm}
 
