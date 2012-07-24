@@ -5,7 +5,6 @@ pdf:
 
 bib:
 	bibtex8 main.aux
-	bibtex8 main.gls.aux
 
 clean:
 	find . -name '*.log' -print0 | xargs -0 rm -f
