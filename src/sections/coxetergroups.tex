@@ -17,9 +17,18 @@ In this chapter we will compile some basic facts on Coxeter groups. First of all
 	is called a \defword{Coxeter group} and $(W,S)$ the corrosponding \defword{Coxeter system}. The cardinality of $S$ is called the \defword{rank} of the Coxeter system (and the Coxeter group).
 \end{defi}
 
-From the definiton we see, that Coxeter groups only depend on the cardinality of $S$ and the relations between the generators in $S$. A common way to visualize this information are \defword{Coxeter graphs}. A Coxeter graph is a graph containing a vertex for each generator in $S$. Let $(s_i s_j)^m = 1$. In case $m = 2$ the two corrosponding vertices have no connecting edge. In case $m = 3$ they are connected by an unlabed edge. For $m > 3$ they have an connecting edge with label $m$.
+From the definiton we see, that Coxeter groups only depend on the cardinality of $S$ and the relations between the generators in $S$. A common way to visualize this information are Coxeter graphs.
 
-For a arbitrary element $w \in W$, $(W,S)$ a Coxeter system, we call a product $s_{i_1} \cdots s_{i_n} = w$ of generators $s_{i_1} \ldots s_{i_n} \in S$ an \defword{expression} of $w$. The present relations between the generators of a Coxeter group allow us to rewrite expressions. Hence an element $w \in W$ can have more than one expression. Obviously any element $w \in W$ has infinitly many expressions, since any expression $s_{i_1} \cdots s_{i_n} = w$ can be extended by applying $s_1^2 = 1$ from the right. But there must be a smallest number of generators needed to receive $w$. For example the neutral element $e$ can be expressed by the empty expression. Or each generator $s_i \in S$ can be expressed by itself, but any expression with less factors (i.e. the empty expression) is unequal to $s_i$.
+\begin{defi}
+	\label{coxeter-graph}
+	A \defword{Coxeter graphs} is a graph containing a vertex for each generator in $S$. Let $(s_i s_j)^m = 1$. In case $m = 2$ the two corrosponding vertices have no connecting edge. In case $m = 3$ they are connected by an unlabed edge. For $m > 3$ they have an connecting edge with label $m$.
+\end{defi}
+
+\begin{defi}
+	For an arbitrary element $w \in W$, $(W,S)$ a Coxeter system, we call a product $s_{i_1} \cdots s_{i_n} = w$ of generators $s_{i_1} \ldots s_{i_n} \in S$ an \defword{expression} of $w$. Any expression that can be obtained from $s_{i_1} \cdots s_{i_n}$ by omitting some (or all) factors is called a \defword{subexpression} of $w$.
+\end{defi}
+
+The present relations between the generators of a Coxeter group allow us to rewrite expressions. Hence an element $w \in W$ can have more than one expression. Obviously any element $w \in W$ has infinitly many expressions, since any expression $s_{i_1} \cdots s_{i_n} = w$ can be extended by applying $s_1^2 = 1$ from the right. But there must be a smallest number of generators needed to receive $w$. For example the neutral element $e$ can be expressed by the empty expression. Or each generator $s_i \in S$ can be expressed by itself, but any expression with less factors (i.e. the empty expression) is unequal to $s_i$.
 
 \begin{defi}
 	\label{length-function}
@@ -53,7 +62,7 @@ This theorem is called the \defword{Strong Exchange Condition}. The same theorem
 	\end{proof}
 \end{coro}
 
-This corollary is called \defword{Deletion Condition} and allows us to reduce expressions. To explain what is exactly meant by this we need another definition. For an expression $w = s_1 \cdots s_r$ and any subset of indices $S' \subset S$ we call $w' = t_1 \cdots t_r$ with $t_i = \hat s_i$ for $i \in S'$ and $t_i = s_i$ for $i \notin S'$ a \defword{subexpression} of $w$. With this definition we can precisily define the action of reducing expressions. Reducing an unreduced expression means to extract a reduced subexpression. Due to the Deletion Condition any unreduced expression can be reduced by omitting a even number of generators (we just have to apply the Deletion Condition inductively).
+This corollary is called \defword{Deletion Condition} and allows us to reduce expressions, i.e. to find a subexpression that is reduced. Due to the Deletion Condition any unreduced expression can be reduced by omitting a even number of generators (we just have to apply the Deletion Condition inductively).
 
 Both, the Exchange Condition and the Deletion Condition, are two of the most powerful tools when investigating properties of Coxeter groups.
 
