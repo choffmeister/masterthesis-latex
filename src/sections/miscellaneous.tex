@@ -5,24 +5,24 @@
 \end{defi}
 
 \begin{ques}
-	\label{main}
+	\typedlabel{ques:main}
 	Let $(W,S)$ be a Coxeter system, $\theta : W \to W$ an automorphism of $W$ with $\theta^2 = \id$ and $\theta(S) = S$, and $K \subset S$ a subset of $S$ generating a finite subgroup of $W$ with $\theta(K) = K$. Futhermore let $T,S_1,S_2,S_3 \subset S$ be four pairwise disjoint sets of generators. For which Coxeter groups $W$ does the implication
 	\begin{equation}
-		\label{main}
+		\label{eq:main}
 		w \in w_K C_{T \cup S_i}, i=1,2,3 \Rightarrow w \in w_K C_T
 	\end{equation}
 	hold for any possible $K,\theta,T,S_1,S_2,S_3$ and $w$?
 \end{ques}
 
 \begin{prop}
-	\label{counterexample-simplification}
-	Let $(W,S)$ be a Coxeter system and $K,T,S_1,S_2,S_3$ be like in \quesref{main}. Suppose we have $w \in W$ and $a_1,\ldots,a_n \in T \cup S_1$, $b_1,\ldots,b_n \in T \cup S_2$, $c_1,\ldots,c_n \in T \cup S_3$ with
+	\typedlabel{prop:counterexample-simplification}
+	Let $(W,S)$ be a Coxeter system and $K,T,S_1,S_2,S_3$ be like in \ref{ques:main}. Suppose we have $w \in W$ and $a_1,\ldots,a_n \in T \cup S_1$, $b_1,\ldots,b_n \in T \cup S_2$, $c_1,\ldots,c_n \in T \cup S_3$ with
 	\begin{align*}
 	w & = w_K \ul{ a_1 \cdots a_n } \\
 	  & = w_K \ul{ b_1 \cdots b_n } \\
 	  & = w_K \ul{ c_1 \cdots c_n }
 	\end{align*}
-	and \eqref{main} does not hold for these three expressions, i.e. $w \notin w_K C_T$. Then there exist $t_1,\ldots,t_m \in T$ and $a'_1,\ldots,a'_{n-m} \in T \cup S_1$, $b'_1,\ldots,b'_{n-m} \in T \cup S_2$, $c'_1,\ldots,c'_{n-m} \in T \cup S_3$ such that
+	and \eqref{eq:main} does not hold for these three expressions, i.e. $w \notin w_K C_T$. Then there exist $t_1,\ldots,t_m \in T$ and $a'_1,\ldots,a'_{n-m} \in T \cup S_1$, $b'_1,\ldots,b'_{n-m} \in T \cup S_2$, $c'_1,\ldots,c'_{n-m} \in T \cup S_3$ such that
 	\begin{align*}
 		w \ul {t_1 \ldots t_m} & = w_K \ul{ a'_1 \cdots a'_{n-m} } \\
 							   & = w_K \ul{ b'_1 \cdots b'_{n-m} } \\
@@ -42,19 +42,19 @@
 \end{prop}
 
 \begin{lemm}
-	\label{counterexample-simplification}
-	A counterexample to \quesref{main} can only exist, if there
+	\typedlabel{lemm:counterexample-simplification}
+	A counterexample to \ref{ques:main} can only exist, if there
 	is an element $u \in w C_T$ and three distinct generators $s_1,s_2,s_3 \in
 	D_r(u)$ such that $u \ul {s_i} \notin w C_T$ for $i=1,2,3$.
 
 	\begin{proof}
-		According to \propref{counterexample-simplification}.
+		According to \ref{prop:counterexample-simplification}.
 	\end{proof}
 \end{lemm}
 
 \begin{lemm}
-	\label{counterexample-simplification2}
-	A counterexample to \quesref{main} can only exist, if there are three not
+	\typedlabel{lemm:counterexample-simplification2}
+	A counterexample to \ref{ques:main} can only exist, if there are three not
 	neseccarily distinct elements $a,b,c \in w_K C_{S \setminus T}$, three
 	distinct generators $s_1 \in A_r(a)$, $s_2 \in A_r(b)$, $s_3 \in A_r(c)$ and an
 	element $u \notin w_K C_{S \setminus T}$ such that
@@ -72,7 +72,7 @@
 \end{lemm}
 
 \begin{lemm}
-	\label{s-right-descending-set}
+	\typedlabel{lemm:s-right-descending-set}
 	Let $(W,S)$ be a Coxeter system, $w \in W$ and $s \in S$. Then $s \in D_R(w)$ iff $w \ul s < w$.
 
 	\begin{proof}

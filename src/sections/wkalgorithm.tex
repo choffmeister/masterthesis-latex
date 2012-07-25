@@ -10,7 +10,7 @@ verwenden, der im wesentlichen benutzt, dass für jede getwistete Involution $w
 %TODO translate
 \begin{algo}[Algorithmus 1]
 	\hfill
-	\label{twoa1}
+	\typedlabel{algo:twoa1}
 	\begin{algorithmic}[1]
 	\Procedure{TwistedWeakOrderingAlgorithm1}{$W$} \Comment{$W$ sei die
 	Coxetergruppe}
@@ -68,7 +68,7 @@ Elementen in $W$. Für bestimmte Gruppen wie z.B. die $A_n$, welche je isomorph
 zu $Sym(n+1)$ sind, lässt sich der Vergleich von Element effizient
 implementieren. Will man jedoch mit Coxetergruppen im Allgemeinen arbeiten, so
 liegt $W$ als frei präsentierte Gruppe vor und der Vergleich von Element is eine
-sehr aufwendige Operation. Bei \algoref{twoa1} muss jedes
+sehr aufwendige Operation. Bei \ref{algo:twoa1} muss jedes
 potentiell neue Element $x$ mit allen schon bekannten $w'$ von gleicher
 getwisteter Länge verglichen werden um zu bestimmen, ob $x$ wirklich ein noch
 nicht bekanntes Element aus $\ti{\theta}$ ist.
@@ -76,7 +76,7 @@ nicht bekanntes Element aus $\ti{\theta}$ ist.
 %TODO translate
 \begin{algo}[Algorithmus 2]
 	\hfill
-	\label{twoa2}
+	\typedlabel{algo:twoa2}
 	\begin{algorithmic}[1]
 	\Procedure{TwistedWeakOrderingAlgorithm2}{$W$} \Comment{$W$ sei die
 	Coxetergruppe}
@@ -93,7 +93,6 @@ nicht bekanntes Element aus $\ti{\theta}$ ist.
 \end{algo}
 
 \begin{table}
-	\label{benchmark-twoa}
 	\centering
 	\begin{tabular}{|c|c|c|r|r|r|r|}
 	\hline
@@ -116,11 +115,12 @@ nicht bekanntes Element aus $\ti{\theta}$ ist.
 	\hline
 	\end{tabular}
 	\caption{Benchmark}
+	\label{tab:benchmark-twoa}
 \end{table}
 
 %TODO translate
-Im Anhang findet sich eine Implementierung der \algoref{twoa1,twoa2}
-in GAP 4.5.4. \tableref{benchmark-twoa} zeigt ein Benchmark anhand von fünf
+Im Anhang findet sich eine Implementierung von \ref{algo:twoa1} und \ref{algo:twoa2}
+in GAP 4.5.4. Table~\ref{tab:benchmark-twoa} zeigt ein Benchmark anhand von fünf
 ausgewählten Coxetergruppen.
 
 %TODO translate

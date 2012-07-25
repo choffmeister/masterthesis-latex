@@ -6,6 +6,8 @@
 \renewcommand{\thetheorem}{\thesection.\arabic{theorem}}
 \setenumerate{ref=\thetheorem.\arabic*}
 
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
 \numberwithin{equation}{theorem}
 
 \lstset{numbers=left, stepnumber=1, breaklines=true, tabsize=2,
@@ -22,3 +24,26 @@ basicstyle=\ttfamily\scriptsize}
 \newcommand{\defword}[1]{\textbf{#1}}
 
 \newcolumntype{M}{>{$\vcenter\bgroup\hbox\bgroup}l<{\egroup\egroup$}}
+
+\makeatletter
+\let\@old@begintheorem=\@begintheorem
+\def\@begintheorem#1#2[#3]{%
+	\gdef\@thm@type{#1}%
+	\gdef\@thm@num{#2}%
+	\gdef\@thm@name{#3}%
+	\@old@begintheorem{#1}{#2}[#3]%
+}
+\let\@old@begintable=\@begintable
+\def\@begintable#1{%
+	\gdef\@thm@type{#1}%
+	\@old@begintheorem{#1}%
+}
+\def\typedlabel#1{\begingroup
+	\edef\@currentlabel{\@thm@type~\@thm@num}%
+	\label{#1}\endgroup
+}
+\def\namedlabel#1{\begingroup
+	\edef\@currentlabel{\@thm@name}%
+	\label{#1}\endgroup
+}
+\makeatother

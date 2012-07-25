@@ -1,5 +1,5 @@
 \subsection{Bruhat ordering}
-\label{bruhat-ordering}
+\label{sec:bruhat-ordering}
 
 We now investigate ways to partially order the elements of a Coxeter group. Futhermore this ordering should be compatible with the length function. The most useful way to achieve this is the Bruhat ordering \cite[Section 5.9]{humphreys:coxeter}.
 
@@ -10,7 +10,7 @@ We now investigate ways to partially order the elements of a Coxeter group. Futh
 		\item if $a \leq b$ and $b \leq a$ then $a=b$, called \defword{antisymmetry}
 		\item if $a \leq b$ and $b \leq c$ then $a \leq c$, called \defword{transitivity}
 	\end{enumerate}
-	In this case $(M,\leq)$ is called a \defword{poset}.
+	In this case $(M,\leq)$ is called a \defword{poset}. If two elements $a \leq b \in M$ are immediate neighbours, i.e. there is no third element $c \in M$ with $a \leq c \leq b$ we say that $b$ \defword{covers} $a$. A poset is called \defword{graded poset} if there is a map $\rho : M \to \nn$ so that $\rho(b) - 1 = \rho(ab)$ whenever $b$ covers $a$.
 \end{defi}
 
 \begin{defi}
@@ -37,6 +37,8 @@ So lets ensure that the Bruhat ordering is graded as well. For this we need anot
 	Let $(W,S)$ be a Coxeter system, $u,w \in W$ with $u \leq w$ and $s \in S$. Then $us \leq w$ or $us \leq ws$ or both.
 
 	\begin{proof}
-		
+		We can reduce the proof (WHY?) to the case $u \to w$, i.e. $ut = w$ for a $t \in T$ with $l(v) < l(u)$. Let $s = t$. Then $us \leq w$ and we are done. In case $s \neq t$ there are two alternatives for the lengths. We can have $l(us) = l(u) - 1$ which would mean $us \to u \to w$, so $us \leq w$.
+
+		So assume $l(us) = l(u) + 1$. For the reflection $t' = sts$ we get $(us)t' = ussts = uts = ws$. So it is $us \leq ws$ iff $l(us) < l(ws)$. Assume this is not the case. Since we have assumed $l(us) = l(u) + 1$ any reduced expression $u = s_1 \cdots s_r$ for $u$ yields a reduced expression $us = s_1 \cdots s_r s$ for $us$. With the Strong Exchange Condition we can obtain $ws = ust'$ from $us$ by omitting one factor. This omitted factor cannot be $s$ since $s \neq t$. This means $ws = s_1 \cdots \hat s_i \cdots s_r s$ and so $ws = s_1 \cdots \hat s_i \cdots s_r$, contradicting to our assumption $l(u) < l(w)$
 	\end{proof}
 \end{prop}
