@@ -79,14 +79,12 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 	\begin{proof}
 		We will induce on $r = l(u) + l(w)$. In case $r = 1$ we have $u = e$ and $w = s$ for an $s \in S$ and are done. So suppose $r > 1$. Then there is a reduced expression $w = s_1 \cdots s_r$ for $w$. Lets fix this expression. Then $l(w s_r) < l(w)$. Thanks to \ref{theo:bruhat-subexpression-characterization} there must be a subexpression of $w$ with $u = s_{i_1} \cdots s_{i_q}$ for some $i_1 < \ldots < i_q$. We distinguish between two cases:
 
-		\begin{enumerate}
-			\item Suppose $u < us$. If $i_q = r$, then $us = s_{i_1} \cdots s_{i_q} s = s_{i_1} \cdots s_{i_{q-1}}$ which is also a subexpression of $ws$. This yields $u < us \leq ws < w$. Since $l(ws) < r$ there is, by induction, a sequence of the desired form. The last step from $ws$ to $w$ also differs in length by exactly 1, so we are done. If $i_q < r$ then $u$ is itself already a subexpression of $ws$ and we can again find a sequence from $u$ to $ws$ strictly ascending length by 1 in each step and have one last step from $ws$ to $w$ also increasing length by 1.
-			\item Suppose $us < u$. Then by induction we can find a sequence from $us$ to $w$, say
-			$$ us = w_0 < \ldots < w_m = w, $$
-			where length of neighboured elements differs by exactly 1. Since $w_0 s = u > us = w_0$ and $w_m s = ws < w = w_m$ there must be a smallest index $i \geq 1$, such that $w_i s < w_i$, which we choose. Suppose $w_i \neq w_{i-1} s$. It is $w_{i-1} < w_{i-1}s \neq w_i$ and due to \ref{lemm:dont-know} we get $w_i < w_i s$. This contradicts to the minimality of $i$. So $w_i = w_{i-1} s$. For all $1 \leq j < i$ we have $w_j \neq w_{j-1} s$, because of $w_j < w_j s$. Again we apply \ref{lemm:dont-know} to receive $w_{j-1} s < w_j s$. Alltogether we can construct a sequence
+		\begin{description}
+			\item[$u < us$] If $i_q = r$, then $us = s_{i_1} \cdots s_{i_q} s = s_{i_1} \cdots s_{i_{q-1}}$ which is also a subexpression of $ws$. This yields $u < us \leq ws < w$. Since $l(ws) < r$ there is, by induction, a sequence of the desired form. The last step from $ws$ to $w$ also differs in length by exactly 1, so we are done. If $i_q < r$ then $u$ is itself already a subexpression of $ws$ and we can again find a sequence from $u$ to $ws$ strictly ascending length by 1 in each step and have one last step from $ws$ to $w$ also increasing length by 1.
+			\item[$us < u$] Then by induction we can find a sequence from $us$ to $w$, say $us = w_0 < \ldots < w_m = w$, where the lengths of neighboured elements differ by exactly 1. Since $w_0 s = u > us = w_0$ and $w_m s = ws < w = w_m$ there must be a smallest index $i \geq 1$, such that $w_i s < w_i$, which we choose. Suppose $w_i \neq w_{i-1} s$. It is $w_{i-1} < w_{i-1}s \neq w_i$ and due to \ref{lemm:dont-know} we get $w_i < w_i s$. This contradicts to the minimality of $i$. So $w_i = w_{i-1} s$. For all $1 \leq j < i$ we have $w_j \neq w_{j-1} s$, because of $w_j < w_j s$. Again we apply \ref{lemm:dont-know} to receive $w_{j-1} s < w_j s$. Alltogether we can construct a sequence
 			$$ u = w_0 s < w_1 s < \ldots < w_{i-1} s = w_i < w_{i+1} < \ldots w_m = w, $$
 			which matches our assumption. \qedhere
-		\end{enumerate}
+		\end{description}
 	\end{proof}
 \end{prop}
 

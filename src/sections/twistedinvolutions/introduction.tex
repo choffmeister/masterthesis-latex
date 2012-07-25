@@ -36,5 +36,23 @@ The map we will define right now is of superior importance to this whole paper, 
 		\theta(s)ws, & \textrm{else} \\
 	\end{cases} $$
 	This operation can be extended on the whole free monoid over $\ul S$ by
-	$$ w \ul{s_{i_1}} \ul{s_{i_2}} \ldots \ul{s_{i_k}} = (\ldots ((w \ul{s_{i_1}}) \ul{s_{i_2}}) \ldots) \ul{s_{i_k}}. $$
+	$$ w \ul{s_{i_1} s_{i_2} \ldots s_{i_k}} = (\ldots ((w \ul{s_{i_1}}) \ul{s_{i_2}}) \ldots) \ul{s_{i_k}}. $$
 \end{defi}
+
+\begin{lemm}
+	For all $w \in W$ and $s \in S$ it is $w \ul {ss} = w$.
+
+	\begin{proof}
+		For $w \ul s$ there are two cases. Suppose $w \ul s = ws$. This means $\theta(s)ws = w$. For $ws \ul s$ there are again two possible options.
+		$$ ws \ul s = \begin{cases}
+			wss = w, & \textrm{if } \theta(s)wss = ws \\
+			\theta(s)wss = ws, & \textrm{else} \\
+		\end{cases} $$
+		The second option contradicts itself. So lets now suppose $w \ul s = \theta(s)ws$. This means $\theta(s)ws \neq w$ and for $(\theta(s)ws) \ul s$ there are again two possible options.
+		$$ (\theta(s)ws) \ul s = \begin{cases}
+			\theta(s)wss = \theta(s)w, & \textrm{if } \theta(s) \theta(s) w ss = \theta(s) w s \\
+			\theta(s)\theta(s)wss = w, & \textrm{else} \\
+		\end{cases} $$
+		The first option is impossible since $\theta(s) \theta(s) w ss = w$ and we have assumed $\theta(s)ws \neq w$. So the only cases possible yield $w \ul s \ul s = w$.
+	\end{proof}
+\end{lemm}
