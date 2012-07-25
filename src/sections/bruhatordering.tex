@@ -11,7 +11,7 @@ We now investigate ways to partially order the elements of a Coxeter group. Futh
 		\item if $a \leq b$ and $b \leq a$ then $a=b$, called \defword{antisymmetry}
 		\item if $a \leq b$ and $b \leq c$ then $a \leq c$, called \defword{transitivity}
 	\end{enumerate}
-	In this case $(M,\leq)$ is called a \defword{poset}. If two elements $a \leq b \in M$ are immediate neighbours, i.e. there is no third element $c \in M$ with $a \leq c \leq b$ we say that $b$ \defword{covers} $a$. A poset is called \defword{graded poset} if there is a map $\rho : M \to \nn$ so that $\rho(b) - 1 = \rho(ab)$ whenever $b$ covers $a$.
+	In this case $(M,\leq)$ is called a \defword{poset}. If two elements $a \leq b \in M$ are immediate neighbours, i.e. there is no third element $c \in M$ with $a \leq c \leq b$ we say that $b$ \defword{covers} $a$. A poset is called \defword{graded poset} if there is a map $\rho : M \to \nn$ so that $\rho(b) - 1 = \rho(a)$ whenever $b$ covers $a$. In this case $\rho$ is called the \defword{rank function} of the graded poset.
 \end{defi}
 
 \begin{defi}
@@ -37,6 +37,8 @@ What we really want is the Bruhat ordering to be graded with the length function
 So lets ensure that the Bruhat ordering is graded as well. For this we need another characterization of the Bruhat ordering with subexpressions. As we will show it is $u \leq w$ iff there is a reduced expression of $u$ that is a subexpression of a reduced expression of $w$.
 
 \begin{prop}
+	%\cite[Prop 5.9]{humphreys:coxeter}
+	\typedlabel{prop:u-leq-w-then-us-leq-w-or-us-leq-ws}
 	Let $(W,S)$ be a Coxeter system, $u,w \in W$ with $u \leq w$ and $s \in S$. Then $us \leq w$ or $us \leq ws$ or both.
 
 	\begin{proof}
@@ -47,5 +49,51 @@ So lets ensure that the Bruhat ordering is graded as well. For this we need anot
 \end{prop}
 
 \begin{theo}
-	Let $(W,S)$ be a Coxeter system and $w \in W$ with any reduced expression $w = s_1 \cdots s_r$ and $s_i \in S$. Then $u \leq w$ (in the Bruhat ordering) iff $u$ can 
+	%\cite[Theorem 5.10]{humphreys:coxeter}
+	\typedlabel{theo:bruhat-subexpression-characterization}
+	Let $(W,S)$ be a Coxeter system and $w \in W$ with any reduced expression $w = s_1 \cdots s_r$ and $s_i \in S$. Then $u \leq w$ (in the Bruhat ordering) iff $u$ can be obtained as a subexpression of this reduced expression.
+
+	\begin{proof}
+		%TODO
+		TODO See \cite[Theorem 5.10]{humphreys:coxeter}.
+	\end{proof}
+\end{theo}
+
+This characterization of the Bruhat ordering is very handy. With it and the following short lemma we will be in the position to show, that $\Br(W)$ is graded with rank function $l$.
+
+\begin{lemm}
+	%\cite[Lemma 5.11]{humphreys:coxeter}
+	\typedlabel{lemm:dont-know}
+	Let $(W,S)$ be a Coxeter system, $u,w \in W$ with $u < w$ and $l(w) = l(u) + 1$. In case there is a generator $s \in S$ with $u < us$ but $us \neq w$, then both $w < ws$ and $us < ws$.
+
+	\begin{proof}
+		Due to \ref{prop:u-leq-w-then-us-leq-w-or-us-leq-ws} we have $us \leq w$ or $us \leq ws$. Since $l(us) = l(w)$ and $us \neq w$ the first case is impossible. So $us \leq ws$ and because of $u \neq w$ already $us < ws$. In turn, $l(w) = l(us) < l(ws)$, forcing $w < ws$.
+	\end{proof}
+\end{lemm}
+
+\begin{prop}
+	%\cite[Proposition 5.11]{humphreys:coxeter}
+	\typedlabel{prop:bruhat-intervals}
+	Let $(W,S)$ be a Coxeter system and $u < w$. Then there are elements $w_0,\ldots,w_m \in W$ such that $u = w_0 < w_1 < \ldots < w_m = w$ with $l(w_i) = l(w_{i-1}) + 1$ for $1 \leq i \leq m$.
+
+	\begin{proof}
+		We will induce on $r = l(u) + l(w)$. In case $r = 1$ we have $u = e$ and $w = s$ for an $s \in S$ and are done. So suppose $r > 1$. Then there is a reduced expression $w = s_1 \cdots s_r$ for $w$. Lets fix this expression. Then $l(w s_r) < l(w)$. Thanks to \ref{theo:bruhat-subexpression-characterization} there must be a subexpression of $w$ with $u = s_{i_1} \cdots s_{i_q}$ for some $i_1 < \ldots < i_q$. We distinguish between two cases:
+
+		Suppose $u < us$. If $i_q = r$, then $us = s_{i_1} \cdots s_{i_q} s = s_{i_1} \cdots s_{i_{q-1}}$ which is also a subexpression of $ws$. This yields $u < us \leq ws < w$. Since $l(ws) < r$ there is, by induction, a sequence of the desired form. The last step from $ws$ to $w$ also differs in length by exactly 1, so we are done. If $i_q < r$ then $u$ is itself already a subexpression of $ws$ and we can again find a sequence from $u$ to $ws$ strictly ascending length by 1 in each step and have one last step from $ws$ to $w$ also increasing length by 1.
+
+		Suppose $us < u$. Then by induction we can find a sequence from $us$ to $w$, say
+		$$ us = w_0 < \ldots < w_m = w, $$
+		where length of neighboured elements differs by exactly 1. Since $w_0 s = u > us = w_0$ and $w_m s = ws < w = w_m$ there must be a smallest index $i \geq 1$, such that $w_i s < w_i$, which we choose. Suppose $w_i \neq w_{i-1} s$. It is $w_{i-1} < w_{i-1}s \neq w_i$ and due to \ref{lemm:dont-know} we get $w_i < w_i s$. This contradicts to the minimality of $i$. So $w_i = w_{i-1} s$. For all $1 \leq j < i$ we have $w_j \neq w_{j-1} s$, because of $w_j < w_j s$. Again we apply \ref{lemm:dont-know} to receive $w_{j-1} s < w_j s$. Alltogether we can construct a sequence
+		$$ u = w_0 s < w_1 s < \ldots < w_{i-1} s = w_i < w_{i+1} < \ldots w_m = w, $$
+		which matches our assumption.
+	\end{proof}
+\end{prop}
+
+\begin{theo}
+	\typedlabel{theo:bruhat-ordering-is-graded}
+	Let $(W,S)$ be a Coxeter system and $\Br(W)$ the Bruhat ordering poset of $W$. Then $\Br(W)$ is graded with $l:W \to \nn$ as rank function.
+
+	\begin{proof}
+		Let $u,w \in W$ with $w$ covering $u$. Then \ref{prop:bruhat-intervals} says there is a sequence $u = w_0 < \ldots < w_m = w$ with $l(w_i) = l(w_{i-1}) + 1$ for $1 \leq i \leq m$. Since $w$ covers $u$ it must be $m = 1$ and so $u < w$ with $l(w) = l(u) + 1$.
+	\end{proof}
 \end{theo}

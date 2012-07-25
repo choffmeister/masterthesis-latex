@@ -44,6 +44,7 @@ We now obtain a way to get a reduced expression of an arbitrary element $s_1 \cd
 $$ T = \bigcup_{w \in W} wSw^{-1}. $$
 
 \begin{theo}[Strong Exchange Condition]
+	%\cite[Theorem 5.8]{humphreys:coxeter}
 	\namedlabel{theo:strong-exchange-condition}
 	Let $(W,S)$ be a Coxeter system, $w \in W$ an arbitrary element and ${s_1 \cdots s_r = w}$ with $s_i \in S$ a not neseccarily reduced expression for $w$. For each reflection $t \in T$ with $l(wt) < l(w)$ there exists an index $i$ for which $wt = s_1 \cdots \hat s_i \cdots s_r$, where $\hat s_i$ means omission. In case we started from a reduced expression, then $i$ is unique.
 
@@ -87,6 +88,7 @@ The \ref{theo:strong-exchange-condition}, the \ref{coro:exchange-condition} and 
 	Let $(W,S)$ be a Coxeter system and $I,J \subset S$ two subsets of generators. Then ${W_I \cap W_J} = W_{I \cap J}$.
 
 	\begin{proof}
+		%TODO
 		Let $w \in W_{I \cap J}$. Then $w \in W_I$ and $w \in W_J$. To show the other inclusion we induce over the length $r$. For $r = 0$ we have $w = e$ and so $w \in W_{S'}$ for any $S' \subset S$. So suppose we have proven the assumption for all lengths up to $r-1$. Let $w \in W_I \cap W_J$ with $l(w) = r$. Then we have two reduced expressions $w = s_1 \cdots s_r = t_1 \cdots t_r$ with $s_i \in I$ and $t_i \in J$. By applying $s_r$ from the right we get $w s_r = s_1 \cdots s_{r-1} = t_1 \cdots t_r s_r$. The expression $t_1 \cdots t_r s_r$ is of length $r-1$, so \ref{coro:exchange-condition} yields $w s_r = s_1 \cdots s_{r-1} = t_1 \cdots \hat t_i \cdots t_r$, hence $w s_r \in W_I \cap W_J$. Due to induction we know that $w s_r \in W_{I \cap J}$. TODO
 	\end{proof}
 \end{lemm}
@@ -105,6 +107,7 @@ To provide a general answer to this question we fallback to a certain class of C
 If a Coxeter system is reducible, then its graph has more than one connection component and each connection component corrosponds to a parabolic subgroup of $W$. 
 
 \begin{prop}
+	%\cite[Proposition 6.1]{humphreys:coxeter}
 	\typedlabel{prop:reducible-coxeter-systems-isomorph-to-parabolic-subgroups}
 	Let $(W,S)$ be a reducible Coxeter system. Then there exists a partition of $S$ into $I,J$ with $(s_i s_j)^2 = e$ whenever $s_i \in I, s_j \in J$ and $W$ is isomorph to the direct product of the two parabolic subgroups $W_I$ and $W_J$.
 
