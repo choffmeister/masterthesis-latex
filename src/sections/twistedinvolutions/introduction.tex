@@ -56,3 +56,29 @@ The map we will define right now is of superior importance to this whole paper, 
 		The first option is impossible since $\theta(s) \theta(s) w ss = w$ and we have assumed $\theta(s)ws \neq w$. So the only cases possible yield $w \ul s \ul s = w$.
 	\end{proof}
 \end{lemm}
+
+\begin{prop}
+	For each $\theta$, $w \in W$ and $s \in S$ it is $w \in \ti{\theta}$ iff $w \ul s \in \ti{\theta}$.
+
+	\begin{proof}
+		%TODO
+		Let $w \in \ti{\theta}$. For $w \ul s$ there are two cases. Suppose $w \ul s = ws$. Then we get
+		$$ \theta(ws) = \theta(\theta(s)wss) = \theta^2(s) \theta(w) = sw^{-1} = (ws^{-1})^{-1} = (ws)^{-1} $$
+		and so $w \ul s \in \ti{\theta}$. Suppose $w \ul s = \theta(s)ws$. Then we get
+		$$ \theta(\theta(s)ws) = \theta^2(s) \theta(w) \theta(s) = sw^{-1}\theta(s) = (\theta^{-1}(s)ws^{-1})^{-1} = (\theta(s)ws)^{-1} $$
+		and so $w \ul s \in \ti{\theta}$.
+
+		Now let $w \ul s \in \ti{\theta}$ and suppose $w \ul s = ws$. TODO
+	\end{proof}
+\end{prop}
+
+\begin{defi}
+	Let $k \in \nn$ and $s_{i_j} \in S$ for all $1 \leq j \leq k$. Then an expression $w \ul{s_{i_1} \cdots s_{i_k}}$ is called \defword{twisted $w$-expression}. In case $w = e$ we will omit $w$, just write $\ul{s_{i_1} \cdots s_{i_k}}$ and call it \defword{twisted expression}.
+\end{defi}
+
+A remarkable property of the operation from \ref{defi:twisted-operation} (and the main reason why we are interested in it) is its $e$-orbit. As the following lemma will show it coincides with $\ti{\theta}$.
+
+\begin{lemm}
+	\typedlabel{lemm:e-orbit-coincides-with-twisted-involutions}
+	Fix $\theta$. Then the set of twisted involutions regarding $\theta$ coincides with the set of all twisted expressions regarding $\theta$. 
+\end{lemm}
