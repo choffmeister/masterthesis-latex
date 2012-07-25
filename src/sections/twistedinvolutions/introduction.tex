@@ -1,0 +1,24 @@
+\subsection{Introduction to twisted involutions}
+\label{sec:twisted-involutions-introduction}
+
+\begin{defi}
+	Let $(W,S)$ be a Coxeter system. An automorphism $\theta : W \to W$ with $\theta(S) = S$ is called a \defword{Coxeter system automorphism} of $(W,S)$.
+\end{defi}
+
+\begin{defi}
+	Let $(W,S)$ be a Coxeter system and $\theta : W \to W$ a Coxeter system automorphism. Then each $w \in W$ with $\theta(w) = w^{-1}$ is called a \defword{twisted involution}. The set of all twisted involutions in $W$ regarding $\theta$ is denoted with $\ti{\theta}(W)$. Often we will just omit the Coxeter group and write $\ti{\theta}$, when it is clear from the context which $W$ is meant.
+\end{defi}
+
+Lets take a quick look at some examples. First of all the trivial one.
+
+\begin{exam}
+	Let $(W,S)$ be a Coxeter system and $\theta = \id_W$. Then $\theta$ is an Coxeter system automorphism and $\ti{\theta} = \{ w \in W : w = w^{-1} \}$.
+\end{exam}
+
+The next example is more helpfull, since it reveals a way to think of $\ti{\theta}$ as a generalization of ordinary Coxeter groups.
+
+\begin{exam}
+	Let $(W,S)$ be a Coxeter system and $\theta$ be the automorphis (not Coxeter system automorphism)
+	$$ \theta : W \times W \to W \times W : (u,w) \mapsto (w,u). $$
+	Then the set of twisted involutions is $\ti{\theta} = \{ (w,w^{-1}) \in W \times W : w \in W \}$. This yields a canonical bijection between $\ti{\theta}$ and $W$.
+\end{exam}
