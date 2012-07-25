@@ -4,11 +4,21 @@
 We now investigate ways to partially order the elements of a Coxeter group. Futhermore this ordering should be compatible with the length function. The most useful way to achieve this is the Bruhat ordering \cite[Section 5.9]{humphreys:coxeter}.
 
 \begin{defi}
-	Let $(W,S)$ be a Coxeter system and $T = \cup_{w \in W} wSw^{-1}$ the set of all reflections in $W$. We write $w' \to w$ if there is a $t \in T$ with $w't = w$ and $l(w') < l(w)$. If there is a sequence $w' = w_0 \to w_1 \to \ldots \to w_m = w$ we say $w' < w$. The resulting relation $w' \leq w$ is called \defword{Bruhat ordering}.
+	Let $M$ be a set. A binary relation, in this case often denoted as ``$\leq$'', is called a \defword{partial order} over $M$, if fullfills the following conditions for all $a,b,c \in M$:
+	\begin{enumerate}
+		\item $a \leq a$, called \defword{reflexivity}
+		\item if $a \leq b$ and $b \leq a$ then $a=b$, called \defword{antisymmetry}
+		\item if $a \leq b$ and $b \leq c$ then $a \leq c$, called \defword{transitivity}
+	\end{enumerate}
+	In this case $(M,\leq)$ is called a \defword{poset}.
+\end{defi}
+
+\begin{defi}
+	Let $(W,S)$ be a Coxeter system and $T = \cup_{w \in W} wSw^{-1}$ the set of all reflections in $W$. We write $w' \to w$ if there is a $t \in T$ with $w't = w$ and $l(w') < l(w)$. If there is a sequence $w' = w_0 \to w_1 \to \ldots \to w_m = w$ we say $w' < w$. The resulting relation $w' \leq w$ is called \defword{Bruhat ordering}, denoted as $\Br(W)$.
 \end{defi}
 
 \begin{lemm}
-	Let $(W,S)$ be a Coxeter system. Then $W$ together with the Bruhat ordering is a poset.
+	Let $(W,S)$ be a Coxeter system. Then $\Br(W)$ is a poset.
 
 	\begin{proof}
 		The Bruhat ordering is reflexive by definition. Since the elements in sequences $e \to w_1 \to w_2 \to \ldots$ are strictly ascending in length, it must be antisymmetric. By concatenation of sequences we get the transitivity.
@@ -21,4 +31,12 @@ What we really want is the Bruhat ordering to be graded with the length function
 	Let $(W,S)$ be a Coxeter system. The ordering $\leq_R$ defined by $u \leq_R w$ iff $uv = w$ for some $u \in W$ with $l(u) + l(v) = l(w)$ is called the \defword{right weak ordering}. The left sided version $u \leq_L w$ iff $vu = w$ is called the \defword{left weak ordering}.
 \end{defi}
 
-So lets ensure that the Bruhat ordering is graded as well. As already hinted the Strong Exchange Condition becomes very handy.
+So lets ensure that the Bruhat ordering is graded as well. For this we need another characterization of the Bruhat ordering with subexpressions. As we will show it is $u \leq w$ iff there is a reduced expression of $u$ that is a subexpression of a reduced expression of $w$.
+
+\begin{prop}
+	Let $(W,S)$ be a Coxeter system, $u,w \in W$ with $u \leq w$ and $s \in S$. Then $us \leq w$ or $us \leq ws$ or both.
+
+	\begin{proof}
+		
+	\end{proof}
+\end{prop}
