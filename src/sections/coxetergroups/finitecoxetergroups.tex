@@ -1,0 +1,104 @@
+\subsection{Finite Coxeter groups}
+
+Coxeter groups can be finite and infinite. A simple example for the former category is the following. Let $S = \{ s \}$. Due to definition it must be $s^2 = e$. So $W$ is isomorph to $\zz_2$ and finite. An example for an infinite Coxeter group can be obtained from $S = \{s,t\}$ with $s^2=t^2=e$ and $(st)^\infty = e$ (so we have no relation between $s$ and $t$). Obviously the element $st$ has infinite order forcing $W$ to be infinite. But there are also infinite Coxeter groups without an $\infty$-relation between two generators. An example for this is $W$ obtained from $S=\{s_1,s_2,s_3\}$ with $s_1^2=s_2^2=s_3^2=(s_1 s_2)^3=(s_2 s_3)^3=(s_3 s_1)^3=e$. But how can it be seen that this $W$ is infinite?
+
+To provide a general answer to this question we fallback to a certain class of Coxeter groups, the irreducible ones.
+
+\begin{defi}
+	\typedlabel{defi:irreducible-coxeter-system}
+	A Coxeter system is called \defword{irreducible}, if the corrosponding Coxeter graph is connected. Else it is called \defword{reducible}.
+\end{defi}
+
+If a Coxeter system is reducible, then its graph has more than one connection component and each connection component corrosponds to a parabolic subgroup of $W$. 
+
+\begin{prop}
+	%\cite[Proposition 6.1]{humphreys:coxeter}
+	\typedlabel{prop:reducible-coxeter-systems-isomorph-to-parabolic-subgroups}
+	Let $(W,S)$ be a reducible Coxeter system. Then there exists a partition of $S$ into $I,J$ with $(s_i s_j)^2 = e$ whenever $s_i \in I, s_j \in J$ and $W$ is isomorph to the direct product of the two parabolic subgroups $W_I$ and $W_J$.
+
+	\begin{proof}
+		See \cite[Proposition 6.1]{humphreys:coxeter}.
+	\end{proof}
+\end{prop}
+
+This proposition tells us, that an arbitray Coxeter system is finite iff its irreducible parabolic subgroups are finite. Therefor we can indeed fallback to irreducible Coxeter systems without loss of generality. If we could categorize all irreducible finite Coxeter systems, we could categorize all finite Coxeter systems. This is done by the following theorem:
+
+\begin{figure}
+	\centering
+	\tikzstyle{vertex}=[draw,thick,circle,minimum size=2mm,inner sep=0pt]
+	\tikzstyle{edge} = [draw,thick,-]
+	\tikzstyle{weight} = [font=\small]
+
+	\begin{tabular}{MMcMM}
+	$A_n (n \geq 1)$
+	&
+	\An
+	&
+	\hspace*{\cgpadh}
+	&
+	$E_8$
+	&
+	\Eeight
+	\\
+	\vspace*{\cgpadv}
+	\\
+	$B_n (n \geq 2)$
+	&
+	\Bn
+	&
+	\hspace*{\cgpadh}
+	&
+	$F_4$
+	&
+	\Ffour
+	\\
+	\vspace*{\cgpadv}
+	\\
+	$D_n (n \geq 4)$
+	&
+	\Dn
+	&
+	\hspace*{\cgpadh}
+	&
+	$H_3$
+	&
+	\Hthree
+	\\
+	\vspace*{\cgpadv}
+	\\
+	$E_6$
+	&
+	\Esix
+	&
+	\hspace*{\cgpadh}
+	&
+	$H_4$
+	&
+	\Hfour
+	\\
+	\vspace*{\cgpadv}
+	\\
+	$E_7$
+	&
+	\Eseven
+	&
+	\hspace*{\cgpadh}
+	&
+	$I_2(m)$
+	&
+	\Itwom
+	\end{tabular}
+	\caption{All types of irreducible finite Coxeter systems}
+	\label{fig:finite-coxeter-systems}
+\end{figure}
+
+\begin{theo}
+	\typedlabel{theo:irreducible-finit-coxeter-systems}
+	The irreducible finite Coxeter systems are exactly the ones in Figure~\ref{fig:finite-coxeter-systems}.
+
+	\begin{proof}
+		\cite[Theorem 6.4]{humphreys:coxeter}
+	\end{proof}
+\end{theo}
+
+Finally we can decide with ease, if a given Coxeter system is finite. Take its irreducible parabolic subgroups and check, if each is one of $A_n$, $B_n$, $D_n$, $E_6$, $E_7$, $E_8$, $F_4$, $H_3$, $H_4$ or $I_2(m)$.
