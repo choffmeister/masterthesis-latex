@@ -4,6 +4,7 @@
 We now investigate ways to partially order the elements of a Coxeter group. Futhermore this ordering should be compatible with the length function. The most useful way to achieve this is the Bruhat ordering \cite[Section 5.9]{humphreys:coxeter}.
 
 \begin{defi}
+	\typedlabel{defi:poset}
 	Let $M$ be a set. A binary relation, in this case often denoted as ``$\leq$'', is called a \defword{partial order} over $M$, if fullfills the following conditions for all $a,b,c \in M$:
 	\begin{enumerate}
 		\item $a \leq a$, called \defword{reflexivity}
@@ -14,10 +15,12 @@ We now investigate ways to partially order the elements of a Coxeter group. Futh
 \end{defi}
 
 \begin{defi}
+	\typedlabel{defi:bruhat-ordering}
 	Let $(W,S)$ be a Coxeter system and $T = \cup_{w \in W} wSw^{-1}$ the set of all reflections in $W$. We write $w' \to w$ if there is a $t \in T$ with $w't = w$ and $l(w') < l(w)$. If there is a sequence $w' = w_0 \to w_1 \to \ldots \to w_m = w$ we say $w' < w$. The resulting relation $w' \leq w$ is called \defword{Bruhat ordering}, denoted as $\Br(W)$.
 \end{defi}
 
 \begin{lemm}
+	\typedlabel{lemm:bruhat-ordering-is-poset}
 	Let $(W,S)$ be a Coxeter system. Then $\Br(W)$ is a poset.
 
 	\begin{proof}
@@ -39,6 +42,10 @@ So lets ensure that the Bruhat ordering is graded as well. For this we need anot
 	\begin{proof}
 		We can reduce the proof (WHY?) to the case $u \to w$, i.e. $ut = w$ for a $t \in T$ with $l(v) < l(u)$. Let $s = t$. Then $us \leq w$ and we are done. In case $s \neq t$ there are two alternatives for the lengths. We can have $l(us) = l(u) - 1$ which would mean $us \to u \to w$, so $us \leq w$.
 
-		So assume $l(us) = l(u) + 1$. For the reflection $t' = sts$ we get $(us)t' = ussts = uts = ws$. So it is $us \leq ws$ iff $l(us) < l(ws)$. Assume this is not the case. Since we have assumed $l(us) = l(u) + 1$ any reduced expression $u = s_1 \cdots s_r$ for $u$ yields a reduced expression $us = s_1 \cdots s_r s$ for $us$. With the Strong Exchange Condition we can obtain $ws = ust'$ from $us$ by omitting one factor. This omitted factor cannot be $s$ since $s \neq t$. This means $ws = s_1 \cdots \hat s_i \cdots s_r s$ and so $ws = s_1 \cdots \hat s_i \cdots s_r$, contradicting to our assumption $l(u) < l(w)$
+		So assume $l(us) = l(u) + 1$. For the reflection $t' = sts$ we get $(us)t' = ussts = uts = ws$. So it is $us \leq ws$ iff $l(us) < l(ws)$. Assume this is not the case. Since we have assumed $l(us) = l(u) + 1$ any reduced expression $u = s_1 \cdots s_r$ for $u$ yields a reduced expression $us = s_1 \cdots s_r s$ for $us$. With the \ref{theo:strong-exchange-condition} we can obtain $ws = ust'$ from $us$ by omitting one factor. This omitted factor cannot be $s$ since $s \neq t$. This means $ws = s_1 \cdots \hat s_i \cdots s_r s$ and so $ws = s_1 \cdots \hat s_i \cdots s_r$, contradicting to our assumption $l(u) < l(w)$
 	\end{proof}
 \end{prop}
+
+\begin{theo}
+	Let $(W,S)$ be a Coxeter system and $w \in W$ with any reduced expression $w = s_1 \cdots s_r$ and $s_i \in S$. Then $u \leq w$ (in the Bruhat ordering) iff $u$ can 
+\end{theo}

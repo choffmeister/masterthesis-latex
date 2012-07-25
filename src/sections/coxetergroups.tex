@@ -52,7 +52,7 @@ $$ T = \bigcup_{w \in W} wSw^{-1}. $$
 	\end{proof}
 \end{theo}
 
-This theorem is called the \defword{Strong Exchange Condition}. When insisting on $t \in S$ we get a weaker lemma, called \defword{Exchange Condition}.
+The \ref{theo:strong-exchange-condition} can be weaken when insisting on $t \in S$ to receive the following corollary.
 
 \begin{coro}[Exchange Condition]
 	\namedlabel{coro:exchange-condition}
@@ -63,20 +63,20 @@ This theorem is called the \defword{Strong Exchange Condition}. When insisting o
 	\end{proof}
 \end{coro}
 
-The Exchange Condition immediatly yields another corollary for Coxeter groups:
+The \ref{coro:exchange-condition} immediatly yields another corollary for Coxeter groups:
 
 \begin{coro}[Deletion Condition]
 	\namedlabel{coro:deletion-condition}
 	Let $(W,S)$ be a Coxeter system, $w \in W$ and $w = s_1 \cdots s_r$ with $s_i \in S$ a unreduced expression of $w$. Then there exist two indices $i,j \in \{1,\cdots,r\}$ with $i < j$, such that $w = s_1 \cdots \hat s_i \cdots \hat s_j \cdots s_r$, where $\hat s_i$ and $\hat s_j$ mean omission.
 
 	\begin{proof}
-		Since the expression is unreduced there must be an index $j$ for that the twisted length shrinks. That means for $w' = s_1 \cdots s_{j-1}$ is $l(w' s_j) < l(w')$. Using the Exchange Condition we get $w' s_j = s_1 \cdots \hat s_i \cdots s_{j-1}$ yielding $w = s_1 \cdots \hat s_i \cdots \hat s_j \cdots s_r$.
+		Since the expression is unreduced there must be an index $j$ for that the twisted length shrinks. That means for $w' = s_1 \cdots s_{j-1}$ is $l(w' s_j) < l(w')$. Using the \ref{coro:exchange-condition} we get $w' s_j = s_1 \cdots \hat s_i \cdots s_{j-1}$ yielding $w = s_1 \cdots \hat s_i \cdots \hat s_j \cdots s_r$.
 	\end{proof}
 \end{coro}
 
 This corollary is called \defword{Deletion Condition} and allows us to reduce expressions, i.e. to find a subexpression that is reduced. Due to the Deletion Condition any unreduced expression can be reduced by omitting a even number of generators (we just have to apply the Deletion Condition inductively).
 
-Both, the Strong Exchange Condition and the Deletion Condition, are two of the most powerful tools when investigating properties of Coxeter groups. We can use the former to prove very handy property of Coxeter groups. The intersection of two parabolic subgroups is again a parabolic subgroup.
+The \ref{theo:strong-exchange-condition}, the \ref{coro:exchange-condition} and the \ref{coro:deletion-condition}, are some of the most powerful tools when investigating properties of Coxeter groups. We can use the second to prove a very handy property of Coxeter groups. The intersection of two parabolic subgroups is again a parabolic subgroup.
 
 \begin{defi}
 	\typedlabel{defi:parabolic-subgroup}
@@ -87,7 +87,7 @@ Both, the Strong Exchange Condition and the Deletion Condition, are two of the m
 	Let $(W,S)$ be a Coxeter system and $I,J \subset S$ two subsets of generators. Then ${W_I \cap W_J} = W_{I \cap J}$.
 
 	\begin{proof}
-		Let $w \in W_{I \cap J}$. Then $w \in W_I$ and $w \in W_J$. To show the other inclusion we induce over the length $r$. For $r = 0$ we have $w = e$ and so $w \in W_{S'}$ for any $S' \subset S$. So suppose we have proven the assumption for all lengths up to $r-1$. Let $w \in W_I \cap W_J$ with $l(w) = r$. Then we have two reduced expressions $w = s_1 \cdots s_r = t_1 \cdots t_r$ with $s_i \in I$ and $t_i \in J$. By applying $s_r$ from the right we get $w s_r = s_1 \cdots s_{r-1} = t_1 \cdots t_r s_r$. The expression $t_1 \cdots t_r s_r$ is of length $r-1$, so Exchange Condition yields $w s_r = s_1 \cdots s_{r-1} = t_1 \cdots \hat t_i \cdots t_r$, hence $w s_r \in W_I \cap W_J$. Due to induction we know that $w s_r \in W_{I \cap J}$. TODO
+		Let $w \in W_{I \cap J}$. Then $w \in W_I$ and $w \in W_J$. To show the other inclusion we induce over the length $r$. For $r = 0$ we have $w = e$ and so $w \in W_{S'}$ for any $S' \subset S$. So suppose we have proven the assumption for all lengths up to $r-1$. Let $w \in W_I \cap W_J$ with $l(w) = r$. Then we have two reduced expressions $w = s_1 \cdots s_r = t_1 \cdots t_r$ with $s_i \in I$ and $t_i \in J$. By applying $s_r$ from the right we get $w s_r = s_1 \cdots s_{r-1} = t_1 \cdots t_r s_r$. The expression $t_1 \cdots t_r s_r$ is of length $r-1$, so \ref{coro:exchange-condition} yields $w s_r = s_1 \cdots s_{r-1} = t_1 \cdots \hat t_i \cdots t_r$, hence $w s_r \in W_I \cap W_J$. Due to induction we know that $w s_r \in W_{I \cap J}$. TODO
 	\end{proof}
 \end{lemm}
 
