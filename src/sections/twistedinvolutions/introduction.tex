@@ -2,7 +2,7 @@
 \label{sec:twisted-involutions-introduction}
 
 \begin{defi}
-	An automorphism $\theta : W \to W$ with $\theta(S) = S$ is called a \defword{Coxeter system automorphism} of $(W,S)$.
+	An automorphism $\theta : W \to W$ with $\theta(S) = S$ is called a \defword{Coxeter system automorphism} of $(W,S)$. We will always assume $\theta^2 = \id$.
 \end{defi}
 
 \begin{defi}
@@ -12,7 +12,8 @@
 Lets take a quick look at some examples. First of all the trivial one.
 
 \begin{exam}
-	Let $\theta = \id_W$. Then $\theta$ is an Coxeter system automorphism and $\ti{\theta} = \{ w \in W : w = w^{-1} \}$.
+	Let $\theta = \id_W$. Then $\theta$ is an Coxeter system automorphism and
+	$$ \ti{\theta} = \{ w \in W : w = w^{-1} \}. $$
 \end{exam}
 
 The next example is more helpfull, since it reveals a way to think of $\ti{\theta}$ as a generalization of ordinary Coxeter groups.
@@ -37,18 +38,21 @@ The map we will define right now is of superior importance to this whole paper, 
 	\end{cases} $$
 	This operation can be extended on the whole free monoid over $\ul S$ by
 	$$ w \ul{s_{i_1} s_{i_2} \ldots s_{i_k}} = (\ldots ((w \ul{s_{i_1}}) \ul{s_{i_2}}) \ldots) \ul{s_{i_k}}. $$
+	If $w \ul s = \theta(s)ws$, then we say $s$ \defword{operates bothsided} on $w$. Else we say $s$ \defword{operates onesided} on $w$.
 \end{defi}
 
 \begin{lemm}
 	For all $w \in W$ and $s \in S$ it is $w \ul {ss} = w$.
 
 	\begin{proof}
-		For $w \ul s$ there are two cases. Suppose $w \ul s = ws$. This means $\theta(s)ws = w$. For $ws \ul s$ there are again two possible options.
+		For $w \ul s$ there are two cases. Suppose $s$ operates onesided on $w$, i.e. $\theta(s)ws = w$. For $ws \ul s$ there are again two possible options.
 		$$ ws \ul s = \begin{cases}
 			wss = w, & \textrm{if } \theta(s)wss = ws \\
 			\theta(s)wss = ws, & \textrm{else} \\
 		\end{cases} $$
-		The second option contradicts itself. So lets now suppose $w \ul s = \theta(s)ws$. This means $\theta(s)ws \neq w$ and for $(\theta(s)ws) \ul s$ there are again two possible options.
+		The second option contradicts itself.
+
+		So lets now suppose $s$ operates bothsided on $w$. This means $\theta(s)ws \neq w$ and for $(\theta(s)ws) \ul s$ there are again two possible options.
 		$$ (\theta(s)ws) \ul s = \begin{cases}
 			\theta(s)wss = \theta(s)w, & \textrm{if } \theta(s) \theta(s) w ss = \theta(s) w s \\
 			\theta(s)\theta(s)wss = w, & \textrm{else} \\
@@ -58,17 +62,25 @@ The map we will define right now is of superior importance to this whole paper, 
 \end{lemm}
 
 \begin{prop}
+	\typedlabel{prop:w-in-ti-iff-wuls-in-ti}
 	For each $\theta$, $w \in W$ and $s \in S$ it is $w \in \ti{\theta}$ iff $w \ul s \in \ti{\theta}$.
 
 	\begin{proof}
 		%TODO
-		Let $w \in \ti{\theta}$. For $w \ul s$ there are two cases. Suppose $w \ul s = ws$. Then we get
-		$$ \theta(ws) = \theta(\theta(s)wss) = \theta^2(s) \theta(w) = sw^{-1} = (ws^{-1})^{-1} = (ws)^{-1} $$
-		and so $w \ul s \in \ti{\theta}$. Suppose $w \ul s = \theta(s)ws$. Then we get
-		$$ \theta(\theta(s)ws) = \theta^2(s) \theta(w) \theta(s) = sw^{-1}\theta(s) = (\theta^{-1}(s)ws^{-1})^{-1} = (\theta(s)ws)^{-1} $$
-		and so $w \ul s \in \ti{\theta}$.
+		Let $w \in \ti{\theta}$. For $w \ul s$ there are two cases. Suppose $s$ operates onesided on $w$. Then we get
+		$$ \theta(ws) = \theta(\theta(s)wss) = \theta^2(s) \theta(w) = sw^{-1} = (ws^{-1})^{-1} = (ws)^{-1}. $$
+		Suppose $s$ operates bothsided on $w$. Then we get
+		$$ \theta(\theta(s)ws) = \theta^2(s) \theta(w) \theta(s) = sw^{-1}\theta(s) = (\theta^{-1}(s)ws^{-1})^{-1} = (\theta(s)ws)^{-1}. $$
+		In both cases $w \ul s \in \ti{\theta}$.
 
-		Now let $w \ul s \in \ti{\theta}$ and suppose $w \ul s = ws$. TODO
+		Now let $w \ul s \in \ti{\theta}$. Suppose $s$ operates onesided on $w$. Then
+		$$ \theta(w) = \theta(\theta(s)ws) = \theta^2(s)\theta(ws) = s (ws)^{-1} = ss^{-1}w^{-1} = w^{-1}. $$
+		Suppose $s$ operates twosided on $w$. Then
+		\begin{align*}
+			\theta(w)	& = \theta(\theta(s)\theta(s)wss) = \theta^2(s) \theta(\theta(s)ws) \theta(s) \\
+						& = s (\theta(s)ws)^{-1} \theta(s) = s(s^{-1} w^{-1} \theta(s^{-1}) \theta(s) = w^{-1}.
+		\end{align*}
+		In both cases $w \in \ti{\theta}$.
 	\end{proof}
 \end{prop}
 
@@ -76,7 +88,7 @@ The map we will define right now is of superior importance to this whole paper, 
 	Let $k \in \nn$ and $s_{i_j} \in S$ for all $1 \leq j \leq k$. Then an expression $w \ul{s_{i_1} \cdots s_{i_k}}$ is called \defword{twisted $w$-expression}. In case $w = e$ we will omit $w$, just write $\ul{s_{i_1} \cdots s_{i_k}}$ and call it \defword{twisted expression}.
 \end{defi}
 
-A remarkable property of the operation from \ref{defi:twisted-operation} (and the main reason why we are interested in it) is its $e$-orbit. As the following lemma will show it coincides with $\ti{\theta}$.
+A remarkable property of the operation from \ref{defi:twisted-operation} is its $e$-orbit. As the following lemma will show it coincides with $\ti{\theta}$.
 
 \begin{lemm}
 	\typedlabel{lemm:e-orbit-coincides-with-twisted-involutions}
