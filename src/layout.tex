@@ -21,7 +21,7 @@ basicstyle=\ttfamily\scriptsize}
 %	morestring={[b][\color{red}]"},
 }
 
-\newcommand{\defword}[1]{\textbf{#1}}
+\newcommand{\defword}[1]{\textit{\textbf{#1}}}
 
 \newcolumntype{M}{>{$\vcenter\bgroup\hbox\bgroup}l<{\egroup\egroup$}}
 
@@ -47,3 +47,5 @@ basicstyle=\ttfamily\scriptsize}
 	\label{#1}\endgroup
 }
 \makeatother
+
+\newcommand{\todo}[0]{{\color{red} \textbf{TODO}}}

@@ -57,8 +57,7 @@ There is another characterization of this action, distinguishing between one- an
 	\end{cases} $$
 
 	\begin{proof}
-		%TODO
-		Suppose $s$ acts oneside on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. So let the other way around $l(\theta(s)ws) = l(w)$. TODO
+		Suppose $s$ acts oneside on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. So let the other way around $l(\theta(s)ws) = l(w)$. \todo
 	\end{proof}
 \end{lemm}
 
@@ -104,7 +103,6 @@ There is another characterization of this action, distinguishing between one- an
 	For all $\theta$, $w \in W$ and $s \in S$ it is $w \in \ti{\theta}$ iff $w \ul s \in \ti{\theta}$.
 
 	\begin{proof}
-		%TODO
 		Let $w \in \ti{\theta}$. For $w \ul s$ there are two cases. Suppose $s$ acts onesided on $w$. Then we get
 		$$ \theta(ws) = \theta(\theta(s)wss) = \theta^2(s) \theta(w) = sw^{-1} = (ws^{-1})^{-1} = (ws)^{-1}. $$
 		Suppose $s$ acts bothsided on $w$. Then we get
@@ -122,14 +120,14 @@ There is another characterization of this action, distinguishing between one- an
 	\end{proof}
 \end{lemm}
 
-A remarkable property of the action from \ref{defi:twisted-operation} is its $e$-orbit. As the following lemma will show that it coincides with $\ti{\theta}$.
+A remarkable property of the action from \ref{defi:twisted-operation} is its $e$-orbit. As the following lemma will shows, it coincides with $\ti{\theta}$.
 
 \begin{lemm}
 	\typedlabel{lemm:twisted-e-orbit-coincides-with-twisted-involutions}
 	Fix $\theta$. Then the set of twisted involutions regarding $\theta$ coincides with the set of all twisted expressions regarding $\theta$.
 
 	\begin{proof}
-		As already seen in \ref{lemm:w-in-ti-iff-w-ul-s-in-ti}, each twisted expression is in $\ti{\theta}$, since $e \in \ti{\theta}$. So let $w \in \ti{\theta}$. So suppose $w \in \ti{\theta}$. If $l(w) = 0$, then $w = e \in \ti{\theta}$. So lets induce on the length of $w$ and let $l(w) = r > 0$. Suppose $w$ has a twisted expression ending with $\ul s$. Then $w$ also has a reduced expression (in $S$) ending with $s$ and so $l(ws) < l(w)$. With \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we get $l(w \ul s) < l(w)$. By induction $w \ul s$ has twisted expression and so $w = w \ul s \ul s$ has one, too.
+		As already seen in \ref{lemm:w-in-ti-iff-w-ul-s-in-ti}, each twisted expression is in $\ti{\theta}$, since $e \in \ti{\theta}$. So let $w \in \ti{\theta}$. If $l(w) = 0$, then $w = e \in \ti{\theta}$. Lets induce on the length of $w$ and let $l(w) = r > 0$. Suppose $w$ has a twisted expression ending with $\ul s$. Then $w$ also has a reduced expression (in $S$) ending with $s$ and so $l(ws) < l(w)$. With \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we get $l(w \ul s) < l(w)$. By induction $w \ul s$ has twisted expression and hence $w = (w \ul s) \ul s$ has one, too.
 	\end{proof} 
 \end{lemm}
 
@@ -141,7 +139,7 @@ A remarkable property of the action from \ref{defi:twisted-operation} is its $e$
 \end{defi}
 
 \begin{exam}
-	Let $w \in W$. Then $wC_\emptyset = \{ w \}$ and $wC_S = W$.
+	Let $w \in W$. Then $wC_\emptyset = \{ w \}$ and $wC_S = \ti{\theta}$.
 \end{exam}
 
 \begin{lemm}
@@ -155,10 +153,10 @@ A remarkable property of the action from \ref{defi:twisted-operation} is its $e$
 	\end{proof}
 \end{lemm}
 
-\begin{lemm}
+\begin{coro}
 	Let $v, w \in W$ and $I \subset S$. Then either $vC_I \cap wC_I = \emptyset$ or $vC_I = wC_I$.
 
 	\begin{proof}
 		Immediately from \ref{lemm:all-elements-of-one-residuum-yield-the-same-residuum}.
 	\end{proof}
-\end{lemm}
+\end{coro}
