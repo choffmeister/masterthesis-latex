@@ -33,64 +33,95 @@ The map we will define right now is of superior importance to this whole paper, 
 	\typedlabel{defi:twisted-operation}
 	Let $\ul S := \{ \ul s : s \in S \}$ be a set of symbols. Each element in $\ul S$ acts from the right on $W$ by the following definition:
 	$$ w \ul s = \begin{cases}
-		ws, & \textrm{if } \theta(s)ws = w \\
-		\theta(s)ws, & \textrm{else} \\
+		ws & \textrm{if } \theta(s)ws = w \\
+		\theta(s)ws & \textrm{else} \\
 	\end{cases} $$
-	This operation can be extended on the whole free monoid over $\ul S$ by
-	$$ w \ul{s_{i_1} s_{i_2} \ldots s_{i_k}} = (\ldots ((w \ul{s_{i_1}}) \ul{s_{i_2}}) \ldots) \ul{s_{i_k}}. $$
-	If $w \ul s = \theta(s)ws$, then we say $s$ \defword{operates bothsided} on $w$. Else we say $s$ \defword{operates onesided} on $w$.
+	This action can be extended on the whole free monoid over $\ul S$ by
+	$$ w \ul{s_1 s_2 \ldots s_k} = (\ldots ((w \ul{s_1}) \ul{s_2}) \ldots) \ul{s_k}. $$
+	If $w \ul s = \theta(s)ws$, then we say $s$ \defword{acts bothsided} on $w$. Else we say $s$ \defword{acts onesided} on $w$.
 \end{defi}
 
+There is another characterization of this action, distinguishing between one- and bothsided actions by lengths.
+
 \begin{lemm}
+	\typedlabel{lemm:twisted-operation-2}
+	Let $w \in \ti{\theta}$ and $s \in S$. Then
+	$$ w \ul s = \begin{cases}
+		ws & \textrm{if } l(\theta(s)ws) = l(w), \\
+		\theta(s)ws & \textrm{else}. \\
+	\end{cases} $$
+
+	\begin{proof}
+		%TODO
+		Suppose $s$ acts oneside on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. So let the other way around $l(\theta(s)ws) = l(w)$. TODO
+	\end{proof}
+\end{lemm}
+
+\begin{lemm}
+	\typedlabel{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w}
+	It is $l(ws) < l(w)$ iff $l(w \ul s) < l(w)$.
+
+	\begin{proof}
+		Suppose $s$ acts onesided on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $s$ acts bothsided on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) \not < l(w)$ would lead to $l(\theta(s)ws) = l(w)$, but then \ref{lemm:twisted-operation-2} says that $s$ acts oneside on $w$, which is a contradiction. So let $l(\theta(s)ws) < l(w)$. Then \ref{lemm:length-function-properties} yields $l(\theta(s)ws) + 2 = l(w)$ and so $l(ws) + 1 = l(w)$.
+	\end{proof}
+\end{lemm}
+
+We will now establish two not that obvious properties of the action in \ref{defi:twisted-operation}.
+\begin{lemm}
+	\typedlabel{lemm:w-ul-ss-eq-w}
 	For all $w \in W$ and $s \in S$ it is $w \ul {ss} = w$.
 
 	\begin{proof}
-		For $w \ul s$ there are two cases. Suppose $s$ operates onesided on $w$, i.e. $\theta(s)ws = w$. For $ws \ul s$ there are again two possible options.
+		For $w \ul s$ there are two cases. Suppose $s$ acts onesided on $w$, i.e. $\theta(s)ws = w$. For $ws \ul s$ there are again two possible options.
 		$$ ws \ul s = \begin{cases}
-			wss = w, & \textrm{if } \theta(s)wss = ws \\
-			\theta(s)wss = ws, & \textrm{else} \\
+			wss = w & \textrm{if } \theta(s)wss = ws \\
+			\theta(s)wss = ws & \textrm{else} \\
 		\end{cases} $$
 		The second option contradicts itself.
 
-		So lets now suppose $s$ operates bothsided on $w$. This means $\theta(s)ws \neq w$ and for $(\theta(s)ws) \ul s$ there are again two possible options.
+		So lets now suppose $s$ acts bothsided on $w$. This means $\theta(s)ws \neq w$ and for $(\theta(s)ws) \ul s$ there are again two possible options.
 		$$ (\theta(s)ws) \ul s = \begin{cases}
-			\theta(s)wss = \theta(s)w, & \textrm{if } \theta(s) \theta(s) w ss = \theta(s) w s \\
-			\theta(s)\theta(s)wss = w, & \textrm{else} \\
+			\theta(s)wss = \theta(s)w & \textrm{if } \theta(s) \theta(s) w ss = \theta(s) w s \\
+			\theta(s)\theta(s)wss = w & \textrm{else} \\
 		\end{cases} $$
 		The first option is impossible since $\theta(s) \theta(s) w ss = w$ and we have assumed $\theta(s)ws \neq w$. So the only cases possible yield $w \ul s \ul s = w$.
 	\end{proof}
 \end{lemm}
 
-\begin{prop}
-	\typedlabel{prop:w-in-ti-iff-wuls-in-ti}
-	For each $\theta$, $w \in W$ and $s \in S$ it is $w \in \ti{\theta}$ iff $w \ul s \in \ti{\theta}$.
+\begin{lemm}
+	\typedlabel{lemm:w-in-ti-iff-w-ul-s-in-ti}
+	For all $\theta$, $w \in W$ and $s \in S$ it is $w \in \ti{\theta}$ iff $w \ul s \in \ti{\theta}$.
 
 	\begin{proof}
 		%TODO
-		Let $w \in \ti{\theta}$. For $w \ul s$ there are two cases. Suppose $s$ operates onesided on $w$. Then we get
+		Let $w \in \ti{\theta}$. For $w \ul s$ there are two cases. Suppose $s$ acts onesided on $w$. Then we get
 		$$ \theta(ws) = \theta(\theta(s)wss) = \theta^2(s) \theta(w) = sw^{-1} = (ws^{-1})^{-1} = (ws)^{-1}. $$
-		Suppose $s$ operates bothsided on $w$. Then we get
+		Suppose $s$ acts bothsided on $w$. Then we get
 		$$ \theta(\theta(s)ws) = \theta^2(s) \theta(w) \theta(s) = sw^{-1}\theta(s) = (\theta^{-1}(s)ws^{-1})^{-1} = (\theta(s)ws)^{-1}. $$
 		In both cases $w \ul s \in \ti{\theta}$.
 
-		Now let $w \ul s \in \ti{\theta}$. Suppose $s$ operates onesided on $w$. Then
+		Now let $w \ul s \in \ti{\theta}$. Suppose $s$ acts onesided on $w$. Then
 		$$ \theta(w) = \theta(\theta(s)ws) = \theta^2(s)\theta(ws) = s (ws)^{-1} = ss^{-1}w^{-1} = w^{-1}. $$
-		Suppose $s$ operates twosided on $w$. Then
+		Suppose $s$ acts twosided on $w$. Then
 		\begin{align*}
 			\theta(w)	& = \theta(\theta(s)\theta(s)wss) = \theta^2(s) \theta(\theta(s)ws) \theta(s) \\
 						& = s (\theta(s)ws)^{-1} \theta(s) = s(s^{-1} w^{-1} \theta(s^{-1}) \theta(s) = w^{-1}.
 		\end{align*}
 		In both cases $w \in \ti{\theta}$.
 	\end{proof}
-\end{prop}
+\end{lemm}
 
 \begin{defi}
 	Let $k \in \nn$ and $s_{i_j} \in S$ for all $1 \leq j \leq k$. Then an expression $w \ul{s_{i_1} \cdots s_{i_k}}$ is called \defword{twisted $w$-expression}. In case $w = e$ we will omit $w$, just write $\ul{s_{i_1} \cdots s_{i_k}}$ and call it \defword{twisted expression}.
 \end{defi}
 
-A remarkable property of the operation from \ref{defi:twisted-operation} is its $e$-orbit. As the following lemma will show it coincides with $\ti{\theta}$.
+A remarkable property of the action from \ref{defi:twisted-operation} is its $e$-orbit. As the following lemma will show it coincides with $\ti{\theta}$.
 
 \begin{lemm}
-	\typedlabel{lemm:e-orbit-coincides-with-twisted-involutions}
-	Fix $\theta$. Then the set of twisted involutions regarding $\theta$ coincides with the set of all twisted expressions regarding $\theta$. 
+	\typedlabel{lemm:twisted-e-orbit-coincides-with-twisted-involutions}
+	Fix $\theta$. Then the set of twisted involutions regarding $\theta$ coincides with the set of all twisted expressions regarding $\theta$.
+
+	\begin{proof}
+		As already seen in \ref{lemm:w-in-ti-iff-w-ul-s-in-ti}, each twisted expression is in $\ti{\theta}$, since $e \in \ti{\theta}$. So let $w \in \ti{\theta}$. So suppose $w \in \ti{\theta}$. If $l(w) = 0$, then $w = e \in \ti{\theta}$. So induce on the length of $w$ and let $l(w) = r > 0$. Suppose $w$ has a twisted expression ending with $\ul s$. Then $w$ also has a reduced expression (in $S$) ending with $s$ and so $l(ws) < l(w)$. With \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we get $l(w \ul s) < l(w)$. By induction $w \ul s$ has twisted expression and so $w = w \ul s \ul s$ has one, too.
+	\end{proof} 
 \end{lemm}
