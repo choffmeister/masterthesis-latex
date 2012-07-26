@@ -41,6 +41,11 @@ The map we will define right now is of superior importance to this whole paper, 
 	If $w \ul s = \theta(s)ws$, then we say $s$ \defword{acts bothsided} on $w$. Else we say $s$ \defword{acts onesided} on $w$.
 \end{defi}
 
+\begin{defi}
+	\typedlabel{defi:twisted-expression}
+	Let $k \in \nn$ and $s_{i_j} \in S$ for all $1 \leq j \leq k$. Then an expression $w \ul{s_{i_1} \cdots s_{i_k}}$ is called \defword{twisted $w$-expression}. In case $w = e$ we will omit $w$, just write $\ul{s_{i_1} \cdots s_{i_k}}$ and call it \defword{twisted expression}.
+\end{defi}
+
 There is another characterization of this action, distinguishing between one- and bothsided actions by lengths.
 
 \begin{lemm}
@@ -66,7 +71,6 @@ There is another characterization of this action, distinguishing between one- an
 	\end{proof}
 \end{lemm}
 
-We will now establish two not that obvious properties of the action in \ref{defi:twisted-operation}.
 \begin{lemm}
 	\typedlabel{lemm:w-ul-ss-eq-w}
 	For all $w \in W$ and $s \in S$ it is $w \ul {ss} = w$.
@@ -87,6 +91,13 @@ We will now establish two not that obvious properties of the action in \ref{defi
 		The first option is impossible since $\theta(s) \theta(s) w ss = w$ and we have assumed $\theta(s)ws \neq w$. So the only cases possible yield $w \ul s \ul s = w$.
 	\end{proof}
 \end{lemm}
+
+\begin{rema}
+	This lemma allows us to to rewrite equations of twisted expressions. For example
+	$$ u = w \ul s \iff u \ul s = w \ul s \ul s = w. $$
+	This can be iterated to get
+	$$ u = w \ul s_1 \ldots \ul s_k \iff u \ul s_k \ldots \ul s_1 = w. $$
+\end{rema}
 
 \begin{lemm}
 	\typedlabel{lemm:w-in-ti-iff-w-ul-s-in-ti}
@@ -111,17 +122,43 @@ We will now establish two not that obvious properties of the action in \ref{defi
 	\end{proof}
 \end{lemm}
 
-\begin{defi}
-	Let $k \in \nn$ and $s_{i_j} \in S$ for all $1 \leq j \leq k$. Then an expression $w \ul{s_{i_1} \cdots s_{i_k}}$ is called \defword{twisted $w$-expression}. In case $w = e$ we will omit $w$, just write $\ul{s_{i_1} \cdots s_{i_k}}$ and call it \defword{twisted expression}.
-\end{defi}
-
-A remarkable property of the action from \ref{defi:twisted-operation} is its $e$-orbit. As the following lemma will show it coincides with $\ti{\theta}$.
+A remarkable property of the action from \ref{defi:twisted-operation} is its $e$-orbit. As the following lemma will show that it coincides with $\ti{\theta}$.
 
 \begin{lemm}
 	\typedlabel{lemm:twisted-e-orbit-coincides-with-twisted-involutions}
 	Fix $\theta$. Then the set of twisted involutions regarding $\theta$ coincides with the set of all twisted expressions regarding $\theta$.
 
 	\begin{proof}
-		As already seen in \ref{lemm:w-in-ti-iff-w-ul-s-in-ti}, each twisted expression is in $\ti{\theta}$, since $e \in \ti{\theta}$. So let $w \in \ti{\theta}$. So suppose $w \in \ti{\theta}$. If $l(w) = 0$, then $w = e \in \ti{\theta}$. So induce on the length of $w$ and let $l(w) = r > 0$. Suppose $w$ has a twisted expression ending with $\ul s$. Then $w$ also has a reduced expression (in $S$) ending with $s$ and so $l(ws) < l(w)$. With \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we get $l(w \ul s) < l(w)$. By induction $w \ul s$ has twisted expression and so $w = w \ul s \ul s$ has one, too.
+		As already seen in \ref{lemm:w-in-ti-iff-w-ul-s-in-ti}, each twisted expression is in $\ti{\theta}$, since $e \in \ti{\theta}$. So let $w \in \ti{\theta}$. So suppose $w \in \ti{\theta}$. If $l(w) = 0$, then $w = e \in \ti{\theta}$. So lets induce on the length of $w$ and let $l(w) = r > 0$. Suppose $w$ has a twisted expression ending with $\ul s$. Then $w$ also has a reduced expression (in $S$) ending with $s$ and so $l(ws) < l(w)$. With \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we get $l(w \ul s) < l(w)$. By induction $w \ul s$ has twisted expression and so $w = w \ul s \ul s$ has one, too.
 	\end{proof} 
+\end{lemm}
+
+\begin{defi}
+	\typedlabel{defi:residuum}
+	Let $w \in W$ and $I \subset S$ be a subset of generators. Then we define
+	$$ wC_I := \{ w \ul{s_1} \ldots \ul{s_k} : k \in \nn_0, s_i \in S \} $$
+	as the \defword{$I$-residuum} of $w$. Each set that can be obtained in this way is called \defword{residuum}. To emphasize the size of $I$, say $|I| = n$, we will also speak of \defword{rank-$n$-residuum}.
+\end{defi}
+
+\begin{exam}
+	Let $w \in W$. Then $wC_\emptyset = \{ w \}$ and $wC_S = W$.
+\end{exam}
+
+\begin{lemm}
+	\typedlabel{lemm:all-elements-of-one-residuum-yield-the-same-residuum}
+	Let $w \in W$ and $I \subset S$. If $v \in wC_I$, then $vC_I = wC_I$.
+
+	\begin{proof}
+		Suppose $v \in wC_I$. Then $v = w \ul s_1 \ldots \ul s_n$ for some $s_i \in I$. Suppose $u = w \ul t_1 \ldots \ul t_m \in wC_I$ be any other element in $wC_I$ with $t_i \in I$. Then
+		$$ u = w \ul t_1 \ldots \ul t_m = (v \ul s_n \ldots \ul s_1) \ul t_1 \ldots \ul t_m $$
+		and so $u \in vC_I$. This yields $wC_I \subset vC_I$. Since $w \in vC_I$ we can swap $v$ and $w$ to get the other inclusion.
+	\end{proof}
+\end{lemm}
+
+\begin{lemm}
+	Let $v, w \in W$ and $I \subset S$. Then either $vC_I \cap wC_I = \emptyset$ or $vC_I = wC_I$.
+
+	\begin{proof}
+		Immediately from \ref{lemm:all-elements-of-one-residuum-yield-the-same-residuum}.
+	\end{proof}
 \end{lemm}
