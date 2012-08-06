@@ -1,6 +1,18 @@
 \subsection{Twisted weak ordering}
 \label{sec:twisted-involutions-twisted-weak-ordering}
 
-In this section we will introduce the twisted weak ordering $Wk(\theta)$ on Coxeter groups, or to be more precise, on $\ti{\theta}$. 
+In this section we will introduce the twisted weak ordering $Wk(\theta)$ on Coxeter groups, or to be more precise, on $\ti{\theta}$. In this section $\rho$ will always be the twisted absolut length function $l^\theta$.
+
+\begin{defi}
+	Let $\ti{\theta}$ be the set of twisted involutions. For $v,w \in \ti{\theta}$ we define $v \preceq w$ iff there are $\ul s_1, \ldots, \ul s_k \in \ul S$ with $w = v \ul{ s_1 \ldots s_k }$ and $\rho(v) = \rho(w) - k$.
+\end{defi}
+
+\begin{lemm}
+	The set $\ti{\theta}$ with the relation $\preceq$ is a graded poset with rank function $\rho$.
+
+	\begin{proof}
+		Follows immediatly from the definition of $\preceq$.
+	\end{proof}
+\end{lemm}
 
 \todo

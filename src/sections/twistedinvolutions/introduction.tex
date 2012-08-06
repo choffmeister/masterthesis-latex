@@ -131,6 +131,20 @@ A remarkable property of the action from \ref{defi:twisted-operation} is its $e$
 	\end{proof} 
 \end{lemm}
 
+In the same way, we can use regular expressions to define the length of an element $w \in W$, we can use the twisted expressions to define the twisted absolute length of an element $w \in \ti{\theta}$.
+
+\begin{defi}
+	Let $\ti{\theta}$ be the set of twisted involutions. Then we define $l^\theta(w)$ as the smallest $k \in \nn$ for that a twisted expression $w = \ul {s_1 \ldots s_k}$ exists. This is called the \defword{twisted absolute length} of $w$.
+\end{defi}
+
+\begin{lemm}
+	The set of twisted involutions $\ti{\theta}$ together with the Bruhat ordering, denoted with $\Br(\ti{\theta})$, is a graded poset with $\rho(w) = (l(w) + l^\theta(w))/2$ as rank function.
+
+	\begin{proof}
+		See \cite[Theorem 4.8]{hultman:bruhat-order}.
+	\end{proof}
+\end{lemm}
+
 \begin{defi}
 	\typedlabel{defi:residuum}
 	Let $w \in W$ and $I \subset S$ be a subset of generators. Then we define
@@ -160,3 +174,5 @@ A remarkable property of the action from \ref{defi:twisted-operation} is its $e$
 		Immediately from \ref{lemm:all-elements-of-one-residuum-yield-the-same-residuum}.
 	\end{proof}
 \end{coro}
+
+\todo
