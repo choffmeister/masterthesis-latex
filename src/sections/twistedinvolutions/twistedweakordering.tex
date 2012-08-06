@@ -1,10 +1,10 @@
 \subsection{Twisted weak ordering}
 \label{sec:twisted-involutions-twisted-weak-ordering}
 
-In this section we will introduce the twisted weak ordering $Wk(\theta)$ on Coxeter groups, or to be more precise, on $\ti{\theta}$. In this section $\rho$ will always be the twisted absolut length function $l^\theta$.
+In this section we will introduce the twisted weak ordering $Wk(\theta)$ on Coxeter groups, or to be more precise, on $\ti{\theta}$.
 
 \begin{defi}
-	Let $\ti{\theta}$ be the set of twisted involutions. For $v,w \in \ti{\theta}$ we define $v \preceq w$ iff there are $\ul s_1, \ldots, \ul s_k \in \ul S$ with $w = v \ul{ s_1 \ldots s_k }$ and $\rho(v) = \rho(w) - k$.
+	Let $\ti{\theta}$ be the set of twisted involutions. For $v,w \in \ti{\theta}$ we define $v \preceq w$ iff there are $\ul s_1, \ldots, \ul s_k \in \ul S$ with $w = v \ul{ s_1 \ldots s_k }$ and $l^\theta(v) = l^\theta(w) - k$. We denote the poset $(\ti{\theta},\preceq)$ with $Wk(\theta)$.
 \end{defi}
 
 \begin{lemm}
@@ -14,5 +14,9 @@ In this section we will introduce the twisted weak ordering $Wk(\theta)$ on Coxe
 		Follows immediatly from the definition of $\preceq$.
 	\end{proof}
 \end{lemm}
+
+\begin{defi}[Geodesic]
+	Let $(W,S)$ be a Coxeter system and $w,u \in W$ with $\rho(u) - \rho(w) = n$. Each sequence $w = w_0 < w_1 < \ldots < w_n = u$ is called a geodesic from $w$ to $u$.
+\end{defi}
 
 \todo

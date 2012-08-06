@@ -46,7 +46,7 @@ The map we will define right now is of superior importance to this whole paper, 
 	Let $k \in \nn$ and $s_{i_j} \in S$ for all $1 \leq j \leq k$. Then an expression $w \ul{s_{i_1} \cdots s_{i_k}}$ is called \defword{twisted $w$-expression}. In case $w = e$ we will omit $w$, just write $\ul{s_{i_1} \cdots s_{i_k}}$ and call it \defword{twisted expression}.
 \end{defi}
 
-There is another characterization of this action, distinguishing between one- and bothsided actions by lengths.
+There is another characterization of this action, distinguishing between one- and bothsided actions by length.
 
 \begin{lemm}
 	\typedlabel{lemm:twisted-operation-2}
@@ -145,34 +145,4 @@ In the same way, we can use regular expressions to define the length of an eleme
 	\end{proof}
 \end{lemm}
 
-\begin{defi}
-	\typedlabel{defi:residuum}
-	Let $w \in W$ and $I \subset S$ be a subset of generators. Then we define
-	$$ wC_I := \{ w \ul{s_1} \ldots \ul{s_k} : k \in \nn_0, s_i \in S \} $$
-	as the \defword{$I$-residuum} of $w$. Each set that can be obtained in this way is called \defword{residuum}. To emphasize the size of $I$, say $|I| = n$, we will also speak of \defword{rank-$n$-residuum}.
-\end{defi}
-
-\begin{exam}
-	Let $w \in W$. Then $wC_\emptyset = \{ w \}$ and $wC_S = \ti{\theta}$.
-\end{exam}
-
-\begin{lemm}
-	\typedlabel{lemm:all-elements-of-one-residuum-yield-the-same-residuum}
-	Let $w \in W$ and $I \subset S$. If $v \in wC_I$, then $vC_I = wC_I$.
-
-	\begin{proof}
-		Suppose $v \in wC_I$. Then $v = w \ul s_1 \ldots \ul s_n$ for some $s_i \in I$. Suppose $u = w \ul t_1 \ldots \ul t_m \in wC_I$ be any other element in $wC_I$ with $t_i \in I$. Then
-		$$ u = w \ul t_1 \ldots \ul t_m = (v \ul s_n \ldots \ul s_1) \ul t_1 \ldots \ul t_m $$
-		and so $u \in vC_I$. This yields $wC_I \subset vC_I$. Since $w \in vC_I$ we can swap $v$ and $w$ to get the other inclusion.
-	\end{proof}
-\end{lemm}
-
-\begin{coro}
-	Let $v, w \in W$ and $I \subset S$. Then either $vC_I \cap wC_I = \emptyset$ or $vC_I = wC_I$.
-
-	\begin{proof}
-		Immediately from \ref{lemm:all-elements-of-one-residuum-yield-the-same-residuum}.
-	\end{proof}
-\end{coro}
-
-\todo
+\todo Lifting property, Exchange property, ...
