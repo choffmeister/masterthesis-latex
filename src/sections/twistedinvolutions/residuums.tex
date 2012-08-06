@@ -82,6 +82,7 @@ With the following propositions and corollaries we will get a much better idea o
 \end{prop}
 
 \begin{coro}
+	\typedlabel{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
 	Let $w \in S$ and $s,t \in S$ two distinct generators. If $w$ is neither the unique element in $wC_{\{s,t\}}$ of smallest twisted length nor the unique (but not neseccarily existing) element of largest twisted length, then $s$ and $t$ act twosided on $w$.
 
 	\begin{proof}
@@ -90,9 +91,24 @@ With the following propositions and corollaries we will get a much better idea o
 \end{coro}
 
 \begin{lemm}
+	\typedlabel{lemm:max-twisted-circle-height}
 	Let $w \in S$, $s,t \in S$ two distinct generators and $m = \ord(st)$. If $m < \infty$ and $w \ul{[st]^n} \neq w$ for all $n \in \nn, n < 2m$, then $w \ul{(st)^{2m}} = w$. If $m = \infty$ then $w \ul{(st)^n} \neq w$ for all $n \in \nn$.
 
 	\begin{proof}
 		\todo
 	\end{proof}
 \end{lemm}
+
+Putting \ref{coro:rank-2-residuums-have-unique-peeks}, \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} and \ref{lemm:max-twisted-circle-height} together we now know how rank-2-residuums look like. They are either of infinite size with a unique smallest element beeing the root of two disjoint branches, which are strictly ascending in twisted length or of finite size with a unique smallest and a unique largest element connected by two disjoint geodesics. With these residuums onesided actions can only appear next to the smallest or (if existing) next to the largest element.
+
+\begin{exam}
+	In Figure \ref{fig:d4_s1s2-and-d4_s3s4} we see poset graph of $Wk(\id)$ on the involutions in the Coxeter group $D_4$. Solid edges represent bothsided actions and dashed edges represent onesided actions.
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.3\textwidth]{resources/d4_s1s2}
+		\quad \quad \quad
+		\includegraphics[width=0.3\textwidth]{resources/d4_s3s4}
+		\caption{$Wk(\id)$ on the involutions in the Coxeter group $D_4$ with only $s_1,s_2$ edges on the left and only $s_3,s_4$ edges on the right side}
+		\label{fig:d4_s1s2-and-d4_s3s4}
+	\end{figure}
+\end{exam}
