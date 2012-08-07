@@ -87,18 +87,18 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 	\end{proof}
 \end{prop}
 
-\begin{theo}
-	\typedlabel{theo:bruhat-ordering-is-graded}
+\begin{coro}
+	\typedlabel{coro:bruhat-ordering-is-graded}
 	Let $(W,S)$ be a Coxeter system and $\Br(W)$ the Bruhat ordering poset of $W$. Then $\Br(W)$ is graded with $l:W \to \nn$ as rank function.
 
 	\begin{proof}
 		Let $u,w \in W$ with $w$ covering $u$. Then \ref{prop:bruhat-intervals} says there is a sequence $u = w_0 < \ldots < w_m = w$ with $l(w_i) = l(w_{i-1}) + 1$ for $1 \leq i \leq m$. Since $w$ covers $u$ it must be $m = 1$ and so $u < w$ with $l(w) = l(u) + 1$.
 	\end{proof}
-\end{theo}
+\end{coro}
 
-\begin{prop}[Lifting Property]
+\begin{theo}[Lifting Property]
 	%\cite[Theorem 1.1]{deodhar:bruhat-order}
-	\namedlabel{prop:lifting-property}
+	\namedlabel{theo:lifting-property}
 	Let $(W,S)$ be a Coxeter system and $v,w \in W$ with $v \leq w$. Suppose $s \in S$ with $s \in D_R(w)$. Then
 	\begin{enumerate}
 		\item $vs \leq w$,
@@ -106,8 +106,12 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 	\end{enumerate}
 
 	\begin{proof}
-		See \cite[Theorem 1.1]{deodhar:bruhat-order}. \todo
+		We use the alternative subexpression characterization of the Bruhat ordering from \ref{theo:bruhat-subexpression-characterization}.
+		\begin{enumerate}
+			\item Since $s \in D_R(w)$ there exists a reduced expression $w = s_1 \cdots s_r$ with $s_r = s$. Due to $v \leq w$ we can obtain $v$ as a subexpression $v = s_{i_1} \cdots s_{i_q}$ from $w$. If $i_q = r$ then $vs = s_{i_1} \cdots s_{i_q} s = s_{i_1} \cdots s_{i_{q - 1}}$ is also a subexpression of $w$. Else if $i_q \neq r$ then $v$ is a subexpression of $ws = s_1 \cdots s_{r-1}$ and so again $vs$ is a subexpression of $w = s_1 \cdots s_{r-1} s$. In both cases we get $vs \leq w$.
+			\item If we additionally assume $s \in D_R(v)$ then we can always find a reduced expression $w = s_1 \cdots s_r$ with $s_r = s$ having $u = s_{i_1} \cdots s_{i_q}$ as subexpression with $s_{i_q} = s$. This yields $vs = s_{i_1} \cdots s_{i_{q-1}} \leq s_1 \cdots s_{r-1} = ws$. \qedhere
+		\end{enumerate}
 	\end{proof}
-\end{prop}
+\end{theo}
 
-The \ref{prop:lifting-property} seems quite innocent, but when trying to investigate facts around the Bruhat ordering it proofs to be one of the key tools in many cases.
+The \ref{theo:lifting-property} seems quite innocent, but when trying to investigate facts around the Bruhat ordering it proofs to be one of the key tools in many cases.

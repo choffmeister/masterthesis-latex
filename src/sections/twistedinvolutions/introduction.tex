@@ -152,9 +152,28 @@ We will now establish many properties from Section \ref{sec:coxeter-groups} for 
 	Let $w \in \ti{\theta}$ and $s \in S$. Then $\rho(w \ul s) = \rho(w) \pm 1$. In fact it is $\rho(w \ul s) = \rho(w) - 1$ iff $s \in D_R(w)$.
 
 	\begin{proof}
-		Since $\Br(\ti{\theta})$ is graded with rank function $\rho$ and either $w \ul s$ covers $w$ or $w$ covers $w \ul s$ it is $\rho(w \ul s) = \rho(w) \pm 1$. Now suppose $w \ul s < w$. Then $l(w \ul s) < l(w)$ and with \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we have $l(w s) < l(w)$ yielding $s \in D_R(w)$. The other way around suppose $s \in D_R(w)$. Then $l(w s) < l(w)$ and again with \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we have $l(w \ul s) < l(w)$.
-		\ref{defi:bruhat-ordering}
+		Since $\Br(\ti{\theta})$ is graded with rank function $\rho$ and either $w \ul s$ covers $w$ or $w$ covers $w \ul s$ it is $\rho(w \ul s) = \rho(w) \pm 1$. Now suppose $w \ul s < w$. Then $l(w \ul s) < l(w)$ and with \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we have $l(w s) < l(w)$ yielding $s \in D_R(w)$. The other way around suppose $w \ul s > w$. Then $l(w \ul s) > l(w)$ and again with \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we have $l(w s) > l(w)$ yielding $s \notin D_R(w)$.
 	\end{proof}
 \end{lemm}
 
-\todo Lifting property, Exchange property, ...
+\begin{prop}[Lifting Property for $\ul S$]
+	%\cite[Lemma 3.9]{hultman:comb-twisted-invo}
+	\namedlabel{prop:lifting-property-for-ul-s}
+	Let $v,w \in W$ with $v \leq w$. Suppose $s \in S$ with $s \in D_R(w)$. Then
+	\begin{enumerate}
+		\item $v \ul s \leq w$,
+		\item $s \in D_R(v) \Rightarrow v \ul s \leq w \ul s$.
+	\end{enumerate}
+
+	\begin{proof}
+		We will distinguish between the four cases of one- and bothsided action of $s$ on $u$ and $w$. Whenever a relation comes from the ordinary \ref{theo:lifting-property}, we will denote it with $<_{LP}$ in this proof.
+		\begin{description}
+			\item[$v \ul s = vs \wedge w \ul s = ws$] Same situation as in \ref{theo:lifting-property}.
+			\item[$v \ul s = vs \wedge w \ul s = \theta(s)ws$] The first part $v \ul s = vs \leq_{LP} w$ is immediate. Suppose $s \in D_R(v)$. Then $vs \leq_{LP} ws \Rightarrow v = \theta(s)vs \leq ws \Rightarrow v \ul s = vs \leq \theta(s)ws = w \ul s$. 
+			\item[$v \ul s = \theta(s)vs \wedge w \ul s = ws$] \todo
+			\item[$v \ul s = \theta(s)vs \wedge w \ul s = \theta(s)ws$] \todo
+		\end{description}
+	\end{proof}
+\end{prop}
+
+\todo Exchange property, ...
