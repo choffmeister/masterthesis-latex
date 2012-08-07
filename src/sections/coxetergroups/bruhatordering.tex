@@ -42,7 +42,7 @@ So lets ensure that the Bruhat ordering is graded as well. For this we need anot
 	Let $(W,S)$ be a Coxeter system, $u,w \in W$ with $u \leq w$ and $s \in S$. Then $us \leq w$ or $us \leq ws$ or both.
 
 	\begin{proof}
-		We can reduce the proof (WHY?) to the case $u \to w$, i.e. $ut = w$ for a $t \in T$ with $l(v) < l(u)$. Let $s = t$. Then $us \leq w$ and we are done. In case $s \neq t$ there are two alternatives for the lengths. We can have $l(us) = l(u) - 1$ which would mean $us \to u \to w$, so $us \leq w$.
+		We can reduce the proof (\todo why?) to the case $u \to w$, i.e. $ut = w$ for a $t \in T$ with $l(v) < l(u)$. Let $s = t$. Then $us \leq w$ and we are done. In case $s \neq t$ there are two alternatives for the lengths. We can have $l(us) = l(u) - 1$ which would mean $us \to u \to w$, so $us \leq w$.
 
 		So assume $l(us) = l(u) + 1$. For the reflection $t' = sts$ we get $(us)t' = ussts = uts = ws$. So it is $us \leq ws$ iff $l(us) < l(ws)$. Assume this is not the case. Since we have assumed $l(us) = l(u) + 1$ any reduced expression $u = s_1 \cdots s_r$ for $u$ yields a reduced expression $us = s_1 \cdots s_r s$ for $us$. With the \ref{theo:strong-exchange-condition} we can obtain $ws = ust'$ from $us$ by omitting one factor. This omitted factor cannot be $s$ since $s \neq t$. This means $ws = s_1 \cdots \hat s_i \cdots s_r s$ and so $ws = s_1 \cdots \hat s_i \cdots s_r$, contradicting to our assumption $l(u) < l(w)$
 	\end{proof}
@@ -95,3 +95,19 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 		Let $u,w \in W$ with $w$ covering $u$. Then \ref{prop:bruhat-intervals} says there is a sequence $u = w_0 < \ldots < w_m = w$ with $l(w_i) = l(w_{i-1}) + 1$ for $1 \leq i \leq m$. Since $w$ covers $u$ it must be $m = 1$ and so $u < w$ with $l(w) = l(u) + 1$.
 	\end{proof}
 \end{theo}
+
+\begin{prop}[Lifting Property]
+	%\cite[Theorem 1.1]{deodhar:bruhat-order}
+	\namedlabel{prop:lifting-property}
+	Let $(W,S)$ be a Coxeter system and $v,w \in W$ with $v \leq w$. Suppose $s \in S$ with $s \in D_R(w)$. Then
+	\begin{enumerate}
+		\item $vs \leq w$,
+		\item $s \in D_R(v) \Rightarrow vs \leq ws$.
+	\end{enumerate}
+
+	\begin{proof}
+		See \cite[Theorem 1.1]{deodhar:bruhat-order}. \todo
+	\end{proof}
+\end{prop}
+
+The \ref{prop:lifting-property} seems quite innocent, but when trying to investigate facts around the Bruhat ordering it proofs to be one of the key tools in many cases.

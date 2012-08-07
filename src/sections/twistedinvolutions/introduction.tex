@@ -19,6 +19,7 @@ Lets take a quick look at some examples. First of all the trivial one.
 The next example is more helpfull, since it reveals a way to think of $\ti{\theta}$ as a generalization of ordinary Coxeter groups.
 
 \begin{exam}
+	\typedlabel{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions}
 	Let $\theta$ be a automorphism of $W \times W$ with
 	$$ \theta : W \times W \to W \times W : (u,w) \mapsto (w,u). $$
 	Note that $\theta$ is no Coxeter system automorphism, but we can think of it as one if we identify $S \subset W$ with $S \times S \subset W \times W$.
@@ -66,7 +67,7 @@ There is another characterization of this action, distinguishing between one- an
 	It is $l(ws) < l(w)$ iff $l(w \ul s) < l(w)$.
 
 	\begin{proof}
-		Suppose $s$ acts onesided on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $s$ acts bothsided on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) \not < l(w)$ would lead to $l(\theta(s)ws) = l(w)$, but then \ref{lemm:twisted-operation-2} says that $s$ acts oneside on $w$, which is a contradiction. So let $l(\theta(s)ws) < l(w)$. Then \ref{lemm:length-function-properties} yields $l(\theta(s)ws) + 2 = l(w)$ and so $l(ws) + 1 = l(w)$.
+		Suppose $s$ acts onesided on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $s$ acts bothsided on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply, that $s$ acts oneside on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So let $l(\theta(s)ws) < l(w)$. Then \ref{lemm:length-function-properties} yields $l(\theta(s)ws) + 2 = l(w)$ and so $l(ws) + 1 = l(w)$.
 	\end{proof}
 \end{lemm}
 
@@ -142,6 +143,17 @@ In the same way, we can use regular expressions to define the length of an eleme
 
 	\begin{proof}
 		See \cite[Theorem 4.8]{hultman:bruhat-order}.
+	\end{proof}
+\end{lemm}
+
+We will now establish many properties from Section \ref{sec:coxeter-groups} for twisted expressions and $\Br(\ti{\theta})$. As seen in \ref{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions} it is $\Br(W) \cong \Br(\ti{\theta})$. So the hope, that many properties can be transfered, is eligible.
+
+\begin{lemm}
+	Let $w \in \ti{\theta}$ and $s \in S$. Then $\rho(w \ul s) = \rho(w) \pm 1$. In fact it is $\rho(w \ul s) = \rho(w) - 1$ iff $s \in D_R(w)$.
+
+	\begin{proof}
+		Since $\Br(\ti{\theta})$ is graded with rank function $\rho$ and either $w \ul s$ covers $w$ or $w$ covers $w \ul s$ it is $\rho(w \ul s) = \rho(w) \pm 1$. Now suppose $w \ul s < w$. Then $l(w \ul s) < l(w)$ and with \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we have $l(w s) < l(w)$ yielding $s \in D_R(w)$. The other way around suppose $s \in D_R(w)$. Then $l(w s) < l(w)$ and again with \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we have $l(w \ul s) < l(w)$.
+		\ref{defi:bruhat-ordering}
 	\end{proof}
 \end{lemm}
 
