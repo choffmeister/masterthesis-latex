@@ -16,6 +16,46 @@ We now investigate ways to partially order the elements of a Coxeter group. Futh
 \end{defi}
 
 \begin{defi}
+	\typedlabel{defi:hasse-diagram}
+	Let $(M,\leq)$ be a poset. The \defword{Hasse diagram} of the poset is the graph obtained in the following way: Add a vertex for each element in $M$. Then add a directed edge from node $a$ to $b$ whenever $b$ covers $a$.
+\end{defi}
+
+\begin{exam}
+	Suppose we have an arbitrary set $M$. Then the powerset $\mathcal P (M)$ can be partially ordered by the subset relation, so $(\mathcal P (M), \subseteq)$ is a poset. Indeed this poset is always graded with the cardinality function as rank function. In Figure \ref{fig:hasse-xyz-subsets} we see a concrete example of this poset with $M = \{x,y,z\}$.
+
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}
+			\tikzstyle{every node}=[]
+			\tikzstyle{relation}=[->]
+
+			\node (xyz) at (0,0) {$\{x,y,z\}$};
+			\node (xy) at (-2,-1.5) {$\{x,y\}$};
+			\node (xz) at (0,-1.5) {$\{x,z\}$};
+			\node (yz) at (2,-1.5) {$\{y,z\}$};
+			\node (x) at (-2,-3) {$\{x\}$};
+			\node (y) at (0,-3) {$\{y\}$};
+			\node (z) at (2,-3) {$\{z\}$};
+			\node (0) at (0,-4.5) {$\{\}$};
+			\draw[relation] (0) -- (x);
+			\draw[relation] (0) -- (y);
+			\draw[relation] (0) -- (z);
+			\draw[relation] (x) -- (xy);
+			\draw[relation] (x) -- (xz);
+			\draw[relation] (y) -- (xy);
+			\draw[relation] (y) -- (yz);
+			\draw[relation] (z) -- (xz);
+			\draw[relation] (z) -- (yz);
+			\draw[relation] (xy) -- (xyz);
+			\draw[relation] (xz) -- (xyz);
+			\draw[relation] (yz) -- (xyz);
+		\end{tikzpicture}
+		\caption{Hasse diagram of the set of all subsets of $\{x,y,z\}$ order by the subset relation}
+		\label{fig:hasse-xyz-subsets}
+	\end{figure}
+\end{exam}
+
+\begin{defi}
 	\typedlabel{defi:bruhat-ordering}
 	Let $(W,S)$ be a Coxeter system and $T = \cup_{w \in W} wSw^{-1}$ the set of all reflections in $W$. We write $w' \to w$ if there is a $t \in T$ with $w't = w$ and $l(w') < l(w)$. If there is a sequence $w' = w_0 \to w_1 \to \ldots \to w_m = w$ we say $w' < w$. The resulting relation $w' \leq w$ is called \defword{Bruhat ordering}, denoted as $\Br(W)$.
 \end{defi}
