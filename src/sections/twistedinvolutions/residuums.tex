@@ -32,17 +32,27 @@
 	\end{proof}
 \end{coro}
 
-Residuums clearly have at least one element of minimal twisted lengths. That there is a unique one is shown be the next lemma.
-
-\begin{lemm}
-	Let $w \in W$, $I \subseteq S$ be a set of generators and let $\rho_0 := \{ \rho(v) : v \in wC_I \}$ be the minimal twisted length within the residuum $wC_I$. Then there is a unique element $w_0 \in wC_I$ with $\rho(w_0) = \rho_0$. We denote this element with $\min(w,I)$.
+\begin{prop}
+	\typedlabel{prop:residuums-have-unique-wk-theta-minimal-element}
+	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators. Then there exists a unique element $w_0 \in wC_I$ with $w_0 \preceq w_0 \ul s$ for all $s \in I$.
 
 	\begin{proof}
-		\todo
+		Suppose there is no such element. Then for each $w \in wC_I$ we can find a $s \in I$ with $w' = w \ul s \preceq w$ and $e' \in wC_I$. By repetition \ref{prop:deletion-property-for-twisted-expressions} says, that $e \in wC_I$, but $e$ has the property, which we assumed, that no element in $wC_I$ has. Hence there must be at least one such element. Now suppose there are two distinct elements $u,v$ with the desired property. Note that this means, that $u$ and $w$ have no reduced twisted expression ending with $\ul s \in I$. Let $v$ have a reduced twisted expression $v = \ul {s_1 \ldots s_k}$. Since $u$ and $v$ are both in $wC_I$ there must be a twisted $v$-expression for $u$
+		$$ u = v \ul{ s_{k+1} \ldots s_{k+l} } = \ul{ s_1 \ldots s_{k+l} } $$
+		with $s_n \in I$ for $k+1 \leq n \leq k+l$. This twisted expression cannot be reduced, since it ends with $\ul{s_{k+l}} \in I$. Then \ref{prop:deletion-property-for-twisted-expressions} yields that this twisted expression contains a reduced twisted subexpression for $u$. It cannot end with $\ul s_n$ for $k+1 \leq n \leq k+l$. Hence it is a twisted subexpression of $\ul{ s_1 \ldots s_k} = v$, too. So $u \leq v$ by \ref{theo:bruhat-subexpression-characterization}. Because of symmetry it is also $v \leq u$ and so $u = v$, contradicting to our assumption $u \neq v$.
 	\end{proof}
-\end{lemm}
+\end{prop}
 
-We proceed with some properties of rank-2-residuums. These are needed later in Section \ref{sec:twisted-involutions-algorithms} to construct an effective algorithm for calculating the twisted weak ordering, i.e. calculating the Hasse diagram of $Wk(\theta)$ for arbitrary Coxeter systems $(W,S)$ and Coxeter system automorphisms $\theta$.
+\begin{coro}
+	\typedlabel{coro:residuums-have-unique-minimal-element}
+	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators and let $\rho_{min} := \{ \rho(v) : v \in wC_I \}$ be the minimal twisted length within the residuum $wC_I$. Then there is a unique element $w_{min} \in wC_I$ with $\rho(w_{min}) = \rho_{min}$. We denote this element with $\min(w,I)$.
+
+	\begin{proof}
+		It is $\min(w,I) = w_0$ from \ref{prop:residuums-have-unique-wk-theta-minimal-element}.
+	\end{proof}
+\end{coro}
+
+We proceed with some properties of rank-2-residuums. Our interest in these residuums steems from the fact, that their properties are needed later in Section \ref{sec:twisted-involutions-algorithms} to construct an effective algorithm for calculating the twisted weak ordering, i.e. calculating the Hasse diagram of $Wk(\theta)$ for arbitrary Coxeter systems $(W,S)$ and Coxeter system automorphisms $\theta$.
 
 \begin{defi}
 	Let $s,t \in S$ be two distinct generators. We define:
@@ -57,31 +67,15 @@ This definition lets us rewrite rank-2-residuums. Suppose we have a fixed start 
 $$ wC_{\{s,t\}} = \{ w \} \ \cup \ \{ w \ul{[st]^n} : n \in \nn \} \ \cup \ \{ w \ul{[ts]^n} : n \in \nn \}. $$
 With the following propositions and corollaries we will get a much better idea of the structure of rank-2-residuums.
 
-\begin{prop}
-	\typedlabel{prop:rank-2-residuums-are-convex}
-	\todo
-	Let $w \in W$ and let $s,t \in S$ two distinct generators. Then $wC_{\{s,t\}}$ does not contain three elements of equal twisted length.
+\begin{lemm}
+	\typedlabel{lemm:rank-2-residuums-are-convex}
+	Let $w \in W$ and let $s,t \in S$ two distinct generators with $m = \ord(st)$. Without loss of generality suppose $w = \min(w, \{s,t\})$. If $m < \infty$, then $wC_{\{s,t\}}$ contains a unique maximal (regarding twisted length) element $w_{max}$ and $wC_{\{s,t\}}$ consists of two geodesics from $w$ to $w_{max}$ only intersecting in those two points. If $m = \infty$ then
+	$$ wC_{\{s,t\}} = \{ w \} \ \dot \cup \ \{ w \ul{[st]^n} : n \in \nn \} \ \dot \cup \ \{ w \ul{[ts]^n} : n \in \nn \}. $$
 
 	\begin{proof}
-		Let $(W,S)$ be a Coxeter system, $w \in W$ with $\rank w = k$, $s, t \in S$ with $s \neq t$. Without loss of generality we can choose $w$ such that $w < w \ul s$ and $w < w \ul t$. Assume the existence of an element $u \in wC_{\{s,t\}}$ with $u \ul s < u$ and $u \ul t < u$. Then \cite[Lemma 3.8]{hultman:comb-twisted-invo} yields $s,t \in D_R(u)$. By using \cite[Lemma 3.9]{hultman:comb-twisted-invo} we conclude that $w \ul s \leq u$ and $w \ul t \leq u$. Hence there cannot exist more than two Elements of same twisted length.
-
-		If no such $u$ exists, then $wC_{\{s,t\}} = w \ \dot \cup \ \{ w \ul{[st]^n} : n \in \nn \} \ \dot \cup \ \{ w \ul{[ts]^n} : n \in \nn \}$ and the assumption still holds.
+		\todo
 	\end{proof}
-\end{prop}
-
-\begin{coro}
-	\typedlabel{coro:rank-2-residuums-have-unique-peeks}
-	\todo
-	Let $w \in W$ and $s,t \in S$ two distinct generators. Then $wC_{\{s,t\}}$ contains exactly one element $v$ with $v < v \ul s$ and $v < v \ul t$ and at most one element $u$ with $u > u \ul s$ and $u > u \ul t$.
-
-	\begin{proof}
-		If there is any $w' \in wC_{\{s,t\}}$ with $w' \ul s = w' \ul t$, then $wC_{\{s,t\}} = \{ w, w \ul s \}$ and we are done. So suppose there is no such element.
-
-		Since twisted length cannot be lower than 0 there must be at least one element $v$ with $s,t \notin D_R(v)$. Suppose there is another element $v' \neq v$ with $s,t \notin D_R(v')$. If $\rho(u) = \rho(u')$ then $\rho(u \ul s) = \rho(u \ul t) = \rho(u' \ul s) = \rho(u' \ul t)$. These four expressions must describe at least three distinct elements, since else we would have $u = u'$. So we have three distinct elements of same twisted length contradicting to \ref{prop:rank-2-residuums-are-convex}. If $\rho(u) < \rho(u')$ we can conclude a contradiction with similar arguments.
-
-		If $|wC_{\{s,t\}}| < \infty$ there must be a $u$ with $s,t \in D_R(u)$. We repeat the previous steps to get, that there is no other $u' \neq u$ with $s,t \in D_R(u')$. If $|wC_{\{s,t\}}| = \infty$ there cannot be a $u$ with $s,t \in D_R(u)$.
-	\end{proof}
-\end{coro}
+\end{lemm}
 
 \begin{prop}
 	\typedlabel{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}

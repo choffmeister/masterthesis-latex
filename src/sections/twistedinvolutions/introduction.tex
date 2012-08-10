@@ -35,8 +35,8 @@ The map we will define right now is of superior importance to this whole paper, 
 	\typedlabel{defi:twisted-operation}
 	Let $\ul S := \{ \ul s : s \in S \}$ be a set of symbols. Each element in $\ul S$ acts from the right on $W$ by the following definition:
 	$$ w \ul s = \begin{cases}
-		ws & \textrm{if } \theta(s)ws = w \\
-		\theta(s)ws & \textrm{else} \\
+		ws & \textrm{if } \theta(s)ws = w, \\
+		\theta(s)ws & \textrm{else}. \\
 	\end{cases} $$
 	This action can be extended on the whole free monoid over $\ul S$ by
 	$$ w \ul{s_1 s_2 \ldots s_k} = (\ldots ((w \ul{s_1}) \ul{s_2}) \ldots) \ul{s_k}. $$
@@ -77,17 +77,17 @@ There is another characterization of this action, distinguishing between one- an
 	For all $w \in W$ and $s \in S$ it is $w \ul {ss} = w$.
 
 	\begin{proof}
-		For $w \ul s$ there are two cases. Suppose $s$ acts onesided on $w$, i.e. $\theta(s)ws = w$. For $ws \ul s$ there are again two possible options.
+		For $w \ul s$ there are two cases. Suppose $s$ acts onesided on $w$, i.e. $\theta(s)ws = w$. For $ws \ul s$ there are again two possible options:
 		$$ ws \ul s = \begin{cases}
-			wss = w & \textrm{if } \theta(s)wss = ws \\
-			\theta(s)wss = ws & \textrm{else} \\
+			wss = w & \textrm{if } \theta(s)wss = ws, \\
+			\theta(s)wss = ws & \textrm{else}. \\
 		\end{cases} $$
 		The second option contradicts itself.
 
-		So lets now suppose $s$ acts bothsided on $w$. This means $\theta(s)ws \neq w$ and for $(\theta(s)ws) \ul s$ there are again two possible options.
+		So lets now suppose $s$ acts bothsided on $w$. This means $\theta(s)ws \neq w$ and for $(\theta(s)ws) \ul s$ there are again two possible options:
 		$$ (\theta(s)ws) \ul s = \begin{cases}
-			\theta(s)wss = \theta(s)w & \textrm{if } \theta(s) \theta(s) w ss = \theta(s) w s \\
-			\theta(s)\theta(s)wss = w & \textrm{else} \\
+			\theta(s)wss = \theta(s)w & \textrm{if } \theta(s) \theta(s) w ss = \theta(s) w s, \\
+			\theta(s)\theta(s)wss = w & \textrm{else}. \\
 		\end{cases} $$
 		The first option is impossible since $\theta(s) \theta(s) w ss = w$ and we have assumed $\theta(s)ws \neq w$. So the only cases possible yield $w \ul s \ul s = w$.
 	\end{proof}
@@ -157,9 +157,9 @@ We will now establish many properties from Section \ref{sec:coxeter-groups} for 
 	\end{proof}
 \end{lemm}
 
-\begin{prop}[Lifting Property for $\ul S$]
+\begin{lemm}[Lifting property for $\ul S$]
 	%\cite[Lemma 3.9]{hultman:comb-twisted-invo}
-	\namedlabel{prop:lifting-property-for-ul-s}
+	\namedlabel{lemm:lifting-property-for-ul-s}
 	Let $v,w \in W$ with $v \leq w$. Suppose $s \in S$ with $s \in D_R(w)$. Then
 	\begin{enumerate}
 		\item $v \ul s \leq w$,
@@ -172,9 +172,21 @@ We will now establish many properties from Section \ref{sec:coxeter-groups} for 
 			\item[$v \ul s = vs \wedge w \ul s = ws$] Same situation as in \ref{theo:lifting-property}.
 			\item[$v \ul s = vs \wedge w \ul s = \theta(s)ws$] The first part $v \ul s = vs \leq_{LP} w$ is immediate. Suppose $s \in D_R(v)$. Then $vs \leq_{LP} ws \Rightarrow v = \theta(s)vs \leq ws \Rightarrow v \ul s = vs \leq \theta(s)ws = w \ul s$. 
 			\item[$v \ul s = \theta(s)vs \wedge w \ul s = ws$] \todo
-			\item[$v \ul s = \theta(s)vs \wedge w \ul s = \theta(s)ws$] \todo
+			\item[$v \ul s = \theta(s)vs \wedge w \ul s = \theta(s)ws$] \todo \qedhere
 		\end{description}
 	\end{proof}
+\end{lemm}
+
+\begin{prop}[Exchange property for twisted expressions]
+	%\cite[Lemma 3.10]{hultman:comb-twisted-invo}
+	\namedlabel{prop:exchanged-property-for-twisted-expressions}
+	\todo
 \end{prop}
 
-\todo Exchange property, ...
+\begin{prop}[Deletion property for twisted expressions]
+	%\cite[Lemma 3.11]{hultman:comb-twisted-invo}
+	\namedlabel{prop:deletion-property-for-twisted-expressions}
+	\todo
+\end{prop}
+
+\todo
