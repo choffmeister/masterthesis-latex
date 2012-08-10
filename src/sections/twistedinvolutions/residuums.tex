@@ -32,6 +32,16 @@
 	\end{proof}
 \end{coro}
 
+Residuums clearly have at least one element of minimal twisted lengths. That there is a unique one is shown be the next lemma.
+
+\begin{lemm}
+	Let $w \in W$, $I \subst S$ be a set of generators and let $\rho_0 := \{ \rho(v) : v \in wC_I \}$ be the minimal twisted length within the residuum $wC_I$. Then there is a unique element $w_0 \in wC_I$ with $\rho(w_0) = \rho_0$. We denote this element with $\min(w,I)$.
+
+	\begin{proof}
+		\todo
+	\end{proof}
+\end{lemm}
+
 We will proceed with some properties of rank-2-residuums. These will be needed later in \ref{sec:twisted-involutions-algorithms} to construct a effective algorithm for calculation the twisted weak ordering.
 
 \begin{defi}
@@ -103,7 +113,7 @@ With the following propositions and corollaries we will get a much better idea o
 Putting \ref{coro:rank-2-residuums-have-unique-peeks}, \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} and \ref{lemm:max-twisted-circle-height} together we now know how rank-2-residuums look like. They are either of infinite size with a unique smallest element beeing the root of two disjoint branches, which are strictly ascending in twisted length or of finite size with a unique smallest and a unique largest element connected by two disjoint geodesics. Within these residuums onesided actions can only appear next to the smallest or (if existing) next to the largest element.
 
 \begin{exam}
-	In Figure \ref{fig:a4_s1s3-and-a4_s2s4} we see Hasse diagram of $Wk(\id)$ on the involutions in the Coxeter group $A_4$. Solid edges represent bothsided actions and dashed edges represent onesided actions.
+	In Figure \ref{fig:a4_s1s3-and-a4_s2s4} we see Hasse diagram of $Wk(\id)$ on the involutions in the Coxeter group $A_4$.
 	\begin{figure}[ht]
 		\centering
 		\input{resources/tikz/a4_s1s3}
