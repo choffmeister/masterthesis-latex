@@ -4,9 +4,9 @@
 
 \begin{defi}
 	\typedlabel{defi:residuum}
-	Let $w \in W$ and $I \subset S$ be a subset of generators. Then we define
+	Let $w \in W$ and $I \subseteq S$ be a subset of generators. Then we define
 	$$ wC_I := \{ w \ul{s_1} \ldots \ul{s_k} : k \in \nn_0, s_i \in S \} $$
-	as the \defword{$I$-residuum} of $w$. Each set that can be obtained in this way is called \defword{residuum}. To emphasize the size of $I$, say $|I| = n$, we will also speak of \defword{rank-$n$-residuum}.
+	as the \defword{$I$-residuum} of $w$ or just \defword{residuum}. To emphasize the size of $I$, say $|I| = n$, we will also speak of a \defword{rank-$n$-residuum}.
 \end{defi}
 
 \begin{exam}
@@ -18,7 +18,7 @@
 	Let $w \in W$ and $I \subset S$. If $v \in wC_I$, then $vC_I = wC_I$.
 
 	\begin{proof}
-		Suppose $v \in wC_I$. Then $v = w \ul s_1 \ldots \ul s_n$ for some $s_i \in I$. Suppose $u = w \ul t_1 \ldots \ul t_m \in wC_I$ be any other element in $wC_I$ with $t_i \in I$. Then
+		Suppose $v \in wC_I$. Then $v = w \ul s_1 \ldots \ul s_n$ for some $s_i \in I$. Suppose $u = w \ul t_1 \ldots \ul t_m \in wC_I$ is any other element in $wC_I$ with $t_i \in I$. Then
 		$$ u = w \ul t_1 \ldots \ul t_m = (v \ul s_n \ldots \ul s_1) \ul t_1 \ldots \ul t_m $$
 		and so $u \in vC_I$. This yields $wC_I \subset vC_I$. Since $w \in vC_I$ we can swap $v$ and $w$ to get the other inclusion.
 	\end{proof}
@@ -28,11 +28,11 @@
 	Let $v, w \in W$ and $I \subset S$. Then either $vC_I \cap wC_I = \emptyset$ or $vC_I = wC_I$.
 
 	\begin{proof}
-		Immediatly from \ref{lemm:all-elements-of-one-residuum-yield-the-same-residuum}.
+		Immediatly follows from \ref{lemm:all-elements-of-one-residuum-yield-the-same-residuum}.
 	\end{proof}
 \end{coro}
 
-We will proceed with some properties of rank-2-residuums. These will be needed later in \ref{sec:twisted-involutions-algorithms} to construct a effective algorithm for calculation the twisted weak ordering.
+We proceed with some properties of rank-2-residuums. These are needed later in Section \ref{sec:twisted-involutions-algorithms} to construct an effective algorithm for calculating the twisted weak ordering, i.e. calculating the Hasse diagram of $Wk(\theta)$ for arbitrary Coxeter systems $(W,S)$ and Coxeter system automorphisms $\theta$.
 
 \begin{defi}
 	Let $s,t \in S$ be two distinct generators. We define:
@@ -45,11 +45,12 @@ We will proceed with some properties of rank-2-residuums. These will be needed l
 
 This definition lets us rewrite rank-2-residuums. Suppose we have a fixed start element $w \in \ti{\theta}$ and two distinct generators $s,t \in S$. Then
 $$ wC_{\{s,t\}} = \{ w \} \ \cup \ \{ w \ul{[st]^n} : n \in \nn \} \ \cup \ \{ w \ul{[ts]^n} : n \in \nn \}. $$
-With the following propositions and corollaries we will get a much better idea of how rank-2-residuums can look like.
+With the following propositions and corollaries we will get a much better idea of the structure of rank-2-residuums.
 
 \begin{prop}
 	\typedlabel{prop:rank-2-residuums-are-convex}
-	Let $w \in W$ and $s,t \in S$ two distinct generators. Then $wC_{\{s,t\}}$ does not contain three elements of same twisted length.
+	\todo
+	Let $w \in W$ and let $s,t \in S$ two distinct generators. Then $wC_{\{s,t\}}$ does not contain three elements of equal twisted length.
 
 	\begin{proof}
 		Let $(W,S)$ be a Coxeter system, $w \in W$ with $\rank w = k$, $s, t \in S$ with $s \neq t$. Without loss of generality we can choose $w$ such that $w < w \ul s$ and $w < w \ul t$. Assume the existence of an element $u \in wC_{\{s,t\}}$ with $u \ul s < u$ and $u \ul t < u$. Then \cite[Lemma 3.8]{hultman:comb-twisted-invo} yields $s,t \in D_R(u)$. By using \cite[Lemma 3.9]{hultman:comb-twisted-invo} we conclude that $w \ul s \leq u$ and $w \ul t \leq u$. Hence there cannot exist more than two Elements of same twisted length.
@@ -60,6 +61,7 @@ With the following propositions and corollaries we will get a much better idea o
 
 \begin{coro}
 	\typedlabel{coro:rank-2-residuums-have-unique-peeks}
+	\todo
 	Let $w \in W$ and $s,t \in S$ two distinct generators. Then $wC_{\{s,t\}}$ contains exactly one element $v$ with $v < v \ul s$ and $v < v \ul t$ and at most one element $u$ with $u > u \ul s$ and $u > u \ul t$.
 
 	\begin{proof}
@@ -73,6 +75,7 @@ With the following propositions and corollaries we will get a much better idea o
 
 \begin{prop}
 	\typedlabel{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
+	\todo
 	Let $w \in S$ and $s,t \in S$ two distinct generators. If $s$ operates onesided on $w$ and $w \ul s < w$, then either $w \ul{st} < w \ul{s}$ or $w \ul{t} > w$.
 
 	\begin{proof}
@@ -84,6 +87,7 @@ With the following propositions and corollaries we will get a much better idea o
 
 \begin{coro}
 	\typedlabel{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
+	\todo
 	Let $w \in S$ and $s,t \in S$ two distinct generators. If $w$ is neither the unique element in $wC_{\{s,t\}}$ of smallest twisted length nor the unique (but not neseccarily existing) element of largest twisted length, then $s$ and $t$ act twosided on $w$.
 
 	\begin{proof}
@@ -93,14 +97,14 @@ With the following propositions and corollaries we will get a much better idea o
 
 \begin{lemm}
 	\typedlabel{lemm:max-twisted-circle-height}
-	Let $w \in S$, $s,t \in S$ two distinct generators and $m = \ord(st)$. If $m < \infty$ and $w \ul{[st]^n} \neq w$ for all $n \in \nn, n < 2m$, then $w \ul{(st)^{2m}} = w$. If $m = \infty$ then $w \ul{(st)^n} \neq w$ for all $n \in \nn$.
+	Let $w \in S$, $s,t \in S$ two distinct generators and $m = \ord(st) < \infty$. Then $|wC_{\{s,t\}}| \leq 2m$.
 
 	\begin{proof}
 		\todo
 	\end{proof}
 \end{lemm}
 
-Putting \ref{coro:rank-2-residuums-have-unique-peeks}, \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} and \ref{lemm:max-twisted-circle-height} together we now know how rank-2-residuums look like. They are either of infinite size with a unique smallest element beeing the root of two disjoint branches, which are strictly ascending in twisted length or of finite size with a unique smallest and a unique largest element connected by two disjoint geodesics. Within these residuums onesided actions can only appear next to the smallest or (if existing) next to the largest element.
+%Putting \ref{coro:rank-2-residuums-have-unique-peeks}, \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} and \ref{lemm:max-twisted-circle-height} together, the structure of rank-2-residuums is heavily constrainted.
 
 \begin{exam}
 	In Figure \ref{fig:a4_s1s3-and-a4_s2s4} we see Hasse diagram of $Wk(\id)$ on the involutions in the Coxeter group $A_4$. Solid edges represent bothsided actions and dashed edges represent onesided actions.
