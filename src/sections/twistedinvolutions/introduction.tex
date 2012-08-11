@@ -68,7 +68,7 @@ There is another characterization of this action, distinguishing between one- an
 	It is $l(ws) < l(w)$ iff $l(w \ul s) < l(w)$.
 
 	\begin{proof}
-		Suppose $s$ acts onesided on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $s$ acts bothsided on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply, that $s$ acts oneside on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So let $l(\theta(s)ws) < l(w)$. Then \ref{lemm:length-function-properties} yields $l(\theta(s)ws) + 2 = l(w)$ and so $l(ws) + 1 = l(w)$.
+		Suppose $s$ acts onesided on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $s$ acts bothsided on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply, that $s$ acts oneside on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So $l(w \ul s) = l(\theta(s)ws) < l(w)$. The other way around suppose $l(w \ul s) < l(w)$. Then \ref{lemm:length-function-properties} says $l(w \ul s) = l(\theta(s)ws) = l(w) - 2$ and so $l(ws) = l(w) - 1$.
 	\end{proof}
 \end{lemm}
 
