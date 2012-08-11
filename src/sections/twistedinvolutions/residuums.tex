@@ -71,17 +71,16 @@ This encourages the following definition.
 	Let $w \in \ti{\theta}$ and let $s,t \in S$ be two distinct generators. Suppose $w = min(w,\{s,t\})$. Then we call $\{ w [\ul s \ul t]^n : n \in \nn \}$ the \defword{$s$-branch} and $\{ w [\ul t \ul s]^n : n \in \nn \}$ the \defword{$t$-branch} of $wC_{\{s,t\}}$.
 \end{defi}
 
-One question arises immediately: Are the $s$- and the $t$-branch disjoint? With the following lemmas, propositions and corollaries we will get a much better idea of the structure of rank-2-residuums and answer this question.
+One question arises immediately: Are the $s$- and the $t$-branch disjoint? With the following propositions, corollaries and lemmas we will get a much better idea of the structure of rank-2-residuums and answer this question.
 
-\begin{lemm}
-	\typedlabel{lemm:rank-2-residuums-are-convex}
-	Let $w \in W$ and let $s,t \in S$ two distinct generators with $m = \ord(st)$. Without loss of generality suppose $w = \min(w, \{s,t\})$. If $m < \infty$, then $wC_{\{s,t\}}$ contains a unique maximal (regarding twisted length) element $w_{max}$ and $wC_{\{s,t\}}$ consists of two geodesics from $w$ to $w_{max}$ only intersecting in those two points. If $m = \infty$ then
-	$$ wC_{\{s,t\}} = \{ w \} \ \dot \cup \ \{ w [\ul s \ul t]^n : n \in \nn \} \ \dot \cup \ \{ w [\ul t \ul s]^n : n \in \nn \}. $$
+\begin{prop}
+	\typedlabel{prop:rank-2-residuums-are-convex}
+	Let $w \in W$ and let $s,t \in S$ two distinct generators. Without loss of generality suppose $w = \min(w, \{s,t\})$. If there is a $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$, then it is the unique element with this property forcing $wC_{\{s,t\}}$ to consist of two geodesics from $w$ to $v$ intersecting only in this two elements. Else the $s$- and $t$-branch are disjoint, strictly ascending in twisted length and of infinite size.
 
 	\begin{proof}
-		\todo
+		Suppose there is a $v$ in the $s$-branch with $v \ul s \prec v$ and $v \ul t \prec v$, say $v = w[\ul s \ul t]^n$. Then $w[\ul s \ul t]^{m+1} \prec w[\ul s \ul t]^m$ for $n \leq m \leq 2m - 1$ and $w[\ul s \ul t]^{2n} = w$. This is because assuming the opposite would yield an element $u \neq w$ with $u \prec u \ul s$ and $u \prec u \ul t$ contradicting to the uniqueness from \ref{prop:residuums-have-unique-wk-theta-minimal-element}. If no such $v$ exists, then the $s$- and $t$-branch must be disjoint, strictly ascending in twisted length and so of infinite size.
 	\end{proof}
-\end{lemm}
+\end{prop}
 
 \begin{prop}
 	\typedlabel{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
@@ -96,8 +95,7 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 
 \begin{coro}
 	\typedlabel{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
-	\todo
-	Let $w \in S$ and $s,t \in S$ two distinct generators. If $w$ is neither the unique element in $wC_{\{s,t\}}$ of smallest twisted length nor the unique (but not neseccarily existing) element of largest twisted length, then $s$ and $t$ act twosided on $w$.
+	Let $w \in S$ and let $s,t \in S$ be two distinct generators. If $w$ is neither the unique element in $wC_{\{s,t\}}$ of smallest twisted length nor the unique (but not necessarily existing) element of largest twisted length, then $s$ and $t$ act twosided on $w$.
 
 	\begin{proof}
 		Follows immediately from \ref{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}.
@@ -112,8 +110,6 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 		\todo
 	\end{proof}
 \end{lemm}
-
-%Putting \ref{coro:rank-2-residuums-have-unique-peeks}, \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} and \ref{lemm:max-twisted-circle-height} together, the structure of rank-2-residuums is heavily constrainted.
 
 \begin{exam}
 	In Figure \ref{fig:a4_s1s3-and-a4_s2s4} we see two Hasse diagrams of $Wk(A_4, \id)$. The first only contains edges with label $s_1,s_3$ and the second only edges with label $s_2,s_4$.
