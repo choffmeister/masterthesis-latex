@@ -3,11 +3,11 @@
 \label{sec:twisted-involutions-introduction}
 
 \begin{defi}
-	An automorphism $\theta : W \to W$ with $\theta(S) = S$ is called a \defword{Coxeter system automorphism} of $(W,S)$. We will always assume $\theta^2 = \id$.
+	An automorphism $\theta : W \to W$ with $\theta(S) = S$ is called a \defword{Coxeter system automorphism} of $(W,S)$. We always assume $\theta^2 = \id$.
 \end{defi}
 
 \begin{defi}
-	Each $w \in W$ with $\theta(w) = w^{-1}$ is called a \defword{$\theta$-twisted involution} or just \defword{twisted involution}, if $\theta$ is clear from the context. The set of all twisted involutions in $W$ regarding $\theta$ is denoted with $\ti{\theta}(W)$. Often we will just omit the Coxeter group and write $\ti{\theta}$, when it is clear from the context which $W$ is meant.
+	Each $w \in W$ with $\theta(w) = w^{-1}$ is called a \defword{$\theta$-twisted involution} or just \defword{twisted involution}, if $\theta$ is clear from the context. The set of all twisted involutions in $W$ regarding $\theta$ is denoted with $\ti{\theta}(W)$. Often we just omit the Coxeter group and write $\ti{\theta}$, when it is clear from the context which $W$ is meant.
 \end{defi}
 
 Lets take a quick look at some examples. First of all the trivial one.
@@ -29,7 +29,7 @@ The next example is more helpfull, since it reveals a way to think of $\ti{\thet
 	This yields a canonical bijection between $\ti{\theta}$ and $W$.
 \end{exam}
 
-The map we will define right now is of superior importance to this whole paper, since it is needed to define the poset, the main thesis is about.
+The map we define right now is of superior importance to this whole paper, since it is needed to define the poset, the main thesis is about.
 
 \begin{defi}
 	\typedlabel{defi:twisted-operation}
@@ -39,13 +39,13 @@ The map we will define right now is of superior importance to this whole paper, 
 		\theta(s)ws & \textrm{else}. \\
 	\end{cases} $$
 	This action can be extended on the whole free monoid over $\ul S$ by
-	$$ w \ul{s_1 s_2 \ldots s_k} = (\ldots ((w \ul{s_1}) \ul{s_2}) \ldots) \ul{s_k}. $$
+	$$ w \ul s_1 \ul s_2 \ldots \ul s_k = (\ldots ((w \ul s_1) \ul s_2) \ldots) \ul s_k. $$
 	If $w \ul s = \theta(s)ws$, then we say $s$ \defword{acts bothsided} on $w$. Else we say $s$ \defword{acts onesided} on $w$.
 \end{defi}
 
 \begin{defi}
 	\typedlabel{defi:twisted-expression}
-	Let $k \in \nn$ and $s_{i_j} \in S$ for all $1 \leq j \leq k$. Then an expression $w \ul{s_{i_1} \cdots s_{i_k}}$ is called \defword{twisted $w$-expression}. In case $w = e$ we will omit $w$, just write $\ul{s_{i_1} \cdots s_{i_k}}$ and call it \defword{twisted expression}.
+	Let $k \in \nn$ and $s_{i_j} \in S$ for all $1 \leq j \leq k$. Then an expression $w \ul s_{i_1} \ldots \ul s_{i_k}$ is called \defword{twisted $w$-expression}. In case $w = e$ we omit $w$, just write $\ul s_{i_1} \ldots \ul s_{i_k}$ and call it \defword{twisted expression}.
 \end{defi}
 
 There is another characterization of this action, distinguishing between one- and bothsided actions by length.
@@ -122,7 +122,7 @@ There is another characterization of this action, distinguishing between one- an
 	\end{proof}
 \end{lemm}
 
-A remarkable property of the action from \ref{defi:twisted-operation} is its $e$-orbit. As the following lemma will shows, it coincides with $\ti{\theta}$.
+A remarkable property of the action from \ref{defi:twisted-operation} is its $e$-orbit. As the following lemma shows, it coincides with $\ti{\theta}$.
 
 \begin{lemm}
 	\typedlabel{lemm:twisted-e-orbit-coincides-with-twisted-involutions}
@@ -136,7 +136,7 @@ A remarkable property of the action from \ref{defi:twisted-operation} is its $e$
 In the same way, we can use regular expressions to define the length of an element $w \in W$, we can use the twisted expressions to define the twisted absolute length of an element $w \in \ti{\theta}$.
 
 \begin{defi}
-	Let $\ti{\theta}$ be the set of twisted involutions. Then we define $\rho(w)$ as the smallest $k \in \nn$ for that a twisted expression $w = \ul {s_1 \ldots s_k}$ exists. This is called the \defword{twisted length} of $w$.
+	Let $\ti{\theta}$ be the set of twisted involutions. Then we define $\rho(w)$ as the smallest $k \in \nn$ for that a twisted expression $w = \ul s_1 \ldots \ul s_k$ exists. This is called the \defword{twisted length} of $w$.
 \end{defi}
 
 \begin{lemm}
@@ -147,7 +147,7 @@ In the same way, we can use regular expressions to define the length of an eleme
 	\end{proof}
 \end{lemm}
 
-We will now establish many properties from Section \ref{sec:coxeter-groups} for twisted expressions and $\Br(\ti{\theta})$. As seen in \ref{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions} it is $\Br(W) \cong \Br(\ti{\theta})$. So the hope, that many properties can be transfered, is eligible.
+We now establish many properties from Section \ref{sec:coxeter-groups} for twisted expressions and $\Br(\ti{\theta})$. As seen in \ref{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions} it is $\Br(W) \cong \Br(\ti{\theta})$. So the hope, that many properties can be transfered, is eligible.
 
 \begin{lemm}
 	Let $w \in \ti{\theta}$ and $s \in S$. Then $\rho(w \ul s) = \rho(w) \pm 1$. In fact it is $\rho(w \ul s) = \rho(w) - 1$ iff $s \in D_R(w)$.
@@ -167,7 +167,7 @@ We will now establish many properties from Section \ref{sec:coxeter-groups} for 
 	\end{enumerate}
 
 	\begin{proof}
-		We will distinguish between the four cases of one- and bothsided action of $s$ on $u$ and $w$. Whenever a relation comes from the ordinary \ref{theo:lifting-property}, we will denote it with $<_{LP}$ in this proof.
+		We distinguish between the four cases of one- and bothsided action of $s$ on $u$ and $w$. Whenever a relation comes from the ordinary \ref{theo:lifting-property}, we denote it with $<_{LP}$ in this proof.
 		\begin{description}
 			\item[$v \ul s = vs \wedge w \ul s = ws$] Same situation as in \ref{theo:lifting-property}.
 			\item[$v \ul s = vs \wedge w \ul s = \theta(s)ws$] The first part $v \ul s = vs \leq_{LP} w$ is immediate. Suppose $s \in D_R(v)$. Then $vs \leq_{LP} ws \Rightarrow v = \theta(s)vs \leq ws \Rightarrow v \ul s = vs \leq \theta(s)ws = w \ul s$. 

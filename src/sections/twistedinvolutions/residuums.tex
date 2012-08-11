@@ -5,8 +5,8 @@
 \begin{defi}
 	\typedlabel{defi:residuum}
 	Let $w \in W$ and $I \subseteq S$ be a subset of generators. Then we define
-	$$ wC_I := \{ w \ul{s_1} \ldots \ul{s_k} : k \in \nn_0, s_i \in S \} $$
-	as the \defword{$I$-residuum} of $w$ or just \defword{residuum}. To emphasize the size of $I$, say $|I| = n$, we will also speak of a \defword{rank-$n$-residuum}.
+	$$ wC_I := \{ w \ul s_1 \ldots \ul s_k : k \in \nn_0, s_i \in S \} $$
+	as the \defword{$I$-residuum} of $w$ or just \defword{residuum}. To emphasize the size of $I$, say $|I| = n$, we also speak of a \defword{rank-$n$-residuum}.
 \end{defi}
 
 \begin{exam}
@@ -28,7 +28,7 @@
 	Let $v, w \in W$ and $I \subset S$. Then either $vC_I \cap wC_I = \emptyset$ or $vC_I = wC_I$.
 
 	\begin{proof}
-		Immediatly follows from \ref{lemm:all-elements-of-one-residuum-yield-the-same-residuum}.
+		Immediately follows from \ref{lemm:all-elements-of-one-residuum-yield-the-same-residuum}.
 	\end{proof}
 \end{coro}
 
@@ -37,9 +37,9 @@
 	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators. Then there exists a unique element $w_0 \in wC_I$ with $w_0 \preceq w_0 \ul s$ for all $s \in I$.
 
 	\begin{proof}
-		Suppose there is no such element. Then for each $w \in wC_I$ we can find a $s \in I$ with $w' = w \ul s \preceq w$ and $e' \in wC_I$. By repetition \ref{prop:deletion-property-for-twisted-expressions} says, that $e \in wC_I$, but $e$ has the property, which we assumed, that no element in $wC_I$ has. Hence there must be at least one such element. Now suppose there are two distinct elements $u,v$ with the desired property. Note that this means, that $u$ and $w$ have no reduced twisted expression ending with $\ul s \in I$. Let $v$ have a reduced twisted expression $v = \ul {s_1 \ldots s_k}$. Since $u$ and $v$ are both in $wC_I$ there must be a twisted $v$-expression for $u$
-		$$ u = v \ul{ s_{k+1} \ldots s_{k+l} } = \ul{ s_1 \ldots s_{k+l} } $$
-		with $s_n \in I$ for $k+1 \leq n \leq k+l$. This twisted expression cannot be reduced, since it ends with $\ul{s_{k+l}} \in I$. Then \ref{prop:deletion-property-for-twisted-expressions} yields that this twisted expression contains a reduced twisted subexpression for $u$. It cannot end with $\ul s_n$ for $k+1 \leq n \leq k+l$. Hence it is a twisted subexpression of $\ul{ s_1 \ldots s_k} = v$, too. So $u \leq v$ by \ref{theo:bruhat-subexpression-characterization}. Because of symmetry it is also $v \leq u$ and so $u = v$, contradicting to our assumption $u \neq v$.
+		Suppose there is no such element. Then for each $w \in wC_I$ we can find a $s \in I$ with $w' = w \ul s \preceq w$ and $e' \in wC_I$. By repetition \ref{prop:deletion-property-for-twisted-expressions} says, that $e \in wC_I$, but $e$ has the property, which we assumed, that no element in $wC_I$ has. Hence there must be at least one such element. Now suppose there are two distinct elements $u,v$ with the desired property. Note that this means, that $u$ and $w$ have no reduced twisted expression ending with some $\ul s \in I$. Let $v$ have a reduced twisted expression $v = \ul s_1 \ldots \ul s_k$. Since $u$ and $v$ are both in $wC_I$ there must be a twisted $v$-expression for $u$
+		$$ u = v \ul s_{k+1} \ldots \ul s_{k+l} = \ul s_1 \ldots \ul s_{k+l} $$
+		with $s_n \in I$ for $k+1 \leq n \leq k+l$. This twisted expression cannot be reduced, since it ends with $\ul s_{k+l} \in I$. Then \ref{prop:deletion-property-for-twisted-expressions} yields that this twisted expression contains a reduced twisted subexpression for $u$. It cannot end with $\ul s_n$ for $k+1 \leq n \leq k+l$. Hence it is a twisted subexpression of $\ul s_1 \ldots \ul s_k = v$, too. So $u \leq v$ by \ref{theo:bruhat-subexpression-characterization}. Because of symmetry it is also $v \leq u$ and so $u = v$, contradicting to our assumption $u \neq v$.
 	\end{proof}
 \end{prop}
 
@@ -48,7 +48,7 @@
 	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators and let $\rho_{min} := \{ \rho(v) : v \in wC_I \}$ be the minimal twisted length within the residuum $wC_I$. Then there is a unique element $w_{min} \in wC_I$ with $\rho(w_{min}) = \rho_{min}$. We denote this element with $\min(w,I)$.
 
 	\begin{proof}
-		It is $\min(w,I) = w_0$ from \ref{prop:residuums-have-unique-wk-theta-minimal-element}.
+		The minimal rank $\rho_{min}$ exists, since $\rho : \ti{\theta} \to \nn_0$, $\nn_0$ is well-ordered and $wC_I \neq \emptyset$. Suppose we have an element $w_{min}$ with $\rho(w_{min}) = \rho_{min}$. This means, that in particular all $w_{min} \ul s$ with $s \in I$ must be of larger twisted length, i.e. $w_{min} < w_{min} \ul s$ for all $s \in I$. With \ref{prop:residuums-have-unique-wk-theta-minimal-element} this element must be unique.
 	\end{proof}
 \end{coro}
 
@@ -56,21 +56,27 @@ We proceed with some properties of rank-2-residuums. Our interest in these resid
 
 \begin{defi}
 	Let $s,t \in S$ be two distinct generators. We define:
-	$$[st]^n :=
+	$$[\ul s \ul t]^n :=
 	\begin{cases}
-	(st)^{\frac{n}{2}} & n \textrm{ even}, \\
-	(st)^{\frac{n-1}{2}}s & n \textrm{ odd}. 
+	(\ul s \ul t)^{\frac{n}{2}} & n \textrm{ even}, \\
+	(\ul s \ul t)^{\frac{n-1}{2}} \ul s & n \textrm{ odd}. 
 	\end{cases}$$
 \end{defi}
 
-This definition lets us rewrite rank-2-residuums. Suppose we have a fixed start element $w \in \ti{\theta}$ and two distinct generators $s,t \in S$. Then
-$$ wC_{\{s,t\}} = \{ w \} \ \cup \ \{ w \ul{[st]^n} : n \in \nn \} \ \cup \ \{ w \ul{[ts]^n} : n \in \nn \}. $$
-With the following propositions and corollaries we will get a much better idea of the structure of rank-2-residuums.
+This definition lets us rewrite rank-2-residuums. Suppose we have an element $w \in \ti{\theta}$ and two distinct generators $s,t \in S$. Thanks to \ref{lemm:all-elements-of-one-residuum-yield-the-same-residuum} and \ref{coro:residuums-have-unique-minimal-element} we can assume, that $w = min(w,\{s,t\})$. Then
+$$ wC_{\{s,t\}} = \{ w \} \ \cup \ \{ w [\ul s \ul t]^n : n \in \nn \} \ \cup \ \{ w [\ul t \ul s]^n : n \in \nn \}. $$
+This encourages the following definition.
+
+\begin{defi}
+	Let $w \in \ti{\theta}$ and let $s,t \in S$ be two distinct generators. Suppose $w = min(w,\{s,t\})$. Then we call $\{ w [\ul s \ul t]^n : n \in \nn \}$ the \defword{$s$-branch} and $\{ w [\ul t \ul s]^n : n \in \nn \}$ the \defword{$t$-branch} of $wC_{\{s,t\}}$.
+\end{defi}
+
+One question arises immediately: Are the $s$- and the $t$-branch disjoint? With the following lemmas, propositions and corollaries we will get a much better idea of the structure of rank-2-residuums and answer this question.
 
 \begin{lemm}
 	\typedlabel{lemm:rank-2-residuums-are-convex}
 	Let $w \in W$ and let $s,t \in S$ two distinct generators with $m = \ord(st)$. Without loss of generality suppose $w = \min(w, \{s,t\})$. If $m < \infty$, then $wC_{\{s,t\}}$ contains a unique maximal (regarding twisted length) element $w_{max}$ and $wC_{\{s,t\}}$ consists of two geodesics from $w$ to $w_{max}$ only intersecting in those two points. If $m = \infty$ then
-	$$ wC_{\{s,t\}} = \{ w \} \ \dot \cup \ \{ w \ul{[st]^n} : n \in \nn \} \ \dot \cup \ \{ w \ul{[ts]^n} : n \in \nn \}. $$
+	$$ wC_{\{s,t\}} = \{ w \} \ \dot \cup \ \{ w [\ul s \ul t]^n : n \in \nn \} \ \dot \cup \ \{ w [\ul t \ul s]^n : n \in \nn \}. $$
 
 	\begin{proof}
 		\todo
@@ -79,13 +85,12 @@ With the following propositions and corollaries we will get a much better idea o
 
 \begin{prop}
 	\typedlabel{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
-	\todo
-	Let $w \in S$ and $s,t \in S$ two distinct generators. If $s$ operates onesided on $w$ and $w \ul s < w$, then either $w \ul{st} < w \ul{s}$ or $w \ul{t} > w$.
+	Let $w \in S$ and $s,t \in S$ two distinct generators. If $s$ operates onesided on $w$ and $w \ul s \prec w$, then either $w \ul{st} \prec w \ul{s}$ or $w \ul{t} \succ w$.
 
 	\begin{proof}
 		We have $\theta(s)ws = w$ and $s \in D_R(w)$. If $t \notin D_R(w)$, then we are done. So suppose $t \in D_R(w)$. This means $w \ul s \leq w$ and $w \ul t \leq w$ and \cite[Lemma 3.9]{hultman:comb-twisted-invo} yields $w \ul {st} < w$ and $w \ul {ts} < w$. If $t \in D_R(w \ul s)$, then we are done. So suppose $t \notin D_R(w \ul s)$. Then $t \in D_R(w \ul {st})$. Together with $w \ul {st} \leq w$ \cite[Lemma 3.9(2)]{hultman:comb-twisted-invo} says $(w \ul {st}) \ul t \leq w \ul t$. Finally we get
 		$$ ws = w \ul s = (w \ul {st}) \ul t \leq w \ul t = wt.$$
-		Since $w \ul s$ and $w \ul t$ are of same twisted length they have to be equal and therefore $s = t$ which contradicts to our assumption of two distinct generators $s$ and $t$.
+		Since $w \ul s$ and $w \ul t$ are of same twisted length they have to be equal and therefore $s = t$ which contradicts to our assumption of two distinct generators $s$ and $t$. We now have $w \ul s \ul t < w \ul s$ or $w \ul t > w$ (in $\Br(\ti{\theta})$). Both cases can be transfered to the twisted weak ordering. If $w \ul s \ul t < w \ul s$, then $\rho(w \ul s \ul t) = \rho(w \ul s) - 1$ and $w \ul s \ul t \ul t = w \ul s$, yielding $w \ul s \ul t \prec w \ul s$. If $w \ul t > w$ then $\rho(w \ul t) = \rho(w) + 1$, yielding $w \ul t \succ w$.
 	\end{proof}
 \end{prop}
 
@@ -95,7 +100,7 @@ With the following propositions and corollaries we will get a much better idea o
 	Let $w \in S$ and $s,t \in S$ two distinct generators. If $w$ is neither the unique element in $wC_{\{s,t\}}$ of smallest twisted length nor the unique (but not neseccarily existing) element of largest twisted length, then $s$ and $t$ act twosided on $w$.
 
 	\begin{proof}
-		Follows immediatly from \ref{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}.
+		Follows immediately from \ref{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}.
 	\end{proof}
 \end{coro}
 
@@ -111,13 +116,13 @@ With the following propositions and corollaries we will get a much better idea o
 %Putting \ref{coro:rank-2-residuums-have-unique-peeks}, \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} and \ref{lemm:max-twisted-circle-height} together, the structure of rank-2-residuums is heavily constrainted.
 
 \begin{exam}
-	In Figure \ref{fig:a4_s1s3-and-a4_s2s4} we see Hasse diagram of $Wk(\id)$ on the involutions in the Coxeter group $A_4$.
+	In Figure \ref{fig:a4_s1s3-and-a4_s2s4} we see two Hasse diagrams of $Wk(A_4, \id)$. The first only contains edges with label $s_1,s_3$ and the second only edges with label $s_2,s_4$.
 	\begin{figure}[ht]
 		\centering
 		\input{resources/tikz/a4_s1s3}
 		\quad \quad \quad
 		\input{resources/tikz/a4_s2s4}
-		\caption{Hasse diagrams of $Wk(\id), W = A_4$ with only $s_1,s_3$ edges on the left and only $s_2,s_4$ edges on the right side}
+		\caption{Hasse diagrams of $Wk(A_4, \id)$ with only $s_1,s_3$ edges on the left and only $s_2,s_4$ edges on the right side}
 		\label{fig:a4_s1s3-and-a4_s2s4}
 	\end{figure}
 \end{exam}
