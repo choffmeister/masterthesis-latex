@@ -10,8 +10,6 @@
 	Each $w \in W$ with $\theta(w) = w^{-1}$ is called a \defword{$\theta$-twisted involution} or just \defword{twisted involution}, if $\theta$ is clear from the context. The set of all twisted involutions in $W$ regarding $\theta$ is denoted with $\ti{\theta}(W)$. Often we just omit the Coxeter group and write $\ti{\theta}$, when it is clear from the context which $W$ is meant.
 \end{defi}
 
-Lets take a quick look at some examples. First of all the trivial one.
-
 \begin{exam}
 	Let $\theta = \id_W$. Then $\theta$ is an Coxeter system automorphism and
 	$$ \ti{\theta} = \{ w \in W : w = w^{-1} \}. $$
@@ -59,7 +57,7 @@ There is another characterization of this action, distinguishing between one- an
 	\end{cases} $$
 
 	\begin{proof}
-		Suppose $s$ acts oneside on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. So let the other way around $l(\theta(s)ws) = l(w)$. \todo
+		Suppose $s$ acts onesided on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. So let the other way around $l(\theta(s)ws) = l(w)$. \todo
 	\end{proof}
 \end{lemm}
 
@@ -68,7 +66,7 @@ There is another characterization of this action, distinguishing between one- an
 	It is $l(ws) < l(w)$ iff $l(w \ul s) < l(w)$.
 
 	\begin{proof}
-		Suppose $s$ acts onesided on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $s$ acts bothsided on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply, that $s$ acts oneside on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So $l(w \ul s) = l(\theta(s)ws) < l(w)$. The other way around suppose $l(w \ul s) < l(w)$. Then \ref{lemm:length-function-properties} says $l(w \ul s) = l(\theta(s)ws) = l(w) - 2$ and so $l(ws) = l(w) - 1$.
+		Suppose $s$ acts onesided on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $s$ acts bothsided on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply, that $s$ acts onesided on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So $l(w \ul s) = l(\theta(s)ws) < l(w)$. The other way around suppose $l(w \ul s) < l(w)$. Then \ref{lemm:length-function-properties} says $l(w \ul s) = l(\theta(s)ws) = l(w) - 2$ and so $l(ws) = l(w) - 1$.
 	\end{proof}
 \end{lemm}
 
@@ -84,12 +82,12 @@ There is another characterization of this action, distinguishing between one- an
 		\end{cases} $$
 		The second option contradicts itself.
 
-		So lets now suppose $s$ acts bothsided on $w$. This means $\theta(s)ws \neq w$ and for $(\theta(s)ws) \ul s$ there are again two possible options:
+		Now suppose $s$ acts bothsided on $w$. This means $\theta(s)ws \neq w$ and for $(\theta(s)ws) \ul s$ there are again two possible options:
 		$$ (\theta(s)ws) \ul s = \begin{cases}
 			\theta(s)wss = \theta(s)w & \textrm{if } \theta(s) \theta(s) w ss = \theta(s) w s, \\
 			\theta(s)\theta(s)wss = w & \textrm{else}. \\
 		\end{cases} $$
-		The first option is impossible since $\theta(s) \theta(s) w ss = w$ and we have assumed $\theta(s)ws \neq w$. So the only cases possible yield $w \ul s \ul s = w$.
+		The first option is impossible since $\theta(s) \theta(s) w ss = w$ and we have assumed $\theta(s)ws \neq w$. Hence the only possible cases yield $w \ul s \ul s = w$.
 	\end{proof}
 \end{lemm}
 
@@ -129,18 +127,18 @@ A remarkable property of the action from \ref{defi:twisted-operation} is its $e$
 	Fix $\theta$. Then the set of twisted involutions regarding $\theta$ coincides with the set of all twisted expressions regarding $\theta$.
 
 	\begin{proof}
-		As already seen in \ref{lemm:w-in-ti-iff-w-ul-s-in-ti}, each twisted expression is in $\ti{\theta}$, since $e \in \ti{\theta}$. So let $w \in \ti{\theta}$. If $l(w) = 0$, then $w = e \in \ti{\theta}$. Lets induce on the length of $w$ and let $l(w) = r > 0$. Suppose $w$ has a twisted expression ending with $\ul s$. Then $w$ also has a reduced expression (in $S$) ending with $s$ and so $l(ws) < l(w)$. With \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we get $l(w \ul s) < l(w)$. By induction $w \ul s$ has twisted expression and hence $w = (w \ul s) \ul s$ has one, too.
+		As already seen in \ref{lemm:w-in-ti-iff-w-ul-s-in-ti}, each twisted expression is in $\ti{\theta}$, since $e \in \ti{\theta}$. So let $w \in \ti{\theta}$. If $l(w) = 0$, then $w = e \in \ti{\theta}$. Induce on the length of $w$ and let $l(w) = r > 0$. Suppose $w$ has a twisted expression ending with $\ul s$. Then $w$ also has a reduced expression (in $S$) ending with $s$ and so $l(ws) < l(w)$. With \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we get $l(w \ul s) < l(w)$. By induction $w \ul s$ has a twisted expression and hence $w = (w \ul s) \ul s$ has one, too.
 	\end{proof} 
 \end{lemm}
 
-In the same way, we can use regular expressions to define the length of an element $w \in W$, we can use the twisted expressions to define the twisted absolute length of an element $w \in \ti{\theta}$.
+In the same way, we can use regular expressions to define the length of an element $w \in W$, we can use the twisted expressions to define the twisted length of an element $w \in \ti{\theta}$.
 
 \begin{defi}
 	Let $\ti{\theta}$ be the set of twisted involutions. Then we define $\rho(w)$ as the smallest $k \in \nn$ for that a twisted expression $w = \ul s_1 \ldots \ul s_k$ exists. This is called the \defword{twisted length} of $w$.
 \end{defi}
 
 \begin{lemm}
-	The set of twisted involutions $\ti{\theta}$ together with the Bruhat ordering, denoted with $\Br(\ti{\theta})$, is a graded poset with $\rho$ as rank function.
+	The Bruhat ordering, restricted to the set of twisted involutions $\ti{\theta}$, is a graded poset with $\rho$ as rank function. We denote this poset with $\Br(\ti{\theta})$.
 
 	\begin{proof}
 		See \cite[Theorem 4.8]{hultman:bruhat-order}.

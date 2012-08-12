@@ -19,14 +19,14 @@ From the definiton we see, that Coxeter groups only depend on the cardinality of
 \end{defi}
 
 \begin{defi}
-	For an arbitrary element $w \in W$, $(W,S)$ a Coxeter system, we call a product $s_{i_1} \cdots s_{i_n} = w$ of generators $s_{i_1} \ldots s_{i_n} \in S$ an \defword{expression} of $w$. Any expression that can be obtained from $s_{i_1} \cdots s_{i_n}$ by omitting some (or all) factors is called a \defword{subexpression} of $w$.
+	Let $(W,S)$ be a Coxeter system. For an arbitrary element $w \in W$ we call a product $s_{i_1} \cdots s_{i_n} = w$ of generators $s_{i_1} \ldots s_{i_n} \in S$ an \defword{expression} of $w$. Any expression that can be obtained from $s_{i_1} \cdots s_{i_n}$ by omitting some (or all) factors, is called a \defword{subexpression} of $w$.
 \end{defi}
 
 The present relations between the generators of a Coxeter group allow us to rewrite expressions. Hence an element $w \in W$ can have more than one expression. Obviously any element $w \in W$ has infinitly many expressions, since any expression $s_{i_1} \cdots s_{i_n} = w$ can be extended by applying $s_1^2 = 1$ from the right. But there must be a smallest number of generators needed to receive $w$. For example the neutral element $e$ can be expressed by the empty expression. Or each generator $s_i \in S$ can be expressed by itself, but any expression with less factors (i.e. the empty expression) is unequal to $s_i$.
 
 \begin{defi}
 	\typedlabel{defi:length-function}
-	Let $(W,S)$ be a Coxeter system and $w \in W$ an element. Then there are some (not necessarily distince) generators $s_i \in S$ with $s_1 \cdots s_r = w$. We call $r$ the \defword{expression length}. The smallest number $r \in \nn_0$ for that $w$ has an expression of length $r$ is called the \defword{length} of $w$ and each expression of $w$, that is ob minimal length, is called \defword{reduced expression}. The map
+	Let $(W,S)$ be a Coxeter system and $w \in W$ an element. Then there are some (not necessarily distinct) generators $s_i \in S$ with $s_1 \cdots s_r = w$. We call $r$ the \defword{expression length}. The smallest number $r \in \nn_0$ for that $w$ has an expression of length $r$ is called the \defword{length} of $w$ and each expression of $w$, that is of minimal length, is called \defword{reduced expression}. The map
 	$$ l : W \to \nn_0 $$
 	that maps each element in $W$ to its length is called \defword{length function}.
 \end{defi}
@@ -36,7 +36,7 @@ The present relations between the generators of a Coxeter group allow us to rewr
 	$$ D_R(w) := \{ s \in S : l(ws) < l(w) \} $$
 	as the \defword{right descending set} of $w$. The analogue left version
 	$$ D_L(w) := \{ s \in S : l(sw) < l(w) \} $$
-	is called \defword{left descending set} of $w$. The right descending set will also just be called \defword{descending set} of $w$.
+	is called \defword{left descending set} of $w$. Since the left descending set is not need in this paper, we will often call the right descending just \defword{descending set} of $w$.
 \end{defi}
 
 The next lemma yields some useful identities and relations for the length function.
