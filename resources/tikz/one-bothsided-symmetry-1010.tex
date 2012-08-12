@@ -1,0 +1,22 @@
+%!TEX root = ../../_main.tex
+\begin{tikzpicture}[scale=1,bend angle=10]
+\newcommand{\xspace}{1}
+\newcommand{\yspace}{0.6}
+\tikzstyle{vertex}=[draw,thick,circle,minimum size=2mm,inner sep=1pt]
+\tikzstyle{edge}=[thick,->]
+\tikzstyle{edge2}=[dotted,thick]
+\tikzstyle{onesided}=[edge,dashed]
+\tikzstyle{bothsided}=[edge]
+\node[vertex] (0) at (\xspace*0,\yspace*0) {w};
+\node[vertex] (1) at (\xspace*-0.375,\yspace*1.5) {};
+\node[vertex] (2) at (\xspace*0.375,\yspace*1.5) {};
+\node[vertex] (3) at (\xspace*-0.375,\yspace*3.0) {};
+\node[vertex] (4) at (\xspace*0.375,\yspace*3.0) {};
+\node[vertex] (5) at (\xspace*0,\yspace*4.5) {v};
+\draw[bothsided] (0) edge (1);
+\draw[onesided] (0) edge (2);
+\draw[edge2] (1) edge (3);
+\draw[edge2] (2) edge (4);
+\draw[onesided] (3) edge (5);
+\draw[bothsided] (4) edge (5);
+\end{tikzpicture}

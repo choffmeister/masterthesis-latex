@@ -103,6 +103,29 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 \end{coro}
 
 \begin{lemm}
+	\typedlabel{lemm:one-both-sided-action-symmetric-in-rank-2-residuums}
+	Let $s,t \in S$ two distinct generators and $w \in S$ with $w = min(w,\{s,t\})$. Suppose $v = w [\ul s \ul t]^n$ with $v \ul s \prec v$ and $v \ul t \prec v$. Then the one- and bothsided actions are distributed axisymmetrically or pointsymmetrically like in Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
+
+	\begin{figure}[ht]
+		\centering
+		\input{resources/tikz/one-bothsided-symmetry-0000}
+		\input{resources/tikz/one-bothsided-symmetry-1111}
+		\input{resources/tikz/one-bothsided-symmetry-1100}
+		\input{resources/tikz/one-bothsided-symmetry-0011}
+		\input{resources/tikz/one-bothsided-symmetry-1010}
+		\input{resources/tikz/one-bothsided-symmetry-0101}
+		\caption{Possible distributions of one- and bothsided actions in a rank-2-residuum}
+		\label{fig:dist-one-bothsided-actions-in-rank-2-residuum}
+	\end{figure}
+
+	\begin{proof}
+		If $u$ covers $w$, then there are only two edges and the assumption holds. So suppose $wC_{\{s,t\}}$ contains at least four edges. Due to \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} the onesided actions can only occure next to $w$ and $v$. Hence there are $2^4 = 16$ configurations possible. There are two geodesics from $w$ to $v$. Suppose they have a different count of onesided actions, say the first has $n$ and the second $m$ onesided actions, and $\rho(v) - \rho(w) = k$. Then
+		$$ l(v) = l(w) + n + 2(k-n) \neq l(w) + m + 2(k-m) = l(v), $$
+		which is obviously a contradiction. This wipes out ten out of the 16 configurations. The remaining are those from Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
+	\end{proof}
+\end{lemm}
+
+\begin{lemm}
 	\typedlabel{lemm:max-twisted-circle-height}
 	Let $w \in S$, $s,t \in S$ two distinct generators and $m = \ord(st) < \infty$. Then $|wC_{\{s,t\}}| \leq 2m$.
 
