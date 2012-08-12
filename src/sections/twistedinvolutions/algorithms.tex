@@ -48,7 +48,7 @@ The steps discussed have been compiled in to an algorithm by Haas \cite[Algorith
 	\end{algorithmic}
 \end{algo}
 
-Note the $k_{max}$ does not have to be evaluated explicitly. When $k$ reaches $k_{max}$, then the only vertex of twisted length $k$ is the unique element $w_0 \in W$ of maximal ordinary length. Since $s \in D_R(w_0)$ for all $s \in S$, there is no $s' \in S$ remaining to calculate $w_0 \ul s'$ for. This condition can be checked to determine the algorithm without knowing $k_{max}$ before. When $W$ is infinite, there is no maximal element and $\ti{\theta}$ is infinite, too. In this case $k_{max}$ can be used to terminate after having calculate a finite part of $Wk(\theta)$.
+Note, that if $W$ is finite, $k_{max}$ does not have to be evaluated explicitly. When $k$ reaches the maximal twisted length in $Wk(\theta)$, then the only vertex of twisted length $k$ is the unique element $w_0 \in W$ of maximal ordinary length. Since $s \in D_R(w_0)$ for all $s \in S$, there is no $s' \in S$ remaining to calculate $w_0 \ul s'$ for. This condition can be checked to determine the algorithm without knowing $k_{max}$ before. When $W$ is infinite, there is no maximal element and $\ti{\theta}$ is infinite, too. In this case $k_{max}$ is used to terminate after having calculated a finite part of $Wk(\theta)$.
 
 \begin{lemm}
 	\ref{algo:twoa1} is a deterministic algorithm.
