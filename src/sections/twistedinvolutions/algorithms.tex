@@ -4,7 +4,7 @@
 
 Now we address the problem of calculating $Wk(\theta)$ for an arbitrary Coxeter group $W$, given in form of a set of generating symbols $S = \{s_1, \ldots s_n\}$ and the relations in form of $m_{ij} = \ord(s_i s_j)$. From this input we want to calculate the Hasse diagram, i.e. the vertex set $\ti{\theta}$ and the edges. Thanks to \ref{lemm:twisted-e-orbit-coincides-with-twisted-involutions} the vertex set can be received by walking the $e$-orbit of the action from \ref{defi:twisted-operation}. The only element of twisted length 0 is $e$. So suppose we have already calculated the Hasse diagram until the twisted length $k$, i.e. we know all vertices $w \in \ti{\theta}$ with $\rho(w) \leq k$ and all edges connection two vertices $u,v$ with $\rho(u) + 1 = \rho(v) \leq k$. Let $\rho_k := \{ w \in \ti{\theta} : \rho(w) = k \}$. Then all vertices in $\rho_{k+1}$ are of the form $w \ul s$ for some $w \in \rho_k, s \in S$. So for each $(w,s) \in \rho_k \times S$, we calculate $w \ul s$. If $\rho(w \ul s) = k + 1$ then $w \prec w \ul s$. To avoid having to check the twisted length we use \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}. We already know the set $S_w \subseteq S$ of all generators yielding an edge into $w$. Due to the lemma it is $\rho(w \ul s) = k - 1$ for all $s \in S_w$ and $\rho(w \ul s) = k + 1$ for all $s \in S \setminus S_w$. Hence we only calculate $w \ul s$ for $s \in S \setminus S_w$ and know $w \prec w \ul s$ without checking the twisted length explicitly. The last problem to solve is the possibility of two different $(w,s),(v,t) \in \rho_k \times S$ with $w \ul s = v \ul t$. To deal with this, we have to compare a potential new twisted involution $w \ul s$ with each element of twisted length $k+1$, already calculated. The concrete problem of comparing two elements in a free presented group, called \defword{wordproblem for groups}, will not be addressed here. We suppose, that whatever computer system is used to implement our algorithm supplies a suitable way to do that. The only thing to note is, that solving the wordproblem is not a cheap operation. So reducing the count of element comparisions is a major demand to any algorithm, calculating $Wk(\theta)$.
 
-The steps discussed have been compiled in to an algorithm by Haas \cite[Algorithm 3.1.1]{haas:twoa}. We take this as our starting point. Since the runtime is far from being optimal, we use the structural properties of rank-2-residuums from Section \ref{sec:twisted-involutions-residuums} to improve the algorithm. As we will show, these optimizations yield an algorithm with an asymptotical perfect runtime behaviour. \ref{algo:twoa1} shows the algorithm of Haas.
+The steps discussed have been compiled in to an algorithm by Haas \cite[Algorithm 3.1.1]{haas:twoa}. We take this as our starting point. Since the runtime is far from being optimal, we use the structural properties of rank-2-residuums from Section \ref{sec:twisted-involutions-residuums} to improve the algorithm. As we will show, these optimizations yield an algorithm with an asymptotical perfect runtime behavior. \ref{algo:twoa1} shows the algorithm of Haas.
 
 \begin{algo}[TWOA1]
 	\hfill
@@ -19,7 +19,7 @@ The steps discussed have been compiled in to an algorithm by Haas \cite[Algorith
 			\ForAll{$s \in S \textbf{ with } \nexists (\cdot,w,s) \in E$} \label{algo:twoa1-s-loop} \Comment{Only $s \notin D_R(w)$}
 				\State $y \gets ws$
 				\State $z \gets \theta(s)y$
-				\If{$z=w$} \Comment{Check if $s$ acts one- or bothsided on $w$}
+				\If{$z=w$} \label{algo:twoa1-check-one-or-bothsided} \Comment{Check if $s$ acts one- or bothsided on $w$}
 					\State $x \gets y$
 					\State $t \gets s$
 				\Else
@@ -28,7 +28,7 @@ The steps discussed have been compiled in to an algorithm by Haas \cite[Algorith
 				\EndIf
 				
 				\State $isNew \gets \textbf{true}$
-				\ForAll{$(w',k_{w'}) \in V \textbf{ with } k_{w'} = k+1$} \Comment{Check if $x$ already known}
+				\ForAll{$(w',k_{w'}) \in V \textbf{ with } k_{w'} = k+1$} \label{algo:twoa1-comp} \Comment{Check if $x$ already known}
 					\If{$x = w'$}
 						\State $isNew \gets \textbf{false}$
 					\EndIf
@@ -48,7 +48,7 @@ The steps discussed have been compiled in to an algorithm by Haas \cite[Algorith
 	\end{algorithmic}
 \end{algo}
 
-Note the $k_{max}$ does not have to be evaluated explicitly. When $k$ reaches $k_{max}$, then the only vertex of twisted length $k$ is the unique element $w_0 \in W$ of maximal ordinary length. Since $s \in D_R(w_0)$ for all $s \in S$, there is not $s' \in S$ remaining to calculate $w_0 \ul s'$ for. This condition can be checked to determine the algorithm without knowing $k_{max}$ before. When $W$ is infinite, there is no maximal element and $\ti{\theta}$ is infinite, too. In this case $k_{max}$ can be used to terminate after having calculate a finite part of $Wk(\theta)$.
+Note the $k_{max}$ does not have to be evaluated explicitly. When $k$ reaches $k_{max}$, then the only vertex of twisted length $k$ is the unique element $w_0 \in W$ of maximal ordinary length. Since $s \in D_R(w_0)$ for all $s \in S$, there is no $s' \in S$ remaining to calculate $w_0 \ul s'$ for. This condition can be checked to determine the algorithm without knowing $k_{max}$ before. When $W$ is infinite, there is no maximal element and $\ti{\theta}$ is infinite, too. In this case $k_{max}$ can be used to terminate after having calculate a finite part of $Wk(\theta)$.
 
 \begin{lemm}
 	\ref{algo:twoa1} is a deterministic algorithm.
@@ -58,6 +58,23 @@ Note the $k_{max}$ does not have to be evaluated explicitly. When $k$ reaches $k
 	\end{proof}
 \end{lemm}
 
+\begin{lemm}
+	Let $k \in \nn$, $n = |\{ w \in \ti{\theta} : \rho(w) \leq k \}|$ and for $0 \leq i \leq k$ let $\rho_i = |\{ w \in \ti{\theta} : \rho(w) = i \}|$. Then $\ref{algo:twoa1} \in \mathcal{O}(n^2/k)$.
+
+	\begin{proof}
+		Set $m = \lfloor \frac{n}{k} \rfloor$. Then our algorithm has to do at least $\rho_i (\rho_i - 1)/2$ many element comparisons (line \ref{algo:twoa1-comp}) for each $0 \leq i \leq k$. In the most optimistic case it is $\rho_i \geq m$ for all $i$. In practice the situation will be worse, since some $\rho_i$ will be smaller than $m$ (for example $\rho_0 = 1$) and so some $\rho_i$ will be much larger than $m$. This optimistic case yields at least $m(m-1)/2 \cdot k$ many element comparisons. Hence regarding the most delimiting operation, the element comparison, our algorithm has a runtime behavior of $\mathcal{O}(m^2k) = \mathcal{O}(n^2 / k)$. The element comparison at line \ref{algo:twoa1-check-one-or-bothsided} done at most $n \cdot |S|$. Other operations, like for example insertion into or searching in sets can be considered super linear, if for example sets are ordered immediately at insertion and then searching is done with binary search. So overall runtime behavior stays $\mathcal{O}(n^2 / k)$.
+	\end{proof}
+\end{lemm}
+
+\begin{coro}
+	Let $k \in \nn$ and $n = |\{ w \in \ti{\theta} : \rho(w) \leq k \}|$. Then any algorithm calculating $Wk(\theta)$ is in $\Omega(n)$.
+
+	\begin{proof}
+		Any algorithm must at least return $\{ w \in \ti{\theta} : \rho(w) \leq k \}$ and this set is of size $n$.
+	\end{proof}
+\end{coro}
+
+Our goal is to improve \ref{algo:twoa1} so that we get an algorithm in $\mathcal{O}(n)$, i.e. an asymptotical perfect algorithm for calculating $Wk(\theta)$. As already seen the element comparison of a potential new element with all already known elements of same twisted length (line \ref{algo:twoa1-comp}) is the bottleneck. Here the rank-2-residuums become key.
 \newpage
 
 \begin{table}
