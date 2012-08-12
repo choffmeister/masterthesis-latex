@@ -6,9 +6,9 @@ Now we address the problem of calculating $Wk(\theta)$ for an arbitrary Coxeter 
 
 The steps discussed have been compiled in to an algorithm by Haas \cite[Algorithm 3.1.1]{haas:twoa}. We take this as our starting point. Since the runtime is far from being optimal, we use the structural properties of rank-2-residuums from Section \ref{sec:twisted-involutions-residuums} to improve the algorithm. As we will show, these optimizations yield an algorithm with an asymptotical perfect runtime behaviour. \ref{algo:twoa1} shows the algorithm of Haas.
 
-\begin{algo}[Algorithm 1]
+\begin{algo}[TWOA1]
 	\hfill
-	\typedlabel{algo:twoa1}
+	\namedlabel{algo:twoa1}
 	\begin{algorithmic}[1]
 	\Procedure{TwistedWeakOrderingAlgorithm1}{$(W,S),k_{max}$} 
 	\State $V \gets \{(e,0)\}$
