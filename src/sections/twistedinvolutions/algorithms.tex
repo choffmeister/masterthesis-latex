@@ -16,7 +16,7 @@ The steps discussed have been compiled in to an algorithm by Haas \cite[Algorith
 
 	\For{$k \gets 0 \textbf{ to } k_{max}$} \label{algo:twoa1-k-loop}
 		\ForAll{$(w,k_w) \in V \textbf{ with } k_w = k$} \label{algo:twoa1-v-loop}
-			\ForAll{$s \in S \textbf{ with } \nexists (\cdot,w,s) \in E$} \label{algo:twoa1-s-loop} \Comment{Only $s \notin D_R(w)$}
+			\ForAll{$s \in S \textbf{ with } \nexists (\cdot,w,s) \in E$} \label{algo:twoa1-s-loop} \Comment{Only for $s \notin D_R(w)$}
 				\State $y \gets ws$
 				\State $z \gets \theta(s)y$
 				\If{$z=w$} \label{algo:twoa1-check-one-or-bothsided} \Comment{Check if $s$ acts one- or bothsided on $w$}
@@ -96,6 +96,28 @@ This can be checked effectively. Both, $w$ and $s$ are fixed. Start with $M = \e
 
 Now $M$ contains all elements of twisted length $k+1$, satisfying the necessary condition from \ref{lemm:twoa1-necessary-condition-for-ws-eq-vt}. Furthermore $|M| < |S|$. So for each pair $(w,s)$ we have to do at most $|S|-1$ many element comparisons the determine, if $w \ul s$ is new or already known, no matter how many elements of twisted length $k+1$ are already known.
 
+\begin{algo}[TWOA2]
+	\hfill
+	\namedlabel{algo:twoa2}
+	\begin{algorithmic}[1]
+	\Procedure{TwistedWeakOrderingAlgorithm1}{$(W,S),k_{max}$} 
+	\State $V \gets \{(e,0)\}$
+	\State $E \gets \{\}$
+
+	\For{$k \gets 0 \textbf{ to } k_{max}$} \label{algo:twoa1-k-loop}
+		\ForAll{$(w,k_w) \in V \textbf{ with } k_w = k$} \label{algo:twoa1-v-loop}
+			\ForAll{$s \in S \textbf{ with } \nexists (\cdot,w,s) \in E$} \label{algo:twoa1-s-loop} \Comment{Only for $s \notin D_R(w)$} \Comment{\todo}
+			\EndFor
+		\EndFor
+		\State $k \gets k + 1$
+	\EndFor
+
+	\State \textbf{return} $(V,E)$\Comment{The poset graph}
+	\EndProcedure
+	\end{algorithmic}
+\end{algo}
+
+
 \newpage
 
 \begin{table}
@@ -104,7 +126,7 @@ Now $M$ contains all elements of twisted length $k+1$, satisfying the necessary 
 	\hline
 	\multicolumn{3}{|c|}{} & \multicolumn{2}{c|}{Timings} & \multicolumn{2}{c|}{Element comparisons}\\
 	\hline
-	$W$ & $|Wk(W,\id)|$ & $\rho(w_0)$ & \ref{algo:twoa1} & TWOA2 & \ref{algo:twoa1} & TWOA2\\
+	$W$ & $|Wk(W,\id)|$ & $\rho(w_0)$ & \ref{algo:twoa1} & \ref{algo:twoa2} & \ref{algo:twoa1} & \ref{algo:twoa2}\\
 	\hline
 	$A_9$ & 9496 & 25 & 00:02.180 & 00:01.372 & 13,531,414 & 42,156\\
 	\hline
