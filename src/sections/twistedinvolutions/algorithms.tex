@@ -104,9 +104,9 @@ Now $M$ contains all elements of twisted length $k+1$, satisfying the necessary 
 	\State $V \gets \{(e,0)\}$
 	\State $E \gets \{\}$
 
-	\For{$k \gets 0 \textbf{ to } k_{max}$} \label{algo:twoa1-k-loop}
-		\ForAll{$(w,k_w) \in V \textbf{ with } k_w = k$} \label{algo:twoa1-v-loop}
-			\ForAll{$s \in S \textbf{ with } \nexists (\cdot,w,s) \in E$} \label{algo:twoa1-s-loop} \Comment{Only for $s \notin D_R(w)$} \Comment{\todo}
+	\For{$k \gets 0 \textbf{ to } k_{max}$} \label{algo:twoa2-k-loop}
+		\ForAll{$(w,k_w) \in V \textbf{ with } k_w = k$} \label{algo:twoa2-v-loop}
+			\ForAll{$s \in S \textbf{ with } \nexists (\cdot,w,s) \in E$} \label{algo:twoa2-s-loop} \Comment{Only for $s \notin D_R(w)$} \Comment{\todo}
 			\EndFor
 		\EndFor
 		\State $k \gets k + 1$
@@ -116,9 +116,6 @@ Now $M$ contains all elements of twisted length $k+1$, satisfying the necessary 
 	\EndProcedure
 	\end{algorithmic}
 \end{algo}
-
-
-\newpage
 
 \begin{table}
 	\centering
