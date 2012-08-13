@@ -92,9 +92,41 @@ Our goal is to improve \ref{algo:twoa1} so that we get an algorithm in $\mathcal
 	\end{proof}
 \end{lemm}
 
-This can be checked effectively. Both, $w$ and $s$ are fixed. Start with $M = \emptyset$. For all already known edges from or to $w$ being labeled with $\ul t \in \ul S \setminus \{\ul s\}$ we do the following: Walk $w[\ul t \ul s]^i$ for $i = 0,1,\ldots$ until $\rho(w[\ul t \ul s]^i) = k + 1$. This must happen due to \ref{prop:rank-2-residuums-are-convex}. Then add this element to $M$ by setting $M = M \cup \{ w[\ul t \ul s]^{i} \}$. Note that walking in this case really means walking the graph. All involved vertices and edges have already been calculated. So there is no need for more calculations in $W$ to find $w[\ul t \ul s]^i$.
+This can be checked effectively. Both, $w$ and $s$ are fixed. Start with $M = \emptyset$. For all already known edges from or to $w$ being labeled with $\ul t \in \ul S \setminus \{\ul s\}$ we do the following: Walk $w[\ul t \ul s]^i$ for $i = 0,1,\ldots$ until $\rho(w[\ul t \ul s]^i) = k + 1$. Note that walking in this case really means walking the graph. All involved vertices and edges have already been calculated. So there is no need for more calculations in $W$ to find $w[\ul t \ul s]^i$. By \ref{prop:rank-2-residuums-are-convex} such a path must exist (in a completely calculated graph). But we could be in the case, where the last step from $w[\ul t \ul s]^{i-1}$ to $w[\ul t \ul s]^{i}$ has not been calculated yet. If it is already calculated, then add this element to $M$ by setting $M = M \cup \{ w[\ul t \ul s]^{i} \}$. If not, do not add it to $M$.
 
-Now $M$ contains all elements of twisted length $k+1$, satisfying the necessary condition from \ref{lemm:twoa1-necessary-condition-for-ws-eq-vt}. Furthermore $|M| < |S|$. So for each pair $(w,s)$ we have to do at most $|S|-1$ many element comparisons the determine, if $w \ul s$ is new or already known, no matter how many elements of twisted length $k+1$ are already known.
+Now $M$ contains all already known elements of twisted length $k+1$, satisfying the necessary condition from \ref{lemm:twoa1-necessary-condition-for-ws-eq-vt}. Furthermore $|M| < |S|$. So for each pair $(w,s)$ we have to do at most $|S|-1$ many element comparisons the determine, if $w \ul s$ is new or already known, no matter how many elements of twisted length $k+1$ are already known. We can get even more information from the rank-2-residuums:
+
+\begin{lemm}
+	Let $w \in \ti{\theta}$ with $\rho(w) = k$, $s,t$ be two distinct generators and $s \notin D_R(w)$. Suppose $n \in \nn$ to be the smallest number for that $\rho(w[\ul t \ul s]^{2n-1}) = k + 1$ holds. Then:
+
+	\begin{enumerate}
+		\item If $n = \ord(st)$, then $w[\ul t \ul s]^{2n-1} = w \ul s$.
+		\item If $n \geq 2$ and $l(w[\ul t \ul s]^{2n-1}) - l(w[\ul t \ul s]^{2n-2}) = 1$, then $w[\ul t \ul s]^{2n-1} = w \ul s$.
+	\end{enumerate}
+
+	\begin{proof}
+
+		\begin{enumerate}
+			\item Follows immediately from \ref{lemm:max-twisted-circle-height}.
+			\item Because of the length difference the step from $w[\ul t \ul s]^{2n-2}$ to $w[\ul t \ul s]^{2n-1}$ is onesided and because of $n \geq 1$ this step cannot be next to the smallest element in $wC_{\{s,t\}}$. Hence $w[\ul t \ul s]^{2n-1} = w \ul s$ by \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}.
+		\end{enumerate}
+	\end{proof}
+\end{lemm}
+
+\begin{lemm}
+	Let $w \in \ti{\theta}$ with $\rho(w) = k$, $s,t$ be two distinct generators and $s \notin D_R(w)$. Suppose $w[\ul t \ul s]^{2n-1} = w \ul s$ and suppose $n$ to be the smallest number with this property. Then $w[\ul t \ul s]^{n-1}$ is the minimal element $\min(w,\{s,t\})$ and $w[\ul t \ul s]^{2n-1}$ is the maximal element. Define
+	\begin{align*}
+		a & = l(w \ul s) - l(w) - 1, \\
+		b & = l(w[\ul t \ul s]^{n-1}) - l(w[\ul t \ul s]^{n-2}) - 1, \\
+		c & = l(w[\ul t \ul s]^{n}) - l(w[\ul t \ul s]^{n-1}) - 1 \textrm{ and} \\
+		d & = l(w[\ul t \ul s]^{2n-1}) - l(w[\ul t \ul s]^{2n-2}) - 1.
+	\end{align*}
+	Note that $a,b,c,d \in \{0,1\}$ contain the information, if edges next to the minimal and the maximal element of $wC_{\{s,t\}}$ are one- or bothsided. Then $a = (b+c+d) \mod 2$.
+
+	\begin{proof}
+		The minimality of $w[\ul t \ul s]^{n-1}$ and the maximality of $w[\ul t \ul s]^{2n-1}$ is due to \ref{prop:rank-2-residuums-are-convex}. The soundness of the equation follows from the symmetric distribution of one- and bothsided actions from \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residuums}.
+	\end{proof}
+\end{lemm}
 
 \begin{algo}[TWOA2]
 	\hfill
@@ -116,6 +148,8 @@ Now $M$ contains all elements of twisted length $k+1$, satisfying the necessary 
 	\EndProcedure
 	\end{algorithmic}
 \end{algo}
+
+\newpage
 
 \begin{table}
 	\centering
