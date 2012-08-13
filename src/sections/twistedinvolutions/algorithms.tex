@@ -54,7 +54,7 @@ Note, that if $W$ is finite, $k_{max}$ does not have to be evaluated explicitly.
 	\ref{algo:twoa1} is a deterministic algorithm.
 
 	\begin{proof}
-		The outer loop (line \ref{algo:twoa1-k-loop}) is strictly ascending in $k \in \{0,\ldots,k_{max}\}$ and so finite. The innermost loop (line \ref{algo:twoa1-s-loop}) is finite since $S$ is finite. The inner loop (line \ref{algo:twoa1-v-loop}) is finite, since $V$ starts as finite set and in each step there are added at most $|V| \cdot |S|$ many new vertices. Therefore the algorithm terminates. The soundness is due to the arguments at the beginning of this section.
+		The outer loop (line \ref{algo:twoa1-k-loop}) is strictly ascending in $k \in \{0,\ldots,k_{max}\}$ and so finite. The innermost loop (line \ref{algo:twoa1-s-loop}) is finite since $S$ is finite. The inner loop (line \ref{algo:twoa1-v-loop}) is finite, since $V$ starts as finite set and in each step there are added at most $|V| \cdot |S|$ many new vertices. Therefore the algorithm terminates. The soundness is due to the arguments at the beginning of Section \ref{sec:twisted-involutions-algorithms}.
 	\end{proof}
 \end{lemm}
 
@@ -102,10 +102,9 @@ Now $M$ contains all elements of twisted length $k+1$, satisfying the necessary 
 	\centering
 	\begin{tabular}{|c|c|c|r|r|r|r|}
 	\hline
-	\multicolumn{3}{|c|}{} & \multicolumn{2}{|c|}{Timings} &
-	\multicolumn{2}{|c|}{Element compares}\\
+	\multicolumn{3}{|c|}{} & \multicolumn{2}{c|}{Timings} & \multicolumn{2}{c|}{Element comparisons}\\
 	\hline
-	W & $|Wk(\id,W)|$ & $\rho(w_0)$ & TWOA1 & TWOA2 & TWOA1 & TWOA2\\
+	$W$ & $|Wk(W,\id)|$ & $\rho(w_0)$ & \ref{algo:twoa1} & TWOA2 & \ref{algo:twoa1} & TWOA2\\
 	\hline
 	$A_9$ & 9496 & 25 & 00:02.180 & 00:01.372 & 13,531,414 & 42,156\\
 	\hline
