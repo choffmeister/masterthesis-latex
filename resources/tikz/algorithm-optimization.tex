@@ -8,18 +8,22 @@
 \tikzstyle{onesided}=[edge,dashed]
 \tikzstyle{bothsided}=[edge]
 
-\node[vertex, label=180:$v$] (3) at (\xspace*-0.375,\yspace*3.0) {};
-\node[vertex, label=360:$w$] (4) at (\xspace*0.375,\yspace*3.0) {};
-\node[vertex, label=180:$v \ul t$, label=360:$w \ul s$] (5) at (\xspace*0,\yspace*4.5) {};
+\node[vertex, label=180:$v$] (3) at (\xspace*-0.375,\yspace*1.5) {};
+\node[vertex, label=360:$w$] (4) at (\xspace*0.375,\yspace*1.5) {};
+\node[vertex, label=180:$v \ul t$] (5) at (\xspace*-0.375,\yspace*3.0) {};
+\node[vertex, label=360:$w \ul s$] (6) at (\xspace*0.375,\yspace*3.0) {};
+\node (7) at (\xspace*0,\yspace*3.0) {$=$};
 \draw[bothsided] (3) edge (5);
-\draw[bothsided] (4) edge (5);
+\draw[bothsided] (4) edge (6);
 
-\node[vertex] (0) at (3+\xspace*0,\yspace*0) {};
-\node[vertex] (1) at (3+\xspace*-0.375,\yspace*1.5) {};
-\node[vertex] (2) at (3+\xspace*0.375,\yspace*1.5) {};
-\node[vertex, label=180:$v$] (3) at (3+\xspace*-0.375,\yspace*3.0) {};
-\node[vertex, label=360:$w$] (4) at (3+\xspace*0.375,\yspace*3.0) {};
-\node[vertex, label=180:$v \ul t$, label=360:$w \ul s$] (5) at (3+\xspace*0,\yspace*4.5) {};
+\node (then) at (\xspace*2,\yspace*2.25) {$\Rightarrow$};
+
+\node[vertex] (0) at (4+\xspace*0,\yspace*0) {};
+\node[vertex] (1) at (4+\xspace*-0.375,\yspace*1.5) {};
+\node[vertex] (2) at (4+\xspace*0.375,\yspace*1.5) {};
+\node[vertex, label=180:$v$] (3) at (4+\xspace*-0.375,\yspace*3.0) {};
+\node[vertex, label=360:$w$] (4) at (4+\xspace*0.375,\yspace*3.0) {};
+\node[vertex, label=180:$v \ul t$, label=360:$w \ul s$] (5) at (4+\xspace*0,\yspace*4.5) {};
 \draw[bothsided] (0) edge (1);
 \draw[bothsided] (0) edge (2);
 \draw[edge2] (1) edge (3);
