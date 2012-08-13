@@ -1,0 +1,29 @@
+%!TEX root = ../../_main.tex
+\begin{tikzpicture}[scale=1,bend angle=10]
+\newcommand{\xspace}{1}
+\newcommand{\yspace}{0.6}
+\tikzstyle{vertex}=[draw,thick,circle,minimum size=2mm,inner sep=1pt]
+\tikzstyle{edge}=[thick,->]
+\tikzstyle{edge2}=[dotted,thick]
+\tikzstyle{onesided}=[edge,dashed]
+\tikzstyle{bothsided}=[edge]
+
+\node[vertex, label=180:$v$] (3) at (\xspace*-0.375,\yspace*3.0) {};
+\node[vertex, label=360:$w$] (4) at (\xspace*0.375,\yspace*3.0) {};
+\node[vertex, label=180:$v \ul t$, label=360:$w \ul s$] (5) at (\xspace*0,\yspace*4.5) {};
+\draw[bothsided] (3) edge (5);
+\draw[bothsided] (4) edge (5);
+
+\node[vertex] (0) at (3+\xspace*0,\yspace*0) {};
+\node[vertex] (1) at (3+\xspace*-0.375,\yspace*1.5) {};
+\node[vertex] (2) at (3+\xspace*0.375,\yspace*1.5) {};
+\node[vertex, label=180:$v$] (3) at (3+\xspace*-0.375,\yspace*3.0) {};
+\node[vertex, label=360:$w$] (4) at (3+\xspace*0.375,\yspace*3.0) {};
+\node[vertex, label=180:$v \ul t$, label=360:$w \ul s$] (5) at (3+\xspace*0,\yspace*4.5) {};
+\draw[bothsided] (0) edge (1);
+\draw[bothsided] (0) edge (2);
+\draw[edge2] (1) edge (3);
+\draw[edge2] (2) edge (4);
+\draw[bothsided] (3) edge (5);
+\draw[bothsided] (4) edge (5);
+\end{tikzpicture}
