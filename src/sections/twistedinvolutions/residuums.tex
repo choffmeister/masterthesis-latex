@@ -84,11 +84,11 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 
 \begin{prop}
 	\typedlabel{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
-	Let $w \in S$ and $s,t \in S$ be two distinct generators. If $\ul s$ acts by multiplications on $w$ and $w \ul s \prec w$, then either $w \ul{st} \prec w \ul{s}$ or $w \ul{t} \succ w$.
+	Let $w \in S$ and $s,t \in S$ be two distinct generators. If $\ul s$ acts by multiplications on $w$ and $w \ul s \prec w$, then either $w \ul s \ul t \prec w \ul s$ or $w \ul t \succ w$.
 
 	\begin{proof}
-		We have $\theta(s)ws = w$ and $s \in D_R(w)$. If $t \notin D_R(w)$, then we are done. In return suppose $t \in D_R(w)$. This means $w \ul s \leq w$ and $w \ul t \leq w$ and \cite[Lemma 3.9]{hultman:comb-twisted-invo} yields $w \ul {st} < w$ and $w \ul {ts} < w$. If $t \in D_R(w \ul s)$, then we are done. Conservely suppose $t \notin D_R(w \ul s)$. Then $t \in D_R(w \ul {st})$. Together with $w \ul {st} \leq w$ \cite[Lemma 3.9(2)]{hultman:comb-twisted-invo} says $(w \ul {st}) \ul t \leq w \ul t$. Finally we get
-		$$ ws = w \ul s = (w \ul {st}) \ul t \leq w \ul t = wt.$$
+		We have $\theta(s)ws = w$ and $s \in D_R(w)$. If $t \notin D_R(w)$, then we are done. In return suppose $t \in D_R(w)$. This means $w \ul s \leq w$ and $w \ul t \leq w$ and \cite[Lemma 3.9]{hultman:comb-twisted-invo} yields $w \ul s \ul t < w$ and $w \ul t \ul s < w$. If $t \in D_R(w \ul s)$, then we are done. Conservely suppose $t \notin D_R(w \ul s)$. Then $t \in D_R(w \ul s \ul t)$. Together with $w \ul s \ul t \leq w$ \cite[Lemma 3.9(2)]{hultman:comb-twisted-invo} says $(w \ul s \ul t) \ul t \leq w \ul t$. Finally we get
+		$$ ws = w \ul s = (w \ul s \ul t) \ul t \leq w \ul t = wt.$$
 		Since $w \ul s$ and $w \ul t$ are of same twisted length they have to be equal and therefore $s = t$ which contradicts to our assumption of two distinct generators $s$ and $t$. Now we have $w \ul s \ul t < w \ul s$ or $w \ul t > w$ (in $\Br(\ti{\theta})$). Both cases can be transfered to the twisted weak ordering. If $w \ul s \ul t < w \ul s$, then $\rho(w \ul s \ul t) = \rho(w \ul s) - 1$ and $w \ul s \ul t \ul t = w \ul s$, yielding $w \ul s \ul t \prec w \ul s$. If $w \ul t > w$ then $\rho(w \ul t) = \rho(w) + 1$, yielding $w \ul t \succ w$.
 	\end{proof}
 \end{prop}
