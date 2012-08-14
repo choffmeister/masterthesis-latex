@@ -47,6 +47,7 @@ The map we define right now is of superior importance to this whole paper, since
 
 \begin{lemm}
 	\typedlabel{lemm:twisted-operation-2}
+	\theocite{Lemma 3.4}{hultman:comb-twisted-invo}
 	Let $w \in \ti{\theta}$ and $s \in S$. Then
 	$$ w \ul s = \begin{cases}
 		ws & \textrm{if } l(\theta(s)ws) = l(w), \\
@@ -121,6 +122,7 @@ A remarkable property of the action from \ref{defi:twisted-operation} is its $e$
 
 \begin{lemm}
 	\typedlabel{lemm:twisted-e-orbit-coincides-with-twisted-involutions}
+	\theocite{Proposition 3.5}{hultman:comb-twisted-invo}
 	Fix $\theta$. Then the set of twisted involutions regarding $\theta$ coincides with the set of all twisted expressions regarding $\theta$.
 
 	\begin{proof}
@@ -135,17 +137,15 @@ In the same way, we can use regular expressions to define the length of an eleme
 \end{defi}
 
 \begin{lemm}
+	\theocite{Theorem 4.8}{hultman:bruhat-order}
 	The Bruhat ordering, restricted to the set of twisted involutions $\ti{\theta}$, is a graded poset with $\rho$ as rank function. We denote this poset with $\Br(\ti{\theta})$.
-
-	\begin{proof}
-		See \cite[Theorem 4.8]{hultman:bruhat-order}.
-	\end{proof}
 \end{lemm}
 
 We now establish many properties from Section \ref{sec:coxeter-groups} for twisted expressions and $\Br(\ti{\theta})$. As seen in \ref{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions} it is $\Br(W) \cong \Br(\ti{\theta})$. So the hope, that many properties can be transfered, is eligible.
 
 \begin{lemm}
 	\typedlabel{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}
+	\theocite{Lemma 3.8}{hultman:comb-twisted-invo}
 	Let $w \in \ti{\theta}$ and $s \in S$. Then $\rho(w \ul s) = \rho(w) \pm 1$. In fact it is $\rho(w \ul s) = \rho(w) - 1$ iff $s \in D_R(w)$.
 
 	\begin{proof}
@@ -154,8 +154,8 @@ We now establish many properties from Section \ref{sec:coxeter-groups} for twist
 \end{lemm}
 
 \begin{lemm}[Lifting property for $\ul S$]
-	%\cite[Lemma 3.9]{hultman:comb-twisted-invo}
 	\namedlabel{lemm:lifting-property-for-ul-s}
+	\theocite{Lemma 3.9}{hultman:comb-twisted-invo}
 	Let $v,w \in W$ with $v \leq w$. Suppose $s \in S$ with $s \in D_R(w)$. Then
 	\begin{enumerate}
 		\item $v \ul s \leq w$,
@@ -174,14 +174,14 @@ We now establish many properties from Section \ref{sec:coxeter-groups} for twist
 \end{lemm}
 
 \begin{prop}[Exchange property for twisted expressions]
-	%\cite[Lemma 3.10]{hultman:comb-twisted-invo}
 	\namedlabel{prop:exchanged-property-for-twisted-expressions}
+	\theocite{Proposition 3.10}{hultman:comb-twisted-invo}
 	\todo
 \end{prop}
 
 \begin{prop}[Deletion property for twisted expressions]
-	%\cite[Lemma 3.11]{hultman:comb-twisted-invo}
 	\namedlabel{prop:deletion-property-for-twisted-expressions}
+	\theocite{Proposition 3.11}{hultman:comb-twisted-invo}
 	\todo
 \end{prop}
 

@@ -14,13 +14,9 @@ To provide a general answer to this question we fallback to a certain class of C
 If a Coxeter system is reducible, then its graph has more than one connection component and each connection component corrosponds to a parabolic subgroup of $W$. 
 
 \begin{prop}
-	%\cite[Proposition 6.1]{humphreys:coxeter}
 	\typedlabel{prop:reducible-coxeter-systems-isomorph-to-parabolic-subgroups}
+	\theocite{Proposition 6.1}{humphreys:coxeter}
 	Let $(W,S)$ be a reducible Coxeter system. Then there exists a partition of $S$ into $I,J$ with $(s_i s_j)^2 = e$ whenever $s_i \in I, s_j \in J$ and $W$ is isomorph to the direct product of the two parabolic subgroups $W_I$ and $W_J$.
-
-	\begin{proof}
-		See \cite[Proposition 6.1]{humphreys:coxeter}.
-	\end{proof}
 \end{prop}
 
 This proposition tells us, that an arbitray Coxeter system is finite iff its irreducible parabolic subgroups are finite. Therefore we can indeed fallback to irreducible Coxeter systems without loss of generality. If we could categorize all irreducible finite Coxeter systems, we could categorize all finite Coxeter systems. This is done by the following theorem:
@@ -96,11 +92,8 @@ This proposition tells us, that an arbitray Coxeter system is finite iff its irr
 
 \begin{theo}
 	\typedlabel{theo:irreducible-finit-coxeter-systems}
+	\theocite{Theorem 6.4}{humphreys:coxeter}
 	The irreducible finite Coxeter systems are exactly the ones in Figure~\ref{fig:finite-coxeter-systems}.
-
-	\begin{proof}
-		\cite[Theorem 6.4]{humphreys:coxeter}
-	\end{proof}
 \end{theo}
 
 Finally we can decide with ease, if a given Coxeter system is finite. Take its irreducible parabolic subgroups and check, if each is one of $A_n$, $B_n$, $D_n$, $E_6$, $E_7$, $E_8$, $F_4$, $H_3$, $H_4$ or $I_2(m)$.
