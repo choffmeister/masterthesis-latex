@@ -19,7 +19,7 @@ The steps discussed have been compiled in to an algorithm by Haas \cite[Algorith
 			\ForAll{$s \in S \textbf{ with } \nexists (\cdot,w,s) \in E$} \label{algo:twoa1-s-loop} \Comment{Only for $s \notin D_R(w)$}
 				\State $y \gets ws$
 				\State $z \gets \theta(s)y$
-				\If{$z=w$} \label{algo:twoa1-check-one-or-bothsided} \Comment{Check if $s$ acts one- or bothsided on $w$}
+				\If{$z=w$} \label{algo:twoa1-check-one-or-bothsided}
 					\State $x \gets y$
 					\State $t \gets s$
 				\Else
@@ -108,7 +108,7 @@ Now $M$ contains all already known elements of twisted length $k+1$, satisfying 
 
 		\begin{enumerate}
 			\item Follows immediately from \ref{lemm:max-twisted-circle-height}.
-			\item Because of the length difference the step from $w[\ul t \ul s]^{2n-2}$ to $w[\ul t \ul s]^{2n-1}$ is onesided and because of $n \geq 1$ this step cannot be next to the smallest element in $wC_{\{s,t\}}$. Hence $w[\ul t \ul s]^{2n-1} = w \ul s$ by \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}.
+			\item Because of the length difference the step from $w[\ul t \ul s]^{2n-2}$ to $w[\ul t \ul s]^{2n-1}$ is a multiplication, not a twisted conjugation, and because of $n \geq 1$ this step cannot be next to the smallest element in $wC_{\{s,t\}}$. Hence $w[\ul t \ul s]^{2n-1} = w \ul s$ by \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}.
 		\end{enumerate}
 	\end{proof}
 \end{lemm}
@@ -121,10 +121,10 @@ Now $M$ contains all already known elements of twisted length $k+1$, satisfying 
 		c & = l(w[\ul t \ul s]^{n}) - l(w[\ul t \ul s]^{n-1}) - 1 \textrm{ and} \\
 		d & = l(w[\ul t \ul s]^{2n-1}) - l(w[\ul t \ul s]^{2n-2}) - 1.
 	\end{align*}
-	Note that $a,b,c,d \in \{0,1\}$ contain the information, if edges next to the minimal and the maximal element of $wC_{\{s,t\}}$ are one- or bothsided. Then each can be deduced from the three remaining ones with the equation $(a+b+c+d) \equiv 0 \mod 2 $.
+	Note that $a,b,c,d \in \{0,1\}$ contain the information, if edges next to the minimal and the maximal element of $wC_{\{s,t\}}$ are twisted conjugations or multiplications. Then each can be deduced from the three remaining ones with the equation $(a+b+c+d) \equiv 0 \mod 2 $.
 
 	\begin{proof}
-		The minimality of $w[\ul t \ul s]^{n-1}$ and the maximality of $w[\ul t \ul s]^{2n-1}$ is due to \ref{prop:rank-2-residuums-are-convex}. The soundness of the equation follows from the symmetric distribution of one- and bothsided actions from \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residuums}.
+		The minimality of $w[\ul t \ul s]^{n-1}$ and the maximality of $w[\ul t \ul s]^{2n-1}$ is due to \ref{prop:rank-2-residuums-are-convex}. The soundness of the equation follows from the symmetric distribution of twisted conjugations and mutipliations from \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residuums}.
 	\end{proof}
 \end{lemm}
 

@@ -84,7 +84,7 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 
 \begin{prop}
 	\typedlabel{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
-	Let $w \in S$ and $s,t \in S$ be two distinct generators. If $s$ operates onesided on $w$ and $w \ul s \prec w$, then either $w \ul{st} \prec w \ul{s}$ or $w \ul{t} \succ w$.
+	Let $w \in S$ and $s,t \in S$ be two distinct generators. If $\ul s$ acts by multiplications on $w$ and $w \ul s \prec w$, then either $w \ul{st} \prec w \ul{s}$ or $w \ul{t} \succ w$.
 
 	\begin{proof}
 		We have $\theta(s)ws = w$ and $s \in D_R(w)$. If $t \notin D_R(w)$, then we are done. In return suppose $t \in D_R(w)$. This means $w \ul s \leq w$ and $w \ul t \leq w$ and \cite[Lemma 3.9]{hultman:comb-twisted-invo} yields $w \ul {st} < w$ and $w \ul {ts} < w$. If $t \in D_R(w \ul s)$, then we are done. Conservely suppose $t \notin D_R(w \ul s)$. Then $t \in D_R(w \ul {st})$. Together with $w \ul {st} \leq w$ \cite[Lemma 3.9(2)]{hultman:comb-twisted-invo} says $(w \ul {st}) \ul t \leq w \ul t$. Finally we get
@@ -95,7 +95,7 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 
 \begin{coro}
 	\typedlabel{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
-	Let $w \in S$ and let $s,t \in S$ be two distinct generators. If $w$ is neither the unique element in $wC_{\{s,t\}}$ of smallest twisted length,i.e. $\min(w,\{s,t\})$, nor the unique (but not necessarily existing) element of largest twisted length, then both $s$ and $t$ act twosided on $w$.
+	Let $w \in S$ and let $s,t \in S$ be two distinct generators. If $w$ is neither the unique element in $wC_{\{s,t\}}$ of smallest twisted length,i.e. $\min(w,\{s,t\})$, nor the unique (but not necessarily existing) element of largest twisted length, then both $\ul s$ and $\ul t$ act by twisted conjugation on $w$.
 
 	\begin{proof}
 		Follows immediately from \ref{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}.
@@ -104,7 +104,7 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 
 \begin{lemm}
 	\typedlabel{lemm:one-both-sided-action-symmetric-in-rank-2-residuums}
-	Let $s,t \in S$ be two distinct generators and $w \in S$ with $w = min(w,\{s,t\})$. Suppose $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$. Then the one- and bothsided actions are distributed axisymmetrically or pointsymmetrically like in Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
+	Let $s,t \in S$ be two distinct generators and $w \in S$ with $w = min(w,\{s,t\})$. Suppose $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$. Then the twisted conjugations and mulitplications are distributed axisymmetrically or pointsymmetrically like in Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
 
 	\begin{figure}[ht]
 		\centering
@@ -114,12 +114,12 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 		\input{resources/tikz/one-bothsided-symmetry-0011}
 		\input{resources/tikz/one-bothsided-symmetry-1010}
 		\input{resources/tikz/one-bothsided-symmetry-0101}
-		\caption{Possible distributions of one- and bothsided actions in a rank-2-residuum}
+		\caption{Possible distributions of twisted conjugations and multiplications in a rank-2-residuum}
 		\label{fig:dist-one-bothsided-actions-in-rank-2-residuum}
 	\end{figure}
 
 	\begin{proof}
-		If $u$ covers $w$, then there are only two edges and the assumption holds. So suppose $wC_{\{s,t\}}$ contains at least four edges. Due to \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} the onesided actions can only occure next to $w$ and $v$. Hence there are $2^4 = 16$ configurations possible. There are two geodesics from $w$ to $v$. Suppose they have a different count of onesided actions, say the first has $n$ and the second $m$ onesided actions, and $\rho(v) - \rho(w) = k$. Then
+		If $u$ covers $w$, then there are only two edges and the assumption holds. So suppose $wC_{\{s,t\}}$ contains at least four edges. Due to \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} the actions by multiplication can only occure next to $w$ and $v$. Hence there are $2^4 = 16$ configurations possible. There are two geodesics from $w$ to $v$. Suppose they have a different count of actions by multiplication, say the first has $n$ and the second $m$ actions by multiplication, and $\rho(v) - \rho(w) = k$. Then
 		$$ l(v) = l(w) + n + 2(k-n) \neq l(w) + m + 2(k-m) = l(v), $$
 		which is obviously a contradiction. This wipes out ten out of the 16 configurations. The remaining are those from Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
 	\end{proof}

@@ -37,15 +37,13 @@ The map we define right now is of superior importance to this whole paper, since
 	\end{cases} $$
 	This action can be extended on the whole free monoid over $\ul S$ by
 	$$ w \ul s_1 \ul s_2 \ldots \ul s_k = (\ldots ((w \ul s_1) \ul s_2) \ldots) \ul s_k. $$
-	If $w \ul s = \theta(s)ws$, then we say $s$ \defword{acts bothsided} on $w$. Else we say $s$ \defword{acts onesided} on $w$.
+	If $w \ul s = \theta(s)ws$, then we say $\ul s$ \defword{acts by twisted conjugation} on $w$. Else we say $\ul s$ \defword{acts by multiplication} on $w$.
 \end{defi}
 
 \begin{defi}
 	\typedlabel{defi:twisted-expression}
 	Let $k \in \nn$ and $s_{i_j} \in S$ for all $1 \leq j \leq k$. Then an expression $w \ul s_{i_1} \ldots \ul s_{i_k}$ is called \defword{twisted $w$-expression}. In case $w = e$ we omit $w$, just write $\ul s_{i_1} \ldots \ul s_{i_k}$ and call it \defword{twisted expression}.
 \end{defi}
-
-There is another characterization of this action, distinguishing between one- and bothsided actions by length.
 
 \begin{lemm}
 	\typedlabel{lemm:twisted-operation-2}
@@ -56,7 +54,7 @@ There is another characterization of this action, distinguishing between one- an
 	\end{cases} $$
 
 	\begin{proof}
-		Suppose $s$ acts onesided on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. So let the other way around $l(\theta(s)ws) = l(w)$. \todo
+		Suppose $\ul s$ acts by multiplication on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. So let the other way around $l(\theta(s)ws) = l(w)$. \todo
 	\end{proof}
 \end{lemm}
 
@@ -65,7 +63,7 @@ There is another characterization of this action, distinguishing between one- an
 	It is $l(ws) < l(w)$ iff $l(w \ul s) < l(w)$.
 
 	\begin{proof}
-		Suppose $s$ acts onesided on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $s$ acts bothsided on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply, that $s$ acts onesided on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So $l(w \ul s) = l(\theta(s)ws) < l(w)$. The other way around suppose $l(w \ul s) < l(w)$. Then \ref{lemm:length-function-properties} says $l(w \ul s) = l(\theta(s)ws) = l(w) - 2$ and so $l(ws) = l(w) - 1$.
+		Suppose $\ul s$ acts by multiplication on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $\ul s$ acts by twisted conjugation on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply, that $\ul s$ acts by multiplication on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So $l(w \ul s) = l(\theta(s)ws) < l(w)$. The other way around suppose $l(w \ul s) < l(w)$. Then \ref{lemm:length-function-properties} says $l(w \ul s) = l(\theta(s)ws) = l(w) - 2$ and so $l(ws) = l(w) - 1$.
 	\end{proof}
 \end{lemm}
 
@@ -74,14 +72,14 @@ There is another characterization of this action, distinguishing between one- an
 	For all $w \in W$ and $s \in S$ it is $w \ul {ss} = w$.
 
 	\begin{proof}
-		For $w \ul s$ there are two cases. Suppose $s$ acts onesided on $w$, i.e. $\theta(s)ws = w$. For $ws \ul s$ there are again two possible options:
+		For $w \ul s$ there are two cases. Suppose $\ul s$ acts by multiplication on $w$, i.e. $\theta(s)ws = w$. For $ws \ul s$ there are again two possible options:
 		$$ ws \ul s = \begin{cases}
 			wss = w & \textrm{if } \theta(s)wss = ws, \\
 			\theta(s)wss = ws & \textrm{else}. \\
 		\end{cases} $$
 		The second option contradicts itself.
 
-		Now suppose $s$ acts bothsided on $w$. This means $\theta(s)ws \neq w$ and for $(\theta(s)ws) \ul s$ there are again two possible options:
+		Now suppose $\ul s$ acts by twisted conjugation on $w$. This means $\theta(s)ws \neq w$ and for $(\theta(s)ws) \ul s$ there are again two possible options:
 		$$ (\theta(s)ws) \ul s = \begin{cases}
 			\theta(s)wss = \theta(s)w & \textrm{if } \theta(s) \theta(s) w ss = \theta(s) w s, \\
 			\theta(s)\theta(s)wss = w & \textrm{else}. \\
@@ -102,15 +100,15 @@ There is another characterization of this action, distinguishing between one- an
 	For all $\theta$, $w \in W$ and $s \in S$ it is $w \in \ti{\theta}$ iff $w \ul s \in \ti{\theta}$.
 
 	\begin{proof}
-		Let $w \in \ti{\theta}$. For $w \ul s$ there are two cases. Suppose $s$ acts onesided on $w$. Then we get
+		Let $w \in \ti{\theta}$. For $w \ul s$ there are two cases. Suppose $\ul s$ acts by multiplication on $w$. Then we get
 		$$ \theta(ws) = \theta(\theta(s)wss) = \theta^2(s) \theta(w) = sw^{-1} = (ws^{-1})^{-1} = (ws)^{-1}. $$
-		Suppose $s$ acts bothsided on $w$. Then we get
+		Suppose $\ul s$ acts by twisted conjugation on $w$. Then we get
 		$$ \theta(\theta(s)ws) = \theta^2(s) \theta(w) \theta(s) = sw^{-1}\theta(s) = (\theta^{-1}(s)ws^{-1})^{-1} = (\theta(s)ws)^{-1}. $$
 		In both cases $w \ul s \in \ti{\theta}$.
 
-		Now let $w \ul s \in \ti{\theta}$. Suppose $s$ acts onesided on $w$. Then
+		Now let $w \ul s \in \ti{\theta}$. Suppose $\ul s$ acts by multiplication on $w$. Then
 		$$ \theta(w) = \theta(\theta(s)ws) = \theta^2(s)\theta(ws) = s (ws)^{-1} = ss^{-1}w^{-1} = w^{-1}. $$
-		Suppose $s$ acts twosided on $w$. Then
+		Suppose $\ul s$ acts by twisted conjugation on $w$. Then
 		\begin{align*}
 			\theta(w)	& = \theta(\theta(s)\theta(s)wss) = \theta^2(s) \theta(\theta(s)ws) \theta(s) \\
 						& = s (\theta(s)ws)^{-1} \theta(s) = s(s^{-1} w^{-1} \theta(s^{-1}) \theta(s) = w^{-1}.
@@ -165,7 +163,7 @@ We now establish many properties from Section \ref{sec:coxeter-groups} for twist
 	\end{enumerate}
 
 	\begin{proof}
-		We distinguish between the four cases of one- and bothsided action of $s$ on $u$ and $w$. Whenever a relation comes from the ordinary \ref{theo:lifting-property}, we denote it with $<_{LP}$ in this proof.
+		Whenever a relation comes from the ordinary \ref{theo:lifting-property}, we denote it with $<_{LP}$ in this proof.
 		\begin{description}
 			\item[$v \ul s = vs \wedge w \ul s = ws$] Same situation as in \ref{theo:lifting-property}.
 			\item[$v \ul s = vs \wedge w \ul s = \theta(s)ws$] The first part $v \ul s = vs \leq_{LP} w$ is immediate. Suppose $s \in D_R(v)$. Then $vs \leq_{LP} ws \Rightarrow v = \theta(s)vs \leq ws \Rightarrow v \ul s = vs \leq \theta(s)ws = w \ul s$. 
