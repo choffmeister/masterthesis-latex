@@ -49,3 +49,17 @@
 		According to \ref{prop:counterexample-simplification}.
 	\end{proof}
 \end{lemm}
+
+Suppose we are in a situation like in \ref{ques:main} with $\rho(w) - \rho(w_K) = n$. If $n = 1$, then \ref{eq:main} holds, since $Wk(\theta)$ cannot contain triple edges. We proceed by induction on $n$. There are three twisted expressions
+\begin{align*}
+	w & = w_K \ul a_1 \ldots \ul a_n \\
+	  & = w_K \ul b_1 \ldots \ul b_n \\
+	  & = w_K \ul c_1 \ldots \ul c_n
+\end{align*}
+with $a_i \in T \cup S_1$, $b_i \in T \cup S_2$ and $c_i \in T \cup S_3$. Since $\rho (w \ul a_n) < \rho(w)$ the \ref{prop:exchanged-property-for-twisted-expressions} yields
+\begin{align*}
+	w \ul a_n & = w_K \ul a_1 \ldots \ul a_n \ul a_n = w_K \ul a_1 \ldots \ul a_{n-1} \\
+			  & = w_K \ul b_1 \ldots \ul b_n \ul a_n = w_K \ul b_1 \ldots \ul {\hat b}_i \ldots \ul b_n \\
+			  & = w_K \ul c_1 \ldots \ul c_n \ul a_n = w_K \ul c_1 \ldots \ul {\hat c}_j \ldots \ul c_n
+\end{align*}
+where $\hat \cdot$ means omission. The omission cannot occur within $w_K$ since all three expressions are still of same twisted length and in the first expression we can see, that $w_K \preceq w \ul a_n$ still holds. It is $\rho(w \ul a_n) - \rho(w_K) = n - 1$, hence by induction hypothesis it is $w \ul a_n \in w_K C_T$. Analogues we get $w \ul b_n, w \ul c_n \in w_K C_T$. If we assume at least one generator of $a_n,b_n,c_n$ to be in $T$, say $a_n \in T$, then $w = w \ul a_n \ul a_n \in w_K C_T$, too. Now suppose $a_n,b_n,c_n \notin T$. Then $a_n,b_n,c_n$ are pairwise different.
