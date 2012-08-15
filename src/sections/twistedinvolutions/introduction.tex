@@ -7,12 +7,11 @@
 \end{defi}
 
 \begin{defi}
-	Each $w \in W$ with $\theta(w) = w^{-1}$ is called a \defword{$\theta$-twisted involution} or just \defword{twisted involution}, if $\theta$ is clear from the context. The set of all twisted involutions in $W$ regarding $\theta$ is denoted with $\ti{\theta}(W)$. Often we just omit the Coxeter group and write $\ti{\theta}$, when it is clear from the context which $W$ is meant.
+	Each $w \in W$ with $\theta(w) = w^{-1}$ is called a \defword{$\theta$-twisted involution} or just \defword{twisted involution}, if $\theta$ is clear from the context. The set of all $\theta$-twisted involutions in $W$ is denoted by $\ti{\theta}(W)$. Often we just omit the Coxeter group and write $\ti{\theta}$, when it is clear from the context which $W$ is meant.
 \end{defi}
 
 \begin{exam}
-	Let $\theta = \id_W$. Then $\theta$ is an Coxeter system automorphism and
-	$$ \ti{\theta} = \{ w \in W : w = w^{-1} \}. $$
+	Let $\theta = \id_W$. Then $\theta$ is an Coxeter system automorphism and the set of all $\id$-twisted involutions coincides with the set of all ordinary involutions of $W$.
 \end{exam}
 
 The next example is more helpfull, since it reveals a way to think of $\ti{\theta}$ as a generalization of ordinary Coxeter groups.
@@ -21,12 +20,12 @@ The next example is more helpfull, since it reveals a way to think of $\ti{\thet
 	\typedlabel{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions}
 	Let $\theta$ be a automorphism of $W \times W$ with
 	$$ \theta : W \times W \to W \times W : (u,w) \mapsto (w,u). $$
-	Note that $\theta$ is no Coxeter system automorphism, but we can think of it as one if we identify $S \subset W$ with $S \times S \subset W \times W$. Then the set of twisted involutions is
+	Then $\theta$ is an Coxeter system automorphism of the Coxeter system $(W \times W, S \times S)$ and the set of twisted involutions is
 	$$ \ti{\theta} = \{ (w,w^{-1}) \in W \times W : w \in W \}. $$
 	This yields a canonical bijection between $\ti{\theta}$ and $W$.
 \end{exam}
 
-The map we define right now is of superior importance to this whole paper, since it is needed to define the poset, the main thesis is about.
+The map we define right now is of great importance to this whole paper, since it is needed to define the poset, the main thesis is about.
 
 \begin{defi}
 	\typedlabel{defi:twisted-operation}
@@ -42,7 +41,7 @@ The map we define right now is of superior importance to this whole paper, since
 
 \begin{defi}
 	\typedlabel{defi:twisted-expression}
-	Let $k \in \nn$ and $s_{i_j} \in S$ for all $1 \leq j \leq k$. Then an expression $w \ul s_{i_1} \ldots \ul s_{i_k}$ is called \defword{twisted $w$-expression}. In case $w = e$ we omit $w$, just write $\ul s_{i_1} \ldots \ul s_{i_k}$ and call it \defword{twisted expression}.
+	Let $k \in \nn$ and $s_{i} \in S$ for all $1 \leq i \leq k$. Then an expression $e \ul s_1 \ldots \ul s_k$, or just $\ul s_1 \ldots \ul s_k$, is called \defword{$\theta$- twisted expression}. If $\theta$ is clear from the context, we omit $\theta$ and call it \defword{twisted expression}. A twisted expression is called \defword{reduced twisted expression}, if there is no $k' < k$ with $\ul s'_1 \ldots \ul s'_{k'} = \ul s_1 \ldots \ul s_k$.
 \end{defi}
 
 \begin{lemm}
@@ -55,7 +54,7 @@ The map we define right now is of superior importance to this whole paper, since
 	\end{cases} $$
 
 	\begin{proof}
-		Suppose $\ul s$ acts by multiplication on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. So let the other way around $l(\theta(s)ws) = l(w)$. \todo
+		Suppose $\ul s$ acts by multiplication on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. Conversely, suppose $l(\theta(s)ws) = l(w)$. \todo
 	\end{proof}
 \end{lemm}
 
@@ -64,13 +63,13 @@ The map we define right now is of superior importance to this whole paper, since
 	It is $l(ws) < l(w)$ iff $l(w \ul s) < l(w)$.
 
 	\begin{proof}
-		Suppose $\ul s$ acts by multiplication on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $\ul s$ acts by twisted conjugation on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply, that $\ul s$ acts by multiplication on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So $l(w \ul s) = l(\theta(s)ws) < l(w)$. The other way around suppose $l(w \ul s) < l(w)$. Then \ref{lemm:length-function-properties} says $l(w \ul s) = l(\theta(s)ws) = l(w) - 2$ and so $l(ws) = l(w) - 1$.
+		Suppose $\ul s$ acts by multiplication on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $\ul s$ acts by twisted conjugation on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply, that $\ul s$ acts by multiplication on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So $l(w \ul s) = l(\theta(s)ws) < l(w)$. Conversely, suppose $l(w \ul s) < l(w)$. Then \ref{lemm:length-function-properties} says $l(w \ul s) = l(\theta(s)ws) = l(w) - 2$ and so $l(ws) = l(w) - 1$.
 	\end{proof}
 \end{lemm}
 
 \begin{lemm}
 	\typedlabel{lemm:w-ul-ss-eq-w}
-	For all $w \in W$ and $s \in S$ it is $w \ul s \ul s = w$.
+	For all $w \in W$ and $s \in S$ we have $w \ul s \ul s = w$.
 
 	\begin{proof}
 		For $w \ul s$ there are two cases. Suppose $\ul s$ acts by multiplication on $w$, i.e. $\theta(s)ws = w$. For $ws \ul s$ there are again two possible options:
@@ -98,7 +97,7 @@ The map we define right now is of superior importance to this whole paper, since
 
 \begin{lemm}
 	\typedlabel{lemm:w-in-ti-iff-w-ul-s-in-ti}
-	For all $\theta$, $w \in W$ and $s \in S$ it is $w \in \ti{\theta}$ iff $w \ul s \in \ti{\theta}$.
+	For all $\theta$, $w \in W$ and $s \in S$ it holds that $w \in \ti{\theta}$ iff $w \ul s \in \ti{\theta}$.
 
 	\begin{proof}
 		Let $w \in \ti{\theta}$. For $w \ul s$ there are two cases. Suppose $\ul s$ acts by multiplication on $w$. Then we get
@@ -123,10 +122,10 @@ A remarkable property of the action from \ref{defi:twisted-operation} is its $e$
 \begin{lemm}
 	\typedlabel{lemm:twisted-e-orbit-coincides-with-twisted-involutions}
 	\theocite{Proposition 3.5}{hultman:comb-twisted-invo}
-	Fix $\theta$. Then the set of twisted involutions regarding $\theta$ coincides with the set of all twisted expressions regarding $\theta$.
+	Fix $\theta$. Then the set of $\theta$-twisted involutions coincides with the set of all $\theta$-twisted expressions.
 
 	\begin{proof}
-		As already seen in \ref{lemm:w-in-ti-iff-w-ul-s-in-ti}, each twisted expression is in $\ti{\theta}$, since $e \in \ti{\theta}$. So let $w \in \ti{\theta}$. If $l(w) = 0$, then $w = e \in \ti{\theta}$. Induce on the length of $w$ and let $l(w) = r > 0$. Suppose $w$ has a twisted expression ending with $\ul s$. Then $w$ also has a reduced expression (in $S$) ending with $s$ and so $l(ws) < l(w)$. With \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we get $l(w \ul s) < l(w)$. By induction $w \ul s$ has a twisted expression and hence $w = (w \ul s) \ul s$ has one, too.
+		By \ref{lemm:w-in-ti-iff-w-ul-s-in-ti}, each twisted expression is in $\ti{\theta}$, since $e \in \ti{\theta}$. So let $w \in \ti{\theta}$. If $l(w) = 0$, then $w = e \in \ti{\theta}$. So assume $l(w) = r > 0$ and that we have already prooven, that every twisted involution $w' \in \ti{\theta}$ with $\rho(w') < r$ has a twisted expression. If $w$ has a reduced twisted expression ending with $\ul s$, then $w$ also has a reduced expression (in $S$) ending with $s$ and so $l(ws) < l(w)$. With \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we get $l(w \ul s) < l(w)$. By induction $w \ul s$ has a twisted expression and hence $w = (w \ul s) \ul s$ has one, too.
 	\end{proof} 
 \end{lemm}
 
@@ -138,10 +137,10 @@ In the same way, we can use regular expressions to define the length of an eleme
 
 \begin{lemm}
 	\theocite{Theorem 4.8}{hultman:bruhat-order}
-	The Bruhat ordering, restricted to the set of twisted involutions $\ti{\theta}$, is a graded poset with $\rho$ as rank function. We denote this poset with $\Br(\ti{\theta})$.
+	The Bruhat ordering, restricted to the set of twisted involutions $\ti{\theta}$, is a graded poset with $\rho$ as rank function. We denote this poset by $\Br(\ti{\theta})$.
 \end{lemm}
 
-We now establish many properties from Section \ref{sec:coxeter-groups} for twisted expressions and $\Br(\ti{\theta})$. As seen in \ref{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions} it is $\Br(W) \cong \Br(\ti{\theta})$. So the hope, that many properties can be transfered, is eligible.
+We now establish many properties from Section \ref{sec:coxeter-groups} for twisted expressions and $\Br(\ti{\theta})$. As seen in \ref{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions} there is a Coxeter system $(W',S')$ and an Coxeter system automorphism $\theta$ with $\Br(W) \cong \Br(\ti{\theta}(W'))$. So the hope, that many properties can be transfered, is eligible.
 
 \begin{lemm}
 	\typedlabel{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}
@@ -149,7 +148,7 @@ We now establish many properties from Section \ref{sec:coxeter-groups} for twist
 	Let $w \in \ti{\theta}$ and $s \in S$. Then $\rho(w \ul s) = \rho(w) \pm 1$. In fact it is $\rho(w \ul s) = \rho(w) - 1$ iff $s \in D_R(w)$.
 
 	\begin{proof}
-		Since $\Br(\ti{\theta})$ is graded with rank function $\rho$ and either $w \ul s$ covers $w$ or $w$ covers $w \ul s$ it is $\rho(w \ul s) = \rho(w) \pm 1$. Now suppose $w \ul s < w$. Then $l(w \ul s) < l(w)$ and with \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we have $l(w s) < l(w)$ yielding $s \in D_R(w)$. The other way around suppose $w \ul s > w$. Then $l(w \ul s) > l(w)$ and again with \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we have $l(w s) > l(w)$ yielding $s \notin D_R(w)$.
+		Since $\Br(\ti{\theta})$ is graded with rank function $\rho$ and either $w \ul s$ covers $w$ or $w$ covers $w \ul s$ it is $\rho(w \ul s) = \rho(w) \pm 1$. Now suppose $w \ul s < w$. Then we have $\rho(w \ul s) < \rho(w)$ iff $w \ul s < w$ iff $l(w \ul s) < l(w)$ iff $l(ws) < l(w)$ iff $s \in D_R(w)$.
 	\end{proof}
 \end{lemm}
 
@@ -163,7 +162,7 @@ We now establish many properties from Section \ref{sec:coxeter-groups} for twist
 	\end{enumerate}
 
 	\begin{proof}
-		Whenever a relation comes from the ordinary \ref{theo:lifting-property}, we denote it with $<_{LP}$ in this proof.
+		Whenever a relation comes from the ordinary \ref{theo:lifting-property}, we denote it by $<_{LP}$ in this proof.
 		\begin{description}
 			\item[$v \ul s = vs \wedge w \ul s = ws$] Same situation as in \ref{theo:lifting-property}.
 			\item[$v \ul s = vs \wedge w \ul s = \theta(s)ws$] The first part $v \ul s = vs \leq_{LP} w$ is immediate. Suppose $s \in D_R(v)$. Then $vs \leq_{LP} ws \Rightarrow v = \theta(s)vs \leq ws \Rightarrow v \ul s = vs \leq \theta(s)ws = w \ul s$. 

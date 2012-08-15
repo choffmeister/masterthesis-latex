@@ -2,17 +2,17 @@
 \subsection{Bruhat ordering}
 \label{sec:coxeter-groups-bruhat-ordering}
 
-We now investigate ways to partially order the elements of a Coxeter group. Futhermore, this ordering should be compatible with the length function. The most useful way to achieve this is the Bruhat ordering \cite[Section 5.9]{humphreys:coxeter}.
+We now investigate ways to partially order the elements of a Coxeter group. Futhermore, this ordering should be compatible with the length function, i.e. for $w,v \in W$ it is $l(w) < l(v)$ whenever $w \leq v$.
 
 \begin{defi}
 	\typedlabel{defi:poset}
-	Let $M$ be a set. A binary relation, in this case often denoted as ``$\leq$'', is called a \defword{partial order} over $M$, if fullfills the following conditions for all $a,b,c \in M$:
+	Let $M$ be a set. A binary relation $\leq$ is called a \defword{partial order} over $M$, if for all $a,b,c \in M$ it satisfies the conditions
 	\begin{enumerate}
-		\item $a \leq a$, called \defword{reflexivity}
-		\item if $a \leq b$ and $b \leq a$ then $a=b$, called \defword{antisymmetry}
-		\item if $a \leq b$ and $b \leq c$ then $a \leq c$, called \defword{transitivity}
+		\item $a \leq a$ (\defword{reflexivity}),
+		\item $a \leq b \wedge b \leq a \Rightarrow a=b$ (\defword{antisymmetry}) and
+		\item $a \leq b \wedge b \leq c \Rightarrow a \leq c$ (\defword{transitivity}).
 	\end{enumerate}
-	In this case $(M,\leq)$ is called a \defword{poset}. If two elements $a \leq b \in M$ are immediate neighbours, i.e. there is no third element $c \in M$ with $a \leq c \leq b$ we say that $b$ \defword{covers} $a$. A poset is called \defword{graded poset} if there is a map $\rho : M \to \nn$ so that $\rho(b) - 1 = \rho(a)$ whenever $b$ covers $a$. In this case $\rho$ is called the \defword{rank function} of the graded poset.
+	In this case $(M,\leq)$ is called a \defword{poset}. If two elements $a \leq b \in M$ are immediate neighbors, i.e. there is no third element $c \in M$ with $a \leq c \leq b$ we say that $b$ \defword{covers} $a$. A poset is called \defword{graded poset} if there is a map $\rho : M \to \nn$ so that $\rho(b) - 1 = \rho(a)$ whenever $b$ covers $a$. In this case $\rho$ is called the \defword{rank function} of the graded poset.
 \end{defi}
 
 \begin{defi}
@@ -33,7 +33,7 @@ We now investigate ways to partially order the elements of a Coxeter group. Futh
 
 \begin{defi}
 	\typedlabel{defi:bruhat-ordering}
-	Let $(W,S)$ be a Coxeter system and $T = \cup_{w \in W} wSw^{-1}$ the set of all reflections in $W$. We write $w' \to w$ if there is a $t \in T$ with $w't = w$ and $l(w') < l(w)$. If there is a sequence $w' = w_0 \to w_1 \to \ldots \to w_m = w$ we say $w' < w$. The resulting relation $w' \leq w$ is called \defword{Bruhat ordering}, denoted as $\Br(W)$.
+	Let $(W,S)$ be a Coxeter system and $T = \cup_{w \in W} wSw^{-1}$ the set of all reflections in $W$. We write $w' \to w$ if there is a $t \in T$ with $w't = w$ and $l(w') < l(w)$. If there is a sequence $w' = w_0 \to w_1 \to \ldots \to w_m = w$ we say $w' < w$. The resulting relation $w' \leq w$ is called \defword{Bruhat ordering}, denoted by $\Br(W)$.
 \end{defi}
 
 \begin{lemm}
@@ -75,7 +75,7 @@ To ensure the Bruhat ordering is graded as well, we need another characterizatio
 	\end{proof}
 \end{theo}
 
-This characterization of the Bruhat ordering is very handy. With it and the following short lemma we will be in the position to show, that $\Br(W)$ is graded with rank function $l$.
+This characterization of the Bruhat ordering is very handy. With it and the following short lemma we will be in the position to show that $\Br(W)$ is graded with rank function $l$.
 
 \begin{lemm}
 	\typedlabel{lemm:dont-know}
@@ -96,8 +96,8 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 		We induce on $r = l(u) + l(w)$. In case $r = 1$ we have $u = e$ and $w = s$ for an $s \in S$ and are done. Conversely suppose $r > 1$. Then there is a reduced expression $w = s_1 \cdots s_r$ for $w$. Lets fix this expression. Then $l(w s_r) < l(w)$. Thanks to \ref{theo:bruhat-subexpression-characterization} there must be a subexpression of $w$ with $u = s_{i_1} \cdots s_{i_q}$ for some $i_1 < \ldots < i_q$. We distinguish between two cases:
 
 		\begin{description}
-			\item[$u < us$] If $i_q = r$, then $us = s_{i_1} \cdots s_{i_q} s = s_{i_1} \cdots s_{i_{q-1}}$ which is also a subexpression of $ws$. This yields $u < us \leq ws < w$. Since $l(ws) < r$ there is, by induction, a sequence of the desired form. The last step from $ws$ to $w$ also differs in length by exactly 1, so we are done. If $i_q < r$ then $u$ is itself already a subexpression of $ws$ and we can again find a sequence from $u$ to $ws$ strictly ascending length by 1 in each step and have one last step from $ws$ to $w$ also increasing length by 1.
-			\item[$us < u$] Then by induction we can find a sequence from $us$ to $w$, say $us = w_0 < \ldots < w_m = w$, where the lengths of neighboured elements differ by exactly 1. Since $w_0 s = u > us = w_0$ and $w_m s = ws < w = w_m$ there must be a smallest index $i \geq 1$, such that $w_i s < w_i$, which we choose. Suppose $w_i \neq w_{i-1} s$. It is $w_{i-1} < w_{i-1}s \neq w_i$ and due to \ref{lemm:dont-know} we get $w_i < w_i s$. This contradicts to the minimality of $i$. So $w_i = w_{i-1} s$. For all $1 \leq j < i$ we have $w_j \neq w_{j-1} s$, because of $w_j < w_j s$. Again we apply \ref{lemm:dont-know} to receive $w_{j-1} s < w_j s$. Alltogether we can construct a sequence
+			\item[$u < us$:] If $i_q = r$, then $us = s_{i_1} \cdots s_{i_q} s = s_{i_1} \cdots s_{i_{q-1}}$ which is also a subexpression of $ws$. This yields $u < us \leq ws < w$. Since $l(ws) < r$ there is, by induction, a sequence of the desired form. The last step from $ws$ to $w$ also differs in length by exactly 1, so we are done. If $i_q < r$ then $u$ is itself already a subexpression of $ws$ and we can again find a sequence from $u$ to $ws$ strictly ascending length by 1 in each step and have one last step from $ws$ to $w$ also increasing length by 1.
+			\item[$us < u$:] Then by induction we can find a sequence from $us$ to $w$, say $us = w_0 < \ldots < w_m = w$, where the lengths of neighbored elements differ by exactly 1. Since $w_0 s = u > us = w_0$ and $w_m s = ws < w = w_m$ there must be a smallest index $i \geq 1$, such that $w_i s < w_i$, which we choose. Suppose $w_i \neq w_{i-1} s$. It is $w_{i-1} < w_{i-1}s \neq w_i$ and due to \ref{lemm:dont-know} we get $w_i < w_i s$. This contradicts to the minimality of $i$. So $w_i = w_{i-1} s$. For all $1 \leq j < i$ we have $w_j \neq w_{j-1} s$, because of $w_j < w_j s$. Again we apply \ref{lemm:dont-know} to receive $w_{j-1} s < w_j s$. Alltogether we can construct a sequence
 			$$ u = w_0 s < w_1 s < \ldots < w_{i-1} s = w_i < w_{i+1} < \ldots w_m = w, $$
 			which matches our assumption. \qedhere
 		\end{description}
@@ -131,4 +131,4 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 	\end{proof}
 \end{theo}
 
-The \ref{theo:lifting-property} seems quite innocent, but when trying to investigate facts around the Bruhat ordering it proofs to be one of the key tools in many cases.
+The \ref{theo:lifting-property} seems quite innocent, but when trying to investigate facts around the Bruhat ordering it prooves to be one of the key tools in many cases.

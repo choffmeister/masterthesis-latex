@@ -5,7 +5,7 @@
 In this section we introduce the twisted weak ordering $Wk(\theta)$ on the set $\ti{\theta}$ of $\theta$-twisted involutions.
 
 \begin{defi}
-	Let $(W,S)$ be a Coxeter system and let $\ti{\theta}$ be the set of $\theta$-twisted involutions in $W$. For $v,w \in \ti{\theta}$ we define $v \preceq w$ iff there are $\ul s_1, \ldots, \ul s_k \in \ul S$ with $w = v \ul s_1 \ldots \ul s_k$ and $\rho(v) = \rho(w) - k$. We call the poset $(\ti{\theta},\preceq)$ \defword{twisted weak ordering}, denoted with $Wk(W, \theta)$. When the Coxeter group $W$ is clear from the context, we just write $Wk(\theta)$.
+	For $v,w \in \ti{\theta}$ we define $v \preceq w$ iff there are $\ul s_1, \ldots, \ul s_k \in \ul S$ with $w = v \ul s_1 \ldots \ul s_k$ and $\rho(v) = \rho(w) - k$. We call the poset $(\ti{\theta},\preceq)$ \defword{twisted weak ordering}, denoted by $Wk(W, \theta)$. When the Coxeter group $W$ is clear from the context, we just write $Wk(\theta)$.
 \end{defi}
 
 \begin{lemm}
@@ -17,7 +17,7 @@ In this section we introduce the twisted weak ordering $Wk(\theta)$ on the set $
 \end{lemm}
 
 \begin{exam}
-	In Figure \ref{fig:a4} we see Hasse diagram of $Wk(A_4, \id)$. Solid edges represent twisted congujations and dashed edges represent multiplications.
+	In Figure \ref{fig:a4} we see the Hasse diagram of $Wk(A_4, \id)$. Solid edges represent twisted congujations and dashed edges represent multiplications.
 	\begin{figure}[ht]
 		\centering
 		\input{resources/tikz/a4}
@@ -27,12 +27,22 @@ In this section we introduce the twisted weak ordering $Wk(\theta)$ on the set $
 \end{exam}
 
 \begin{lemm}
+	\typedlabel{lemm:wk-subposet-of-br}
 	The poset $Wk(\theta)$ is a subposet of $\Br(\ti{\theta})$.
 
 	\begin{proof}
 		Both posets are defined on $\ti{\theta}$. Let $w,v \in \ti{\theta}$ be two twisted involutions. Assume $w \preceq v$ with $w \ul s = v$ for some $s \in S$. If $\ul s$ acts by multiplication on $w$, then $ws = v$ and since $s \in T$ ($T$ the set of all reflections in $W$) and $l(w \ul s) = l(w) + 1$ it is $w \leq v$. If conversely $\ul s$ acts by twisted conjugation on $w$, then $v = \theta(s)ws = w (w^{-1} \theta(s) w)(e^{-1}se)$ and since $w^{-1} \theta(s) w, s \in T$ and $l(w \ul s) = l(\theta(s)w) + 1 = l(w) + 2$ it is again $w \leq v$.
 	\end{proof}
 \end{lemm}
+
+\begin{coro}
+	\typedlabel{coro:w-ul-s-leq-w-iff-s-in-dr-w}
+	For all $w \in \ti{\theta}$ and $s \in S$ we have $w \ul s \prec w$ iff $s \in D_R(w)$ and $w \ul s \succ w$ iff $s \notin D_R(w)$ as well as $w \ul s < w$ iff $s \in D_R(w)$ and $w \ul s > w$ iff $s \notin D_R(w)$.
+
+	\begin{proof}
+		We have $w \ul s \ul s = w$ and $\rho(w \ul s) = \rho(w) - 1$ iff $s \in D_R(w)$ and $\rho(w \ul s) = \rho(w) + 1$ iff $s \notin D_R(w)$ by \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}. By \ref{lemm:wk-subposet-of-br} both statements are true for $\Br(\ti{\theta})$, too.
+	\end{proof}
+\end{coro}
 
 \begin{defi}
 	Let $v,w \in W$ with $\rho(w) - \rho(v) = n$. A sequence $v = w_0 \prec w_1 \prec \ldots \prec w_n = w$ is called a \defword{geodesic} from $v$ to $w$.

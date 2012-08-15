@@ -46,14 +46,14 @@
 
 \begin{coro}
 	\typedlabel{coro:residuums-have-unique-minimal-element}
-	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators and let $\rho_{min} := \{ \rho(v) : v \in wC_I \}$ be the minimal twisted length within the residuum $wC_I$. Then there is a unique element $w_{min} \in wC_I$ with $\rho(w_{min}) = \rho_{min}$. We denote this element with $\min(w,I)$.
+	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators and let $\rho_{min} := \min \{ \rho(v) : v \in wC_I \}$ be the minimal twisted length within the residuum $wC_I$. Then there is a unique element $w_{min} \in wC_I$ with $\rho(w_{min}) = \rho_{min}$. We denote this element by $\min(w,I)$.
 
 	\begin{proof}
-		The minimal rank $\rho_{min}$ exists, since $\rho : \ti{\theta} \to \nn_0$, $\nn_0$ is well-ordered and $wC_I \neq \emptyset$. Suppose we have an element $w_{min}$ with $\rho(w_{min}) = \rho_{min}$. This means, that in particular all $w_{min} \ul s$ with $s \in I$ must be of larger twisted length, i.e. $w_{min} < w_{min} \ul s$ for all $s \in I$. With \ref{prop:residuums-have-unique-wk-theta-minimal-element} this element must be unique.
+		The minimal rank $\rho_{min}$ exists, since the image of $\rho$ is in $\nn_0$, which is well-ordered, and $wC_I \neq \emptyset$. Suppose we have an element $w_{min}$ with $\rho(w_{min}) = \rho_{min}$. This means, that in particular all $w_{min} \ul s$ with $s \in I$ must be of larger twisted length, i.e. $w_{min} < w_{min} \ul s$ for all $s \in I$. With \ref{prop:residuums-have-unique-wk-theta-minimal-element} this element must be unique.
 	\end{proof}
 \end{coro}
 
-We proceed with some properties of rank-2-residuums. Our interest in these residuums steems from the fact, that their properties are needed later in Section \ref{sec:twisted-involutions-algorithms} to construct an effective algorithm for calculating the twisted weak ordering, i.e. calculating the Hasse diagram of $Wk(\theta)$ for arbitrary Coxeter systems $(W,S)$ and Coxeter system automorphisms $\theta$.
+We proceed with some properties of rank-2-residuums. Our interest in these residuums stems from the fact, that their properties are needed later in Section \ref{sec:twisted-involutions-algorithms} to construct an effective algorithm for calculating the twisted weak ordering, i.e. calculating the Hasse diagram of $Wk(\theta)$ for arbitrary Coxeter systems $(W,S)$ and Coxeter system automorphisms $\theta$.
 
 \begin{defi}
 	Let $s,t \in S$ be two distinct generators. We define:
@@ -64,7 +64,7 @@ We proceed with some properties of rank-2-residuums. Our interest in these resid
 	\end{cases}$$
 \end{defi}
 
-This definition allows us rewrite rank-2-residuums. Suppose we have an element $w \in \ti{\theta}$ and two distinct generators $s,t \in S$. Thanks to \ref{lemm:all-elements-of-one-residuum-yield-the-same-residuum} and \ref{coro:residuums-have-unique-minimal-element} we can assume, that $w = min(w,\{s,t\})$. Then
+This definition allows us to express rank-2-residuums differently. Suppose we have an element $w \in \ti{\theta}$ and two distinct generators $s,t \in S$. Thanks to \ref{lemm:all-elements-of-one-residuum-yield-the-same-residuum} and \ref{coro:residuums-have-unique-minimal-element} we can assume, that $w = min(w,\{s,t\})$. Then
 $$ wC_{\{s,t\}} = \{ w \} \ \cup \ \{ w [\ul s \ul t]^n : n \in \nn \} \ \cup \ \{ w [\ul t \ul s]^n : n \in \nn \}. $$
 This encourages the following definition.
 
@@ -76,10 +76,10 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 
 \begin{prop}
 	\typedlabel{prop:rank-2-residuums-are-convex}
-	Let $w \in W$ and let $s,t \in S$ be two distinct generators. Without loss of generality suppose $w = \min(w, \{s,t\})$. If there is a $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$, then it is the unique element with this property forcing $wC_{\{s,t\}}$ to consist of two geodesics from $w$ to $v$ intersecting only in these two elements. Else, the $s$- and $t$-branch are disjoint, strictly ascending in twisted length and of infinite size.
+	Let $w \in W$ and let $s,t \in S$ be two distinct generators. Without loss of generality suppose $w = \min(w, \{s,t\})$. If there is a $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$, then it is unique with this property in $wC_{\{s,t\}}$. Hence $wC_{\{s,t\}}$ consists of two geodesics from $w$ to $v$ intersecting only in these two elements. Else, the $s$- and $t$-branch are disjoint, strictly ascending in twisted length and of infinite size.
 
 	\begin{proof}
-		Suppose there is a $v$ in the $s$-branch with $v \ul s \prec v$ and $v \ul t \prec v$, say $v = w[\ul s \ul t]^n$. Then $w[\ul s \ul t]^{m+1} \prec w[\ul s \ul t]^m$ for $n \leq m \leq 2m - 1$ and $w[\ul s \ul t]^{2n} = w$. This is because assuming the opposite would yield an element $u \neq w$ with $u \prec u \ul s$ and $u \prec u \ul t$ contradicting to the uniqueness from \ref{prop:residuums-have-unique-wk-theta-minimal-element}. If no such $v$ exists, then the $s$- and $t$-branch must be disjoint, strictly ascending in twisted length and so of infinite size.
+		Suppose there is a $v$ in the $s$-branch with $v \ul s \prec v$ and $v \ul t \prec v$, say $v = w[\ul s \ul t]^n$ and $n$ is minimal with this property. Because of the uniqueness of a minimal element from \ref{prop:residuums-have-unique-wk-theta-minimal-element} we have $w[\ul s \ul t]^{m+1} \prec w[\ul s \ul t]^m$ for all $m \in \nn$ with $n \leq m \leq 2n - 1$. With the same argument we have $w[\ul s \ul t]^{2n} = w$. If no such $v$ exists, then the $s$- and $t$-branch must be disjoint, strictly ascending in twisted length and so of infinite size.
 	\end{proof}
 \end{prop}
 
@@ -88,15 +88,15 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 	Let $w \in S$ and $s,t \in S$ be two distinct generators. If $\ul s$ acts by multiplications on $w$ and $w \ul s \prec w$, then either $w \ul s \ul t \prec w \ul s$ or $w \ul t \succ w$.
 
 	\begin{proof}
-		We have $\theta(s)ws = w$ and $s \in D_R(w)$. If $t \notin D_R(w)$, then we are done. In return suppose $t \in D_R(w)$. This means $w \ul s \leq w$ and $w \ul t \leq w$ and \cite[Lemma 3.9]{hultman:comb-twisted-invo} yields $w \ul s \ul t < w$ and $w \ul t \ul s < w$. If $t \in D_R(w \ul s)$, then we are done. Conservely suppose $t \notin D_R(w \ul s)$. Then $t \in D_R(w \ul s \ul t)$. Together with $w \ul s \ul t \leq w$ \cite[Lemma 3.9(2)]{hultman:comb-twisted-invo} says $(w \ul s \ul t) \ul t \leq w \ul t$. Finally we get
-		$$ ws = w \ul s = (w \ul s \ul t) \ul t \leq w \ul t = wt.$$
-		Since $w \ul s$ and $w \ul t$ are of same twisted length they have to be equal and therefore $s = t$ which contradicts to our assumption of two distinct generators $s$ and $t$. Now we have $w \ul s \ul t < w \ul s$ or $w \ul t > w$ (in $\Br(\ti{\theta})$). Both cases can be transfered to the twisted weak ordering. If $w \ul s \ul t < w \ul s$, then $\rho(w \ul s \ul t) = \rho(w \ul s) - 1$ and $w \ul s \ul t \ul t = w \ul s$, yielding $w \ul s \ul t \prec w \ul s$. If $w \ul t > w$ then $\rho(w \ul t) = \rho(w) + 1$, yielding $w \ul t \succ w$.
+		We have $\theta(s)ws = w$ and $s \in D_R(w)$, hence $w \ul s \leq w$. If $t \notin D_R(w)$ or $t \in D_R(w \ul s)$, then we are done. In return suppose $t \in D_R(w)$ and $t \notin D_R(w \ul s)$. Then we have $w \ul t \leq w$ and $w \ul s \leq w \ul s \ul t$. With the second part of \ref{lemm:lifting-property-for-ul-s} we conclude $(w \ul s \ul t) \ul t \leq w \ul t$. This yields
+		$$ ws = w \ul s = (w \ul s \ul t) \ul t \leq w \ul t. $$
+		Since $l(w) - 1 = l(w \ul s) \leq l(w \ul t) < l(w)$ we have $w \ul t = wt$, hence $ws \leq wt$. But $s,t \in D_R(w)$ and so $l(ws) = l(wt)$ and $ws = wt$, too. Therefore $s = t$, contradicting our assumption of two distinct generators.
 	\end{proof}
 \end{prop}
 
 \begin{coro}
 	\typedlabel{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
-	Let $w \in S$ and let $s,t \in S$ be two distinct generators. If $w$ is neither the unique element in $wC_{\{s,t\}}$ of smallest twisted length,i.e. $\min(w,\{s,t\})$, nor the unique (but not necessarily existing) element of largest twisted length, then both $\ul s$ and $\ul t$ act by twisted conjugation on $w$.
+	Let $w \in S$ and let $s,t \in S$ be two distinct generators. If $w$ is neither $\min(w,\{s,t\})$, nor a maximal element in $wC_{\{s,t\}}$, then both $\ul s$ and $\ul t$ act by twisted conjugation on $w$.
 
 	\begin{proof}
 		Follows immediately from \ref{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}.
@@ -120,9 +120,9 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 	\end{figure}
 
 	\begin{proof}
-		If $u$ covers $w$, then there are only two edges and the assumption holds. So suppose $wC_{\{s,t\}}$ contains at least four edges. Due to \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} the actions by multiplication can only occure next to $w$ and $v$. Hence there are $2^4 = 16$ configurations possible. There are two geodesics from $w$ to $v$. Suppose they have a different count of actions by multiplication, say the first has $n$ and the second $m$ actions by multiplication, and $\rho(v) - \rho(w) = k$. Then
-		$$ l(v) = l(w) + n + 2(k-n) \neq l(w) + m + 2(k-m) = l(v), $$
-		which is obviously a contradiction. This wipes out ten out of the 16 configurations. The remaining are those from Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
+		If $u$ covers $w$, then there are only two edges and the assumption holds. So suppose $wC_{\{s,t\}}$ contains at least four edges. Due to \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} the actions by multiplication can only occure next to $w$ and $v$. Hence there are $2^4 = 16$ configurations possible. There are two geodesics from $w$ to $v$. Suppose the first has $n$ and the second $m$ actions by multiplication, and $\rho(v) - \rho(w) = k$. Then
+		$$ l(w) + n + 2(k-n) = l(v) = l(w) + m + 2(k-m), $$
+		hence $n = m$. This wipes out ten out of the 16 configurations. The remaining are those from Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
 	\end{proof}
 \end{lemm}
 
@@ -142,7 +142,7 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 		\input{resources/tikz/a4_s1s3}
 		\quad \quad \quad
 		\input{resources/tikz/a4_s2s4}
-		\caption{Hasse diagrams of $Wk(A_4, \id)$ with only $s_1,s_3$ edges on the left and only $s_2,s_4$ edges on the right side}
+		\caption{Hasse diagrams of $Wk(A_4, \id)$ after removing $s_2,s_4$ edges in the left and $s_1,s_3$ edges in the right diagram}
 		\label{fig:a4_s1s3-and-a4_s2s4}
 	\end{figure}
 \end{exam}
