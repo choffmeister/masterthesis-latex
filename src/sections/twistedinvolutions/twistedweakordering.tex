@@ -35,17 +35,28 @@ In this section we introduce the twisted weak ordering $Wk(\theta)$ on the set $
 	\end{proof}
 \end{lemm}
 
-\begin{coro}
-	\typedlabel{coro:w-ul-s-leq-w-iff-s-in-dr-w}
+\begin{prop}
+	\typedlabel{prop:w-ul-s-leq-w-iff-s-in-dr-w}
 	For all $w \in \ti{\theta}$ and $s \in S$ we have $w \ul s \prec w$ iff $s \in D_R(w)$ and $w \ul s \succ w$ iff $s \notin D_R(w)$ as well as $w \ul s < w$ iff $s \in D_R(w)$ and $w \ul s > w$ iff $s \notin D_R(w)$.
 
 	\begin{proof}
 		We have $w \ul s \ul s = w$ and $\rho(w \ul s) = \rho(w) - 1$ iff $s \in D_R(w)$ and $\rho(w \ul s) = \rho(w) + 1$ iff $s \notin D_R(w)$ by \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}. By \ref{lemm:wk-subposet-of-br} both statements are true for $\Br(\ti{\theta})$, too.
 	\end{proof}
-\end{coro}
+\end{prop}
 
 \begin{defi}
 	Let $v,w \in W$ with $\rho(w) - \rho(v) = n$. A sequence $v = w_0 \prec w_1 \prec \ldots \prec w_n = w$ is called a \defword{geodesic} from $v$ to $w$.
 \end{defi}
+
+\begin{prop}
+	\typedlabel{prop:geodesics-have-same-count-of-multiplicative-steps}
+	Let $v,w \in W$ with $v \prec w$. Then all geodesics from $v$ to $w$ have the same count of twisted conjugated and multiplicative steps.
+
+	\begin{proof}
+		Suppose we have two geodesics from $v$ to $w$, where the first has $n$ and the second $m$ multiplicative steps. Then
+		$$ l(w) + n + 2(k-n) = l(v) = l(w) + m + 2(k-m), $$
+		hence $n = m$.
+	\end{proof}
+\end{prop}
 
 \todo

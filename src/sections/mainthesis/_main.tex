@@ -12,54 +12,56 @@
 	hold for any possible $K,\theta,T,S_1,S_2,S_3$ and $w$?
 \end{ques}
 
-\begin{prop}
-	\typedlabel{prop:counterexample-simplification}
-	Let $(W,S)$ be a Coxeter system and $K,T,S_1,S_2,S_3$ be like in \ref{ques:main}. Suppose we have $w \in W$ and $a_1,\ldots,a_n \in T \cup S_1$, $b_1,\ldots,b_n \in T \cup S_2$, $c_1,\ldots,c_n \in T \cup S_3$ with
-	\begin{align*}
-	w & = w_K \ul a_1 \ldots \ul a_n \\
-	  & = w_K \ul b_1 \ldots \ul b_n \\
-	  & = w_K \ul c_1 \ldots \ul c_n
-	\end{align*}
-	and \eqref{eq:main} does not hold for these three expressions, i.e. $w \notin w_K C_T$. Then there exist $t_1,\ldots,t_m \in T$ and $a'_1,\ldots,a'_{n-m} \in T \cup S_1$, $b'_1,\ldots,b'_{n-m} \in T \cup S_2$, $c'_1,\ldots,c'_{n-m} \in T \cup S_3$ such that
-	\begin{align*}
-		w \ul t_1 \ldots \ul t_m & = w_K \ul a'_1 \cdots \ul a'_{n-m} \\
-								 & = w_K \ul b'_1 \cdots \ul b'_{n-m} \\
-								 & = w_K \ul c'_1 \cdots \ul c'_{n-m}
-	\end{align*}
-	with $a'_{n-m},b'_{n-m},c'_{n-m} \notin T$.
 
-	\begin{proof}
-		Suppose at least one element of $a_n,b_n,c_n$ to be in $T$, for example $a_n \in T$. Then we can apply $\ul a_n$ to all three expressions. Since $\rho (w \ul a_n) < \rho(w)$ the \ref{prop:exchanged-property-for-twisted-expressions} yields
-		\begin{align*}
-			w \ul a_n & = w_K \ul a_1 \ldots \ul a_n \ul a_n = w_K \ul a_1 \ldots \ul a_{n-1} \\
-					  & = w_K \ul b_1 \ldots \ul b_n \ul a_n = w_K \ul b_1 \ldots \ul {\hat b}_i \ldots \ul b_n \\
-					  & = w_K \ul c_1 \ldots \ul c_n \ul a_n = w_K \ul c_1 \ldots \ul {\hat c}_j \ldots \ul c_n
-		\end{align*}
-		where $\hat \cdot$ means omission. The omission cannot occur within $w_K$ since all three expressions are still of same twisted length and in the first expression we can see, that $w_K \preceq w \ul a_n$ still holds. This step can be repeated until $w = w_K$ or $a_n,b_n,c_n \notin T$.
-	\end{proof}
-\end{prop}
 
-\begin{lemm}
-	\typedlabel{lemm:counterexample-simplification}
-	A counterexample to \ref{ques:main} can only exist, if there
-	is an element $u \in w C_T$ and three distinct generators $s_1,s_2,s_3 \in
-	D_R(u)$ such that $u \ul s_i \notin w C_T$ for $i=1,2,3$.
+% \begin{prop}
+% 	\typedlabel{prop:counterexample-simplification}
+% 	Let $(W,S)$ be a Coxeter system and $K,T,S_1,S_2,S_3$ be like in \ref{ques:main}. Suppose we have $w \in W$ and $a_1,\ldots,a_n \in T \cup S_1$, $b_1,\ldots,b_n \in T \cup S_2$, $c_1,\ldots,c_n \in T \cup S_3$ with
+% 	\begin{align*}
+% 	w & = w_K \ul a_1 \ldots \ul a_n \\
+% 	  & = w_K \ul b_1 \ldots \ul b_n \\
+% 	  & = w_K \ul c_1 \ldots \ul c_n
+% 	\end{align*}
+% 	and \eqref{eq:main} does not hold for these three expressions, i.e. $w \notin w_K C_T$. Then there exist $t_1,\ldots,t_m \in T$ and $a'_1,\ldots,a'_{n-m} \in T \cup S_1$, $b'_1,\ldots,b'_{n-m} \in T \cup S_2$, $c'_1,\ldots,c'_{n-m} \in T \cup S_3$ such that
+% 	\begin{align*}
+% 		w \ul t_1 \ldots \ul t_m & = w_K \ul a'_1 \cdots \ul a'_{n-m} \\
+% 								 & = w_K \ul b'_1 \cdots \ul b'_{n-m} \\
+% 								 & = w_K \ul c'_1 \cdots \ul c'_{n-m}
+% 	\end{align*}
+% 	with $a'_{n-m},b'_{n-m},c'_{n-m} \notin T$.
 
-	\begin{proof}
-		According to \ref{prop:counterexample-simplification}.
-	\end{proof}
-\end{lemm}
+% 	\begin{proof}
+% 		Suppose at least one element of $a_n,b_n,c_n$ to be in $T$, for example $a_n \in T$. Then we can apply $\ul a_n$ to all three expressions. Since $\rho (w \ul a_n) < \rho(w)$ the \ref{prop:exchanged-property-for-twisted-expressions} yields
+% 		\begin{align*}
+% 			w \ul a_n & = w_K \ul a_1 \ldots \ul a_n \ul a_n = w_K \ul a_1 \ldots \ul a_{n-1} \\
+% 					  & = w_K \ul b_1 \ldots \ul b_n \ul a_n = w_K \ul b_1 \ldots \ul {\hat b}_i \ldots \ul b_n \\
+% 					  & = w_K \ul c_1 \ldots \ul c_n \ul a_n = w_K \ul c_1 \ldots \ul {\hat c}_j \ldots \ul c_n
+% 		\end{align*}
+% 		where $\hat \cdot$ means omission. The omission cannot occur within $w_K$ since all three expressions are still of same twisted length and in the first expression we can see, that $w_K \preceq w \ul a_n$ still holds. This step can be repeated until $w = w_K$ or $a_n,b_n,c_n \notin T$.
+% 	\end{proof}
+% \end{prop}
 
-Suppose we are in a situation like in \ref{ques:main} with $\rho(w) - \rho(w_K) = n$. If $n = 1$, then \ref{eq:main} holds, since $Wk(\theta)$ cannot contain triple edges. We proceed by induction on $n$. There are three twisted expressions
-\begin{align*}
-	w & = w_K \ul a_1 \ldots \ul a_n \\
-	  & = w_K \ul b_1 \ldots \ul b_n \\
-	  & = w_K \ul c_1 \ldots \ul c_n
-\end{align*}
-with $a_i \in T \cup S_1$, $b_i \in T \cup S_2$ and $c_i \in T \cup S_3$. Since $\rho (w \ul a_n) < \rho(w)$ the \ref{prop:exchanged-property-for-twisted-expressions} yields
-\begin{align*}
-	w \ul a_n & = w_K \ul a_1 \ldots \ul a_n \ul a_n = w_K \ul a_1 \ldots \ul a_{n-1} \\
-			  & = w_K \ul b_1 \ldots \ul b_n \ul a_n = w_K \ul b_1 \ldots \ul {\hat b}_i \ldots \ul b_n \\
-			  & = w_K \ul c_1 \ldots \ul c_n \ul a_n = w_K \ul c_1 \ldots \ul {\hat c}_j \ldots \ul c_n
-\end{align*}
-where $\hat \cdot$ means omission. The omission cannot occur within $w_K$ since all three expressions are still of same twisted length and in the first expression we can see, that $w_K \preceq w \ul a_n$ still holds. It is $\rho(w \ul a_n) - \rho(w_K) = n - 1$, hence by induction hypothesis it is $w \ul a_n \in w_K C_T$. Analogues we get $w \ul b_n, w \ul c_n \in w_K C_T$. If we assume at least one generator of $a_n,b_n,c_n$ to be in $T$, say $a_n \in T$, then $w = w \ul a_n \ul a_n \in w_K C_T$, too. Now suppose $a_n,b_n,c_n \notin T$. Then $a_n,b_n,c_n$ are pairwise different.
+% \begin{lemm}
+% 	\typedlabel{lemm:counterexample-simplification}
+% 	A counterexample to \ref{ques:main} can only exist, if there
+% 	is an element $u \in w C_T$ and three distinct generators $s_1,s_2,s_3 \in
+% 	D_R(u)$ such that $u \ul s_i \notin w C_T$ for $i=1,2,3$.
+
+% 	\begin{proof}
+% 		According to \ref{prop:counterexample-simplification}.
+% 	\end{proof}
+% \end{lemm}
+
+% Suppose we are in a situation like in \ref{ques:main} with $\rho(w) - \rho(w_K) = n$. If $n = 1$, then \ref{eq:main} holds, since $Wk(\theta)$ cannot contain triple edges. We proceed by induction on $n$. There are three twisted expressions
+% \begin{align*}
+% 	w & = w_K \ul a_1 \ldots \ul a_n \\
+% 	  & = w_K \ul b_1 \ldots \ul b_n \\
+% 	  & = w_K \ul c_1 \ldots \ul c_n
+% \end{align*}
+% with $a_i \in T \cup S_1$, $b_i \in T \cup S_2$ and $c_i \in T \cup S_3$. Since $\rho (w \ul a_n) < \rho(w)$ the \ref{prop:exchanged-property-for-twisted-expressions} yields
+% \begin{align*}
+% 	w \ul a_n & = w_K \ul a_1 \ldots \ul a_n \ul a_n = w_K \ul a_1 \ldots \ul a_{n-1} \\
+% 			  & = w_K \ul b_1 \ldots \ul b_n \ul a_n = w_K \ul b_1 \ldots \ul {\hat b}_i \ldots \ul b_n \\
+% 			  & = w_K \ul c_1 \ldots \ul c_n \ul a_n = w_K \ul c_1 \ldots \ul {\hat c}_j \ldots \ul c_n
+% \end{align*}
+% where $\hat \cdot$ means omission. The omission cannot occur within $w_K$ since all three expressions are still of same twisted length and in the first expression we can see, that $w_K \preceq w \ul a_n$ still holds. It is $\rho(w \ul a_n) - \rho(w_K) = n - 1$, hence by induction hypothesis it is $w \ul a_n \in w_K C_T$. Analogues we get $w \ul b_n, w \ul c_n \in w_K C_T$. If we assume at least one generator of $a_n,b_n,c_n$ to be in $T$, say $a_n \in T$, then $w = w \ul a_n \ul a_n \in w_K C_T$, too. Now suppose $a_n,b_n,c_n \notin T$. Then $a_n,b_n,c_n$ are pairwise different.
