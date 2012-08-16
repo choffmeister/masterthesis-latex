@@ -39,6 +39,9 @@ The map we define right now is of great importance to this whole paper, since it
 	If $w \ul s = \theta(s)ws$, then we say $\ul s$ \defword{acts by twisted conjugation} on $w$. Else we say $\ul s$ \defword{acts by multiplication} on $w$.
 \end{defi}
 
+Note that this is no group action. For example let $W$ be a Coxeter group with two generators $s,t$ satisfying $\ord(st) = 3$ and let $\theta = \id$. Then $sts = tst$, but
+$$ e \ul s \ul t \ul s = s \ul t \ul s = tst \ul s = sts \ul s = t \neq s = tst \ul t = sts \ul t = t \ul s \ul t = e \ul t \ul s \ul t. $$
+
 \begin{defi}
 	\typedlabel{defi:twisted-expression}
 	Let $k \in \nn$ and $s_{i} \in S$ for all $1 \leq i \leq k$. Then an expression $e \ul s_1 \ldots \ul s_k$, or just $\ul s_1 \ldots \ul s_k$, is called \defword{$\theta$- twisted expression}. If $\theta$ is clear from the context, we omit $\theta$ and call it \defword{twisted expression}. A twisted expression is called \defword{reduced twisted expression}, if there is no $k' < k$ with $\ul s'_1 \ldots \ul s'_{k'} = \ul s_1 \ldots \ul s_k$.
@@ -176,12 +179,11 @@ We now establish many properties from Section \ref{sec:coxeter-groups} for twist
 	\namedlabel{prop:exchanged-property-for-twisted-expressions}
 	\theocite{Proposition 3.10}{hultman:comb-twisted-invo}
 	Suppose $\ul s_1 \ldots \ul s_k$ is a reduced twisted expression. If $\rho(\ul s_1 \ldots \ul s_k \ul s) < k$ for some $s \in S$, then
-	$$ \ul s_1 \ldots \ul s_k \ul s = \ul s_1 \ldots \ul{\hat s}_i \ldots \ul s_k $$
+	$\ul s_1 \ldots \ul s_k \ul s = \ul s_1 \ldots \ul{\hat s}_i \ldots \ul s_k$
 	for some $i \in \{1,\ldots,k\}$.
 	
 	\begin{proof}
-		Let $w = s_1 \ldots \ul s_k$ and $v = s_1 \ldots \ul s_k \ul s$. Assume $v \ul s_k \ldots \ul s_{i+1} \ul s_i < v \ul s_k \ldots \ul s_{i+1}$ for all $i$. Then we would get $\rho(v \ul s_k \ldots s_1) < k - k = 0$. Hence there is an index $i$ with $v \ul s_k \ldots \ul s_{i+1} \ul s_i > v \ul s_k \ldots \ul s_{i+1}$ and we choose $i$ maximal with this property. Since $w > v$ we conclude by repetition of \ref{lemm:lifting-property-for-ul-s}, that $w \ul s_k \ldots \ul s_{i+1} \geq v \ul s_k \ldots \ul s_i$. By \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1} we have $\rho(v) = k + 1$ and so $\rho(w \ul s_k \ldots \ul s_{i+1}) = \rho(v \ul s_k \ldots \ul s_i)$. Because $\Br(\ti{\theta})$ is graded with rank function $\rho$, both twisted expresssions must represent the same element. There for we have
-		$$ w \ul s_k \ldots \ul s_{i+1} = v \ul s_k \ldots \ul s_i \Rightarrow v = w \ul s_k \ldots s_{i+1} \ul s_i \ldots \ul s_k = \ul s_1 \ul{\hat s}_i \ldots \ul s_k. $$
+		Let $w = s_1 \ldots \ul s_k$ and $v = s_1 \ldots \ul s_k \ul s$. Assume $v \ul s_k \ldots \ul s_{i+1} \ul s_i < v \ul s_k \ldots \ul s_{i+1}$ for all $i$. Then we would get $\rho(v \ul s_k \ldots s_1) < k - k = 0$. Hence there is an index $i$ with $v \ul s_k \ldots \ul s_{i+1} \ul s_i > v \ul s_k \ldots \ul s_{i+1}$ and we choose $i$ maximal with this property. Since $w > v$ we conclude by repetition of \ref{lemm:lifting-property-for-ul-s}, that $w \ul s_k \ldots \ul s_{i+1} \geq v \ul s_k \ldots \ul s_i$. By \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1} we have $\rho(v) = k + 1$ and so $\rho(w \ul s_k \ldots \ul s_{i+1}) = \rho(v \ul s_k \ldots \ul s_i)$. Because $\Br(\ti{\theta})$ is graded with rank function $\rho$, both twisted expresssions must represent the same element. Therefore we have $w \ul s_k \ldots \ul s_{i+1} = v \ul s_k \ldots \ul s_i$ yielding $v = w \ul s_k \ldots s_{i+1} \ul s_i \ldots \ul s_k = \ul s_1 \ul{\hat s}_i \ldots \ul s_k$.
 	\end{proof}
 \end{prop}
 
@@ -191,6 +193,6 @@ We now establish many properties from Section \ref{sec:coxeter-groups} for twist
 	Let $w = s_1 \ldots \ul s_k$ be a not reduced twisted expression. Then there are two indices $1 \leq i < j \leq k$ such that $w = \ul s_1 \ldots \ul{\hat s}_i \ldots \ul{\hat s}_j \ldots \ul s_k$.
 
 	\begin{proof}
-		Choose $j$ minimal, so we have $s_1 \ldots \ul s_j$ is not reduced. By \ref{prop:exchanged-property-for-twisted-expressions} there is an index $i$ with $s_1 \ldots \ul s_j = s_1 \ldots \ul{\hat s}_i \ldots \ul s_{j-1}$.
+		Choose $j$ minimal, so we have $s_1 \ldots \ul s_j$ is not reduced. By \ref{prop:exchanged-property-for-twisted-expressions} there is an index $i$ with $\ul s_1 \ldots \ul s_j = s_1 \ldots \ul{\hat s}_i \ldots \ul s_{j-1}$ yielding our hypothesis $w = \ul s_1 \ldots \ul s_j \ldots \ul s_k = \ul s_1 \ldots \ul{\hat s}_i \ldots \ul{\hat s}_j \ldots \ul s_k$.
 	\end{proof}
 \end{prop}
