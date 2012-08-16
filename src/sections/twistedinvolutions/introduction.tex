@@ -63,7 +63,7 @@ $$ e \ul s \ul t \ul s = s \ul t \ul s = tst \ul s = sts \ul s = t \neq s = tst 
 
 \begin{lemm}
 	\typedlabel{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w}
-	It is $l(ws) < l(w)$ iff $l(w \ul s) < l(w)$.
+	We have $l(ws) < l(w)$ iff $l(w \ul s) < l(w)$.
 
 	\begin{proof}
 		Suppose $\ul s$ acts by multiplication on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $\ul s$ acts by twisted conjugation on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply, that $\ul s$ acts by multiplication on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So $l(w \ul s) = l(\theta(s)ws) < l(w)$. Conversely, suppose $l(w \ul s) < l(w)$. Then \ref{lemm:length-function-properties} says $l(w \ul s) = l(\theta(s)ws) = l(w) - 2$ and so $l(ws) = l(w) - 1$.
@@ -151,7 +151,7 @@ We now establish many properties from Section \ref{sec:coxeter-groups} for twist
 	Let $w \in \ti{\theta}$ and $s \in S$. Then $\rho(w \ul s) = \rho(w) \pm 1$. In fact it is $\rho(w \ul s) = \rho(w) - 1$ iff $s \in D_R(w)$.
 
 	\begin{proof}
-		Since $\Br(\ti{\theta})$ is graded with rank function $\rho$ and either $w \ul s$ covers $w$ or $w$ covers $w \ul s$ it is $\rho(w \ul s) = \rho(w) \pm 1$. Now suppose $w \ul s < w$. Then we have $\rho(w \ul s) < \rho(w)$ iff $w \ul s < w$ iff $l(w \ul s) < l(w)$ iff $l(ws) < l(w)$ iff $s \in D_R(w)$.
+		Since $\Br(\ti{\theta})$ is graded with rank function $\rho$ and either $w \ul s$ covers $w$ or $w$ covers $w \ul s$ we have $\rho(w \ul s) = \rho(w) \pm 1$. Now suppose $w \ul s < w$. Then we have $\rho(w \ul s) < \rho(w)$ iff $w \ul s < w$ iff $l(w \ul s) < l(w)$ iff $l(ws) < l(w)$ iff $s \in D_R(w)$.
 	\end{proof}
 \end{lemm}
 

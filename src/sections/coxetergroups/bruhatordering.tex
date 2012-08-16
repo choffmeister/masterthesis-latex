@@ -2,7 +2,7 @@
 \subsection{Bruhat ordering}
 \label{sec:coxeter-groups-bruhat-ordering}
 
-We now investigate ways to partially order the elements of a Coxeter group. Futhermore, this ordering should be compatible with the length function, i.e. for $w,v \in W$ it is $l(w) < l(v)$ whenever $w \leq v$.
+We now investigate ways to partially order the elements of a Coxeter group. Futhermore, this ordering should be compatible with the length function, i.e. for $w,v \in W$ we have $l(w) < l(v)$ whenever $w \leq v$.
 
 \begin{defi}
 	\typedlabel{defi:poset}
@@ -61,7 +61,7 @@ To ensure the Bruhat ordering is graded as well, we need another characterizatio
 	\begin{proof}
 		We can reduce the proof (\todo why?) to the case $u \to w$, i.e. $ut = w$ for a $t \in T$ with $l(v) < l(u)$. Let $s = t$. Then $us \leq w$ and we are done. In case $s \neq t$ there are two alternatives for the lengths. We can have $l(us) = l(u) - 1$ which would mean $us \to u \to w$, so $us \leq w$.
 
-		Assume $l(us) = l(u) + 1$. For the reflection $t' = sts$ we get $(us)t' = ussts = uts = ws$. So it is $us \leq ws$ iff $l(us) < l(ws)$. Suppose this is not the case. Since we have assumed $l(us) = l(u) + 1$ any reduced expression $u = s_1 \cdots s_r$ for $u$ yields a reduced expression $us = s_1 \cdots s_r s$ for $us$. With the \ref{theo:strong-exchange-condition} we can obtain $ws = ust'$ from $us$ by omitting one factor. This omitted factor cannot be $s$ since $s \neq t$. This means $ws = s_1 \cdots \hat s_i \cdots s_r s$ and so $ws = s_1 \cdots \hat s_i \cdots s_r$, contradicting to our assumption $l(u) < l(w)$
+		Assume $l(us) = l(u) + 1$. For the reflection $t' = sts$ we get $(us)t' = ussts = uts = ws$. So we have $us \leq ws$ iff $l(us) < l(ws)$. Suppose this is not the case. Since we have assumed $l(us) = l(u) + 1$ any reduced expression $u = s_1 \cdots s_r$ for $u$ yields a reduced expression $us = s_1 \cdots s_r s$ for $us$. With the \ref{theo:strong-exchange-condition} we can obtain $ws = ust'$ from $us$ by omitting one factor. This omitted factor cannot be $s$ since $s \neq t$. This means $ws = s_1 \cdots \hat s_i \cdots s_r s$ and so $ws = s_1 \cdots \hat s_i \cdots s_r$, contradicting to our assumption $l(u) < l(w)$
 	\end{proof}
 \end{prop}
 
@@ -97,7 +97,7 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 
 		\begin{description}
 			\item[$u < us$:] If $i_q = r$, then $us = s_{i_1} \cdots s_{i_q} s = s_{i_1} \cdots s_{i_{q-1}}$ which is also a subexpression of $ws$. This yields $u < us \leq ws < w$. Since $l(ws) < r$ there is, by induction, a sequence of the desired form. The last step from $ws$ to $w$ also differs in length by exactly 1, so we are done. If $i_q < r$ then $u$ is itself already a subexpression of $ws$ and we can again find a sequence from $u$ to $ws$ strictly ascending length by 1 in each step and have one last step from $ws$ to $w$ also increasing length by 1.
-			\item[$us < u$:] Then by induction we can find a sequence from $us$ to $w$, say $us = w_0 < \ldots < w_m = w$, where the lengths of neighbored elements differ by exactly 1. Since $w_0 s = u > us = w_0$ and $w_m s = ws < w = w_m$ there must be a smallest index $i \geq 1$, such that $w_i s < w_i$, which we choose. Suppose $w_i \neq w_{i-1} s$. It is $w_{i-1} < w_{i-1}s \neq w_i$ and due to \ref{lemm:dont-know} we get $w_i < w_i s$. This contradicts to the minimality of $i$. So $w_i = w_{i-1} s$. For all $1 \leq j < i$ we have $w_j \neq w_{j-1} s$, because of $w_j < w_j s$. Again we apply \ref{lemm:dont-know} to receive $w_{j-1} s < w_j s$. Alltogether we can construct a sequence
+			\item[$us < u$:] Then by induction we can find a sequence from $us$ to $w$, say $us = w_0 < \ldots < w_m = w$, where the lengths of neighbored elements differ by exactly 1. Since $w_0 s = u > us = w_0$ and $w_m s = ws < w = w_m$ there must be a smallest index $i \geq 1$, such that $w_i s < w_i$, which we choose. Suppose $w_i \neq w_{i-1} s$. We have $w_{i-1} < w_{i-1}s \neq w_i$ and due to \ref{lemm:dont-know} we get $w_i < w_i s$. This contradicts to the minimality of $i$. So $w_i = w_{i-1} s$. For all $1 \leq j < i$ we have $w_j \neq w_{j-1} s$, because of $w_j < w_j s$. Again we apply \ref{lemm:dont-know} to receive $w_{j-1} s < w_j s$. Alltogether we can construct a sequence
 			$$ u = w_0 s < w_1 s < \ldots < w_{i-1} s = w_i < w_{i+1} < \ldots w_m = w, $$
 			which matches our assumption. \qedhere
 		\end{description}
