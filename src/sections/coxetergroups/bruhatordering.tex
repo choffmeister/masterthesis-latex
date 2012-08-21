@@ -151,7 +151,7 @@ The \ref{theo:lifting-property} seems quite innocent, but when trying to investi
 	The poset $\Br(W)$ is directed.
 
 	\begin{proof}
-		Let $u,v \in W$. We need to find an element $w \in W$ with $u \leq w$ and $v \leq w$. For that, we induct on $r = l(u) + l(w)$. For $r = 0$ we have $u = v = e$ and can choose $w = e$. So let $r > 0$. Because of symmetry we can assume $l(u) > 0$, hence $u \neq e$ and so there is a $s \in S$ with $us < u$. By induction hypothesis there is a $w \in W$ with $us < w$ and  $v < w$. Consider two cases:
+		Let $u,v \in W$. We need to find an element $w \in W$ with $u \leq w$ and $v \leq w$. For that, we induce on $r = l(u) + l(w)$. For $r = 0$ we have $u = v = e$ and can choose $w = e$. So let $r > 0$. Because of symmetry we can assume $l(u) > 0$, hence $u \neq e$ and so there is a $s \in S$ with $us < u$. By induction hypothesis there is a $w \in W$ with $us < w$ and  $v < w$. Consider two cases:
 
 		\begin{description}
 			\item[$ws < w$:] Then $s \in D_R(w)$ and with \ref{theo:lifting-property} we have $u = uss \leq w$, so both $u \leq w$ and $v \leq w$.
@@ -170,7 +170,7 @@ The \ref{theo:lifting-property} seems quite innocent, but when trying to investi
 	\begin{proof}
 		\begin{enumerate}
 			\item Assume there are two elements $u,v \in W $ of maximal rank. Since $\Br(W)$ is directed, there is an element $w \in W$ with $u \leq w$ and $v \leq w$. Because $\Br(W)$ is graded, we have $l(w) > l(u) = l(v)$, contradicting to the maximality of $u$ and $v$.
-			\item We want to show, that $v < w$ for all $v \in W$. For that, we induct on $r = l(v)$. If $r = 0$, then $v = e \leq w$. Let $r > 0$. Then there is a $s \in S$ with $us < u$. By induction, $us \leq w$. Since $s \in D_R(w)$, we have $uss = u \leq w$ by \ref{theo:lifting-property} and are done with our induction. This yields $W = [e,w]$ and since intervals in the Bruhat order are finite, $W$ is finite, too. \qedhere
+			\item We want to show, that $v < w$ for all $v \in W$. For that, we induce on $r = l(v)$. If $r = 0$, then $v = e \leq w$. Let $r > 0$. Then there is a $s \in S$ with $us < u$. By induction, $us \leq w$. Since $s \in D_R(w)$, we have $uss = u \leq w$ by \ref{theo:lifting-property} and are done with our induction. This yields $W = [e,w]$ and since intervals in the Bruhat order are finite, $W$ is finite, too. \qedhere
 		\end{enumerate}
 	\end{proof}
 \end{coro}
