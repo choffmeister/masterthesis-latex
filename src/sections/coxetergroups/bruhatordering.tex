@@ -12,7 +12,11 @@ We now investigate ways to partially order the elements of a Coxeter group. Futh
 		\item $a \leq b \wedge b \leq a \Rightarrow a=b$ (\defword{antisymmetry}) and
 		\item $a \leq b \wedge b \leq c \Rightarrow a \leq c$ (\defword{transitivity}).
 	\end{enumerate}
-	In this case $(M,\leq)$ is called a \defword{poset}. If two elements $a \leq b \in M$ are immediate neighbors, i.e. there is no third element $c \in M$ with $a \leq c \leq b$ we say that $b$ \defword{covers} $a$. A poset is called \defword{graded poset} if there is a map $\rho : M \to \nn$ so that $\rho(b) - 1 = \rho(a)$ whenever $b$ covers $a$. In this case $\rho$ is called the \defword{rank function} of the graded poset.
+	In this case $(M,\leq)$ is called a \defword{poset}. If two elements $a \leq b \in M$ are immediate neighbors, i.e. there is no third element $c \in M$ with $a \leq c \leq b$ we say that $b$ \defword{covers} $a$. A poset is called \defword{graded poset} if there is a map $\rho : M \to \nn$ so that $\rho(b) - 1 = \rho(a)$ whenever $b$ covers $a$. In this case $\rho$ is called the \defword{rank function} of the graded poset If for any two elements $a,b \in M$ there is an element $c \in M$ with $a \leq c$ and $b \leq c$, then a poset is called \defword{directed poset}.
+\end{defi}
+
+\begin{defi}
+	Let $(M,\leq)$ be a poset and $a,b \in M$. Then we call $\{ c \in M : a \leq c \leq b \}$ an \defword{interval} and denote it by $[a,b]_\leq$. The set $\{ c \in M : a < c < b \}$ is called an \defword{open interval} and is denoted by $(a,b)_\leq$. In both cases we can omit the $\leq$, if the relation is clear from context.
 \end{defi}
 
 \begin{defi}
@@ -75,6 +79,14 @@ To ensure the Bruhat ordering is graded as well, we need another characterizatio
 	\end{proof}
 \end{theo}
 
+\begin{coro}
+	Let $u,w \in W$. Then the interval $[u,w]$ in the Bruhat order $\Br(W)$ is finite.
+
+	\begin{proof}
+		We have $[u,w] \subseteq [e,w]$. All elements $v \in [e,w]$ can be obtained as subexpressions of one fixed reduced expression for $w$. Let $s_1 \ldots s_k = w$ be such an reduced expression. Then there are at most $2^k$ many subexpressions, hence $[u,w]$ is finite.
+	\end{proof}
+\end{coro}
+
 This characterization of the Bruhat ordering is very handy. With it and the following short lemma we will be in the position to show that $\Br(W)$ is graded with rank function $l$.
 
 \begin{lemm}
@@ -132,3 +144,33 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 \end{theo}
 
 The \ref{theo:lifting-property} seems quite innocent, but when trying to investigate facts around the Bruhat ordering it prooves to be one of the key tools in many cases.
+
+\begin{prop}
+	\namedlabel{prop:bruhat-is-directed}
+	\theocite{Proposition 7}{denton:coxeter}
+	The poset $\Br(W)$ is directed.
+
+	\begin{proof}
+		Let $u,v \in W$. We need to find an element $w \in W$ with $u \leq w$ and $v \leq w$. For that, we induct on $r = l(u) + l(w)$. For $r = 0$ we have $u = v = e$ and can choose $w = e$. So let $r > 0$. Because of symmetry we can assume $l(u) > 0$, hence $u \neq e$ and so there is a $s \in S$ with $us < u$. By induction hypothesis there is a $w \in W$ with $us < w$ and  $v < w$. Consider two cases:
+
+		\begin{description}
+			\item[$ws < w$:] Then $s \in D_R(w)$ and with \ref{theo:lifting-property} we have $u = uss \leq w$, so both $u \leq w$ and $v \leq w$.
+			\item[$ws > w$:] \todo
+		\end{description}
+	\end{proof}
+\end{prop}
+
+\begin{coro}
+	\theocite{Proposition 8}{denton:coxeter}
+	\begin{enumerate}
+		\item Let $W$ be finite, then there exists an unique element $w_0 \in W$ with $w \leq w_0$ for all $w \in W$.
+		\item If $W$ contains an element $w$, with $D_R(w) = S$, then $W$ is finite and $w$ is the unique element $w_0$.
+	\end{enumerate}
+
+	\begin{proof}
+		\begin{enumerate}
+			\item Assume there are two elements $u,v \in W $ of maximal rank. Since $\Br(W)$ is directed, there is an element $w \in W$ with $u \leq w$ and $v \leq w$. Because $\Br(W)$ is graded, we have $l(w) > l(u) = l(v)$, contradicting to the maximality of $u$ and $v$.
+			\item We want to show, that $v < w$ for all $v \in W$. For that, we induct on $r = l(v)$. If $r = 0$, then $v = e \leq w$. Let $r > 0$. Then there is a $s \in S$ with $us < u$. By induction, $us \leq w$. Since $s \in D_R(w)$, we have $uss = u \leq w$ by \ref{theo:lifting-property} and are done with our induction. This yields $W = [e,w]$ and since intervals in the Bruhat order are finite, $W$ is finite, too. \qedhere
+		\end{enumerate}
+	\end{proof}
+\end{coro}
