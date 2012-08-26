@@ -115,21 +115,12 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 		\input{resources/tikz/one-bothsided-symmetry-0011}
 		\input{resources/tikz/one-bothsided-symmetry-1010}
 		\input{resources/tikz/one-bothsided-symmetry-0101}
-		\caption{Possible distributions of twisted conjugations and multiplications in a rank-2-residuum}
+		\caption{Possible distributions of twisted conjugations and multiplications in finite rank-2-residuums}
 		\label{fig:dist-one-bothsided-actions-in-rank-2-residuum}
 	\end{figure}
 
 	\begin{proof}
 		If $u$ covers $w$, then there are only two edges and the assumption holds. So suppose $wC_{\{s,t\}}$ contains at least four edges. Due to \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} the actions by multiplication can only occure next to $w$ and $v$. Hence there are $2^4 = 16$ configurations possible. \ref{prop:geodesics-have-same-count-of-multiplicative-steps} wipes out ten out of the 16 configurations. The remaining are those from Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
-	\end{proof}
-\end{lemm}
-
-\begin{lemm}
-	\typedlabel{lemm:max-twisted-circle-height}
-	Let $w \in S$, $s,t \in S$ be two distinct generators and $m = \ord(st) < \infty$. Then $|wC_{\{s,t\}}| \leq 2m$.
-
-	\begin{proof}
-		\todo
 	\end{proof}
 \end{lemm}
 
@@ -142,7 +133,42 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 		\input{resources/tikz/a4_s1s3}
 		\quad \quad
 		\input{resources/tikz/a4_s1s4}
-		\caption{Hasse diagrams of $Wk(A_4, \id)$ after removing $s_3,s_4$ edges in the left, $s_2,s_4$ edges in the middle an $s_2,s_3$ edges in the right diagram}
+		\caption{Hasse diagrams of $Wk(A_4, \id)$ after removing $s_3,s_4$ edges in the left, $s_2,s_4$ edges in the middle and $s_2,s_3$ edges in the right diagram}
 		\label{fig:a4_s1s3-and-a4_s2s4}
 	\end{figure}
 \end{exam}
+
+\begin{lemm}
+	\typedlabel{lemm:max-twisted-circle-height}
+	Let $w \in S$, $s,t \in S$ be two distinct generators and $m = \ord(st) < \infty$. Then $|wC_{\{s,t\}}| \leq 2m$.
+
+	\begin{proof}
+		Let $w$ be the $Wk$-minimal element and $v$ be the $Wk$-maximal element in our residuum. Due to \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residuums} there are six different cases we have to consider. We handle the cases in Figure~\ref{fig:dist-one-bothsided-actions-in-rank-2-residuum} from left to right:
+		\begin{description}
+			\item[First:] We have $w (\ul s \ul t)^m = (ts)^m w (st)^m = w$.
+			\item[Second:] Due to $\theta(s)w = ws$ and $\theta(t)w = wt$ we have
+			$$ w (\ul s \ul t)^{m/2+1} = \theta(\hat t (st)^{m/2-1} \hat s) w (st)^{m/2+1} = w(st)^m = w. $$
+			It is still remaining to show, that this case can only occur for even $m$. \todo
+			\item[Third:] Again we are in a case, where $\theta(s)w = ws$ and $\theta(t)w = wt$ hold. Hence we have
+			$$ w (\ul s \ul t)^{(m+1)/2} = \theta(\hat t (st)^{(m-1)/2} \hat s) w (st)^{(m+1)/2} = w(st)^m = w. $$
+			It is still remaining to show, that this case can only occur for odd $m$. \todo
+			\item[Fourth:] Analogue to the previous case, if we start from $u$ instead of $w$.
+			\item[Fifth:] Suppose $m$ is even. Then we have
+			$$ w (\ul s \ul t)^m = \theta(\underbrace{ts \cdots st}_{m-1} \hat s \underbrace{ts \cdots st}_{m-1} \hat s) w (st)^m = \theta(\underbrace{ts \cdots s}_{m-2} \underbrace{s \cdots st}_{m-2}) w = \ldots = w. $$
+			If $m$ is odd, then we have the completely analogue situation
+			$$ w (\ul s \ul t)^m = \theta(\underbrace{ts \cdots ts}_{m-1} \hat t \underbrace{st \cdots st}_{m-1} \hat s) w (st)^m = \theta(\underbrace{ts \cdots t}_{m-2} \underbrace{t \cdots st}_{m-2}) w = \ldots = w. $$
+			\item[Sixst:] Analogue to the previous case due to symmetry.
+		\end{description}
+		So in all six cases we have $w (\ul s \ul t)^k = w$ for a $k \leq \ord(st)$ and hence the residuum can have at most $2 \cdot \ord(st)$ many distinct elements.
+	\end{proof}
+\end{lemm}
+
+\begin{prop}
+	Let $w \in S$ and $s,t \in S$ be two distinct generators with $w \ul s \neq w \ul t$. Suppose $w = w(\ul s \ul t)^m = w(\ul s \ul t)^n$. Then $\gcd(m,n) > 1$.
+
+	\begin{proof}
+		Suppose $k$ to be the smallest positive integer with $w = w(\ul s \ul t)^k$. Note, that since we assumed $w \ul s \neq w \ul t$ we have $k > 1$. Let $n$ be another positive integer with the same property, say $n = qk + r$ for $q \in \nn_0$ and $r \in \{0,\ldots,k-1\}$. Then
+		$$ w(\ul s \ul t)^n = w(\ul s \ul t)^{qk+r} = w((\ul s \ul t)^k)^q (\ul s \ul t)^r = w(\ul s \ul t)^r. $$
+		For $r > 0$ we would have a contradiction to the minimality of $k$, hence $r = 0$, $q > 0$ and therefore $n = qk$. So any $n \in \nn$ satisfying the desired property is a multiple of k, hence for two arbitrary $m,n \in \nn$ with the desired property we have $\gcd(m,n) \geq k > 1$.
+	\end{proof}
+\end{prop}
