@@ -157,18 +157,27 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 			$$ w (\ul s \ul t)^m = \theta(\underbrace{ts \cdots st}_{m-1} \hat s \underbrace{ts \cdots st}_{m-1} \hat s) w (st)^m = \theta(\underbrace{ts \cdots s}_{m-2} \underbrace{s \cdots st}_{m-2}) w = \ldots = w. $$
 			If $m$ is odd, then we have the completely analogue situation
 			$$ w (\ul s \ul t)^m = \theta(\underbrace{ts \cdots ts}_{m-1} \hat t \underbrace{st \cdots st}_{m-1} \hat s) w (st)^m = \theta(\underbrace{ts \cdots t}_{m-2} \underbrace{t \cdots st}_{m-2}) w = \ldots = w. $$
-			\item[Sixst:] Analogue to the previous case due to symmetry.
+			\item[Sixth:] Analogue to the previous case due to symmetry.
 		\end{description}
 		So in all six cases we have $w (\ul s \ul t)^k = w$ for a $k \leq \ord(st)$ and hence the residuum can have at most $2 \cdot \ord(st)$ many distinct elements.
 	\end{proof}
 \end{lemm}
 
 \begin{prop}
+	\typedlabel{prop:rank-2-residuum-minimal-k}
+	Let $w \in S$ and $s,t \in S$ be two distinct generators with $\ord(st) < \infty$. Suppose $k \in \nn$ to be the smallest number with $w = w(\ul s \ul t)^k$. Then for any $n \in \nn$ with $w = w(\ul s \ul t)^n$ we have $k \ | \ n$.
+
+	\begin{proof}
+		Let $n = qk + r$ for $q \in \nn_0$ and $r \in \{0,\ldots,k-1\}$. Then
+		$$ w(\ul s \ul t)^n = w(\ul s \ul t)^{qk+r} = w((\ul s \ul t)^k)^q (\ul s \ul t)^r = w(\ul s \ul t)^r. $$
+		For $r > 0$ we would have a contradiction to the minimality of $k$, hence $r = 0$, $q > 0$ and therefore $k \ | \ n$.
+	\end{proof}
+\end{prop}
+
+\begin{coro}
 	Let $w \in S$ and $s,t \in S$ be two distinct generators with $w \ul s \neq w \ul t$. Suppose $w = w(\ul s \ul t)^m = w(\ul s \ul t)^n$. Then $\gcd(m,n) > 1$.
 
 	\begin{proof}
-		Suppose $k$ to be the smallest positive integer with $w = w(\ul s \ul t)^k$. Note, that since we assumed $w \ul s \neq w \ul t$ we have $k > 1$. Let $n$ be another positive integer with the same property, say $n = qk + r$ for $q \in \nn_0$ and $r \in \{0,\ldots,k-1\}$. Then
-		$$ w(\ul s \ul t)^n = w(\ul s \ul t)^{qk+r} = w((\ul s \ul t)^k)^q (\ul s \ul t)^r = w(\ul s \ul t)^r. $$
-		For $r > 0$ we would have a contradiction to the minimality of $k$, hence $r = 0$, $q > 0$ and therefore $n = qk$. So any $n \in \nn$ satisfying the desired property is a multiple of k, hence for two arbitrary $m,n \in \nn$ with the desired property we have $\gcd(m,n) \geq k > 1$.
+		Let $k$ be the same as in \ref{prop:rank-2-residuum-minimal-k}. Since $w \ul s \neq w \ul t$ we have $k > 1$. Both, $k \ | \ n$ and $k \ | \ m$, hence $\gcd(m,n) \geq k > 1$.
 	\end{proof}
-\end{prop}
+\end{coro}
