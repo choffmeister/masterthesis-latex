@@ -14,22 +14,29 @@
 
 The reader might wonder, why we handle with three sets $S_1,S_2,S_3$ and not just with two. The reason for that is also the main reason, why $Wk(\theta)$ is less accessible than $\Br(\ti{\theta})$: In $Wk(\theta)$ there is the possibilty for $w \ul s = w \ul t$ for two distinct generators $s,t \in S$. Within the Hasse diagram this situation appears in form of double edges between two vertices. For example, let $W = A_3$ and $\theta$ be the Coxeter system automorphism swapping $s_1$ with $s_3$. Then we have $e \ul s_1 = s_3 s_1 = s_1 s_3 = e \ul s_3$. Double edges can also occur for $\theta = \id$, but in this situation they cannot appear next to the neutral element $e$, since $\theta(s)es = e$ for all $s \in S$, hence $e \ul s = s \neq t = e \ul t$ for all $s,t \in S$ with $s \neq t$. Therefore, if we had written \ref{eq:main} with just two sets, then it would be false immediately for any Coxeter system automorphism, that swaps two commutating generators and presumably there could be found many more counterexamples.
 
-A much stronger version of \ref{ques:main} proves to be false.
+By a couple of example we now further investigate some properties of the poset $Wk(\theta)$, that make it less accessible than for example $\Br(W)$. When applying the \ref{prop:exchanged-property-for-twisted-expressions} to a twisted expression, there is no hint which $\ul s_i$ can be omitted. Hence the following hypothesis would be very useful, but unfortunately it proves to be false for $Wk(\theta)$. Consider the following situation: Let $w \in \ti{\theta}$ and $w \ul s_1 \ldots \ul s_k = w \ul t_1 \ldots \ul t_k$ two reduced twisted expressions. Then in the twisted expression $w \ul s_1 \ldots \ldots \ul s_k \ul t_k$ we can omit the $\ul t_k$ and one other $\ul s$ by \ref{prop:exchanged-property-for-twisted-expressions} and get still the same element. It would be nice, when the second omitted $\ul s$ is one of the $\ul s_i$ in general, but unfortunately this proves to be false:
 
-\begin{ques}
-	\typedlabel{ques:cap-of-three-residuums}
-	Let $w \in \ti{\theta}$ and $S_1,S_2,S_3 \subseteq S$. Is $wC_{S_1} \cap wC_{S_2} \cap wC_{S_3} = wC_{S_1 \cap S_2 \cap S_3}$?
-	\todo
-\end{ques}
+\begin{exam}
+	\typedlabel{exam:wk-prefix-hypothesis}
+	Let $W = A_3$ and $w = \ul s_3$ as in Figure~\ref{fig:wk-prefix-counterexample}. Then $w \ul s_2 \ul s_1 \ul s_2 = w \ul s_1 \ul s_2 \ul s_3$, but $w \ul s_1 \ul s_2 \ul s_3 \ul s_2 \notin \{ w \ul s_1 \ul s_2, w \ul s_1 \ul s_3, w \ul s_2 \ul s_3 \}$.
 
-\begin{lemm}
-	Let $w \in \ti{\theta}$ and $u = w \ul s_1 \ldots \ul s_k = w \ul t_1 \ldots \ul t_k$ be two reduced twisted expressions with same prefix $w$. Then $u \ul t_k = w \ul s_1 \ldots \ul{\hat s}_i \ldots \ul s_k$ for some $i = 1,\ldots,k$.
+	\begin{figure}[ht]
+		\centering
+		\input{resources/tikz/wk-prefix-counterexample}
+		\label{fig:wk-prefix-counterexample}
+		\caption{Hasse diagram for \ref{exam:wk-prefix-hypothesis}}
+	\end{figure}
+\end{exam}
+
+\begin{exam}
+	\typedlabel{exam:cap-of-three-residuums}
+	Let $w \in \ti{\theta}$ and $S_1,S_2,S_3 \subseteq S$. Then $wC_{S_1} \cap wC_{S_2} \cap wC_{S_3} = wC_{S_1 \cap S_2 \cap S_3}$ is not true in general.
 
 	\begin{proof}
-		By \ref{prop:exchanged-property-for-twisted-expressions} there must be the possibility for omission, but it could be the case, that only an omission within the prefix $w$ yields an expression for $u \ul t_k$. Suppose this is the case, i.e. our hypothesis is false. By the proof of \ref{prop:exchanged-property-for-twisted-expressions} we have $u \ul t_k \ul s_k \ldots \ul s_i < u \ul t_k \ul s_k \ldots \ul s_{i+1}$ for all $i = 1,\ldots,k$. Then $u \ul t_k < u$, $s_k \in D_R(u)$ and $s_k \in D_R(u \ul t_k)$, hence by \ref{lemm:lifting-property-for-ul-s} we have $u \ul t_k \ul s_k < u \ul s_k$. Since we assumed, that $u \ul t_k \ul s_k \ldots \ul s_i$ is strictly descending in twisted length, we can repeat this step to obtain $v := u \ul t_k \ul s_k \ldots \ul s_1 < u \ul s_k \ldots \ul s_1 = w$.
 		\todo
 	\end{proof}
-\end{lemm}
+\end{exam}
+
 
 % \begin{prop}
 % 	\typedlabel{prop:counterexample-simplification}
