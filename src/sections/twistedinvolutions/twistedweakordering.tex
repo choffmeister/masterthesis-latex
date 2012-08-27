@@ -57,4 +57,19 @@ In this section we introduce the twisted weak ordering $Wk(\theta)$ on the set $
 	\end{proof}
 \end{prop}
 
+\begin{prop}
+	\typedlabel{coro:no-triple-edges}
+	Let $w \in W$ and $w \ul s \succ w$. Then $|\{ t \in S \setminus D_R(w) : w \ul t = w \ul s \}| \in \{1,2\}$.
+
+	\begin{proof}
+		Suppose $t \in S \setminus D_R(w)$ with $w \ul t = w \ul s$. Because of the ordinary length either both $\ul s$ and $\ul t$ act by multiplication on $w$, or both act by twisted conjugation on $w$. Suppose they act by multiplication, then $ws = w \ul s = w \ul t = wt$, hence $s = t$. Conversely, assume they act by twisted conjugation. Then $\theta(s) w s = w \ul s = w \ul t = \theta(t)wt$. Because of $\theta(t) w t t = \theta(t) w = \theta(s) w s t$ we have $l(\theta(s) w s t) < l(\theta(s) w s)$ and so by \ref{coro:exchange-condition} there are three possible cases
+		$$ \theta(t)w = \theta(s) w s t = \begin{cases}
+			\theta(s) w & \Rightarrow s = t, \\
+			w s & \Rightarrow \theta(t) = w s w^{-1} \textrm{ or} \\
+			\theta(s) \overline w s & \Rightarrow w = \theta(t) \theta(s) \overline w s, \\
+		\end{cases} $$
+		where $\overline w$ denotes a well choosen subexpression of $w$. The first case is trivial, the second determines $t$ unambiguously. The third case is impossible, since by \ref{coro:exchange-condition} and \ref{rema:exchange-condition-left-sided} we would have a reduced expression for $w$ beginning with $\theta(s)$ or ending with $s$ (or both), yielding $l(\theta(s)ws) \leq l(w)$, which contradicts to $\rho(w \ul s) = \rho(\theta(s)ws) > \rho(w)$. Therefore, there cannot be more than two distinct $s,t \in S \setminus D_R(w)$ with $w \ul s = w \ul t$.
+	\end{proof}
+\end{prop}
+
 \todo

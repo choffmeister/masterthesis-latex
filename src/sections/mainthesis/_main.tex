@@ -14,21 +14,6 @@
 
 The reader might wonder, why we handle with three sets $S_1,S_2,S_3$ and not just with two. The reason for that is also the main reason, why $Wk(\theta)$ is less accessible than $\Br(\ti{\theta})$: In $Wk(\theta)$ there is the possibilty for $w \ul s = w \ul t$ for two distinct generators $s,t \in S$. Within the Hasse diagram this situation appears in form of double edges between two vertices. For example, let $W = A_3$ and $\theta$ be the Coxeter system automorphism swapping $s_1$ with $s_3$. Then we have $e \ul s_1 = s_3 s_1 = s_1 s_3 = e \ul s_3$. Double edges can also occur for $\theta = \id$, but in this situation they cannot appear next to the neutral element $e$, since $\theta(s)es = e$ for all $s \in S$, hence $e \ul s = s \neq t = e \ul t$ for all $s,t \in S$ with $s \neq t$. Therefore, if we had written \ref{eq:main} with just two sets, then it would be false immediately for any Coxeter system automorphism, that swaps two commutating generators and presumably there could be found many more counterexamples.
 
-\begin{prop}
-	\typedlabel{coro:no-triple-edges}
-	Let $w \in W$ and $w \ul s \succ w$. Then $|\{ t \in S \setminus D_R(w) : w \ul t = w \ul s \}| \in \{1,2\}$.
-
-	\begin{proof}
-		Suppose $t \in S \setminus D_R(w)$ with $w \ul t = w \ul s$. Because of the ordinary length either both $\ul s$ and $\ul t$ act by multiplication on $w$, or both act by twisted conjugation on $w$. Suppose they act by multiplication, then $ws = w \ul s = w \ul t = wt$, hence $s = t$. Conversely, assume they act by twisted conjugation. Then $\theta(s) w s = w \ul s = w \ul t = \theta(t)wt$. Because of $\theta(t) w t t = \theta(t) w = \theta(s) w s t$ we have $l(\theta(s) w s t) < l(\theta(s) w s)$ and so by \ref{coro:exchange-condition} there are three possible cases
-		$$ \theta(t)w = \theta(s) w s t = \begin{cases}
-			\theta(s) w & \Rightarrow s = t, \\
-			w s & \Rightarrow \theta(t) = w s w^{-1} \textrm{ or} \\
-			\theta(s) \overline w s & \Rightarrow w = \theta(t) \theta(s) \overline w s, \\
-		\end{cases} $$
-		where $\overline w$ denotes a well choosen subexpression of $w$. The first case is trivial, the second determines $t$ unambiguously. The third case is impossible, since by \ref{coro:exchange-condition} and \ref{rema:exchange-condition-left-sided} we would have a reduced expression for $w$ beginning with $\theta(s)$ or ending with $s$ (or both), yielding $l(\theta(s)ws) \leq l(w)$, which contradicts to $\rho(w \ul s) = \rho(\theta(s)ws) > \rho(w)$. Therefore, there cannot be more than two distinct $s,t \in S \setminus D_R(w)$ with $w \ul s = w \ul t$.
-	\end{proof}
-\end{prop}
-
 A much stronger version of \ref{ques:main} proves to be false.
 
 \begin{ques}
