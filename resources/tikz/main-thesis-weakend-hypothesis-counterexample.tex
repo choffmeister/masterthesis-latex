@@ -1,0 +1,76 @@
+%!TEX root = ../../_main.tex
+\begin{tikzpicture}[scale=1,bend angle=10]
+\newcommand{\xspace}{1}
+\newcommand{\yspace}{1}
+\tikzstyle{vertex}=[draw,thick,circle,minimum size=2mm,inner sep=0pt]
+\tikzstyle{edge}=[->]
+\tikzstyle{onesided}=[edge,dashed]
+\tikzstyle{bothsided}=[edge]
+\tikzstyle{unhighlighted}=[]
+\tikzstyle{highlighted}=[ultra thick]
+\definecolor{s1color}{RGB}{130,76,253}
+\definecolor{s2color}{RGB}{76,253,78}
+\definecolor{s3color}{RGB}{253,76,124}
+\definecolor{s4color}{RGB}{76,176,253}
+\definecolor{s5color}{RGB}{228,253,76}
+\tikzstyle{s1}=[s1color]
+\tikzstyle{s2}=[s2color]
+\tikzstyle{s3}=[s3color]
+\tikzstyle{s4}=[s4color]
+\tikzstyle{s5}=[s5color]
+\node[vertex,unhighlighted] (56) at (\xspace*-3.375,\yspace*9) {};
+\node[vertex,unhighlighted] (57) at (\xspace*-2.625,\yspace*9) {};
+\node[vertex,unhighlighted] (58) at (\xspace*-1.875,\yspace*9) {};
+\node[vertex,unhighlighted] (59) at (\xspace*-1.125,\yspace*9) {};
+\node[vertex,unhighlighted] (60) at (\xspace*-0.375,\yspace*9) {};
+\node[vertex,unhighlighted] (61) at (\xspace*0.375,\yspace*9) {};
+\node[vertex,unhighlighted] (62) at (\xspace*1.125,\yspace*9) {};
+\node[vertex,unhighlighted] (63) at (\xspace*1.875,\yspace*9) {};
+\node[vertex,highlighted] (64) at (\xspace*2.625,\yspace*9) {};
+\node[vertex,unhighlighted] (65) at (\xspace*3.375,\yspace*9) {};
+\node[vertex,unhighlighted] (66) at (\xspace*-1.875,\yspace*10.5) {};
+\node[vertex,unhighlighted] (67) at (\xspace*-1.125,\yspace*10.5) {};
+\node[vertex,highlighted] (68) at (\xspace*-0.375,\yspace*10.5) {};
+\node[vertex,unhighlighted] (69) at (\xspace*0.375,\yspace*10.5) {};
+\node[vertex,unhighlighted] (70) at (\xspace*1.125,\yspace*10.5) {};
+\node[vertex,highlighted] (71) at (\xspace*1.875,\yspace*10.5) {};
+\node[vertex,unhighlighted] (72) at (\xspace*-0.75,\yspace*12) {};
+\node[vertex,highlighted] (73) at (\xspace*0,\yspace*12) {};
+\node[vertex,highlighted] (74) at (\xspace*0.75,\yspace*12) {};
+\node[vertex,highlighted] (75) at (\xspace*0,\yspace*13.5) {};
+\draw[s5,bothsided,unhighlighted] (56) edge (66);
+\draw[s3,bothsided,unhighlighted] (57) edge (66);
+\draw[s4,onesided,unhighlighted] (57) edge (67);
+\draw[s5,bothsided,unhighlighted] (58) edge (67);
+\draw[s3,bothsided,unhighlighted] (58) edge (68);
+\draw[s2,bothsided,unhighlighted] (59) edge (66);
+\draw[s4,bothsided,unhighlighted] (59) edge (69);
+\draw[s2,onesided,unhighlighted] (60) edge (67);
+\draw[s3,bothsided,unhighlighted] (60) edge (69);
+\draw[s5,bothsided,unhighlighted] (61) edge (69);
+\draw[s2,bothsided,unhighlighted] (61) edge (70);
+\draw[s1,bothsided,unhighlighted] (62) edge (66);
+\draw[s4,bothsided,unhighlighted] (62) edge (70);
+\draw[s1,bothsided,unhighlighted] (63) edge (67);
+\draw[s3,bothsided,unhighlighted] (63) edge (71);
+\draw[s1,bothsided,highlighted,bend right] (64) edge (68);
+\draw[s4,bothsided,highlighted,bend left] (64) edge (68);
+\draw[s2,bothsided,highlighted,bend right] (64) edge (71);
+\draw[s5,bothsided,highlighted,bend left] (64) edge (71);
+\draw[s1,bothsided,unhighlighted] (65) edge (69);
+\draw[s4,bothsided,unhighlighted] (66) edge (72);
+\draw[s3,bothsided,unhighlighted] (67) edge (73);
+\draw[s5,bothsided,highlighted] (68) edge (73);
+\draw[s2,bothsided,highlighted] (68) edge (74);
+\draw[s2,bothsided,unhighlighted] (69) edge (72);
+\draw[s1,bothsided,unhighlighted,bend right] (70) edge (72);
+\draw[s5,bothsided,unhighlighted,bend left] (70) edge (72);
+\draw[s3,onesided,unhighlighted] (70) edge (74);
+\draw[s1,bothsided,highlighted] (71) edge (73);
+\draw[s4,bothsided,highlighted] (71) edge (74);
+\draw[s3,onesided,unhighlighted] (72) edge (75);
+\draw[s2,bothsided,highlighted,bend right] (73) edge (75);
+\draw[s4,bothsided,highlighted,bend left] (73) edge (75);
+\draw[s1,bothsided,highlighted,bend right] (74) edge (75);
+\draw[s5,bothsided,highlighted,bend left] (74) edge (75);
+\end{tikzpicture}
