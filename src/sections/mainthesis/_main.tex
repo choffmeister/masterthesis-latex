@@ -12,13 +12,14 @@
 	hold for any possible $K,\theta,S_1,S_2,S_3$ and $w$?
 \end{ques}
 
-The reader might wonder, why we handle with intersections of sets of generators and not just with arbitrary sets of generators. The reason for that is also the main reason, why $Wk(\theta)$ is less accessible than $\Br(W)$: In $Wk(\theta)$ there is the possibilty for $w \ul s = w \ul t$ for two distinct generators $s,t \in S$. Within the Hasse diagram this situation appears in form of double edges between two vertices. For example, let $W = A_3$ and $\theta$ be the Coxeter system automorphism swapping $s_1$ with $s_3$. Then we have $e \ul s_1 = s_3 s_1 = s_1 s_3 = e \ul s_3$. Double edges can also occur for $\theta = \id$, but in this situation they cannot appear next to the neutral element $e$, since $\theta(s)es = e$ for all $s \in S$, hence $e \ul s = s \neq t = e \ul t$ for all $s,t \in S$ with $s \neq t$. Therefore, if we had written \ref{eq:main} with just two sets, then it would be false immediately for any Coxeter system automorphism, that swaps two commutating generators, as seen in the next example.
+The reader might wonder, why we handle with intersections of sets of generators and not just with arbitrary sets of generators. The reason for that is also the main reason, why $Wk(\theta)$ is less accessible than $\Br(W)$: In $Wk(\theta)$ there is the possibilty for $w \ul s = w \ul t$ for two distinct generators $s,t \in S$. Within the Hasse diagram this situation appears in form of double edges between two vertices. For example, let $W = A_3$ and $\theta$ be the Coxeter system automorphism swapping $s_1$ with $s_3$. Then we have $e \ul s_1 = s_3 s_1 = s_1 s_3 = e \ul s_3$. Double edges can also occur for $\theta = \id$, but in this situation they cannot appear next to the neutral element $e$, since $\theta(s)es = e$ for all $s \in S$, hence $e \ul s = s \neq t = e \ul t$ for all $s,t \in S$ with $s \neq t$. Therefore, if we had written \ref{eq:main} with arbitrary sets $S_{12},S_{23},S_{31}$, then it would be false immediately for any Coxeter system automorphism, that swaps two commutating generators, as seen in the next example.
 
 \begin{exam}
+	\typedlabel{exam:trivial-counterexample-for-arbitary-sets-of-generators}
 	Let $W = A_3$ and $\theta$ be the Coxeter system autmorphism swapping $s_1$ and $s_3$. Then $e \ul s_1 = e \ul s_3$ but $e \ul s_1 \notin eC_{\{s_1\} \cap \{s_1\} \cap \{s_2\}} = eC_\emptyset = \{e\}$.
 \end{exam}
 
-This trivial counterexample can not occur in the situation from \ref{ques:main}.
+Such a trivial counterexample like in \ref{exam:trivial-counterexample-for-arbitary-sets-of-generators} can not occur in the situation from \ref{ques:main}.
 
 \begin{prop}
 	Let $w,v \in W$ with $\rho(v) - \rho(w) = 1$ and let $S_1,S_2,S_3 \subset S$ be three arbitrary sets of generators with $v \in w C_{S_{ij}}$ for $1 \leq i < j \leq 3$. Then we have $v \in wC_T$ ($S_{ij}$ and $T$ are defined like in \ref{ques:main}).
@@ -28,16 +29,16 @@ This trivial counterexample can not occur in the situation from \ref{ques:main}.
 	\end{proof}
 \end{prop}
 
-\begin{exam}
-	Let $W = A_5$, $\theta = \id$ and $w = \ul s_1 \ul s_5 \ul s_3 \ul s_4 \ul s_2 \ul s_3$ as in Figure~\ref{fig:main-thesis-weakend-hypothesis-counterexample}. Denote the maximal element by $w_0$. Let $S_{12} = \{s_1,s_2\}$, $S_{23} = \{s_5,s_6\}$ and $S_{31} = \{s_1,s_5,s_6\}$. Then $w_0 \in wC_{S_i}$ for $i=1,2,3$ by $w_0 = w \ul s_2 \ul s_1 \ul s_2 = w \ul s_6 \ul s_5 \ul s_6 = w \ul s_6 \ul s_1 \ul s_5$, but $w_0 \notin wC_{S_{12} \cap S_{23} \cap S_{31}} = wC_{\emptyset} = \{w\}$.
-
-	\begin{figure}[ht]
-		\centering
-		\input{resources/tikz/main-thesis-weakend-hypothesis-counterexample}
-		\caption{Upper end of Hasse diagram of $Wk(A_5,\id)$}
-		\label{fig:main-thesis-weakend-hypothesis-counterexample}
-	\end{figure}
-\end{exam}
+%\begin{exam}
+%	Let $W = A_5$, $\theta = \id$ and $w = \ul s_1 \ul s_5 \ul s_3 \ul s_4 \ul s_2 \ul s_3$ as in Figure~\ref{fig:main-thesis-weakend-hypothesis-counterexample}. Denote the maximal element by $w_0$. Let $S_{12} = \{s_1,s_2\}$, $S_{23} = \{s_5,s_6\}$ and $S_{31} = \{s_1,s_5,s_6\}$. Then $w_0 \in wC_{S_i}$ for $i=1,2,3$ by $w_0 = w \ul s_2 \ul s_1 \ul s_2 = w \ul s_6 \ul s_5 \ul s_6 = w \ul s_6 \ul s_1 \ul s_5$, but $w_0 \notin wC_{S_{12} \cap S_{23} \cap S_{31}} = wC_{\emptyset} = \{w\}$.
+%
+%	\begin{figure}[ht]
+%		\centering
+%		\input{resources/tikz/main-thesis-weakend-hypothesis-counterexample}
+%		\caption{Upper end of Hasse diagram of $Wk(A_5,\id)$}
+%		\label{fig:main-thesis-weakend-hypothesis-counterexample}
+%	\end{figure}
+%\end{exam}
 
 A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J = wC_{I \cap J}$. If this would be true, \ref{ques:main} could be concluded immediately. Unfortunately it proves to be false. Again, double-edges yield a simple counterexample.
 
@@ -45,3 +46,15 @@ A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J 
 	\typedlabel{exam:cap-of-residuums}
 	Let $w \in \ti{\theta}$ and $s,t$ two distinct generators with $w \ul s = w \ul t = v$. Then $wC_{\{s\}} \cap wC_{\{t\}} = \{w,v\} \neq \{w\} = wC_{\emptyset} = wC_{\{s\} \cap \{t\}}$.
 \end{exam}
+
+\begin{prop}
+	\typedlabel{prop:s1-in-s2-main-special-case}
+	Let $S_1,S_2,S_3,S_{12},S_{23},S_{31},T$ like in \ref{ques:main}. Suppose one set of $S_1,S_2,S_3$ is contained by another. Then
+	$$ \forall \ 1 \leq i < j \leq 3 : v \in w C_{S_{ij}} \quad \Rightarrow \quad v \in w C_T. $$
+
+	\begin{proof}
+		Let $S_1 \subset S_2$. Then we have $S_{12} = S_1$. By this we get the identity
+		$$ T = S_1 \cap S_2 \cap S_3 = S_{12} \cap S_3 = S_1 \cap S_3. $$
+		Hence $v \in w C_T = w C_{S_{31}}$.
+	\end{proof}
+\end{prop}
