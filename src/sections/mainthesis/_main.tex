@@ -22,12 +22,21 @@ The reader might wonder, why we handle with intersections of sets of generators 
 Such a trivial counterexample like in \ref{exam:trivial-counterexample-for-arbitary-sets-of-generators} can not occur in the situation from \ref{ques:main}.
 
 \begin{prop}
-	Let $w,v \in W$ with $\rho(v) - \rho(w) = 1$ and let $S_1,S_2,S_3 \subset S$ be three arbitrary sets of generators with $v \in w C_{S_{ij}}$ for $1 \leq i < j \leq 3$. Then we have $v \in wC_T$ ($S_{ij}$ and $T$ are defined like in \ref{ques:main}).
+	\typedlabel{prop:s-cannot-be-in-exactly-two-intersections}
+	Consider the situation from \ref{ques:main}. Let $s \in S_{12}$ and $s \in S_{23}$. Then $s \in T$.
 
 	\begin{proof}
-		We can assume, that $v$ covers $w$, say $w \ul s = v$. Suppose there is no other $t \in S \setminus \{s\}$ with $w \ul t = v$. Then $s \in S_{ij}$ for $1 \leq i < j \leq 3$ and hence $s \in T$. So suppose there is a double-edge, say $t \in S \setminus \{s\}$ with $w \ul t = v$. Without loss of generality we can assume $s \in S_{12}$, $s \in S_{23}$ and $t \in S_{31}$. But then $s \in S_1$, $s \in S_2$ and $s \in S_3$, hence $s \in T$ again.
+		We have $s \in S_1,S_2,S_3$, hence $s \in T$.
 	\end{proof}
 \end{prop}
+
+\begin{coro}
+	Consider the situation from \ref{ques:main}. Let $w,v \in W$ with $\rho(v) - \rho(w) = 1$ and let $S_1,S_2,S_3 \subset S$ be three arbitrary sets of generators with $v \in w C_{S_{ij}}$ for $1 \leq i < j \leq 3$. Then we have $v \in wC_T$.
+
+	\begin{proof}
+		Each set of $S_1,S_2,S_3$ must at least contain $s$ or $t$, hence $s$ or $t$ is in at least two sets, say $s$ is in two sets. By \ref{prop:s-cannot-be-in-exactly-two-intersections} $s$ is in all three sets, hence $s \in T$ and so $v \in wC_T$.
+	\end{proof}
+\end{coro}
 
 %\begin{exam}
 %	Let $W = A_5$, $\theta = \id$ and $w = \ul s_1 \ul s_5 \ul s_3 \ul s_4 \ul s_2 \ul s_3$ as in Figure~\ref{fig:main-thesis-weakend-hypothesis-counterexample}. Denote the maximal element by $w_0$. Let $S_{12} = \{s_1,s_2\}$, $S_{23} = \{s_5,s_6\}$ and $S_{31} = \{s_1,s_5,s_6\}$. Then $w_0 \in wC_{S_i}$ for $i=1,2,3$ by $w_0 = w \ul s_2 \ul s_1 \ul s_2 = w \ul s_6 \ul s_5 \ul s_6 = w \ul s_6 \ul s_1 \ul s_5$, but $w_0 \notin wC_{S_{12} \cap S_{23} \cap S_{31}} = wC_{\emptyset} = \{w\}$.
