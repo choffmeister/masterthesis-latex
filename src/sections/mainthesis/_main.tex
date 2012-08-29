@@ -12,15 +12,21 @@
 	hold for any possible $K,\theta,S_1,S_2,S_3$ and $w$?
 \end{ques}
 
-The reader might wonder, why we handle with three sets $S_1,S_2,S_3$ and not just with two. The reason for that is also the main reason, why $Wk(\theta)$ is less accessible than $\Br(W)$: In $Wk(\theta)$ there is the possibilty for $w \ul s = w \ul t$ for two distinct generators $s,t \in S$. Within the Hasse diagram this situation appears in form of double edges between two vertices. For example, let $W = A_3$ and $\theta$ be the Coxeter system automorphism swapping $s_1$ with $s_3$. Then we have $e \ul s_1 = s_3 s_1 = s_1 s_3 = e \ul s_3$. Double edges can also occur for $\theta = \id$, but in this situation they cannot appear next to the neutral element $e$, since $\theta(s)es = e$ for all $s \in S$, hence $e \ul s = s \neq t = e \ul t$ for all $s,t \in S$ with $s \neq t$. Therefore, if we had written \ref{eq:main} with just two sets, then it would be false immediately for any Coxeter system automorphism, that swaps two commutating generators and presumably there could be found many more counterexamples. 
-
-The sets $S_{ij}$ in \ref{ques:main} are not arbitrary, since they arise from certain intersections. If we could choose them freely, then there would be plenty of counterexamples. The following one is trivial.
+The reader might wonder, why we handle with intersections of sets of generators and not just with arbitrary sets of generators. The reason for that is also the main reason, why $Wk(\theta)$ is less accessible than $\Br(W)$: In $Wk(\theta)$ there is the possibilty for $w \ul s = w \ul t$ for two distinct generators $s,t \in S$. Within the Hasse diagram this situation appears in form of double edges between two vertices. For example, let $W = A_3$ and $\theta$ be the Coxeter system automorphism swapping $s_1$ with $s_3$. Then we have $e \ul s_1 = s_3 s_1 = s_1 s_3 = e \ul s_3$. Double edges can also occur for $\theta = \id$, but in this situation they cannot appear next to the neutral element $e$, since $\theta(s)es = e$ for all $s \in S$, hence $e \ul s = s \neq t = e \ul t$ for all $s,t \in S$ with $s \neq t$. Therefore, if we had written \ref{eq:main} with just two sets, then it would be false immediately for any Coxeter system automorphism, that swaps two commutating generators, as seen in the next example.
 
 \begin{exam}
 	Let $W = A_3$ and $\theta$ be the Coxeter system autmorphism swapping $s_1$ and $s_3$. Then $e \ul s_1 = e \ul s_3$ but $e \ul s_1 \notin eC_{\{s_1\} \cap \{s_1\} \cap \{s_2\}} = eC_\emptyset = \{e\}$.
 \end{exam}
 
-The next example starts from an arbitary $w$, not a $w_K$ being the maximal element of a subgroup $\langle K \rangle$.
+This trivial counterexample can not occur in the situation from \ref{ques:main}.
+
+\begin{prop}
+	Let $w,v \in W$ with $\rho(v) - \rho(w) = 1$ and let $S_1,S_2,S_3 \subset S$ be three arbitrary sets of generators with $v \in w C_{S_{ij}}$ for $1 \leq i < j \leq 3$. Then we have $v \in wC_T$ ($S_{ij}$ and $T$ are defined like in \ref{ques:main}).
+
+	\begin{proof}
+		We can assume, that $v$ covers $w$, say $w \ul s = v$. Suppose there is no other $t \in S \setminus \{s\}$ with $w \ul t = v$. Then $s \in S_{ij}$ for $1 \leq i < j \leq 3$ and hence $s \in T$. So suppose there is a double-edge, say $t \in S \setminus \{s\}$ with $w \ul t = v$. Without loss of generality we can assume $s \in S_{12}$, $s \in S_{23}$ and $t \in S_{31}$. But then $s \in S_1$, $s \in S_2$ and $s \in S_3$, hence $s \in T$ again.
+	\end{proof}
+\end{prop}
 
 \begin{exam}
 	Let $W = A_5$, $\theta = \id$ and $w = \ul s_1 \ul s_5 \ul s_3 \ul s_4 \ul s_2 \ul s_3$ as in Figure~\ref{fig:main-thesis-weakend-hypothesis-counterexample}. Denote the maximal element by $w_0$. Let $S_{12} = \{s_1,s_2\}$, $S_{23} = \{s_5,s_6\}$ and $S_{31} = \{s_1,s_5,s_6\}$. Then $w_0 \in wC_{S_i}$ for $i=1,2,3$ by $w_0 = w \ul s_2 \ul s_1 \ul s_2 = w \ul s_6 \ul s_5 \ul s_6 = w \ul s_6 \ul s_1 \ul s_5$, but $w_0 \notin wC_{S_{12} \cap S_{23} \cap S_{31}} = wC_{\emptyset} = \{w\}$.
@@ -33,25 +39,9 @@ The next example starts from an arbitary $w$, not a $w_K$ being the maximal elem
 	\end{figure}
 \end{exam}
 
-When applying the \ref{prop:exchanged-property-for-twisted-expressions} to a twisted expression, there is no hint which $\ul s_i$ can be omitted. Consider the following situation: Let $w \in \ti{\theta}$ and $w \ul s_1 \ldots \ul s_k = w \ul t_1 \ldots \ul t_k$ two reduced twisted expressions. Then in the twisted expression $w \ul s_1 \ldots \ldots \ul s_k \ul t_k$ we can omit the $\ul t_k$ and one other $\ul s$ by \ref{prop:exchanged-property-for-twisted-expressions} and get still the same element. It would be nice, when the second omitted $\ul s$ is one of the $\ul s_i$ in general, but unfortunately this proves to be false:
+A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J = wC_{I \cap J}$. If this would be true, \ref{ques:main} could be concluded immediately. Unfortunately it proves to be false. Again, double-edges yield a simple counterexample.
 
 \begin{exam}
-	\typedlabel{exam:wk-prefix-hypothesis}
-	Let $W = A_3$, $\theta = \id$ and $w = \ul s_3$ as in Figure~\ref{fig:wk-prefix-counterexample}. Then $w \ul s_2 \ul s_1 \ul s_2 = w \ul s_1 \ul s_2 \ul s_3$, but $w \ul s_1 \ul s_2 \ul s_3 \ul s_2 \notin \{ w \ul s_1 \ul s_2, w \ul s_1 \ul s_3, w \ul s_2 \ul s_3 \}$.
-
-	\begin{figure}[ht]
-		\centering
-		\input{resources/tikz/wk-prefix-counterexample}
-		\caption{Hasse diagram of $Wk(A_3,\id)$}
-		\label{fig:wk-prefix-counterexample}
-	\end{figure}
-\end{exam}
-
-\begin{exam}
-	\typedlabel{exam:cap-of-three-residuums}
-	Let $w \in \ti{\theta}$ and $S_1,S_2,S_3 \subseteq S$. Then $wC_{S_1} \cap wC_{S_2} \cap wC_{S_3} = wC_{S_1 \cap S_2 \cap S_3}$ is not true in general.
-
-	\begin{proof}
-		\todo
-	\end{proof}
+	\typedlabel{exam:cap-of-residuums}
+	Let $w \in \ti{\theta}$ and $s,t$ two distinct generators with $w \ul s = w \ul t = v$. Then $wC_{\{s\}} \cap wC_{\{t\}} = \{w,v\} \neq \{w\} = wC_{\emptyset} = wC_{\{s\} \cap \{t\}}$.
 \end{exam}

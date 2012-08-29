@@ -194,3 +194,10 @@ We now establish many properties from Section \ref{sec:coxeter-groups} for twist
 		Choose $j$ minimal, so we have $\ul s_1 \ldots \ul s_j$ is not reduced. By \ref{prop:exchanged-property-for-twisted-expressions} there is an index $i$ with $\ul s_1 \ldots \ul s_j = s_1 \ldots \ul{\hat s}_i \ldots \ul s_{j-1}$ yielding our hypothesis $w = \ul s_1 \ldots \ul s_j \ldots \ul s_k = \ul s_1 \ldots \ul{\hat s}_i \ldots \ul{\hat s}_j \ldots \ul s_k$.
 	\end{proof}
 \end{prop}
+
+When applying the \ref{prop:exchanged-property-for-twisted-expressions} to a twisted expression, there is no hint which $\ul s_i$ can be omitted. Consider the following situation: Let $w \in \ti{\theta}$ and $w \ul s_1 \ldots \ul s_k = w \ul t_1 \ldots \ul t_k$ two reduced twisted expressions. Then in the twisted expression $w \ul s_1 \ldots \ldots \ul s_k \ul t_k$ we can omit the $\ul t_k$ and one other $\ul s$ by \ref{prop:exchanged-property-for-twisted-expressions} and get still the same element. It would be nice, when the second omitted $\ul s$ is one of the $\ul s_i$ in general, but unfortunately this proves to be false:
+
+\begin{exam}
+	\typedlabel{exam:wk-prefix-hypothesis}
+	Let $W = A_3$, $\theta = \id$ and $w = \ul s_3$. Then $w \ul s_2 \ul s_1 \ul s_2 = w \ul s_1 \ul s_2 \ul s_3$, but $w \ul s_1 \ul s_2 \ul s_3 \ul s_2 \notin \{ w \ul s_1 \ul s_2, w \ul s_1 \ul s_3, w \ul s_2 \ul s_3 \}$. Hence the omission cannot be choosen after the prefix $w$, but $w \ul s_1 \ul s_2 \ul s_3 \ul s_2 = \ul s_1 \ul s_2 \ul s_3$ works, as guaranteed by \ref{prop:exchanged-property-for-twisted-expressions}.
+\end{exam}
