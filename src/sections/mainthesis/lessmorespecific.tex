@@ -1,5 +1,5 @@
 %!TEX root = ../../../_main.tex
-\subsection{Results in less or more specific cases}
+\subsection{Results in less and more specific cases}
 \label{sec:sec:main-thesis-less-more-specific}
 
 %\begin{exam}
@@ -26,7 +26,7 @@ Such a trivial counterexample like in \ref{exam:trivial-counterexample-for-arbit
 	Consider the situation from \ref{ques:main}. Let $w,v \in \ti{\theta}$ with $\rho(v) - \rho(w) = 1$ and let $v \in w C_{S_{ij}}$ for $1 \leq i < j \leq 3$. Then we have $v \in wC_T$.
 
 	\begin{proof}
-		Each set $S_{12},S_{23},S_{31}$ must at least contain $s$ or $t$, hence $s$ or $t$ is in at least two sets, say $s$ is in two sets. By \ref{coro:three-sets-pairwise-intersection} $s$ is in all three sets, hence $s \in T$ and so $v \in wC_T$.
+		There are at most two (not necessarily distinct) $s,t \in S$ with $w \ul s = v$ and $w \ul t = v$. Each set $S_{12},S_{23},S_{31}$ must at least contain $s$ or $t$, hence $s$ or $t$ is in at least two sets, say $s \in S_{12},S_{23}$. Hence $s \in S_1,S_2,S_3$ and therefore $v \in wC_T$.
 	\end{proof}
 \end{prop}
 
@@ -43,7 +43,7 @@ A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J 
 	$$ \forall \ 1 \leq i < j \leq 3 : v \in w C_{S_{ij}} \quad \Rightarrow \quad v \in w C_T. $$
 
 	\begin{proof}
-		Let $S_1 \subset S_2$. Then we have $S_{12} = S_1$. By this we get the identity
+		Without loss of generality let $S_1 \subset S_2$. Then we have $S_{12} = S_1$. By this we get the identity
 		$$ T = S_1 \cap S_2 \cap S_3 = S_{12} \cap S_3 = S_1 \cap S_3. $$
 		Hence $v \in w C_T = w C_{S_{31}}$.
 	\end{proof}
