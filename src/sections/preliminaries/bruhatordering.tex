@@ -1,39 +1,8 @@
 %!TEX root = ../../../_main.tex
-\subsection{Bruhat ordering}
+\subsection{Bruhat ordering on Coxeter groups}
 \label{sec:coxeter-groups-bruhat-ordering}
 
 We now investigate ways to partially order the elements of a Coxeter group. Futhermore, this ordering should be compatible with the length function, i.e. for $w,v \in W$ we have $l(w) < l(v)$ whenever $w \leq v$.
-
-\begin{defi}
-	\typedlabel{defi:poset}
-	Let $M$ be a set. A binary relation $\leq$ is called a \defword{partial order} over $M$, if for all $a,b,c \in M$ it satisfies the conditions
-	\begin{enumerate}
-		\item $a \leq a$ (\defword{reflexivity}),
-		\item $a \leq b \wedge b \leq a \Rightarrow a=b$ (\defword{antisymmetry}) and
-		\item $a \leq b \wedge b \leq c \Rightarrow a \leq c$ (\defword{transitivity}).
-	\end{enumerate}
-	In this case $(M,\leq)$ is called a \defword{poset}. If two elements $a \leq b \in M$ are immediate neighbors, i.e. there is no third element $c \in M$ with $a \leq c \leq b$ we say that $b$ \defword{covers} $a$. A poset is called \defword{graded poset} if there is a map $\rho : M \to \nn$ so that $\rho(b) - 1 = \rho(a)$ whenever $b$ covers $a$. In this case $\rho$ is called the \defword{rank function} of the graded poset If for any two elements $a,b \in M$ there is an element $c \in M$ with $a \leq c$ and $b \leq c$, then a poset is called \defword{directed poset}.
-\end{defi}
-
-\begin{defi}
-	Let $(M,\leq)$ be a poset and $a,b \in M$. Then we call $\{ c \in M : a \leq c \leq b \}$ an \defword{interval} and denote it by $[a,b]_\leq$. The set $\{ c \in M : a < c < b \}$ is called an \defword{open interval} and is denoted by $(a,b)_\leq$. In both cases we can omit the $\leq$, if the relation is clear from context.
-\end{defi}
-
-\begin{defi}
-	\typedlabel{defi:hasse-diagram}
-	Let $(M,\leq)$ be a poset. The \defword{Hasse diagram} of the poset is the graph obtained in the following way: Add a vertex for each element in $M$. Then add a directed edge from vertex $a$ to $b$ whenever $b$ covers $a$.
-\end{defi}
-
-\begin{exam}
-	Suppose we have an arbitrary set $M$. Then the powerset $\mathcal P (M)$ can be partially ordered by the subset relation, so $(\mathcal P (M), \subseteq)$ is a poset. Indeed this poset is always graded with the cardinality function as rank function. In Figure \ref{fig:poset-xyz-subsets} we see the Hasse diagram of this poset with $M = \{x,y,z\}$.
-
-	\begin{figure}[ht]
-		\centering
-		\input{resources/tikz/poset-xyz-subsets.tex}
-		\caption{Hasse diagram of the set of all subsets of $\{x,y,z\}$ order by the subset relation}
-		\label{fig:poset-xyz-subsets}
-	\end{figure}
-\end{exam}
 
 \begin{defi}
 	\typedlabel{defi:bruhat-ordering}
@@ -147,7 +116,7 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 The \ref{theo:lifting-property} seems quite innocent, but when trying to investigate facts around the Bruhat ordering it proves to be one of the key tools in many cases.
 
 \begin{prop}
-	\namedlabel{prop:bruhat-is-directed}
+	\typedlabel{prop:bruhat-is-directed}
 	\theocite{Proposition 7}{denton:coxeter}
 	The poset $\Br(W)$ is directed.
 
@@ -162,6 +131,7 @@ The \ref{theo:lifting-property} seems quite innocent, but when trying to investi
 \end{prop}
 
 \begin{coro}
+	\typedlabel{coro:bruhat-is-bounded}
 	\theocite{Proposition 8}{denton:coxeter}
 	\begin{enumerate}
 		\item Let $W$ be finite, then there exists an unique element $w_0 \in W$ with $w \leq w_0$ for all $w \in W$.
@@ -173,5 +143,21 @@ The \ref{theo:lifting-property} seems quite innocent, but when trying to investi
 			\item Assume there are two elements $u,v \in W $ of maximal rank. Since $\Br(W)$ is directed, there is an element $w \in W$ with $u \leq w$ and $v \leq w$. Because $\Br(W)$ is graded, we have $l(w) > l(u) = l(v)$, contradicting to the maximality of $u$ and $v$.
 			\item We want to show, that $v < w$ for all $v \in W$. For that, we induce on $r = l(v)$. If $r = 0$, then $v = e \leq w$. Let $r > 0$. Then there is a $s \in S$ with $us < u$. By induction, $us \leq w$. Since $s \in D_R(w)$, we have $uss = u \leq w$ by \ref{theo:lifting-property} and are done with our induction. This yields $W = [e,w]$ and since by \ref{coro:bruhat-intervals-are-finite} intervals in the Bruhat order are finite, $W$ is finite, too. \qedhere
 		\end{enumerate}
+	\end{proof}
+\end{coro}
+
+\begin{theo}
+	Let $(W,S)$ be a finite Coxeter system. Then $\Br(W)$ is graded, directed and bounded.
+
+	\begin{proof}
+		$\Br(W)$ is graded due to \ref{coro:bruhat-ordering-is-graded}, directed due to \ref{prop:bruhat-is-directed} and bounded due to \ref{coro:bruhat-is-bounded}.
+	\end{proof}
+\end{theo}
+
+\begin{coro}
+	Let $(W,S)$ be a Coxeter system and $w,v \in W$ with $w < v$. Then the interval $[w,v]$ is a finite poset, which is finite, graded, directed and bounded.
+
+	\begin{proof}
+		The poset structure and the graduation transfers directly from $Br(W)$. By \ref{coro:bruhat-intervals-are-finite} intervals in $\Br(W)$ are finite. Since $v$ is the unique maximal element and $w$ the unique minimal element, it is bounded. By definition of intervals we have $u \leq v$ for every element $u \in [w,v]$, hence it is directed.
 	\end{proof}
 \end{coro}

@@ -1,0 +1,42 @@
+%!TEX root = ../../../_main.tex
+\subsection{Posets}
+\label{sec:posets}
+
+\begin{defi}
+	\typedlabel{defi:poset}
+	Let $M$ be a set. A binary relation $\leq$ is called a \defword{partial order} over $M$, if for all $a,b,c \in M$ it satisfies the conditions
+	\begin{enumerate}
+		\item $a \leq a$ (\defword{reflexivity}),
+		\item $a \leq b \wedge b \leq a \Rightarrow a=b$ (\defword{antisymmetry}) and
+		\item $a \leq b \wedge b \leq c \Rightarrow a \leq c$ (\defword{transitivity}).
+	\end{enumerate}
+	In this case $(M,\leq)$ is called a \defword{poset}. If two elements $a \leq b \in M$ are immediate neighbors, i.e. there is no third element $c \in M$ with $a \leq c \leq b$ we say that $b$ \defword{covers} $a$.
+\end{defi}
+
+\begin{defi}
+	A poset is called \defword{graded poset} if there is a map $\rho : M \to \nn$ such that for all $a,b \in M$ with $b$ covers $a$ we have $\rho(b) = \rho(a) + 1$. In this case $\rho$ is called the \defword{rank function} of the graded poset.
+\end{defi}
+
+\begin{defi}
+	A poset is called \defword{directed poset}, if for any two elements $a,b \in M$ there is an element $c \in M$ with $a \leq c$ and $b \leq c$. It is called \defword{bounded poset}, if it has a unique minimal and maximal element, denoted by $\hat 0$ and $\hat 1$.
+\end{defi}
+
+\begin{defi}
+	Let $(M,\leq)$ be a poset and $a,b \in M$. Then we call $\{ c \in M : a \leq c \leq b \}$ an \defword{interval} and denote it by $[a,b]_\leq$. The set $\{ c \in M : a < c < b \}$ is called an \defword{open interval} and is denoted by $(a,b)_\leq$. In both cases we can omit the $\leq$, if the relation is clear from context.
+\end{defi}
+
+\begin{defi}
+	\typedlabel{defi:hasse-diagram}
+	The \defword{Hasse diagram} of the poset $(M,\leq)$ is the graph obtained in the following way: Add a vertex for each element in $M$. Then add a directed edge from vertex $a$ to $b$ whenever $b$ covers $a$.
+\end{defi}
+
+\begin{exam}
+	Suppose we have an arbitrary set $M$. Then the powerset $\mathcal P (M)$ can be partially ordered by the subset relation, so $(\mathcal P (M), \subseteq)$ is a poset. Indeed this poset is always graded with the cardinality function as rank function. In Figure \ref{fig:poset-xyz-subsets} we see the Hasse diagram of this poset with $M = \{x,y,z\}$.
+
+	\begin{figure}[ht]
+		\centering
+		\input{resources/tikz/poset-xyz-subsets.tex}
+		\caption{Hasse diagram of the set of all subsets of $\{x,y,z\}$ order by the subset relation}
+		\label{fig:poset-xyz-subsets}
+	\end{figure}
+\end{exam}
