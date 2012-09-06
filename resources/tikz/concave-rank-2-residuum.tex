@@ -4,7 +4,8 @@
 \newcommand{\yspace}{1}
 \tikzstyle{vertex}=[draw,thick,circle,minimum size=2mm,inner sep=0pt]
 \tikzstyle{edge}=[thick,->]
-\node[vertex] (0) at (\xspace*0,\yspace*0) {};
+\tikzstyle{label}=[fill=white,inner sep=1.5pt]
+\node[vertex] (0) at (\xspace*-0.375,\yspace*0) {};
 \node[vertex] (1) at (\xspace*-1.5,\yspace*1.5) {};
 \node[vertex] (2) at (\xspace*-0.75,\yspace*1.5) {};
 \node[vertex] (3) at (\xspace*0.75,\yspace*1.5) {};
@@ -12,12 +13,12 @@
 \node[vertex] (5) at (\xspace*-0.375,\yspace*3) {};
 \node[vertex] (6) at (\xspace*0.375,\yspace*3) {};
 \node[vertex] (7) at (\xspace*-0,\yspace*4.5) {};
-\draw[edge] (0) edge (1);
-\draw[edge] (0) edge (3);
-\draw[edge] (1) edge (4);
-\draw[edge] (2) edge (4);
-\draw[edge] (2) edge (5);
-\draw[edge] (3) edge (6);
-\draw[edge] (5) edge (7);
-\draw[edge] (6) edge (7);
+\draw[edge] (0) edge node[label] {$\ul s$} (1);
+\draw[edge] (0) edge node[label] {$\ul t$} (3);
+\draw[edge] (1) edge node[label] {$\ul t$} (4);
+\draw[edge] (2) edge node[label] {$\ul s$} (4);
+\draw[edge] (2) edge node[label] {$\ul t$} (5);
+\draw[edge] (3) edge node[label] {$\ul s$} (6);
+\draw[edge] (5) edge node[label] {$\ul s$} (7);
+\draw[edge] (6) edge node[label] {$\ul t$} (7);
 \end{tikzpicture}
