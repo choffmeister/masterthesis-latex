@@ -1,0 +1,23 @@
+%!TEX root = ../../_main.tex
+\begin{tikzpicture}[scale=1,bend angle=10]
+\newcommand{\xspace}{1}
+\newcommand{\yspace}{1}
+\tikzstyle{vertex}=[draw,thick,circle,minimum size=2mm,inner sep=0pt]
+\tikzstyle{edge}=[thick,->]
+\node[vertex] (0) at (\xspace*0,\yspace*0) {};
+\node[vertex] (1) at (\xspace*-1.5,\yspace*1.5) {};
+\node[vertex] (2) at (\xspace*-0.75,\yspace*1.5) {};
+\node[vertex] (3) at (\xspace*0.75,\yspace*1.5) {};
+\node[vertex] (4) at (\xspace*-1.125,\yspace*3) {};
+\node[vertex] (5) at (\xspace*-0.375,\yspace*3) {};
+\node[vertex] (6) at (\xspace*0.375,\yspace*3) {};
+\node[vertex] (7) at (\xspace*-0,\yspace*4.5) {};
+\draw[edge] (0) edge (1);
+\draw[edge] (0) edge (3);
+\draw[edge] (1) edge (4);
+\draw[edge] (2) edge (4);
+\draw[edge] (2) edge (5);
+\draw[edge] (3) edge (6);
+\draw[edge] (5) edge (7);
+\draw[edge] (6) edge (7);
+\end{tikzpicture}
