@@ -92,27 +92,12 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 	\end{proof}
 \end{prop}
 
-\begin{prop}
-	\typedlabel{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
-	Let $w \in S$ and $s,t \in S$ be two distinct generators with $w \ul s \prec w$. If $\ul s$ acts by multiplication on $w$, then either $w \ul s \ul t \prec w \ul s$ or $w \ul t \succ w$.
-
-	\begin{proof}
-		We want to show, that precisely one of two situations holds. Suppose none of both holds. Then we have $w \ul s \ul t \succ w \ul s$ and $w \ul t \prec w$, but this contradicts to \ref{prop:rank-2-residuums-are-convex}. If we assume, that precisely one situation holds, then we are done. In return suppose both situations hold.
-
-We have $\theta(s)ws = w$ and $s \in D_R(w)$, hence $w \ul s \leq w$. 
-
-		We cannot have both $t \in D_R(w)$ and $t \notin D_R(w \ul s)$, since this would contradict to \ref{prop:rank-2-residuums-are-convex} and if either $t \notin D_R(w)$ or $t \in D_R(w \ul s)$, then we are done. In return suppose $t \in D_R(w)$ and $t \notin D_R(w \ul s)$. Then we have $w \ul t \leq w$ and $w \ul s \leq w \ul s \ul t$. With the second part of \ref{lemm:lifting-property-for-ul-s} we conclude $(w \ul s \ul t) \ul t \leq w \ul t$. This yields
-		$$ ws = w \ul s = (w \ul s \ul t) \ul t \leq w \ul t. $$
-		Since $l(w) - 1 = l(w \ul s) \leq l(w \ul t) < l(w)$ we have $w \ul t = wt$, hence $ws \leq wt$. But $s,t \in D_R(w)$ and so $l(ws) = l(wt)$ and $ws = wt$, too. Therefore $s = t$, contradicting our assumption of two distinct generators.
-	\end{proof}
-\end{prop}
-
 \begin{coro}
 	\typedlabel{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
 	Let $w \in S$ and let $s,t \in S$ be two distinct generators. Suppose $w \ul s \ul t \prec w \ul s \prec w$. If $s$ acts by multiplication on $w$, then $w \ul t \prec w$.
 
 	\begin{proof}
-		We assumed, that $w \ul s \ul t \prec w \ul s$. Hence by \ref{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle} (which is stated with exclusive or) we cannot have the other possible situation $w \ul t \succ w$, so $w \ul t \prec w$.
+		We assumed, that $w \ul s \ul t \prec w \ul s$. Hence by \ref{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle} we must have $w \ul t \prec w$.
 	\end{proof}
 \end{coro}
 
