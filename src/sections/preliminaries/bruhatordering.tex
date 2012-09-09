@@ -33,19 +33,27 @@ To ensure the Bruhat ordering is graded as well, we need another characterizatio
 	Let $(W,S)$ be a Coxeter system, $u,w \in W$ with $u \leq w$ and $s \in S$. Then $us \leq w$ or $us \leq ws$ or both.
 
 	\begin{proof}
-		We can reduce the proof (\todo why?) to the case $u \to w$, i.e. $ut = w$ for a $t \in T$ with $l(v) < l(u)$. Let $s = t$. Then $us \leq w$ and we are done. In case $s \neq t$ there are two alternatives for the lengths. We can have $l(us) = l(u) - 1$ which would mean $us \to u \to w$, so $us \leq w$.
+		We can reduce the proof to the case $u \to w$, i.e. $ut = w$ for a $t \in T$ with $l(v) < l(u)$. Let $s = t$. Then $us \leq w$ and we are done. In case $s \neq t$ there are two alternatives for the lengths. We can have $l(us) = l(u) - 1$ which would mean $us \to u \to w$, so $us \leq w$.
 
-		Assume $l(us) = l(u) + 1$. For the reflection $t' = sts$ we get $(us)t' = ussts = uts = ws$. So we have $us \leq ws$ iff $l(us) < l(ws)$. Suppose this is not the case. Since we have assumed $l(us) = l(u) + 1$ any reduced expression $u = s_1 \cdots s_r$ for $u$ yields a reduced expression $us = s_1 \cdots s_r s$ for $us$. With the \ref{theo:strong-exchange-condition} we can obtain $ws = ust'$ from $us$ by omitting one factor. This omitted factor cannot be $s$ since $s \neq t$. This means $ws = s_1 \cdots \hat s_i \cdots s_r s$ and so $ws = s_1 \cdots \hat s_i \cdots s_r$, contradicting to our assumption $l(u) < l(w)$
+		Assume $l(us) = l(u) + 1$. For the reflection $t' = sts$ we get $(us)t' = ussts = uts = ws$. So we have $us \leq ws$ iff $l(us) < l(ws)$. Suppose this is not the case. Since we have assumed $l(us) = l(u) + 1$ any reduced expression $u = s_1 \cdots s_r$ for $u$ yields a reduced expression $us = s_1 \cdots s_r s$ for $us$. With the \ref{theo:strong-exchange-condition} we can obtain $ws = ust'$ from $us$ by omitting one factor. This omitted factor cannot be $s$ since $s \neq t$. This means $ws = s_1 \cdots \hat s_i \cdots s_r s$ and so $ws = s_1 \cdots \hat s_i \cdots s_r$, contradicting to our assumption $l(u) < l(w)$.
 	\end{proof}
 \end{prop}
 
 \begin{theo}[Subword property]
 	\namedlabel{theo:bruhat-subexpression-characterization}
 	\theocite{Theorem 5.10}{humphreys:coxeter}
-	Let $(W,S)$ be a Coxeter system and $w \in W$ with any reduced expression $w = s_1 \cdots s_r$ and $s_i \in S$. Then $u \leq w$ (in the Bruhat ordering) iff $u$ can be obtained as a subexpression of this reduced expression.
+	Let $(W,S)$ be a Coxeter system and $w \in W$ with a fixed, but arbitrary, reduced expression $w = s_1 \cdots s_r$ and $s_i \in S$. Then $u \leq w$ (in the Bruhat ordering) iff $u$ can be obtained as a subexpression of this reduced expression.
 
 	\begin{proof}
-		\todo
+		First we show, that any $w' < w$ occurs as a subexpression. For that we start with the case $w' \to w$, say $w't = w$. We have $l(w') < l(w)$ and hence by \ref{theo:strong-exchange-condition} we get
+		$$ w' = w'tt = wt = s_1 \cdots \hat s_i \cdots s_r $$
+		for some $i$. This step can be iterated. In return, suppose we have a subexpression $w' = s_{i_1} \cdots s_{i_q}$. We induce on $r = l(w)$. For $r = 0$ we have $w = e$, hence $w' = e$, too and so $w' \leq w$. Now suppose $r > 0$. If $i_q < r$, then $s_{i_1} \cdots s_{i_q}$ is a subexpression of $w s_r = s_1 \cdots s_{r-1}$, too. Since $l(w s_r) = r-1 < r$, we can conclude
+		$$ s_{i_1} \cdots s_{i_q} \leq s_1 \cdots s_{r-1} = w s_r < w $$
+		by induction hypothesis. If $i_q = r$, then we use our induction hypothesis to get $s_{i_1} \cdots s_{i_{q-1}} \leq s_1 \cdots s_{r-1}$. By \ref{prop:u-leq-w-then-us-leq-w-or-us-leq-ws} we get
+		$$ s_{i_1} \cdots s_{i_q} \leq s_1 \cdots s_{r-1} < w $$
+		or
+		$$ s_{i_1} \cdots s_{i_q} \leq s_1 \cdots s_r = w, $$
+		both finishing our induction.
 	\end{proof}
 \end{theo}
 
