@@ -56,7 +56,7 @@ $$ e \ul s \ul t \ul s = s \ul t \ul s = tst \ul s = sts \ul s = t \neq s = tst 
 	\end{cases} $$
 
 	\begin{proof}
-		Suppose $\ul s$ acts by multiplication on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. Conversely, suppose $l(\theta(s)ws) = l(w)$. \todo
+		Suppose $\ul s$ acts by multiplication on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. Conversely, suppose $l(\theta(s)ws) = l(w)$. If $w \ul s = ws$, then we are done. So assume $\theta(s)ws \neq w$. Then $w$ must have a reduced expression beginning with $\theta(s)$ or ending with $s$ (else, we could not have $l(\theta(s)ws) = l(w)$). Without loss of generality suppose that $\theta(s)s_1 \cdots s_k$ is such an expression for $w$. Since $w$ is a $\theta$-twisted involution, i.e. $\theta(w) = w^{-1}$, we have $l(ws) < l(w)$. Since $l(\theta(s)ws) = l(w)$, no reduced expression for $w$ both begins with $\theta(s)$ and ends with $s$ and hence \ref{coro:exchange-condition} yields $ws = s_1 \cdots s_k$, which implies $\theta(s)ws = w$, contradicting to our assumption.
 	\end{proof}
 \end{lemm}
 
