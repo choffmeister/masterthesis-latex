@@ -129,20 +129,22 @@ Now $M$ contains all already known elements of twisted length $k+1$, satisfying 
 \end{lemm}
 
 \begin{lemm}
-	Let $w \in S$ and $s,t \in S$ be two distinct generators with $w \ul s \neq w \ul t$. Then the following table shows all possible $n \in \nn$ with $w(\ul s \ul t)^n = w$ regarding a certain $\ord(st)$.
+	Let $w \in S$ and $s,t \in S$ be two distinct generators with $w \ul s \neq w \ul t$. Then the following table shows all possible $n \in \nn$ with $w(\ul s \ul t)^n = w$ regarding $\ord(st)$ and the distribution of multiplications and twisted conjugations in $wC_{\{s,t\}}$ (see Figure~\ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}).
 
 	\begin{center}
 		\begin{tabular}{c|ccccccc|c}
-			$ord(st)$	& 2 & 3 & 4 & 5 & 6 & 7 & 8 & \todo \\
+													& \multicolumn{7}{c|}{$\ord(st)$} \\
+													& 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 			\hline
-			n 			& 2 & 3 & 2,4 & 5 & 2,3,4,6 & 7 & 2,4,6,8 & \textrm{First, Fifth, Sixst}	\\
-			n 			& 2 & -- & 3 & -- & 2,4 & -- & 5 & \textrm{Second} \\
-			n			& -- & 2 & -- & 3 & -- & 2,4 & -- & \textrm{Third, Fourth} \\
+			\textrm{non-multiplicative}				& 1,2 & 3 & 2,4 & 5 & 2,3,4,6 & 7 & 2,4,6,8 \\
+			\textrm{diagonal-multiplicative}		& 2 & 3 & 2,4 & 5 & 2,3,4,6 & 7 & 2,4,6,8 \\
+			\textrm{maximal-multiplicative}			& 2 & -- & 3 & -- & 2,4 & -- & 5 \\
+			\textrm{bottom- and top-multiplicative}	& -- & 2 & -- & 3 & -- & 2,4 & -- \\
 		\end{tabular}		
 	\end{center}
 
 	\begin{proof}
-		In each case we get a $m$ with $w = (\ul s \ul t)^m$ from the proof of \ref{lemm:max-twisted-circle-height}. By \ref{coro:rank-2-residuum-gcd-n-m} any $n$ with this property has a non trivial divisor in common with $m$.
+		In each case we get a $m$ with $w = (\ul s \ul t)^m$ from the proof of \ref{lemm:max-twisted-circle-height}. By \ref{coro:rank-2-residuum-gcd-n-m} any $n$ with this property has a non trivial divisor in common with $m$. The situation $w \ul s \ul t = w$ for $s \neq t$ can only occur, if $\ul s$ and $\ul t$ act by twisted conjugation on $w$ due to the proof of \ref{prop:no-triple-edges}, and if $\ord(st) = 2$ due to \ref{coro:double-edges-only-for-ord-2}.
 	\end{proof}
 \end{lemm}
 

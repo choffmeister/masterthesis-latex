@@ -101,7 +101,7 @@ The assertion that \ref{prop:rank-2-residuums-are-convex} makes can be thought o
 	\end{proof}
 \end{prop}
 
-Note that this proposition could be strengthen by insisting on an exclusive or, since we cannot have both cases at the same time. By the prove of \ref{coro:no-triple-edges} we see, that we cannot have $w \ul s \ul t = w$, since double edges are always twisted conjugations. Hence having $w \ul s \ul t \succ w \ul s \prec w \succ w \ul t$ would contradict to the convexity from \ref{prop:rank-2-residuums-are-convex}. The next corollary ensures, that multiplicative actions in $Wk(\theta)$ can only occur at the top or bottom end of rank-2-residuums. 
+Note that this proposition could be strengthen by insisting on an exclusive or, since we cannot have both cases at the same time. By the prove of \ref{prop:no-triple-edges} we see, that we cannot have $w \ul s \ul t = w$, since double edges are always twisted conjugations. Hence having $w \ul s \ul t \succ w \ul s \prec w \succ w \ul t$ would contradict to the convexity from \ref{prop:rank-2-residuums-are-convex}. The next corollary ensures, that multiplicative actions in $Wk(\theta)$ can only occur at the top or bottom end of rank-2-residuums. 
 
 \begin{coro}
 	\typedlabel{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
@@ -114,21 +114,30 @@ Note that this proposition could be strengthen by insisting on an exclusive or, 
 
 Again, this corollary can be strengthen by insisting on an exclusive or with the same arguments as before.
 
-\begin{lemm}
-	\typedlabel{lemm:one-both-sided-action-symmetric-in-rank-2-residuums}
-	Let $s,t \in S$ be two distinct generators and $w \in S$ with $w = min(w,\{s,t\})$. Suppose $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$. Then the twisted conjugations and mulitplications are distributed axisymmetrically or pointsymmetrically like in Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
+
+\begin{defi}
+	Let $w \in W$, $s,t \in S$ be two distinct generators with $\ord(st) < \infty$ and $C := wC_{\{s,t\}}$ the corrosponding rank-2-residuum. We classify rank-2-residuums according to Figure~\ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
 
 	\begin{figure}[ht]
 		\centering
-		\input{resources/tikz/one-bothsided-symmetry-0000}
-		\input{resources/tikz/one-bothsided-symmetry-1111}
-		\input{resources/tikz/one-bothsided-symmetry-1100}
-		\input{resources/tikz/one-bothsided-symmetry-0011}
-		\input{resources/tikz/one-bothsided-symmetry-1010}
-		\input{resources/tikz/one-bothsided-symmetry-0101}
-		\caption{Possible distributions of twisted conjugations and multiplications in finite rank-2-residuums}
+		\begin{tabular}{ccc}
+			\input{resources/tikz/one-bothsided-symmetry-0000} &
+			\input{resources/tikz/one-bothsided-symmetry-1111} &
+			\input{resources/tikz/one-bothsided-symmetry-1100} \\
+			\defword{non-multiplicative} & \defword{maximal-multiplicative} & \defword{bottom-multiplicative} \\
+			\input{resources/tikz/one-bothsided-symmetry-0011} &
+			\input{resources/tikz/one-bothsided-symmetry-1010} &
+			\input{resources/tikz/one-bothsided-symmetry-0101} \\
+			\defword{top-multiplicative} & \multicolumn{2}{c}{\defword{diagonal-multiplicative}}
+		\end{tabular}
+		\caption{Classification of rank-2-residuums}
 		\label{fig:dist-one-bothsided-actions-in-rank-2-residuum}
 	\end{figure}
+\end{defi}
+
+\begin{lemm}
+	\typedlabel{lemm:one-both-sided-action-symmetric-in-rank-2-residuums}
+	Let $s,t \in S$ be two distinct generators and $w \in S$ with $w = min(w,\{s,t\})$. Suppose $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$. Then $wC_{\{s,t\}}$ is either non-, maximal-, bottom-, top- or diagonal-multiplicative. In particular the twisted conjugations and mulitplications are distributed axisymmetrically or pointsymmetrically.
 
 	\begin{proof}
 		If $u$ covers $w$, then there are only two edges and the assumption holds. So suppose $wC_{\{s,t\}}$ contains at least four edges. Due to \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} the actions by multiplication can only occure next to $w$ and $v$. Hence there are $2^4 = 16$ configurations possible. \ref{prop:geodesics-have-same-count-of-multiplicative-steps} wipes out ten out of the 16 configurations. The remaining are those from Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
@@ -154,23 +163,22 @@ Again, this corollary can be strengthen by insisting on an exclusive or with the
 	Let $w \in S$, $s,t \in S$ be two distinct generators and $m = \ord(st) < \infty$. Then $|wC_{\{s,t\}}| \leq 2m$.
 
 	\begin{proof}
-		Let $w$ be the $Wk$-minimal element and $v$ be the $Wk$-maximal element in our residuum. Due to \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residuums} there are six different cases we have to consider. We handle the cases in Figure~\ref{fig:dist-one-bothsided-actions-in-rank-2-residuum} from left to right:
+		Let $w$ be the $Wk$-minimal element and $v$ be the $Wk$-maximal element in our residuum. Due to \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residuums} there are five different cases we have to consider:
 		\begin{description}
-			\item[First:] We have $w (\ul s \ul t)^m = (ts)^m w (st)^m = w$.
-			\item[Second:] Due to $\theta(s)w = ws$ and $\theta(t)w = wt$ we have
+			\item[Non-multiplicative:] We have $w (\ul s \ul t)^m = (ts)^m w (st)^m = w$.
+			\item[Maximal-multiplicative:] Due to $\theta(s)w = ws$ and $\theta(t)w = wt$ we have
 			$$ w (\ul s \ul t)^{m/2+1} = \theta(\hat t (st)^{m/2-1} \hat s) w (st)^{m/2+1} = w(st)^m = w. $$
 			(\todo \ Show that this situation only occurs for even $m$)
-			\item[Third:] Again we are in a case, where $\theta(s)w = ws$ and $\theta(t)w = wt$ hold. Hence we have
+			\item[Bottom-multiplicative:] Again we are in a case, where $\theta(s)w = ws$ and $\theta(t)w = wt$ hold. Hence we have
 			$$ w (\ul s \ul t)^{(m+1)/2} = \theta(\hat t (st)^{(m-1)/2} \hat s) w (st)^{(m+1)/2} = w(st)^m = w. $$
 			(\todo \ Show that this situation only occurs for odd $m$)
-			\item[Fourth:] Analogue to the previous case, if we start from $u$ instead of $w$.
-			\item[Fifth:] Suppose $m$ is even. Then we have
+			\item[Top-multiplicative:] Analogue to the previous case, if we start from $u$ instead of $w$.
+			\item[Diagonal-multiplicative:] Suppose $m$ is even. Then we have
 			$$ w (\ul s \ul t)^m = \theta(\underbrace{ts \cdots st}_{m-1} \hat s \underbrace{ts \cdots st}_{m-1} \hat s) w (st)^m = \theta(\underbrace{ts \cdots s}_{m-2} \underbrace{s \cdots st}_{m-2}) w = \ldots = w. $$
 			If $m$ is odd, then we have the completely analogue situation
 			$$ w (\ul s \ul t)^m = \theta(\underbrace{ts \cdots ts}_{m-1} \hat t \underbrace{st \cdots st}_{m-1} \hat s) w (st)^m = \theta(\underbrace{ts \cdots t}_{m-2} \underbrace{t \cdots st}_{m-2}) w = \ldots = w. $$
-			\item[Sixth:] Analogue to the previous case due to symmetry.
 		\end{description}
-		So in all six cases we have $w (\ul s \ul t)^k = w$ for a $k \leq \ord(st)$ and hence the residuum can have at most $2 \cdot \ord(st)$ many distinct elements.
+		So in all cases we have $w (\ul s \ul t)^k = w$ for a $k \leq \ord(st)$ and hence the residuum can have at most $2 \cdot \ord(st)$ many distinct elements.
 	\end{proof}
 \end{lemm}
 
@@ -180,7 +188,7 @@ Again, this corollary can be strengthen by insisting on an exclusive or with the
 
 	\begin{proof}
 		Let $n = qk + r$ for $q \in \nn_0$ and $r \in \{0,\ldots,k-1\}$. Then
-		$$ w(\ul s \ul t)^n = w(\ul s \ul t)^{qk+r} = w((\ul s \ul t)^k)^q (\ul s \ul t)^r = w(\ul s \ul t)^r. $$
+		$$ w = w(\ul s \ul t)^n = w(\ul s \ul t)^{qk+r} = w(\ul s \ul t)^{qk} (\ul s \ul t)^r = w (\ul s \ul t)^{q(k-1)} (\ul s \ul t)^r = \ldots = w(\ul s \ul t)^r. $$
 		For $r > 0$ we would have a contradiction to the minimality of $k$, hence $r = 0$, $q > 0$ and therefore $k \ | \ n$.
 	\end{proof}
 \end{prop}
