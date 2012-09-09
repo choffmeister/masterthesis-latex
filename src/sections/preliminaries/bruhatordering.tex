@@ -130,11 +130,11 @@ The \ref{theo:lifting-property} seems quite innocent, but when trying to investi
 	The poset $\Br(W)$ is directed.
 
 	\begin{proof}
-		Let $u,v \in W$. We need to find an element $w \in W$ with $u \leq w$ and $v \leq w$. For that, we induce on $r = l(u) + l(w)$. For $r = 0$ we have $u = v = e$ and can choose $w = e$. So let $r > 0$. Because of symmetry we can assume $l(u) > 0$, hence $u \neq e$ and so there is a $s \in S$ with $us < u$. By induction hypothesis there is a $w \in W$ with $us < w$ and  $v < w$. Consider two cases:
+		Let $u,v \in W$. We need to find an element $w \in W$ with $u \leq w$ and $v \leq w$. For that, we induce on $r = l(u) + l(w)$. For $r = 0$ we have $u = v = e$ and can choose $w = e$. So let $r > 0$. Because of symmetry we can assume $l(u) > 0$, hence $u \neq e$ and so there is a $s \in S$ with $us < u$. By induction hypothesis there is a $w \in W$ with $us \leq w$ and  $v \leq w$. Consider two cases:
 
 		\begin{description}
 			\item[$ws < w$:] Then $s \in D_R(w)$ and with \ref{theo:lifting-property} we have $u = uss \leq w$, so both $u \leq w$ and $v \leq w$.
-			\item[$ws > w$:] \todo \qedhere
+			\item[$ws > w$:] Then $s \in D_R(w s)$ and $u s \leq w < w s$, hence again by \ref{theo:lifting-property} we have $u = uss \leq w s$, so both $u \leq ws$ and $v \leq w < ws$. \qedhere
 		\end{description}
 	\end{proof}
 \end{prop}
