@@ -1,0 +1,8 @@
+C:\Users\choffmeister\Documents\Visual Studio 2012\Projects\DataConverter\DataConverter\bin\Release\benchmark.txt
+C:\Users\choffmeister\Documents\Visual Studio 2012\Projects\DataConverter\DataConverter\bin\Release\DataConverter.exe
+C:\Users\choffmeister\Documents\Visual Studio 2012\Projects\DataConverter\DataConverter\bin\Release\DataConverter.pdb
+C:\Users\choffmeister\Documents\Visual Studio 2012\Projects\DataConverter\DataConverter\bin\Release\CsvHelper.dll
+C:\Users\choffmeister\Documents\Visual Studio 2012\Projects\DataConverter\DataConverter\bin\Release\CsvHelper.pdb
+C:\Users\choffmeister\Documents\Visual Studio 2012\Projects\DataConverter\DataConverter\bin\Release\CsvHelper.xml
+C:\Users\choffmeister\Documents\Visual Studio 2012\Projects\DataConverter\DataConverter\obj\Release\DataConverter.exe
+C:\Users\choffmeister\Documents\Visual Studio 2012\Projects\DataConverter\DataConverter\obj\Release\DataConverter.pdb

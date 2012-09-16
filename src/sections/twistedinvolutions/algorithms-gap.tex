@@ -5,16 +5,16 @@
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}
-		\pgfplotstableread{resources/data/benchmark1.txt} \dataTwoaOne
-		\pgfplotstableread{resources/data/benchmark2.txt} \dataTwoaTwo
-		\pgfplotstableread{resources/data/benchmark3.txt} \dataTwoaThree
+		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa1.txt} \dataTwoaOne
+		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa2.txt} \dataTwoaTwo
+		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa3.txt} \dataTwoaThree
 		\begin{axis}[width=0.9\textwidth,legend pos= south east,grid=major,xmode=log,ymode=log,
 			xlabel={Size of $Wk(W,\theta)$},ylabel=Runtime in seconds]
-			\addplot table[x=numVertices, y=comparisons] from \dataTwoaOne;
+			\addplot table[x=V, y=C] from \dataTwoaOne;
 			\addlegendentry{TWOA1}
-			\addplot table[x=numVertices, y=comparisons] from \dataTwoaTwo;
+			\addplot table[x=V, y=C] from \dataTwoaTwo;
 			\addlegendentry{TWOA2}
-			\addplot table[x=numVertices, y=comparisons] from \dataTwoaThree;
+			\addplot table[x=V, y=C] from \dataTwoaThree;
 			\addlegendentry{TWOA3}
 		\end{axis}
 	\end{tikzpicture}
@@ -29,16 +29,16 @@ At first we compare the count of element comparisons need for our three algorith
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}
-		\pgfplotstableread{resources/data/a-benchmark1.txt} \dataTwoaOne
-		\pgfplotstableread{resources/data/a-benchmark2.txt} \dataTwoaTwo
-		\pgfplotstableread{resources/data/a-benchmark3.txt} \dataTwoaThree
+		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa1-a.txt} \dataTwoaOne
+		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa2-a.txt} \dataTwoaTwo
+		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa3-a.txt} \dataTwoaThree
 		\begin{axis}[width=0.9\textwidth,legend pos= south east,grid=major,xmode=log,ymode=log,
 			xlabel={Size of $Wk(W,\theta)$},ylabel=Runtime in seconds]
-			\addplot table[x=numVertices, y=time] from \dataTwoaOne;
+			\addplot table[x=V, y=T] from \dataTwoaOne;
 			\addlegendentry{TWOA1}
-			\addplot table[x=numVertices, y=time] from \dataTwoaTwo;
+			\addplot table[x=V, y=T] from \dataTwoaTwo;
 			\addlegendentry{TWOA2}
-			\addplot table[x=numVertices, y=time] from \dataTwoaThree;
+			\addplot table[x=V, y=T] from \dataTwoaThree;
 			\addlegendentry{TWOA3}
 		\end{axis}
 	\end{tikzpicture}
