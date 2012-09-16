@@ -9,7 +9,7 @@
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa2.txt} \dataTwoaTwo
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa3.txt} \dataTwoaThree
 		\begin{axis}[width=0.9\textwidth,legend pos= south east,grid=major,xmode=log,ymode=log,
-			xlabel={Size of $Wk(W,\theta)$},ylabel=Runtime in seconds]
+			xlabel={Size of $Wk(W,\theta)$},ylabel=Count of element comparisons]
 			\addplot table[x=V, y=C] from \dataTwoaOne;
 			\addlegendentry{TWOA1}
 			\addplot table[x=V, y=C] from \dataTwoaTwo;
