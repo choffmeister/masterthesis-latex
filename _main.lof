@@ -7,3 +7,4 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Optimization of \ref {algo:twoa1}}}{28}{figure.3.5}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Element comparisons needed in TWOA1, TWOA2 and TWOA3}}{30}{figure.3.6}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Runtime for TWOA1, TWOA2 and TWOA3 in seconds with $W = A_n$}}{31}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Runtime for TWOA1, TWOA2 and TWOA3 in seconds with $W \not =A_n$}}{32}{figure.3.8}
