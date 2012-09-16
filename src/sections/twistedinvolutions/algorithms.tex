@@ -111,9 +111,9 @@ Now $M$ contains all already known elements of twisted length $k+1$, satisfying 
 	\end{proof}
 \end{lemm}
 
-The following results can be used to further reduce the count of needed element comparisons, when calculating the poset graph of $Wk(\theta)$.
+Many more explicit element comparisons can be avoided. In some cases we can deduce the equality $v \ul t = w \ul s$ as well as $l(w \ul s) - l(w)$ just from the already calculated structure of the rank-2-residuum $wC_{\{s,t\}}$, while in other cases we can preclude that $v \ul t$ equals $w \ul s$. The following two corollaries show examples of restrictions, that rank-2-residuums are subjected to:
 
-\begin{lemm}
+\begin{coro}
 	Let $w \in \ti{\theta}$ with $\rho(w) = k$, $s,t$ be two distinct generators and $s \notin D_R(w)$. Suppose $n \in \nn$ to be the smallest number for that $\rho(w[\ul t \ul s]^{2n-1}) = k + 1$ holds. Then:
 
 	\begin{enumerate}
@@ -128,22 +128,7 @@ The following results can be used to further reduce the count of needed element 
 			\item Because of the length difference the step from $w[\ul t \ul s]^{2n-2}$ to $w[\ul t \ul s]^{2n-1}$ is a multiplication, not a twisted conjugation, and because of $n \geq 1$ this step cannot be next to the smallest element in $wC_{\{s,t\}}$. Hence $w[\ul t \ul s]^{2n-1} = w \ul s$ by \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}. \qedhere
 		\end{enumerate}
 	\end{proof}
-\end{lemm}
-
-\begin{lemm}
-	Let $w \in \ti{\theta}$ with $\rho(w) = k$, $s,t$ be two distinct generators and $s \notin D_R(w)$. Suppose $w[\ul t \ul s]^{2n-1} = w \ul s$ and suppose $n$ to be the smallest number with this property. Then $w[\ul t \ul s]^{n-1}$ is the minimal element $\min(w,\{s,t\})$ and $w[\ul t \ul s]^{2n-1}$ is the maximal element. Define
-	\begin{align*}
-		a & = l(w \ul s) - l(w), \\
-		b & = l(w[\ul t \ul s]^{n-1}) - l(w[\ul t \ul s]^{n-2}), \\
-		c & = l(w[\ul t \ul s]^{n}) - l(w[\ul t \ul s]^{n-1}) \textrm{ and} \\
-		d & = l(w[\ul t \ul s]^{2n-1}) - l(w[\ul t \ul s]^{2n-2}).
-	\end{align*}
-	Note that $a,b,c,d \in \{1,2\}$ contain the information, if edges next to the minimal and the maximal element of $wC_{\{s,t\}}$ are twisted conjugations or multiplications. Then each can be deduced from the three remaining ones with the equation $a+b=c+d$.
-
-	\begin{proof}
-		The minimality of $w[\ul t \ul s]^{n-1}$ and the maximality of $w[\ul t \ul s]^{2n-1}$ is due to \ref{prop:rank-2-residuums-are-convex}. The soundness of the equation follows from the symmetric distribution of twisted conjugations and mutipliations from \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residuums}.
-	\end{proof}
-\end{lemm}
+\end{coro}
 
 \begin{coro}
 	Let $w \in S$ and $s,t \in S$ be two distinct generators. Then the following table shows all possible $n \in \nn$ with $w(\ul s \ul t)^n = w$ regarding $\ord(st)$ and the distribution of multiplications and twisted conjugations in $wC_{\{s,t\}}$ (see Figure~\ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}).
@@ -165,50 +150,9 @@ The following results can be used to further reduce the count of needed element 
 	\end{proof}
 \end{coro}
 
+We use these restrictions to further improve \ref{algo:twoa2}:
+
 \begin{algo}[TWOA3]
 	\namedlabel{algo:twoa3}
 	\todo
 \end{algo}
-
-
-\newpage
-
-\begin{tikzpicture}
-	\pgfplotstableread{resources/data/benchmark1.txt} \dataTwoaOne
-	\pgfplotstableread{resources/data/benchmark2.txt} \dataTwoaTwo
-	\pgfplotstableread{resources/data/benchmark3.txt} \dataTwoaThree
-	\begin{axis}[width=0.9\textwidth,legend pos= south east,grid=major,xmode=log,ymode=log,
-		xlabel={Size of $Wk(W,\theta)$},ylabel=Count of element comparisons]
-		\addplot table[x=numVertices, y=comparisons] from \dataTwoaOne;
-		\addlegendentry{TWOA1}
-		\addplot table[x=numVertices, y=comparisons] from \dataTwoaTwo;
-		\addlegendentry{TWOA2}
-		\addplot table[x=numVertices, y=comparisons] from \dataTwoaThree;
-		\addlegendentry{TWOA3}
-	\end{axis}
-\end{tikzpicture}
-
-\begin{table}
-	\centering
-	\begin{tabular}{|c|c|c|r|r|r|r|}
-	\hline
-	\multicolumn{3}{|c|}{} & \multicolumn{2}{c|}{Timings} & \multicolumn{2}{c|}{Element comparisons}\\
-	\hline
-	$W$ & $|Wk(W,\id)|$ & $\rho(w_0)$ & \ref{algo:twoa1} & \ref{algo:twoa2} & \ref{algo:twoa1} & \ref{algo:twoa2}\\
-	\hline
-	$A_9$ & 9496 & 25 & 00:02.180 & 00:01.372 & 13,531,414 & 42,156\\
-	\hline
-	$A_{10}$ & 35696 & 30 & 00:31.442 & 00:06.276 & 185,791,174 & 173,356\\
-	\hline
-	$A_{11}$ & 140152 & 36 & 11:04.241 & 00:29.830 & 2,778,111,763 & 737,313\\
-	\hline
-	$E_6$ & 892 & 20 & 00:03.044 & 00:00.268 & 85,857 & 2,347\\
-	\hline
-	$E_7$ & 10208 & 35 & 06:11.728 & 00:02.840 & 7,785,186 & 29,687\\
-	\hline
-	$E_8$ & 199952 & 64 & -- & 11:03.278 & -- & 682,227\\
-	\hline
-	\end{tabular}
-	\caption{Benchmark}
-	\label{tab:benchmark-twoa}
-\end{table}
