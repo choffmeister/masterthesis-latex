@@ -60,10 +60,10 @@ Note, that if $W$ is finite, $k_{max}$ does not have to be evaluated explicitly.
 \end{lemm}
 
 \begin{lemm}
-	Let $k \in \nn$, $n = |\{ w \in \ti{\theta} : \rho(w) \leq k \}|$ and for $0 \leq i \leq k$ let $\rho_i = |\{ w \in \ti{\theta} : \rho(w) = i \}|$. Then $\ref{algo:twoa1} \in \mathcal{O}(n^2/k)$.
+	Let $k \in \nn$, $n = |\{ w \in \ti{\theta} : \rho(w) \leq k \}|$. Then $\ref{algo:twoa1} \in \mathcal{O}(n^2/k)$.
 
 	\begin{proof}
-		Our algorithm has to do at least $\rho_i (\rho_i - 1)/2$ many element comparisons (line~\ref{algo:twoa1-comp}) for each $0 \leq i \leq k$. Set $m = \lfloor \frac{n}{k} \rfloor$. In the most optimistic case we have $\rho_i \geq m$ for all $i$. In practice the situation will be worse, since some $\rho_i$ will be smaller than $m$ (for example $\rho_0 = 1$) and so some $\rho_i$ will be much larger than $m$. This optimistic case yields at least $m(m-1)/2 \cdot k$ many element comparisons. Hence regarding the most delimiting operation, the element comparison, our algorithm is in $\Omega(m^2k) = \Omega(n^2 / k)$. The element comparison at line \ref{algo:twoa1-check-one-or-bothsided} done at most $n \cdot |S|$. Other operations, like for example insertion into or searching in sets can be considered super linear, if for example sets are ordered immediately at insertion and then searching is done with binary search. So the algorithm is in $\mathcal{O}(n^2 / k)$.
+		Let $\rho_i = |\{ w \in \ti{\theta} : \rho(w) = i \}|$ for $0 \leq i \leq k$. Our algorithm has to do at least $\rho_i (\rho_i - 1)/2$ many element comparisons (line~\ref{algo:twoa1-comp}) for each $0 \leq i \leq k$. Set $m = \lfloor \frac{n}{k} \rfloor$. In the most optimistic case we have $\rho_i \geq m$ for all $i$. In practice the situation will be worse, since some $\rho_i$ will be smaller than $m$ (for example $\rho_0 = 1$) and so some $\rho_i$ will be much larger than $m$. This optimistic case yields at least $m(m-1)/2 \cdot k$ many element comparisons. Hence regarding the most delimiting operation, the element comparison, our algorithm is in $\Omega(m^2k) = \Omega(n^2 / k)$. The element comparison at line \ref{algo:twoa1-check-one-or-bothsided} done at most $n \cdot |S|$. Other operations, like for example insertion into or searching in sets can be considered super linear, if for example sets are ordered immediately at insertion and then searching is done with binary search. So the algorithm is in $\mathcal{O}(n^2 / k)$.
 	\end{proof}
 \end{lemm}
 
@@ -104,7 +104,7 @@ Now $M$ contains all already known elements of twisted length $k+1$, satisfying 
 \end{lemm}
 
 \begin{lemm}
-	Let $k \in \nn$, $n = |\{ w \in \ti{\theta} : \rho(w) \leq k \}|$ and for $0 \leq i \leq k$ let $\rho_i = |\{ w \in \ti{\theta} : \rho(w) = i \}|$. Then $\ref{algo:twoa2} \in \mathcal{O}(n)$.
+	Let $k \in \nn$, $n = |\{ w \in \ti{\theta} : \rho(w) \leq k \}|$. Then $\ref{algo:twoa2} \in \mathcal{O}(n)$.
 
 	\begin{proof}
 		We can consider the rank of $W$ to be a constant, since it is tiny in comparison to $n$. The loop of \ref{algo:twoa1}, that increased it runtime above linear, was the one in line~\ref{algo:twoa1-comp}. We restricted it to have at most $|S|$ cases, hence it can be considered to have constant runtime, too.
