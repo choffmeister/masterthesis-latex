@@ -17,7 +17,7 @@ In this section we investigate some results and examples, in situations that are
 
 \begin{exam}
 	\typedlabel{exam:trivial-counterexample-for-arbitary-sets-of-generators}
-	Let $W = A_3$ and $\theta$ be the Coxeter system autmorphism swapping $s_1$ and $s_3$. Then $e \ul s_1 = e \ul s_3$ but $e \ul s_1 \notin eC_{\{s_1\} \cap \{s_1\} \cap \{s_2\}} = eC_\emptyset = \{e\}$.
+	Let $W = A_3$ and $\theta$ be the Coxeter system autmorphism swapping $s_1$ and $s_3$ and let $w = s_1s_3 = s_3s_1$. We have $e \ul s_1 = s_3 s_1 = w = s_1 s_3 = e \ul s_3$. Hence $w \in eC_{\{s_1\}}$ and $w \in eC_{\{s_3\}}$ but $w \notin eC_{\{s_1\} \cap \{s_1\} \cap \{s_3\}} = eC_\emptyset = \{e\}$.
 \end{exam}
 
 Such a trivial counterexample like in \ref{exam:trivial-counterexample-for-arbitary-sets-of-generators} can not occur in the situation from \ref{ques:main}.
@@ -26,7 +26,7 @@ Such a trivial counterexample like in \ref{exam:trivial-counterexample-for-arbit
 	Consider the situation from \ref{ques:main}. Let $w,v \in \ti{\theta}$ with $\rho(v) - \rho(w) = 1$ and let $v \in w C_{S_{ij}}$ for $1 \leq i < j \leq 3$. Then we have $v \in wC_T$.
 
 	\begin{proof}
-		There are at most two (not necessarily distinct) $s,t \in S$ with $w \ul s = v$ and $w \ul t = v$. Each set $S_{12},S_{23},S_{31}$ must at least contain $s$ or $t$, hence $s$ or $t$ is in at least two sets, say $s \in S_{12},S_{23}$. Hence $s \in S_1,S_2,S_3$ and therefore $v \in wC_T$.
+		By \ref{prop:no-triple-edges} there are at most two (not necessarily distinct) $s,t \in S$ with $w \ul s = v$ and $w \ul t = v$. Each set $S_{12},S_{23},S_{31}$ must at least contain $s$ or $t$, hence $s$ or $t$ is at least in two sets, say $s \in S_{12},S_{23}$. Hence $s \in S_1,S_2,S_3$ and therefore $v \in wC_T$.
 	\end{proof}
 \end{prop}
 

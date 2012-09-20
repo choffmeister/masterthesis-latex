@@ -4,9 +4,7 @@
 
 In this section we will look at a concrete implementation of the algorithm \ref{algo:twoa1} from \cite{brennemann:twoa} and \cite{haas:twoa} and of the improved versions \ref{algo:twoa2} and \ref{algo:twoa3}, that we have just introduced. The source codes of the test implementations can be found in the appendix, Section~\ref{sec:sourcecodes}. They are written in GAP\footnote{See \url{http://www.gap-system.org/}.}, a System for Computational Discrete Algebra. It supplies a powerful programming language and can handle with free represented groups, in particular it allows comparisons of elements in such groups. The following algorithm benchmarks have been executed on a computer running Debian Linux in Verion 6.0.5 with an Intel\textsuperscript{\textregistered} Core\textsuperscript{\texttrademark} i7-965 CPU with four cores at 3.2 GHz and 8 GiB RAM. The version 4.5.5 of GAP is used. Note that our implementations do not support multithreding.
 
-At first we compare the count of element comparisons needed for our three algorithms. For this we calculate $Wk(W,\id)$ for a selection of finite Coxeter systems and count the comparisons. In Figure~\ref{fig:twoa123-element-comparisons} we see the count of needed element comparisons plotted against the size of the set of $\id$-twisted involutions. The first observation is the much lower count of needed element comparisons of \ref{algo:twoa2} and \ref{algo:twoa3} in comparison to \ref{algo:twoa1}, just as we intended it with our improvements. Our implementations represents Coxeter systems of type $A_n$ as $\Sym(n+1)$ while representing the Coxeter systems of other types as arbitrary free represented groups. Hence in our case element comparison in $A_n$ is very effective, while the element comparison in other types is very ineffective. Therefore comparing the runtimes for $A_n$ with the runtimes of other types is senseless. Figure~\ref{fig:twoa123-runtime-a} plots the runtimes against the size of $Wk(\theta)$ for Coxeter groups of type $A_n$ and Figure~\ref{fig:twoa123-runtime-not-a} for the other types. The complete table of benchmark results can be found in the appendix, Section~\ref{sec:benchmarkresults}.
-
-For $W = A_n$ with $n < 9$ \ref{algo:twoa1} is faster than our improved versions. But as already seen, \ref{algo:twoa1} is quadratic in the size of $Wk(\theta)$, while \ref{algo:twoa2} and \ref{algo:twoa3} are linear and so for larger $n$ our improvements start to pay off. In case $W \neq A_n$ we have essentially the situation that \ref{algo:twoa3} is faster than \ref{algo:twoa2} is faster than \ref{algo:twoa1} for all $|Wk(\id)|$.
+At first we compare the count of element comparisons needed for our three algorithms. For this we calculate $Wk(W,\id)$ for a selection of finite Coxeter systems and count the comparisons. In Figure~\ref{fig:twoa123-element-comparisons} we see the count of needed element comparisons plotted against the size of the set of $\id$-twisted involutions.
 
 \begin{figure}[ht]
 	\centering
@@ -14,7 +12,7 @@ For $W = A_n$ with $n < 9$ \ref{algo:twoa1} is faster than our improved versions
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa1.txt} \dataTwoaOne
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa2.txt} \dataTwoaTwo
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa3.txt} \dataTwoaThree
-		\begin{axis}[width=0.9\textwidth,legend pos= south east,grid=major,xmode=log,ymode=log,
+		\begin{axis}[width=0.9\textwidth,legend pos=south east,grid=major,xmode=log,ymode=log,
 			xlabel={Size of $Wk(W,\theta)$},ylabel=Count of element comparisons]
 			\addplot table[x=V, y=C] from \dataTwoaOne;
 			\addlegendentry{TWOA1}
@@ -28,13 +26,15 @@ For $W = A_n$ with $n < 9$ \ref{algo:twoa1} is faster than our improved versions
 	\label{fig:twoa123-element-comparisons}
 \end{figure}
 
+The first observation is the much lower count of needed element comparisons of \ref{algo:twoa2} and \ref{algo:twoa3} in comparison to \ref{algo:twoa1}, just as we intended it with our improvements. Our implementations represents Coxeter systems of type $A_n$ as $\Sym(n+1)$ while representing the Coxeter systems of other types as arbitrary free represented groups. Hence in our case element comparison in $A_n$ is very effective, while the element comparison in other types is very ineffective and therefore comparing the runtimes for $A_n$ with the runtimes of other types is senseless. Figure~\ref{fig:twoa123-runtime-a} plots the runtimes against the size of $Wk(\theta)$ for Coxeter groups of type $A_n$ and Figure~\ref{fig:twoa123-runtime-not-a} for the other types. The complete table of benchmark results can be found in the appendix, Section~\ref{sec:benchmarkresults}.
+
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa1-a.txt} \dataTwoaOne
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa2-a.txt} \dataTwoaTwo
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa3-a.txt} \dataTwoaThree
-		\begin{axis}[width=0.9\textwidth,legend pos= south east,grid=major,xmode=log,ymode=log,
+		\begin{axis}[width=0.9\textwidth,legend pos=south east,grid=major,xmode=log,ymode=log,
 			xlabel={Size of $Wk(W,\theta)$},ylabel=Runtime in seconds]
 			\addplot table[x=V, y=T] from \dataTwoaOne;
 			\addlegendentry{TWOA1}
@@ -54,7 +54,7 @@ For $W = A_n$ with $n < 9$ \ref{algo:twoa1} is faster than our improved versions
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa1-not-a.txt} \dataTwoaOne
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa2-not-a.txt} \dataTwoaTwo
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa3-not-a.txt} \dataTwoaThree
-		\begin{axis}[width=0.9\textwidth,legend pos= south east,grid=major,xmode=log,ymode=log,
+		\begin{axis}[width=0.9\textwidth,legend pos=south east,grid=major,xmode=log,ymode=log,
 			xlabel={Size of $Wk(W,\theta)$},ylabel=Runtime in seconds]
 			\addplot table[x=V, y=T] from \dataTwoaOne;
 			\addlegendentry{TWOA1}
@@ -67,3 +67,5 @@ For $W = A_n$ with $n < 9$ \ref{algo:twoa1} is faster than our improved versions
 	\caption{Runtime for TWOA1/2/3 in seconds with $W \neq A_n$, $\theta = \id$}
 	\label{fig:twoa123-runtime-not-a}
 \end{figure}
+
+For $W = A_n$ with $n < 9$ \ref{algo:twoa1} is faster than our improved versions. But as already seen, \ref{algo:twoa1} is quadratic in the size of $Wk(\theta)$, while \ref{algo:twoa2} and \ref{algo:twoa3} are linear and so for larger $n$ our improvements start to pay off. In case $W \neq A_n$ we have essentially the situation that \ref{algo:twoa3} is faster than \ref{algo:twoa2} while \ref{algo:twoa2} is faster than \ref{algo:twoa1}.
