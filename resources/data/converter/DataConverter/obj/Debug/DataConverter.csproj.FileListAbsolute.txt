@@ -7,3 +7,12 @@ C:\Users\choffmeister\Documents\Visual Studio 2012\Projects\DataConverter\DataCo
 C:\Users\choffmeister\Documents\Visual Studio 2012\Projects\DataConverter\DataConverter\bin\Debug\CsvHelper.dll
 C:\Users\choffmeister\Documents\Visual Studio 2012\Projects\DataConverter\DataConverter\bin\Debug\CsvHelper.pdb
 C:\Users\choffmeister\Documents\Visual Studio 2012\Projects\DataConverter\DataConverter\bin\Debug\CsvHelper.xml
+D:\ma-latex\resources\data\converter\DataConverter\obj\Debug\DataConverter.exe
+D:\ma-latex\resources\data\converter\DataConverter\obj\Debug\DataConverter.pdb
+D:\ma-latex\resources\data\converter\DataConverter\obj\Debug\DataConverter.csprojResolveAssemblyReference.cache
+D:\ma-latex\resources\data\converter\DataConverter\bin\Debug\benchmark.txt
+D:\ma-latex\resources\data\converter\DataConverter\bin\Debug\DataConverter.exe
+D:\ma-latex\resources\data\converter\DataConverter\bin\Debug\DataConverter.pdb
+D:\ma-latex\resources\data\converter\DataConverter\bin\Debug\CsvHelper.dll
+D:\ma-latex\resources\data\converter\DataConverter\bin\Debug\CsvHelper.pdb
+D:\ma-latex\resources\data\converter\DataConverter\bin\Debug\CsvHelper.xml

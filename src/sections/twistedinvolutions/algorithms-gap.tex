@@ -2,6 +2,12 @@
 \subsection{Implementing the twisted weak ordering algorithms}
 \label{sec:implementing-twisted-involutions-algorithms}
 
+In this section we will look at a concrete implementation of the algorithm \ref{algo:twoa1} from \cite{brennemann:twoa} and \cite{haas:twoa} and of the improved versions \ref{algo:twoa2} and \ref{algo:twoa3}, that we have just introduced. The source codes of the test implementations can be found in the appendix, Section~\ref{sec:sourcecodes}. They are written in GAP\footnote{See \url{http://www.gap-system.org/}.}, a System for Computational Discrete Algebra. It supplies a powerful programming language and can handle with free represented groups, in particular it allows comparisons of elements in such groups. The following algorithm benchmarks have been executed on a computer running Debian Linux in Verion 6.0.5 with an Intel\textsuperscript{\textregistered} Core\textsuperscript{\texttrademark} i7-965 CPU with four cores at 3.2 GHz and 8 GiB RAM. The version 4.5.5 of GAP is used. Note that our implementations do not support multithreding.
+
+At first we compare the count of element comparisons needed for our three algorithms. For this we calculate $Wk(W,\id)$ for a selection of finite Coxeter systems and count the comparisons. In Figure~\ref{fig:twoa123-element-comparisons} we see the count of needed element comparisons plotted against the size of the set of $\id$-twisted involutions. The first observation is the much lower count of needed element comparisons of \ref{algo:twoa2} and \ref{algo:twoa3} in comparison to \ref{algo:twoa1}, just as we intended it with our improvements. Our implementations represents Coxeter systems of type $A_n$ as $\Sym(n+1)$ while representing the Coxeter systems of other types as arbitrary free represented groups. Hence in our case element comparison in $A_n$ is very effective, while the element comparison in other types is very ineffective. Therefore comparing the runtimes for $A_n$ with the runtimes of other types is senseless. Figure~\ref{fig:twoa123-runtime-a} plots the runtimes against the size of $Wk(\theta)$ for Coxeter groups of type $A_n$ and Figure~\ref{fig:twoa123-runtime-not-a} for the other types. The complete table of benchmark results can be found in the appendix, Section~\ref{sec:benchmarkresults}.
+
+For $W = A_n$ with $n < 9$ \ref{algo:twoa1} is faster than our improved versions. But as already seen, \ref{algo:twoa1} is quadratic in the size of $Wk(\theta)$, while \ref{algo:twoa2} and \ref{algo:twoa3} are linear and so for larger $n$ our improvements start to pay off. In case $W \neq A_n$ we have essentially the situation that \ref{algo:twoa3} is faster than \ref{algo:twoa2} is faster than \ref{algo:twoa1} for all $|Wk(\id)|$.
+
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}
@@ -18,13 +24,9 @@
 			\addlegendentry{TWOA3}
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Element comparisons needed in TWOA1, TWOA2 and TWOA3}
+	\caption{Element comparisons needed in TWOA1/2/3 with $\theta = \id$}
 	\label{fig:twoa123-element-comparisons}
 \end{figure}
-
-In this section we will look at a concrete implementation of the algorithm \ref{algo:twoa1} from \cite{brennemann:twoa} and \cite{haas:twoa} and of the improvement versions \ref{algo:twoa2} and \ref{algo:twoa3}, that we have just introduced. The source codes can be found in the appendix. It is implemented in GAP\footnote{See \url{http://www.gap-system.org/}.}, a System for Computational Discrete Algebra, Version 4.5.5. It supplies a powerful programming language and can handle with free represented groups, in particular it allows comparisons of elements in such groups. 
-
-At first we compare the count of element comparisons need for our three algorithms. For this we calculate $Wk(W,\id)$ for the Coxeter groups $A_1,\ldots,A_{11}$, $BC_2,\ldots,BC_6$, $D_4,D_5,D_6$, $E_6,E_7,E_8$, $F_4$, $H_3$, $H_4$. In Figure~\ref{fig:twoa123-element-comparisons} we see the plot showing the size $|Wk(W,\id)|$ on the x-axis and the count of needed element comparisons on the y-axis. The first observation is the much lower count of needed element comparisons of \ref{algo:twoa2} and \ref{algo:twoa3} against \ref{algo:twoa1}. As one would expect, this results in much better execution time of the three algorithms, at least for large groups. When comparing the execution time only for the Coxeter groups of type $A_n$, then \ref{algo:twoa1} is ahead for small $n$, since the element comparison in $A_n$, when represented as symmetric group $\Sym(n+1)$ can be done very effectively. Hence the larger costs for avoiding element comparisons, top the savings. As $n$ becomes larger and larger, \ref{algo:twoa1} falls more and more behind. Figure~\ref{fig:twoa123-runtime-a} show the runtime for $W=A_n$ with $n=1,\dots,11$.
 
 \begin{figure}[ht]
 	\centering
@@ -42,7 +44,7 @@ At first we compare the count of element comparisons need for our three algorith
 			\addlegendentry{TWOA3}
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Runtime for TWOA1, TWOA2 and TWOA3 in seconds with $W = A_n$}
+	\caption{Runtime for TWOA1/2/3 in seconds with $W = A_n$, $\theta = \id$}
 	\label{fig:twoa123-runtime-a}
 \end{figure}
 
@@ -62,8 +64,6 @@ At first we compare the count of element comparisons need for our three algorith
 			\addlegendentry{TWOA3}
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Runtime for TWOA1, TWOA2 and TWOA3 in seconds with $W \neq A_n$}
+	\caption{Runtime for TWOA1/2/3 in seconds with $W \neq A_n$, $\theta = \id$}
 	\label{fig:twoa123-runtime-not-a}
 \end{figure}
-
-The algorithms have been executed on a computer running Debian Linux in Verion 6.0.5 with an Intel\textsuperscript{\textregistered} Core\textsuperscript{\texttrademark} i7-965 CPU with four cores at 3.2 GHz and 8 GiB RAM. Since the algorithms cannot be parallized, only one core can be used for running the algorithms.

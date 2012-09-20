@@ -1,0 +1,43 @@
+%!TEX root = ../../_main.tex
+\section{Benchmark results}
+\label{sec:benchmarkresults}
+
+\begin{table}[ht]
+	\centering
+	\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa1.txt} \data
+	\pgfplotstabletypeset[
+		columns={W,V,T,C},
+		columns/W/.style={column name={$W$},string type},
+		columns/V/.style={column name={$|Wk(W,\id)|$},fixed,dec sep align},
+		columns/T/.style={column name={Time in seconds},sci,sci subscript,sci zerofill,precision=3,dec sep align},
+		columns/C/.style={column name={Element comparisons},fixed,dec sep align}
+		]{\data}
+	\caption{Benchmark results for \ref{algo:twoa1}}
+	\label{tab:benchmark-twoa1}
+\end{table}
+\begin{table}[ht]
+	\centering
+	\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa2.txt} \data
+	\pgfplotstabletypeset[
+		columns={W,V,T,C},
+		columns/W/.style={column name={$W$},string type},
+		columns/V/.style={column name={$|Wk(W,\id)|$},fixed,dec sep align},
+		columns/T/.style={column name={Time in seconds},sci,sci subscript,sci zerofill,precision=3,dec sep align},
+		columns/C/.style={column name={Element comparisons},fixed,dec sep align}
+		]{\data}
+	\caption{Benchmark results for \ref{algo:twoa2}}
+	\label{tab:benchmark-twoa2}
+\end{table}
+\begin{table}[ht]
+	\centering
+	\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa3.txt} \data
+	\pgfplotstabletypeset[
+		columns={W,V,T,C},
+		columns/W/.style={column name={$W$},string type},
+		columns/V/.style={column name={$|Wk(W,\id)|$},fixed,dec sep align},
+		columns/T/.style={column name={Time in seconds},sci,sci subscript,sci zerofill,precision=3,dec sep align},
+		columns/C/.style={column name={Element comparisons},fixed,dec sep align}
+		]{\data}
+	\caption{Benchmark results for \ref{algo:twoa3}}
+	\label{tab:benchmark-twoa3}
+\end{table}
