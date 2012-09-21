@@ -49,11 +49,11 @@
 	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators and let $\rho_{min} := \min \{ \rho(v) : v \in wC_I \}$ be the minimal twisted length within the residuum $wC_I$. Then there is a unique element $w_{min} \in wC_I$ with $\rho(w_{min}) = \rho_{min}$. We denote this element by $\min(w,I)$.
 
 	\begin{proof}
-		The minimal rank $\rho_{min}$ exists, since the image of $\rho$ is in $\nn_0$, which is well-ordered, and $wC_I \neq \emptyset$. Suppose we have an element $w_{min}$ with $\rho(w_{min}) = \rho_{min}$. This means, that in particular all $w_{min} \ul s$ with $s \in I$ must be of larger twisted length, i.e. $w_{min} < w_{min} \ul s$ for all $s \in I$. With \ref{prop:residuums-have-unique-wk-theta-minimal-element} this element must be unique.
+		The minimal rank $\rho_{min}$ exists, since the image of $\rho$ is in $\nn_0$, which is well-ordered, and $wC_I \neq \emptyset$. Suppose we have an element $w_{min}$ with $\rho(w_{min}) = \rho_{min}$. This means, that in particular all $w_{min} \ul s$ with $s \in I$ must be of larger twisted length, i.e. $w_{min} \prec w_{min} \ul s$ for all $s \in I$. With \ref{prop:residuums-have-unique-wk-theta-minimal-element} this element must be unique.
 	\end{proof}
 \end{coro}
 
-We proceed with some properties of rank-2-residuums. Our interest in these residuums stems from the fact, that their properties are needed later in Section \ref{sec:twisted-involutions-algorithms} to construct an effective algorithm for calculating the twisted weak ordering, i.e. calculating the Hasse diagram of $Wk(\theta)$ for arbitrary Coxeter systems $(W,S)$ and Coxeter system automorphisms $\theta$.
+We proceed with some properties of rank-2-residuums. Our interest in these residuums stems from the fact, that their properties are needed later in Section \ref{sec:twisted-involutions-algorithms} to construct an effective algorithm for calculating the twisted weak ordering, i.e. calculating the Hasse diagram of $Wk(W,\theta)$ for arbitrary Coxeter systems $(W,S)$ and Coxeter system automorphisms $\theta$.
 
 \begin{defi}
 	Let $s,t \in S$ be two distinct generators. We define:
