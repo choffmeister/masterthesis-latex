@@ -103,19 +103,17 @@ A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J 
 	\begin{proof}
 		By \ref{lemm:properties-of-wk-in-reducible-coxeter-groups} for every element $w \in \ti{\id}(W)$ we can find a twisted expression like $w = \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n$ with $s \in S_1, t \in S_2$. Hence the map
 		$$ \varphi : \ti{\id}(W_1) \times \ti{\id}(W_2) \to \ti{\id}(W) : (\ul s_1 \ldots \ul s_m, \ul t_1 \ldots \ul t_n) \mapsto \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n $$
-		is a bijection. It remains to show, that the relation $\preceq_W$ satisfies \ref{defi:direct-product-of-posets}. Let $v_1,w_1 \in \ti{\id}(W_1)$, $v_2,w_2 \in \ti{\id}(W_2)$ and $v = v_1v_2 = \varphi(v_1,v_2), w = w_1w_2 = \varphi(w_1,w_2) \in \ti{\id}(W)$. Suppose $v_i \preceq_{W_i} w_i$ for $i=1,2$. Then
+		is a bijection. It remains to show, that the relation $\preceq_W$ satisfies \ref{defi:direct-product-of-posets}. Let $v_1,w_1 \in \ti{\id}(W_1)$, $v_2,w_2 \in \ti{\id}(W_2)$ and $v = v_1v_2 = \varphi(v_1,v_2), w = w_1w_2 = \varphi(w_1,w_2) \in \ti{\id}(W)$. Suppose $v_i \preceq_{W_i} w_i$ for $i=1,2$. Then we have
 		\begin{align*}
-			v_1	& = \ul s_1 \ldots \ul s_m, \\
+			v_1	& = \ul s_1 \ldots \ul s_m, &
 			w_1	& = \ul s_1 \ldots \ul s_m \ldots \ul s_{m'} = v_1 \ul s_{m+1} \ldots \ul s_{m'}, \\
-			v_2	& = \ul t_1 \ldots \ul t_n, \\
+			v_2	& = \ul t_1 \ldots \ul t_n, &
 			w_2	& = \ul t_1 \ldots \ul t_n \ldots \ul t_{n'} = v_2 \ul t_{n+1} \ldots \ul t_{n'} \\
 		\end{align*}
 		for $s_i \in S_1, t_i \in S_2, 0 \leq m \leq m', 0 \leq n \leq n'$. Hence
 		\begin{align*}
-			v	& = \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n \\
-				& \leq \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n \ul s_{m+1} \ldots \ul s_{m'} \ul t_{n+1} \ldots \ul t_{n'} \\
-				& = \ul s_1 \ldots \ul s_m \ul s_{m+1} \ldots \ul s_{m'} \ul t_1 \ldots \ul t_n  \ul t_{n+1} \ldots \ul t_{n'} \\
-				& = w.
+			v	& = v_1 v_2 = \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n  \leq \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n \ul s_{m+1} \ldots \ul s_{m'} \ul t_{n+1} \ldots \ul t_{n'} \\
+				& = \ul s_1 \ldots \ul s_m \ul s_{m+1} \ldots \ul s_{m'} \ul t_1 \ldots \ul t_n  \ul t_{n+1} \ldots \ul t_{n'} = w_1 w_2 = w.
 		\end{align*}
 		In return suppose $v \preceq_W w$. \todo
 	\end{proof}
