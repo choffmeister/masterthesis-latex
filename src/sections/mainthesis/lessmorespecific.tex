@@ -50,6 +50,7 @@ A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J 
 \end{prop}
 
 \begin{lemm}
+	\typedlabel{lemm:properties-of-wk-in-reducible-coxeter-groups}
 	Let $(W, S_1 \dot \cup S_2)$ be a reducible Coxeter system with $\ord(st) = 2$ for $s \in S_1, t \in S_2$. Let $\theta = \id$, $s_1,\ldots,s_m,s \in S_1$ and $t_1,\ldots,t_n,t \in S_2$. Then
 
 	\begin{enumerate}
@@ -91,3 +92,17 @@ A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J 
 		\end{enumerate}
 	\end{proof}
 \end{lemm}
+
+\begin{rema}
+	Note that \ref{lemm:properties-of-wk-in-reducible-coxeter-groups} still holds, if we drop the premise $\theta = \id$ and instead insist on $\theta(S_i) = S_i$ for $i=1,2$.
+\end{rema}
+
+\begin{coro}
+	Let $(W,S_1 \dot \cup S_2)$ be Coxeter system with $\ord(st) = 2$ whenever $s \in S_1, t \in S_2$. In particular $W$ is reducible. Let $W := W_{S_1}$ and $W_2 := W_{S_2}$ be the parabolic subgroups of $W$ corrosponding to $S_1$ and $S_2$. Then we have $Wk(W,\id) \cong Wk(W_1,\id) \times Wk(W_2,\id)$.
+
+	\begin{proof}
+		By \ref{lemm:properties-of-wk-in-reducible-coxeter-groups} for every element $w \in \ti{\id}(W)$ we can find a twisted expression like $w = \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n$ with $s \in S_1, t \in S_2$. Hence the map
+		$$ \varphi : \ti{\id}(W_1) \times \ti{\id}(W_2) \to \ti{\id}(W) : (\ul s_1 \ldots \ul s_m, \ul t_1 \ldots \ul t_n) \mapsto \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n $$
+		is a bijection. It remains to show, that the relation $\preceq_W$ satisfies \ref{defi:direct-product-of-posets}. Let $v_1,w_1 \in \ti{\id}(W_1)$, $v_2,w_2 \in \ti{\id}(W_2)$ and $v = v_1v_2 = \varphi(v_1,v_2), w = w_1w_2 = \varphi(w_1,w_2) \in \ti{\id}(W)$. Suppose $v_i \preceq_{W_i} w_i$ for $i=1,2$. \todo \ In return suppose $v \preceq_W w$. \todo
+	\end{proof}
+\end{coro}
