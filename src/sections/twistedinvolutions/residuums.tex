@@ -4,18 +4,18 @@
 
 \begin{defi}
 	\typedlabel{defi:residuum}
-	Let $w \in W$ and $I \subseteq S$ be a subset of generators. Then we define
+	Let $w \in \ti{\theta}$ and $I \subseteq S$ be a subset of generators. Then we define
 	$$ wC_I := \{ w \ul s_1 \ldots \ul s_k : k \in \nn_0, s_i \in S \} $$
 	as the \defword{$I$-residuum} of $w$ or just \defword{residuum}. To emphasize the size of $I$, say $|I| = n$, we also speak of a \defword{rank-$n$-residuum}.
 \end{defi}
 
 \begin{exam}
-	Let $w \in W$. Then $wC_\emptyset = \{ w \}$ and $wC_S = \ti{\theta}$.
+	Let $w \in \ti{\theta}$. Then $wC_\emptyset = \{ w \}$ and $wC_S = \ti{\theta}$.
 \end{exam}
 
 \begin{lemm}
 	\typedlabel{lemm:all-elements-of-one-residuum-yield-the-same-residuum}
-	Let $w \in W$ and $I \subset S$. If $v \in wC_I$, then $vC_I = wC_I$.
+	Let $w \in \ti{\theta}$ and $I \subset S$. If $v \in wC_I$, then $vC_I = wC_I$.
 
 	\begin{proof}
 		Suppose $v \in wC_I$. Then $v = w \ul s_1 \ldots \ul s_n$ for some $s_i \in I$. Suppose $u = w \ul t_1 \ldots \ul t_m \in wC_I$ is any other element in $wC_I$ with $t_i \in I$. Then
@@ -25,7 +25,7 @@
 \end{lemm}
 
 \begin{coro}
-	Let $v, w \in W$ and $I \subset S$. Then either $vC_I \cap wC_I = \emptyset$ or $vC_I = wC_I$.
+	Let $v, w \in \ti{\theta}$ and $I \subset S$. Then either $vC_I \cap wC_I = \emptyset$ or $vC_I = wC_I$.
 
 	\begin{proof}
 		Immediately follows from \ref{lemm:all-elements-of-one-residuum-yield-the-same-residuum}.
@@ -76,7 +76,7 @@ One question arises immediately: Are the $s$- and the $t$-branch disjoint? With 
 
 \begin{prop}
 	\typedlabel{prop:rank-2-residuums-are-convex}
-	Let $w \in W$ and let $s,t \in S$ be two distinct generators. Without loss of generality suppose $w = \min(w, \{s,t\})$. If there is a $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$, then it is unique with this property in $wC_{\{s,t\}}$. Hence $wC_{\{s,t\}}$ consists of two geodesics from $w$ to $v$ intersecting only in these two elements. Else, the $s$- and $t$-branch are disjoint, strictly ascending in twisted length and of infinite size.
+	Let $w \in \ti{\theta}$ and let $s,t \in S$ be two distinct generators. Without loss of generality suppose $w = \min(w, \{s,t\})$. If there is a $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$, then it is unique with this property in $wC_{\{s,t\}}$. Hence $wC_{\{s,t\}}$ consists of two geodesics from $w$ to $v$ intersecting only in these two elements. Else, the $s$- and $t$-branch are disjoint, strictly ascending in twisted length and of infinite size.
 
 	\begin{proof}
 		Suppose there is a $v$ in the $s$-branch with $v \ul s \prec v$ and $v \ul t \prec v$, say $v = w[\ul s \ul t]^n$ and $n$ is minimal with this property. Because of the uniqueness of a minimal element from \ref{prop:residuums-have-unique-wk-theta-minimal-element} we have $w[\ul s \ul t]^{m+1} \prec w[\ul s \ul t]^m$ for all $m \in \nn$ with $n \leq m \leq 2n - 1$. With the same argument we have $w[\ul s \ul t]^{2n} = w$. If no such $v$ exists, then the $s$- and $t$-branch must be disjoint, strictly ascending in twisted length and so of infinite size.
@@ -116,7 +116,7 @@ Again, this corollary can be strengthen by insisting on an exclusive or with the
 
 
 \begin{defi}
-	Let $w \in W$, $s,t \in S$ be two distinct generators with $\ord(st) < \infty$ and $C := wC_{\{s,t\}}$ the corrosponding rank-2-residuum. We classify rank-2-residuums according to Figure~\ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
+	Let $w \in \ti{\theta}$, $s,t \in S$ be two distinct generators with $\ord(st) < \infty$ and $C := wC_{\{s,t\}}$ the corrosponding rank-2-residuum. We classify rank-2-residuums according to Figure~\ref{fig:dist-one-bothsided-actions-in-rank-2-residuum}.
 
 	\begin{figure}[ht]
 		\centering
