@@ -51,7 +51,7 @@ A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J 
 
 \begin{lemm}
 	\typedlabel{lemm:properties-of-wk-in-reducible-coxeter-groups}
-	Let $(W, S_1 \dot \cup S_2)$ be a reducible Coxeter system with $\ord(st) = 2$ for $s \in S_1, t \in S_2$. Let $\theta = \id$, $s_1,\ldots,s_m,s \in S_1$ and $t_1,\ldots,t_n,t \in S_2$. Then
+	Let $(W, S_1 \dotcup S_2)$ be a reducible Coxeter system with $\ord(st) = 2$ for $s \in S_1, t \in S_2$. Let $\theta = \id$, $s_1,\ldots,s_m,s \in S_1$ and $t_1,\ldots,t_n,t \in S_2$. Then
 
 	\begin{enumerate}
 		\item $\ul s$ acts by twisted conjugation on $\ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n$ if and only if it acts by twisted conjugation on $\ul s_1 \ldots \ul s_m$,
@@ -93,28 +93,60 @@ A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J 
 	\end{proof}
 \end{lemm}
 
-\begin{rema}
-	Note that \ref{lemm:properties-of-wk-in-reducible-coxeter-groups} still holds, if we drop the premise $\theta = \id$ and instead insist on $\theta(S_i) = S_i$ for $i=1,2$.
-\end{rema}
-
 \begin{coro}
-	Let $(W,S_1 \dot \cup S_2)$ be Coxeter system with $\ord(st) = 2$ whenever $s \in S_1, t \in S_2$. In particular $W$ is reducible. Let $W := W_{S_1}$ and $W_2 := W_{S_2}$ be the parabolic subgroups of $W$ corrosponding to $S_1$ and $S_2$. Then we have $Wk(W,\id) \cong Wk(W_1,\id) \times Wk(W_2,\id)$.
+	\typedlabel{coro:wk-of-reducible-coxeter-groups}
+	Let $(W,S_1 \dotcup S_2)$ be Coxeter system with $\ord(st) = 2$ whenever $s \in S_1, t \in S_2$. In particular $W$ is reducible. Let $W := W_{S_1}$ and $W_2 := W_{S_2}$ be the parabolic subgroups of $W$ corrosponding to $S_1$ and $S_2$. Then we have $Wk(W,\id) \cong Wk(W_1,\id) \times Wk(W_2,\id)$.
 
 	\begin{proof}
-		By \ref{lemm:properties-of-wk-in-reducible-coxeter-groups} for every element $w \in \ti{\id}(W)$ we can find a twisted expression like $w = \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n$ with $s \in S_1, t \in S_2$. Hence the map
+		We denote the relation in $W$ (resp. in $W_1$, $W_2$) by $\preceq_W$ (resp. by $\preceq_{W_1}$, $\preceq_{W_2}$). By \ref{lemm:properties-of-wk-in-reducible-coxeter-groups} for every element $w \in \ti{\id}(W)$ we can find a twisted expression like $w = \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n$ with $s \in S_1, t \in S_2$. Hence the map
 		$$ \varphi : \ti{\id}(W_1) \times \ti{\id}(W_2) \to \ti{\id}(W) : (\ul s_1 \ldots \ul s_m, \ul t_1 \ldots \ul t_n) \mapsto \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n $$
-		is a bijection. It remains to show, that the relation $\preceq_W$ satisfies \ref{defi:direct-product-of-posets}. Let $v_1,w_1 \in \ti{\id}(W_1)$, $v_2,w_2 \in \ti{\id}(W_2)$ and $v = v_1v_2 = \varphi(v_1,v_2), w = w_1w_2 = \varphi(w_1,w_2) \in \ti{\id}(W)$. Suppose $v_i \preceq_{W_i} w_i$ for $i=1,2$. Then we have
+		is surjective. The injectivity is due to \ref{prop:reducible-coxeter-systems-isomorph-to-parabolic-subgroups}. It remains to show that $\preceq_W$ satisfies \ref{defi:direct-product-of-posets}. Let $v_1,w_1 \in \ti{\id}(W_1)$, $v_2,w_2 \in \ti{\id}(W_2)$ and $v = v_1v_2 = \varphi(v_1,v_2), w = w_1w_2 = \varphi(w_1,w_2) \in \ti{\id}(W)$. Suppose $v_i \preceq_{W_i} w_i$ for $i=1,2$. Then we have
 		\begin{align*}
 			v_1	& = \ul s_1 \ldots \ul s_m, &
 			w_1	& = \ul s_1 \ldots \ul s_m \ldots \ul s_{m'} = v_1 \ul s_{m+1} \ldots \ul s_{m'}, \\
-			v_2	& = \ul t_1 \ldots \ul t_n, &
-			w_2	& = \ul t_1 \ldots \ul t_n \ldots \ul t_{n'} = v_2 \ul t_{n+1} \ldots \ul t_{n'} \\
+			v_2	& = \ul t_1 \ldots \ul t_n \textrm{ and} &
+			w_2	& = \ul t_1 \ldots \ul t_n \ldots \ul t_{n'} = v_2 \ul t_{n+1} \ldots \ul t_{n'}
 		\end{align*}
-		for $s_i \in S_1, t_i \in S_2, 0 \leq m \leq m', 0 \leq n \leq n'$. Hence
+		for some well chosen generators $s_i \in S_1, t_i \in S_2$ and $0 \leq m \leq m', 0 \leq n \leq n'$. Hence
 		\begin{align*}
-			v	& = v_1 v_2 = \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n  \leq \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n \ul s_{m+1} \ldots \ul s_{m'} \ul t_{n+1} \ldots \ul t_{n'} \\
+			v	& = v_1 v_2 = \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n \preceq_W \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n \ul s_{m+1} \ldots \ul s_{m'} \ul t_{n+1} \ldots \ul t_{n'} \\
 				& = \ul s_1 \ldots \ul s_m \ul s_{m+1} \ldots \ul s_{m'} \ul t_1 \ldots \ul t_n  \ul t_{n+1} \ldots \ul t_{n'} = w_1 w_2 = w.
 		\end{align*}
-		In return suppose $v \preceq_W w$. \todo
+		In return suppose $v \preceq_W w$. Then we have
+		\begin{align*}
+			v	& = \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n \textrm{ and} \\
+			w	& = \ul s_1 \ldots \ul s_m \ul t_1 \ldots \ul t_n \ul s_{m+1} \ldots \ul s_{m'} \ul t_{n+1} \ldots \ul t_{n'}
+		\end{align*}
+		for some well chosen generators $s_i \in S_1, t_i \in S_2$ and $0 \leq m \leq m', 0 \leq n \leq n'$. Again with similar arguments we have 
+		\begin{align*}
+			v_1	& = \ul s_1 \ldots \ul s_m \preceq_{W_1} \ul s_1 \ldots \ul s_m \ul s_{m+1} \ldots \ul s_{m'} = w_1 \textrm{ and} \\
+			w_1	& = \ul t_1 \ldots \ul t_n \preceq_{W_2} \ul t_1 \ldots \ul t_n \ul t_{n+1} \ldots \ul t_{n'} = w_2. \qedhere
+		\end{align*}
 	\end{proof}
 \end{coro}
+
+\begin{rema}
+	Note that \ref{lemm:properties-of-wk-in-reducible-coxeter-groups} and \ref{coro:wk-of-reducible-coxeter-groups} still hold, if we drop the premise $\theta = \id$ and instead insist on $\theta(S_i) = S_i$ for $i=1,2$. They also remain true, if we have a partition of the generator set in more than two subsets. Hence for $(W,S_1 \dotcup \ldots \dotcup S_n)$ with $\ord(st) = 2$ whenever $s \in S_i, t \in S_j, i \neq j$ we have
+	$$ Wk(W,\id) = Wk(W_{S_1},\id) \times \ldots \times Wk(W_{S_n},\id). $$
+\end{rema}
+
+\begin{theo}
+	Let $(W,S)$ be a reducible Coxeter system with $S = S' \cup S''$ and $\ord(st) = 2$ whenever $s \in S', t \in S''$ and let $\theta = \id$. Then \ref{eq:main} holds for $(W,S)$ if and only if it holds for $(W_{S'},S')$ and $(W_{S''},S'')$, too.
+
+	\begin{proof}
+		If \ref{eq:main} holds for $(W,S)$, then it holds for $(W_{S'},S')$ and $(W_{S''},S'')$ in particular. In return suppose \ref{eq:main} to hold for $(W_{S'},S')$ and $(W_{S''},S'')$ and assume we are in the situtation from \ref{ques:main}. For a set $M \subseteq S$ we define $M' := M \cap S'$ and $M'' := M \cap S''$, hence $M = M' \dotcup M''$ in particular. This is compatible with our definition of $S_{ij}$ and $T$:
+		\begin{align*}
+			S_{ij}	& = S_i \cap S_j = (S'_i \dotcup S''_i) \cap (S'_j \dotcup S''_j) = (S'_i \cap S'_j) \dotcup (S''_i \cap S''_j) = S'_{ij} \dotcup S''_{ij} \\
+			T		& = S_1 \cap S_2 \cap S_3 = (S'_{12} \dotcup S''_{12}) \cap (S'_3 \dotcup S''_3) = (S'_{12} \cap S'_3) \dotcup (S''_{12} \cap S''_3) = T' \dotcup T''
+		\end{align*}
+		Let $w_K = \ul s'_1 \ldots \ul s'_m \ul s''_1 \ldots \ul s''_{m'}$ with $s'_i \in K',s''_i \in K''$. We have three twisted expressions
+		\begin{align*}
+			w	& = w_K \ul a'_1 \ldots \ul a'_{n'} \ul a''_1 \ldots \ul a''_{n''} \\
+				& = w_K \ul b'_1 \ldots \ul b'_{n'} \ul b''_1 \ldots \ul b''_{n''} \\
+				& = w_K \ul c'_1 \ldots \ul c'_{n'} \ul c''_1 \ldots \ul c''_{n''}
+		\end{align*}
+		with $a'_i,a''_i \in S_1$, $b'_i,b''_i \in S_2$ and $c'_i,c''_i \in S_3$. Thanks to \ref{lemm:properties-of-wk-in-reducible-coxeter-groups} we can assume without loss of generality that $a' \in S'_1, a'' \in S''_1$, $b' \in S'_2, b'' \in S''_2$ and $c' \in S'_3, c'' \in S''_3$.
+
+		\noindent \todo
+	\end{proof}
+\end{theo}
