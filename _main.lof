@@ -1,8 +1,8 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Hasse diagram of the set of all subsets of $\{x,y,z\}$ order by the subset relation}}{5}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces All types of irreducible finite Coxeter systems}}{9}{figure.2.2}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Hasse diagram of $Wk(A_4, \id )$}}{18}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Impossible concave structure of a rank-2-residuums}}{22}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Classification of rank-2-residuums}}{23}{figure.3.3}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Impossible concave structure of a rank-2-residues}}{22}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Classification of rank-2-residues}}{23}{figure.3.3}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Hasse diagrams of $Wk(A_4, \id )$ after removing $s_3,s_4$ edges in the left, $s_2,s_4$ edges in the middle and $s_2,s_3$ edges in the right diagram}}{24}{figure.3.4}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Optimization of \ref {algo:twoa1}}}{28}{figure.3.5}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Element comparisons needed in TWOA1/2/3 with $\theta = \id $}}{31}{figure.3.6}
