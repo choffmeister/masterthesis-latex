@@ -1,13 +1,13 @@
-\documentclass[a4paper,11pt,blue,extramargin,oneside]{tubsartcl}
-%\documentclass[a4paper,11pt]{scrartcl}
+%\documentclass[a4paper,11pt,blue,extramargin,oneside]{tubsartcl}
+\documentclass[a4paper,11pt]{scrartcl}
 
 \input{src/packages}
+\addbibresource{src/bibliography.bib}
 \input{src/layout}
 \input{src/math}
 \input{resources/tikz/coxeter-diagrams}
 
 \begin{document}
-
 \includepdf{resources/title/title}
 \newpage
 \tableofcontents
@@ -20,8 +20,8 @@
 \input{src/sections/twistedinvolutions/_main}
 \input{src/sections/mainthesis/_main}
 \input{src/sections/application/_main}
-\appendix
 
+\appendix
 \include{src/sections/sourcecodes}
 \include{src/sections/benchmarkresults}
 \include{src/sections/bibliography}
