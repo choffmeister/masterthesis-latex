@@ -1,10 +1,13 @@
-all: pdf bib
+all: pdf bib idx
 
 pdf:
 	pdflatex -file-line-error -interaction=nonstopmode -synctex=1 -etex _main.tex
 
 bib:
-	bibtex8 _main.aux
+	bibtex8 _main
+
+idx:
+	makeindex _main
 
 clean:
 	find . -name '*.log' -print0 | xargs -0 rm -f

@@ -20,7 +20,10 @@ basicstyle=\ttfamily\scriptsize}
 %	morestring={[b][\color{red}]"},
 }
 
-\newcommand{\defword}[1]{\textit{\textbf{#1}}}
+\makeindex
+%\newcommand{\defword}[1]{\index{#1}{Test}\textit{\textbf{#1}}}
+\newcommand{\defword}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\index{#2}{\textbf{#2}}}{\index{#1}{\textbf{#2}}}}
+
 
 \newcolumntype{M}{>{$\vcenter\bgroup\hbox\bgroup}l<{\egroup\egroup$}}
 
