@@ -1,0 +1,58 @@
+%!TEX root = ../../../_main.tex
+\subsection{Chamber systems}
+
+\begin{defi}
+	\typedlabel{defi:chamber-system}
+	A \defword{chamber system over $I$} is a pair $\mathcal{C} = (C,(\sim_i, i \in I))$, with a nonempty set $C$, whose members are called \defword{chambers} and a family of equivalence relations $\sim_i$, indexed by $i \in I$, that satisfies the implication
+	$$ c \sim_i d \wedge c \sim_j d \Rightarrow c = d \vee i = j $$
+	for all $c,d \in C$ and $i,j \in I$. The cardinality $|I|$ is called the \defword{rank} of $\mathcal{C}$. If for two chambers $c,d$ we have $c \sim_i d$, then $c$ is called \defword{i-adjacent} to $d$ or just \defword{adjacent}.
+\end{defi}
+
+So the main assertion for chamber systems is, that two distinct chambers $c,d \in C$ are at most adjacent by one $i \in I$. For the rest of this paper $\mathcal{C} = (C,(\sim_i, i \in I))$ will always denote a chamber system and we will always assume, that chamber systems are of finite rank.
+
+\begin{exam}
+	For an arbitrary Coxeter system let $W$ act as set of chambers and for each generator $s \in S$ define a equivalence relation $w \sim_s v$ if and only if either $w = v$ or $ws = v$. That this are really equivalence relations is easy to check. So suppose $w \sim_s v$, $w \sim_t v$ for two distinct generators $s,t \in S$. The assumption $w \neq v$ immediately yields a contradiction by $ws = v = wt \iff s = t$. Hence this is indeed a chamber system.
+\end{exam}
+
+The previous example is just a special case of a quite general recipe to create chamber systems from groups, the so-called coset chamber systems.
+
+\begin{defi}
+	\theocite{Defnition 3.6.3}{buekenhout:diagram-geometry}
+	Let $G$ be an arbitrary group with a subgroup $B$ and a family of subgroups $(G_i, i \in I)$ such that $B \subseteq G_i$ for $i \in I$. Choose the chamber set $C$ as the set of all $B$-cosets $gB$ for some $g \in G$ and define the equivalence relations $(\sim_i, i \in I)$ by $gB \sim_i hB$ iff $gG_i = hG_i$. Then we call this chamber system the \defword{coset chamber system} of $G$ on $B$ with respect to $(G_i, i \in I)$.
+\end{defi}
+
+\begin{lemm}
+	Coset chamber systems are chamber systems.
+
+	\begin{proof}
+		As easy to check the $\sim_i$ are equivalence relations. So suppose $gB \sim_i hB$ and $gB \sim_j hB$ and let $gB \neq hB$, i.e. $h^{-1}g \notin B$. \todo \ Different definitions of chamber system at Horn and Buekenhout/Cohen?
+	\end{proof}
+\end{lemm}
+
+If two chambers $c,d \in C$ in a chamber system are not adjacent, then there might be a chain of subsequent adjacent chambers with $c$ as first and $d$ as last chamber.
+
+\begin{defi}
+	Let $G = (c_0,\ldots,c_k)$ be a finite sequence of chambers $c_i \in C$ with $c_{i-1}$ adjacent to $c_i$ for all $1 \leq i \leq k$. Then $G$ is called a \defword{gallery} in $\mathcal{C}$ whereas the integer $k$ is called the \defword{length} of $G$. The first element $c_0$ of a gallery $G$ is denoted by $\alpha(G)$ and the last by $\omega(G)$. If for two chambers $c,d \in C$ there is a gallery $G$ with $\alpha(G) = c$ and $\omega(G) = d$, then we say that $G$ \defword{joins} $c$ and $d$. A gallery with G with $\alpha(G) = \omega(G)$ is called \defword{closed} and a gallery $G = (c_0,\ldots,c_k)$ with $c_{i-1} \neq c_i$ for all $1 \leq i \leq k$ is called \defword{simple}. If a gallery $G$ of length $k$ joins two chambers $c,d$ and there is no joining gallery of shorter length, then we call $G$ a \defword{minimal gallery joining $c$ and $d$}.
+\end{defi}
+
+Note, that two chambers are adjacent if and only if they can be joined by a gallery of length 1.
+
+\begin{defi}
+	The chamber system $\mathcal{C}$ is called \defword{connected} if any two chambers $c,d \in C$ can be joined by a gallery.
+\end{defi}
+
+\begin{defi}
+	Let $G = (c_0,\ldots,c_k)$ be a gallery and let $J \subset I$ be a subset. If for $1 \leq i \leq k$ there is a $j \in J$ with $c_{i-1} \sim_j c_i$, then we call $G$ a \defword{$J$-gallery}. Two chambers $c,d \in C$, that have a $J$-gallery joining them, are called \defword{$J$-equivalent}, denoted by $c \sim_J d$.
+\end{defi}
+
+\begin{defi}
+	For a chamber $c \in C$ and a subset $J \subseteq I$, we call the set $R_J(c) := \{ d \in C : c \sim_J d \}$ a \defword{$J$-residue}. If $|J| = 1$, say $J = \{i\}$, then $R_J(c) = R_{\{i\}}(c)$ is called a \defword{$i$-panel}.
+\end{defi}
+
+Note that for any chamber system $(C,(\sim_i, i \in I))$, $c \in C$ and $J \subseteq I$, the chamber system $(R_J(c), (\sim_j, j \in J))$ is connected by construction.
+
+\begin{defi}
+	Let $\mathcal{C}$ be a chamber system over $I$. We call it a \defword{residually connected} chamber system if the following holds: For every $J \subseteq I$ and every family of residues $(R_{I \setminus \{j\}}, j \in J)$ with pairwise nonempty intersection we have
+	$$ \bigcap_{j \in J} R_{I \setminus \{j\}} = R_{I \setminus J}(c) $$
+	for some $c \in C$.
+\end{defi}

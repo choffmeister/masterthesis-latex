@@ -17,7 +17,7 @@
   \item adjacent, \hyperpage{38}
   \item antisymmetry, \hyperpage{4}
   \item appartment, \hyperpage{40}
-  \item associated chamber system, \hyperpage{39}
+  \item associated chamber system, \hyperpage{40}
 
   \indexspace
 
@@ -30,9 +30,9 @@
 
   \item chamber system over $I$, \hyperpage{38}
   \item chambers, \hyperpage{38}
-  \item closed, \hyperpage{38}
-  \item connected, \hyperpage{39, 40}
-  \item convex, \hyperpage{40}
+  \item closed, \hyperpage{39}
+  \item connected, \hyperpage{39}, \hyperpage{41}
+  \item convex, \hyperpage{41}
   \item coset chamber system, \hyperpage{38}
   \item covers, \hyperpage{4}
   \item Coxeter graph, \hyperpage{6}
@@ -56,7 +56,7 @@
 
   \indexspace
 
-  \item gallery, \hyperpage{38}
+  \item gallery, \hyperpage{39}
   \item geodesic, \hyperpage{19}
   \item graded poset, \hyperpage{4}
 
@@ -72,19 +72,19 @@
 
   \indexspace
 
-  \item joins, \hyperpage{38}
+  \item joins, \hyperpage{39}
 
   \indexspace
 
   \item left descending set, \hyperpage{6}
   \item left weak ordering, \hyperpage{10}
-  \item length, \hyperpage{6}, \hyperpage{38}
+  \item length, \hyperpage{6}, \hyperpage{39}
   \item length function, \hyperpage{6}
 
   \indexspace
 
   \item maximal-multiplicative, \hyperpage{24}
-  \item minimal gallery joining $c$ and $d$, \hyperpage{38}
+  \item minimal gallery joining $c$ and $d$, \hyperpage{39}
 
   \indexspace
 
@@ -93,7 +93,7 @@
   \indexspace
 
   \item open interval, \hyperpage{4}
-  \item opposite, \hyperpage{40}
+  \item opposite, \hyperpage{41}
 
   \indexspace
 
@@ -103,7 +103,7 @@
 
   \indexspace
 
-  \item rank, \hyperpage{5}, \hyperpage{38, 39}
+  \item rank, \hyperpage{5}, \hyperpage{38}, \hyperpage{40}
   \item rank function, \hyperpage{4}
   \item rank-$n$-residue, \hyperpage{20}
   \item reduced expression, \hyperpage{6}
@@ -120,8 +120,8 @@
 
   \item set of $\theta $-twisted involutions, \hyperpage{14}
   \item set of twisted involutions, \hyperpage{14}
-  \item simple, \hyperpage{38}
-  \item spherical, \hyperpage{40}
+  \item simple, \hyperpage{39}
+  \item spherical, \hyperpage{41}
   \item subexpression, \hyperpage{6}
 
   \indexspace
