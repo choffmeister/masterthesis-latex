@@ -2,7 +2,7 @@
 \section{Application}
 \label{sec:application}
 
-See \cite{horn:kac-moody}.
+This section is based on \cite{horn:kac-moody}.
 
 \begin{defi}
 	\typedlabel{defi:chamber-system}
@@ -36,7 +36,7 @@ The previous example is just a special case of a quite general recipe to create 
 If two chambers $c,d \in C$ in a chamber system are not adjacent, then there might be a chain of subsequent adjacent chambers with $c$ as first and $d$ as last chamber.
 
 \begin{defi}
-	Let $G = (c_0,\ldots,c_k)$ be a finite sequence of chambers $c_i \in C$ with $c_{i-1}$ adjacent to $c_i$ for all $1 \leq i \leq k$. Then $G$ is called a \defword{gallery} in $\mathcal{C}$ whereas the integer $k$ is called the \defword{length} of $G$. The first element $c_0$ of a gallery $G$ is denoted by $\alpha(G)$ and the last by $\omega(G)$. If for two chambers $c,d \in C$ there is a gallery $G$ with $\alpha(G) = c$ and $\omega(G) = d$, then we say that $G$ \defword{joins} $c$ and $d$. A gallery with G with $\alpha(G) = \omega(G)$ is called \defword{closed} and a gallery $G = (c_0,\ldots,c_k)$ with $c_{i-1} \neq c_i$ for all $1 \leq i \leq k$ is called \defword{simple}.
+	Let $G = (c_0,\ldots,c_k)$ be a finite sequence of chambers $c_i \in C$ with $c_{i-1}$ adjacent to $c_i$ for all $1 \leq i \leq k$. Then $G$ is called a \defword{gallery} in $\mathcal{C}$ whereas the integer $k$ is called the \defword{length} of $G$. The first element $c_0$ of a gallery $G$ is denoted by $\alpha(G)$ and the last by $\omega(G)$. If for two chambers $c,d \in C$ there is a gallery $G$ with $\alpha(G) = c$ and $\omega(G) = d$, then we say that $G$ \defword{joins} $c$ and $d$. A gallery with G with $\alpha(G) = \omega(G)$ is called \defword{closed} and a gallery $G = (c_0,\ldots,c_k)$ with $c_{i-1} \neq c_i$ for all $1 \leq i \leq k$ is called \defword{simple}. If a gallery $G$ of length $k$ joins two chambers $c,d$ and there is no joining gallery of shorter length, then we call $G$ a \defword{minimal gallery joining $c$ and $d$}.
 \end{defi}
 
 Note, that two chambers are adjacent if and only if they can be joined by a gallery of length 1.
@@ -50,7 +50,7 @@ Note, that two chambers are adjacent if and only if they can be joined by a gall
 \end{defi}
 
 \begin{defi}
-	For a chamber $c \in C$ and a subset $J \subseteq I$, we call the set $R_J(c) := \{ d \in C : c \sim_J d \}$ a \defword{$J$-residue}.
+	For a chamber $c \in C$ and a subset $J \subseteq I$, we call the set $R_J(c) := \{ d \in C : c \sim_J d \}$ a \defword{$J$-residue}. If $|J| = 1$, say $J = \{i\}$, then $R_J(c) = R_{\{i\}}(c)$ is called a \defword{$i$-panel}.
 \end{defi}
 
 Note that for any chamber system $(C,(\sim_i, i \in I))$, $c \in C$ and $J \subseteq I$, the chamber system $(R_J(c), (\sim_j, j \in J))$ is connected by construction.
@@ -70,16 +70,59 @@ Note that for any chamber system $(C,(\sim_i, i \in I))$, $c \in C$ and $J \subs
 	\end{axioms}
 \end{defi}
 
-We can associate a chamber system to a building.
+\begin{defi}
+	Let $(\mathcal{C}, \delta)$ be building of type $(W,S)$. Then cardinality of $S$ is called the \defword{rank} of the building.
+\end{defi}
 
 \begin{defi}
-	Let $(\mathcal{C}, \delta)$ be a building of type $(W,S)$. For each $s \in S$ we define $c,d \in C$ to be $s$-adjacent, if and only iff $\delta(c,d) \in \{e,s\}$. Then $(\mathcal{C}, (\sim_s, s \in S))$ is the to our building $(\mathcal{C}, \delta)$ associated chamber system.
+	Let $(\mathcal{C}, \delta)$ be a building of type $(W,S)$. For each $s \in S$ we define $c,d \in C$ to be $s$-adjacent, if and only iff $\delta(c,d) \in \{e,s\}$. Then $(\mathcal{C}, (\sim_s, s \in S))$ is the to our building $(\mathcal{C}, \delta)$ \defword{associated chamber system}.
 \end{defi}
+
+Since 
 
 \begin{lemm}
 	Let $(\mathcal{C}, \delta)$ be a building of type $(W,S)$. Then the associated chamber system is a chamber system.
 
 	\begin{proof}
-		
+		Let $c,d \in \mathcal{C}$ and $s,t \in S$ with $c \sim_s d$ and $c \sim_t d$. If $c \neq d$, then $\delta(c,d) = s$ and $\delta(c,d) = t$, hence $s = t$.
 	\end{proof}
 \end{lemm}
+
+\begin{defi}
+	A building $(\mathcal{C}, \delta)$ of type $(W,S)$ is called \defword{thick} (resp. \defword{thin}), if for every chamber $c \in \mathcal{C}$ and every $s \in S$ there are at least three (resp. exactly two) chambers $s$-adjacent to $c$.
+\end{defi}
+
+\begin{exam}
+	\typedlabel{exam:thin-building}
+	For a Coxeter system $(W,S)$ define a map
+	$$ \delta_S : W \times W \to W : (x,y) \mapsto x^{-1}y. $$
+	Then $\delta_S(x,y) = e \iff x = y$. Furthermore for $z \in W$ with $\delta_S(y,z) = s$, i.e. $z = ys$, we have $\delta_S(x,z) = x^{-1}z = x^{-1}ys = \delta(x,y)s$. For $s \in S$ and $x,y \in W$ choose $z = ys$. Then $\delta_S(y,z) = s$ and as before $\delta_S(x,z) = \delta_S(x,y)s$. Hence $(W,\delta_S)$ is a building of type $(W,S)$. More precisely, it is a thin building, since for every $s \in S$ and $x,y \in W$ we have $\delta_S(x,y) = x^{-1}y \in \{e,s\}$ if and only if $x = y$ or $y = xs$, hence there are excatly two chambers $s$-adjacent to $x$.
+\end{exam}
+
+This example for a thin building of type $(W,S)$ can be indeed called "the" thin building of type $(W,S)$ as the following lemma shows.
+
+\begin{lemm}
+	\theocite{Theorem 4.2.8}{buekenhout:diagram-geometry}
+	Let $(\mathcal{C}, \delta)$ be a thin building of type $(W,S)$. Then it is isometric to the building $(W, \delta_S)$ (cf. \ref{exam:thin-building}).
+\end{lemm}
+
+\begin{defi}
+	For a building $(\mathcal{C},\delta)$ of type $(W,S)$ we call a subset $\Sigma \subseteq \mathcal{C}$ an \defword{appartment}, if $(\Sigma, \delta|_\Sigma)$ is isometric to $(W,\delta_S)$ from \ref{exam:thin-building}, or equivalent if $(\sigma, \delta|_\Sigma)$ is thin.
+\end{defi}
+
+By the axioms of buildings, a building must have at least two chambers ($|S| \geq 1$ and $\mathcal{C} \neq \emptyset$). Hence by the next theorem we can think of thin buildings as the trivial ones for a given type $(W,S)$.
+
+\begin{theo}
+	\theocite{Theorem 11.2.5}{buekenhout:diagram-geometry}
+	Let $(\mathcal{C},\delta)$ be a building. Then for any two chambers $c,d \in \mathcal{C}$ there is an appartment $\Sigma$ with $c,d \in \Sigma$. In particular every building contains at least one appartment.
+\end{theo}
+
+So thin buildings are precisely those, that contain excatly one apparment, i.e. are appartments themself.
+
+\begin{defi}
+	A building $(\mathcal{C},\delta)$ of type $(W,S)$ is called \defword{spherical} if $W$ is finite. In this case $W$ has a longest element $w_0$ and two chambers $c,d$ are called \defword{opposite}, if $\delta(c,d) = w_0$.
+\end{defi}
+
+\begin{defi}
+	Let $(\mathcal{C},\delta)$ be a building of type $(W,S)$. A set of chambers $M \subseteq \mathcal{C}$ is called \defword{connected}, if any two chambers in $M$ can be joined by a gallery completeley contained in $M$. If in addition, every minimal gallery joining two chambers in $M$ is completeley contained in $M$, then $M$ is called \defword{convex}.
+\end{defi}
