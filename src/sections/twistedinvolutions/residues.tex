@@ -2,6 +2,8 @@
 \subsection{Residues}
 \label{sec:twisted-involutions-residues}
 
+Residues in $Wk(\theta)$ are subsets of $\theta$-twisted involutions, that can be "reached" from a fixed starting point by using just certain $\ul s \in \ul S$ as the following definition specifies.
+
 \begin{defi}
 	\typedlabel{defi:residue}
 	Let $w \in \ti{\theta}$ and $I \subseteq S$ be a subset of generators. Then we define
@@ -180,15 +182,15 @@ Again, this corollary can be strengthen by insisting on an exclusive or with the
 	\begin{proof}
 		Let $w$ be the $Wk$-minimal element and $v$ be the $Wk$-maximal element in our residue. Due to \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residues} there are five different cases we have to consider:
 		\begin{description}
-			\item[Non-multiplicative:] We have $w (\ul s \ul t)^m = (ts)^m w (st)^m = w$.
-			\item[Maximal-multiplicative:] Due to $\theta(s)w = ws$ and $\theta(t)w = wt$ we have
+			\item[Non-multiplicative] We have $w (\ul s \ul t)^m = (ts)^m w (st)^m = w$.
+			\item[Maximal-multiplicative] Due to $\theta(s)w = ws$ and $\theta(t)w = wt$ we have
 			$$ w (\ul s \ul t)^{m/2+1} = \theta(\hat t (st)^{m/2-1} \hat s) w (st)^{m/2+1} = w(st)^m = w. $$
 			(\todo \ Show that this situation only occurs for even $m$)
-			\item[Bottom-multiplicative:] Again we are in a case, where $\theta(s)w = ws$ and $\theta(t)w = wt$ hold. Hence we have
+			\item[Bottom-multiplicative] Again we are in a case, where $\theta(s)w = ws$ and $\theta(t)w = wt$ hold. Hence we have
 			$$ w (\ul s \ul t)^{(m+1)/2} = \theta(\hat t (st)^{(m-1)/2} \hat s) w (st)^{(m+1)/2} = w(st)^m = w. $$
 			(\todo \ Show that this situation only occurs for odd $m$)
-			\item[Top-multiplicative:] Analogue to the previous case, if we start from $u$ instead of $w$.
-			\item[Diagonal-multiplicative:] Suppose $m$ is even. Then we have
+			\item[Top-multiplicative] Analogue to the previous case, if we start from $u$ instead of $w$.
+			\item[Diagonal-multiplicative] Suppose $m$ is even. Then we have
 			$$ w (\ul s \ul t)^m = \theta(\underbrace{ts \cdots st}_{m-1} \hat s \underbrace{ts \cdots st}_{m-1} \hat s) w (st)^m = \theta(\underbrace{ts \cdots s}_{m-2} \underbrace{s \cdots st}_{m-2}) w = \ldots = w. $$
 			If $m$ is odd, then we have the completely analogue situation
 			$$ w (\ul s \ul t)^m = \theta(\underbrace{ts \cdots ts}_{m-1} \hat t \underbrace{st \cdots st}_{m-1} \hat s) w (st)^m = \theta(\underbrace{ts \cdots t}_{m-2} \underbrace{t \cdots st}_{m-2}) w = \ldots = w. $$
