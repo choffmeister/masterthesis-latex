@@ -1,12 +1,12 @@
 %!TEX root = ../_main.tex
 \usepackage[utf8]{inputenc}
-\usepackage[backend=bibtex,backref=true,backrefstyle=none,style=alphabetic]{biblatex}
+%\usepackage[backend=bibtex,backref=true,backrefstyle=none,style=alphabetic]{biblatex}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{algorithmicx}
 \usepackage{algpseudocode}
 \usepackage{enumitem}
 \usepackage{url}
-\usepackage{hyperref}
+\usepackage[backref=page]{hyperref}
 \usepackage{multirow}
 \usepackage{listings}
 \usepackage{xcolor}
@@ -15,5 +15,6 @@
 \usepackage{pdfpages}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
-\usepackage{makeidx}
+\pgfplotsset{compat=1.6}
+\makeindex
 \usepackage{ifthen}

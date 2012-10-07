@@ -1,100 +1,100 @@
-\indexentry{partial order|hyperpage}{4}
-\indexentry{reflexivity|hyperpage}{4}
-\indexentry{antisymmetry|hyperpage}{4}
-\indexentry{transitivity|hyperpage}{4}
-\indexentry{poset|hyperpage}{4}
-\indexentry{covers|hyperpage}{4}
-\indexentry{graded poset|hyperpage}{4}
-\indexentry{rank function|hyperpage}{4}
-\indexentry{directed poset|hyperpage}{4}
-\indexentry{bounded poset|hyperpage}{4}
-\indexentry{interval|hyperpage}{4}
-\indexentry{open interval|hyperpage}{4}
-\indexentry{Hasse diagram|hyperpage}{4}
-\indexentry{direct product of posets|hyperpage}{4}
-\indexentry{Coxeter group|hyperpage}{5}
-\indexentry{Coxeter system|hyperpage}{5}
-\indexentry{rank|hyperpage}{5}
-\indexentry{Coxeter graph|hyperpage}{6}
-\indexentry{expression|hyperpage}{6}
-\indexentry{subexpression|hyperpage}{6}
-\indexentry{expression length|hyperpage}{6}
-\indexentry{length|hyperpage}{6}
-\indexentry{reduced expression|hyperpage}{6}
-\indexentry{length function|hyperpage}{6}
-\indexentry{right descending set|hyperpage}{6}
-\indexentry{left descending set|hyperpage}{6}
-\indexentry{descending set|hyperpage}{6}
-\indexentry{reflection|hyperpage}{7}
-\indexentry{Deletion Condition|hyperpage}{7}
-\indexentry{parabolic subgroup|hyperpage}{8}
-\indexentry{irreducible|hyperpage}{8}
-\indexentry{reducible|hyperpage}{8}
-\indexentry{Bruhat ordering|hyperpage}{9}
-\indexentry{right weak ordering|hyperpage}{10}
-\indexentry{left weak ordering|hyperpage}{10}
-\indexentry{Coxeter system automorphism|hyperpage}{14}
-\indexentry{set of $\theta $-twisted involutions|hyperpage}{14}
-\indexentry{set of twisted involutions|hyperpage}{14}
-\indexentry{$\theta $-twisted involution|hyperpage}{14}
-\indexentry{twisted involution|hyperpage}{14}
-\indexentry{acts by twisted conjugation|hyperpage}{14}
-\indexentry{acts by multiplication|hyperpage}{14}
-\indexentry{$\theta $- twisted expression|hyperpage}{15}
-\indexentry{twisted expression|hyperpage}{15}
-\indexentry{reduced twisted expression|hyperpage}{15}
-\indexentry{twisted length|hyperpage}{17}
-\indexentry{twisted weak ordering|hyperpage}{18}
-\indexentry{geodesic|hyperpage}{19}
-\indexentry{$I$-residue|hyperpage}{20}
-\indexentry{residue|hyperpage}{20}
-\indexentry{rank-$n$-residue|hyperpage}{20}
-\indexentry{$s$-branch|hyperpage}{22}
-\indexentry{$t$-branch|hyperpage}{22}
-\indexentry{non-multiplicative|hyperpage}{24}
-\indexentry{maximal-multiplicative|hyperpage}{24}
-\indexentry{bottom-multiplicative|hyperpage}{24}
-\indexentry{top-multiplicative|hyperpage}{24}
-\indexentry{diagonal-multiplicative|hyperpage}{24}
-\indexentry{word problem for groups|hyperpage}{26}
-\indexentry{chamber system over $I$|hyperpage}{38}
-\indexentry{chambers|hyperpage}{38}
-\indexentry{rank|hyperpage}{38}
-\indexentry{i-adjacent|hyperpage}{38}
-\indexentry{adjacent|hyperpage}{38}
-\indexentry{coset chamber system|hyperpage}{38}
-\indexentry{gallery|hyperpage}{39}
-\indexentry{length|hyperpage}{39}
-\indexentry{joins|hyperpage}{39}
-\indexentry{closed|hyperpage}{39}
-\indexentry{simple|hyperpage}{39}
-\indexentry{minimal gallery joining $c$ and $d$|hyperpage}{39}
-\indexentry{connected|hyperpage}{39}
-\indexentry{$J$-gallery|hyperpage}{39}
-\indexentry{$J$-equivalent|hyperpage}{39}
-\indexentry{$J$-residue|hyperpage}{39}
-\indexentry{type|hyperpage}{39}
-\indexentry{$i$-panel|hyperpage}{39}
-\indexentry{residually connected|hyperpage}{39}
-\indexentry{building|hyperpage}{39}
-\indexentry{distance function|hyperpage}{39}
-\indexentry{rank|hyperpage}{40}
-\indexentry{associated chamber system|hyperpage}{40}
-\indexentry{gallery|hyperpage}{40}
-\indexentry{residue|hyperpage}{40}
-\indexentry{panel|hyperpage}{40}
-\indexentry{thick|hyperpage}{40}
-\indexentry{thin|hyperpage}{40}
-\indexentry{apartment|hyperpage}{40}
-\indexentry{spherical|hyperpage}{41}
-\indexentry{opposite|hyperpage}{41}
-\indexentry{connected|hyperpage}{41}
-\indexentry{convex|hyperpage}{41}
-\indexentry{twin building of type $(W,S)$|hyperpage}{41}
-\indexentry{codistance function|hyperpage}{41}
-\indexentry{gallery|hyperpage}{41}
-\indexentry{residue|hyperpage}{41}
-\indexentry{panel|hyperpage}{41}
-\indexentry{opposite|hyperpage}{41}
-\indexentry{opposite|hyperpage}{41}
-\indexentry{twin apartment|hyperpage}{41}
+\indexentry{partial order|hyperpage}{2}
+\indexentry{reflexivity|hyperpage}{2}
+\indexentry{antisymmetry|hyperpage}{2}
+\indexentry{transitivity|hyperpage}{2}
+\indexentry{poset|hyperpage}{2}
+\indexentry{covers|hyperpage}{2}
+\indexentry{graded poset|hyperpage}{2}
+\indexentry{rank function|hyperpage}{2}
+\indexentry{directed poset|hyperpage}{2}
+\indexentry{bounded poset|hyperpage}{2}
+\indexentry{interval|hyperpage}{2}
+\indexentry{open interval|hyperpage}{2}
+\indexentry{Hasse diagram|hyperpage}{2}
+\indexentry{direct product of posets|hyperpage}{3}
+\indexentry{Coxeter group|hyperpage}{4}
+\indexentry{Coxeter system|hyperpage}{4}
+\indexentry{rank|hyperpage}{4}
+\indexentry{Coxeter graph|hyperpage}{4}
+\indexentry{expression|hyperpage}{4}
+\indexentry{subexpression|hyperpage}{4}
+\indexentry{expression length|hyperpage}{4}
+\indexentry{length|hyperpage}{4}
+\indexentry{reduced expression|hyperpage}{4}
+\indexentry{length function|hyperpage}{4}
+\indexentry{right descending set|hyperpage}{4}
+\indexentry{left descending set|hyperpage}{4}
+\indexentry{descending set|hyperpage}{4}
+\indexentry{reflection|hyperpage}{5}
+\indexentry{Deletion Condition|hyperpage}{6}
+\indexentry{parabolic subgroup|hyperpage}{6}
+\indexentry{irreducible|hyperpage}{6}
+\indexentry{reducible|hyperpage}{6}
+\indexentry{Bruhat ordering|hyperpage}{7}
+\indexentry{right weak ordering|hyperpage}{8}
+\indexentry{left weak ordering|hyperpage}{8}
+\indexentry{Coxeter system automorphism|hyperpage}{11}
+\indexentry{set of $\theta $-twisted involutions|hyperpage}{11}
+\indexentry{set of twisted involutions|hyperpage}{12}
+\indexentry{$\theta $-twisted involution|hyperpage}{12}
+\indexentry{twisted involution|hyperpage}{12}
+\indexentry{acts by twisted conjugation|hyperpage}{12}
+\indexentry{acts by multiplication|hyperpage}{12}
+\indexentry{$\theta $- twisted expression|hyperpage}{12}
+\indexentry{twisted expression|hyperpage}{12}
+\indexentry{reduced twisted expression|hyperpage}{12}
+\indexentry{twisted length|hyperpage}{14}
+\indexentry{twisted weak ordering|hyperpage}{15}
+\indexentry{geodesic|hyperpage}{17}
+\indexentry{$I$-residue|hyperpage}{18}
+\indexentry{residue|hyperpage}{18}
+\indexentry{rank-$n$-residue|hyperpage}{18}
+\indexentry{$s$-branch|hyperpage}{19}
+\indexentry{$t$-branch|hyperpage}{19}
+\indexentry{non-multiplicative|hyperpage}{21}
+\indexentry{maximal-multiplicative|hyperpage}{21}
+\indexentry{bottom-multiplicative|hyperpage}{21}
+\indexentry{top-multiplicative|hyperpage}{21}
+\indexentry{diagonal-multiplicative|hyperpage}{21}
+\indexentry{word problem for groups|hyperpage}{23}
+\indexentry{chamber system over $I$|hyperpage}{35}
+\indexentry{chambers|hyperpage}{35}
+\indexentry{rank|hyperpage}{35}
+\indexentry{i-adjacent|hyperpage}{35}
+\indexentry{adjacent|hyperpage}{35}
+\indexentry{coset chamber system|hyperpage}{35}
+\indexentry{gallery|hyperpage}{35}
+\indexentry{length|hyperpage}{35}
+\indexentry{joins|hyperpage}{35}
+\indexentry{closed|hyperpage}{35}
+\indexentry{simple|hyperpage}{35}
+\indexentry{minimal gallery joining $c$ and $d$|hyperpage}{35}
+\indexentry{connected|hyperpage}{36}
+\indexentry{$J$-gallery|hyperpage}{36}
+\indexentry{$J$-equivalent|hyperpage}{36}
+\indexentry{$J$-residue|hyperpage}{36}
+\indexentry{type|hyperpage}{36}
+\indexentry{$i$-panel|hyperpage}{36}
+\indexentry{residually connected|hyperpage}{36}
+\indexentry{building|hyperpage}{36}
+\indexentry{distance function|hyperpage}{36}
+\indexentry{rank|hyperpage}{36}
+\indexentry{associated chamber system|hyperpage}{36}
+\indexentry{gallery|hyperpage}{36}
+\indexentry{residue|hyperpage}{36}
+\indexentry{panel|hyperpage}{36}
+\indexentry{thick|hyperpage}{37}
+\indexentry{thin|hyperpage}{37}
+\indexentry{apartment|hyperpage}{37}
+\indexentry{spherical|hyperpage}{37}
+\indexentry{opposite|hyperpage}{37}
+\indexentry{connected|hyperpage}{37}
+\indexentry{convex|hyperpage}{37}
+\indexentry{twin building of type $(W,S)$|hyperpage}{38}
+\indexentry{codistance function|hyperpage}{38}
+\indexentry{gallery|hyperpage}{38}
+\indexentry{residue|hyperpage}{38}
+\indexentry{panel|hyperpage}{38}
+\indexentry{opposite|hyperpage}{38}
+\indexentry{opposite|hyperpage}{38}
+\indexentry{twin apartment|hyperpage}{38}

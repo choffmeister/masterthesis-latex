@@ -7,23 +7,11 @@
 \numberwithin{table}{section}
 \numberwithin{equation}{theorem}
 
-\renewcommand{\baselinestretch}{1.0}\normalsize
+\renewcommand{\baselinestretch}{1.1}\normalsize
 
-\lstset{numbers=left, stepnumber=1, breaklines=true, tabsize=2,
-basicstyle=\ttfamily\scriptsize}
-\lstset{
-	emph={
-		function, local, for, while, if, then, elif, else, fi, do, od, return, end
-	},
-	emphstyle={\color{black}\bfseries}
-%	morecomment={[l][\color{gray}]{#}},
-%	morestring={[b][\color{red}]"},
-}
+\lstset{numbers=left, stepnumber=1, breaklines=true, tabsize=2, basicstyle=\ttfamily\scriptsize}
 
-\makeindex
-%\newcommand{\defword}[1]{\index{#1}{Test}\textit{\textbf{#1}}}
 \newcommand{\defword}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\index{#2}{\textbf{#2}}}{\index{#1}{\textbf{#2}}}}
-
 
 \newcolumntype{M}{>{$\vcenter\bgroup\hbox\bgroup}l<{\egroup\egroup$}}
 
@@ -50,8 +38,5 @@ basicstyle=\ttfamily\scriptsize}
 }
 \makeatother
 
-\newcommand{\todo}[0]{{\color{red} \textbf{TODO}}}
-
+\newcommand{\todo}{\textbf{TODO}}
 \newcommand{\theocite}[2]{\textnormal{\cite[#1]{#2}}}
-
-\pgfplotsset{compat=1.6}

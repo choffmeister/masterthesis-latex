@@ -1,19 +1,22 @@
-%\documentclass[a4paper,11pt,blue,extramargin,oneside]{tubsartcl}
-\documentclass[a4paper,11pt]{scrartcl}
+%\documentclass[a4paper,11pt]{scrartcl}
+\documentclass{amsart}
 
 \input{src/packages}
-\addbibresource{src/bibliography.bib}
 \input{src/layout}
 \input{src/math}
 \input{resources/tikz/coxeter-diagrams}
 
+\title{Posets of twisted involutions in Coxeter groups}
+\author{Christian Hoffmeister}
+\address{Maienstr. 23\\38118 Braunschweig\\Germany}
+\email{choffmeister@choffmeister.de}
+\thanks{Thanks in particular to Dr. Max Horn.}
+\keywords{Coxeter groups, Coxeter systems, twisted involutions}
+\subjclass[2010]{20F55}
+
 \begin{document}
 \includepdf{resources/title/title}
-\newpage
-\tableofcontents
-\newpage
-\listoffigures
-\newpage
+\maketitle
 
 \input{src/sections/introduction}
 \input{src/sections/preliminaries/_main}
