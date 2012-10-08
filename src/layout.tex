@@ -1,16 +1,17 @@
 %!TEX root = ../_main.tex
-\newcounter{theorem}[section]
-\renewcommand{\thetheorem}{\thesection.\arabic{theorem}}
+\areaset[0.5cm]{14cm}{25cm}
+
+\newcounter{theorem}[chapter]
+\renewcommand{\thetheorem}{\thechapter.\arabic{theorem}}
 \setenumerate{ref=\thetheorem.\arabic*}
 
-\numberwithin{figure}{section}
-\numberwithin{table}{section}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
 \numberwithin{equation}{theorem}
 
 \renewcommand{\baselinestretch}{1.1}\normalsize
 
 \lstset{numbers=left, stepnumber=1, breaklines=true, tabsize=2, basicstyle=\ttfamily\scriptsize}
-
 \newcommand{\defword}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\index{#2}{\textbf{#2}}}{\index{#1}{\textbf{#2}}}}
 
 \newcolumntype{M}{>{$\vcenter\bgroup\hbox\bgroup}l<{\egroup\egroup$}}

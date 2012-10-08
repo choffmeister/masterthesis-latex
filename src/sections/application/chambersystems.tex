@@ -1,14 +1,14 @@
 %!TEX root = ../../../_main.tex
-\subsection{Chamber systems}
+\section{Chamber systems}
 
 \begin{defi}
 	\typedlabel{defi:chamber-system}
 	A \defword{chamber system over $I$} is a pair $\mathcal{C} = (C,(\sim_i, i \in I))$, with a nonempty set $C$, whose members are called \defword{chambers} and a family of equivalence relations $\sim_i$, indexed by $i \in I$, that satisfies the implication
 	$$ c \sim_i d \wedge c \sim_j d \Rightarrow c = d \vee i = j $$
-	for all $c,d \in C$ and $i,j \in I$. The cardinality $|I|$ is called the \defword{rank} of $\mathcal{C}$. If for two chambers $c,d$ we have $c \sim_i d$, then $c$ is called \defword{i-adjacent} to $d$ or just \defword{adjacent}.
+	for all $c,d \in C$ and $i,j \in I$. The cardinality $|I|$ is called the \defword{rank} of $\mathcal{C}$. For all chamber systems we will assume that they have finite rank. If for two chambers $c,d$ we have $c \sim_i d$, then $c$ is called \defword{i-adjacent} to $d$ or just \defword{adjacent}.
 \end{defi}
 
-So the main assertion for chamber systems is, that two distinct chambers $c,d \in C$ are at most adjacent by one $i \in I$. For the rest of this paper $\mathcal{C} = (C,(\sim_i, i \in I))$ will always denote a chamber system and we will always assume, that chamber systems are of finite rank.
+So the main assertion for chamber systems is, that two distinct chambers $c,d \in C$ are at most adjacent by one $i \in I$. For the rest of this section $\mathcal{C} = (C,(\sim_i, i \in I))$ will denote a chamber system.
 
 \begin{exam}
 	For an arbitrary Coxeter system let $W$ act as set of chambers and for each generator $s \in S$ define a equivalence relation $w \sim_s v$ if and only if either $w = v$ or $ws = v$. That this are really equivalence relations is easy to check. So suppose $w \sim_s v$, $w \sim_t v$ for two distinct generators $s,t \in S$. The assumption $w \neq v$ immediately yields a contradiction by $ws = v = wt \iff s = t$. Hence this is indeed a chamber system.
