@@ -1,0 +1,44 @@
+%!TEX root = ../../../_main.tex
+\subsection{Building flips and flip-flop systems}
+In this section let $\mathcal C = (\mathcal C_+, \mathcal C_-, \delta^*)$ be a twin building of type $(W,S)$.
+
+\begin{defi}
+	Let $\tilde \theta$ be a permutation of $\mathcal C_+ \cup \mathcal C_-$ satisfying
+	\begin{axioms}
+		\item[(Fl1)] \label{axiom:fl1} $\tilde \theta^2 = \id$,
+		\item[(Fl2)] \label{axiom:fl2} $\tilde \theta(\mathcal C_+) = \mathcal C_-$ and
+		\item[(Fl3)] \label{axiom:fl3} for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $x \sim y$ iff $\tilde \theta(x) \sim \tilde \theta(y)$ and $x \opp z$ iff $\tilde \theta(x) \opp \tilde \theta(z)$.
+	\end{axioms}
+	Then we call $\tilde \theta$ a \defword{building quasi-flip} of $\mathcal{C}$. If in addition
+	\begin{axioms}
+		\item[(Fl3')] \label{axiom:fl3'} for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $\delta_\varepsilon(x,y) = \delta_{-\varepsilon}(\tilde \theta(x),\tilde \theta(y))$ and $\delta^*(x,z) = \delta^*(\tilde \theta(x),\tilde \theta(y))$, 
+	\end{axioms}
+	then we call $\tilde \theta$ a \defword{building flip} of $\mathcal C$.
+\end{defi}
+
+So building (quasi-)flips permute the two halfes of a twin building while preserving adjacency and opposition and building flips also flip the distance and preserver the codistance. The next lemma gives a first idea, how building quasi-flips are coherent to the poset $Wk(\theta)$.
+
+\begin{lemm}
+	\theocite{Lemma 2.1.4}{horn:kac-moody}
+	Let $\tilde \theta$ be a building quasi-flip of $\mathcal C$. Then $\tilde \theta$ induces an involutory (i.e. order at most 2) Coxeter system automorphism $\theta$ on $(W,S)$, so that for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $\theta(\delta_\varepsilon(x,y)) = \delta_{-\varepsilon}(\tilde \theta(x), \tilde \theta(y))$ and $\theta(\delta^*(x,z)) = \delta^*(\tilde \theta(x), \tilde \theta(z))$.
+\end{lemm}
+
+Of course the coherence between building quasi-flips and $Wk(\theta)$ is not clear by any means, but at least do building quasi-flips admit a Coxeter system and an involutory Coxeter system automorphism, hence every building quasi-flip has a corrosponding twisted weak ordering poset $Wk(W,\theta)$. But there are some definitions left until we have our objects of interest.
+
+\begin{defi}
+	For a chamber $c \in \mathcal C_+ \cup \mathcal C_-$ we call $\delta^{\tilde \theta}(c) := \delta^*(c,\tilde \theta(c))$ the \defword{$\tilde \theta$-codistance} of $c$ and $l^{\tilde \theta}(c) = l(\delta^{\tilde \theta}(c))$ the \defword{numerical $\theta$-codistance} of $c$.
+\end{defi}
+
+\begin{defi}
+	Let $\tilde \theta$ be a building quasi-flip of $\mathcal C$ and let $R \subseteq \mathcal C_+$ be an arbitrary residue. The \defword{minimal numerical $\tilde \theta$-codistance} of $R$ is defined as $\min_{c \in R} l^{\tilde \theta}(c)$.
+\end{defi}
+
+According to the definition of $c_+ \opp d_-$, i.e. $l(\delta^*(c_+,d_-)) = 0$, we can consider the chambers with minimal numerical $\tilde \theta$-codistance as those, that are mapped away "as far as possible".
+
+\begin{defi}
+	Let $\tilde \theta$ be a building quasi-flip of $\mathcal C$ and let $R \subseteq \mathcal C_+$ be an arbitrary residue. The (sub)chamber system of all chambers with minimal numerical $\tilde \theta$-codistance
+	$$ R^{\tilde \theta} := \{ c \in R : l^{\tilde \theta}(c) = \min_{d \in R} l^{\tilde \theta}(d) \} $$
+	together with the equivalence relations inherited from $\mathcal C_+$ is called the \defword{induced flip-flop system} on $R$. In case $R = \mathcal C_+$, we call $C^{\tilde \theta} := C_+^{\tilde \theta} = R^{\tilde \theta}$ the \defword{flip-flop system} associated to $\tilde \theta$.
+\end{defi}
+
+In particular, if $\min_{c \in R} l^{\tilde \theta}(c) = 0$, then $R^{\tilde \theta} = \{ c \in R : c \opp \tilde \theta(c) \}$.
