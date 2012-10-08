@@ -1,5 +1,5 @@
 %!TEX root = ../../../_main.tex
-\section{Bruhat ordering on Coxeter groups}
+\section{Bruhat ordering}
 \label{sec:coxeter-groups-bruhat-ordering}
 
 We now investigate ways to partially order the elements of a Coxeter group. Futhermore, this ordering should be compatible with the length function, i.e. for $w,v \in W$ we have $l(w) < l(v)$ whenever $w < v$.
@@ -121,6 +121,14 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 		\end{enumerate}
 	\end{proof}
 \end{theo}
+
+\begin{rema}
+	Note that the \ref{theo:lifting-property} has an analogue left-sided version: Let $(W,S)$ be a Coxeter system and $v,w \in W$ with $v \leq w$. Suppose $s \in S$ with $s \in D_L(w)$. Then
+	\begin{enumerate}
+		\item $sv \leq w$,
+		\item $s \in D_L(v) \Rightarrow sv \leq sw$.
+	\end{enumerate}
+\end{rema}
 
 The \ref{theo:lifting-property} seems quite innocent, but when trying to investigate facts around the Bruhat ordering it proves to be one of the key tools in many cases.
 
