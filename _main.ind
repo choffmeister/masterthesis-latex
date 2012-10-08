@@ -1,93 +1,158 @@
 \begin{theindex}
 
-  \item $J$-equivalent, \hyperpage{2}
-  \item $J$-gallery, \hyperpage{2}
-  \item $J$-residue, \hyperpage{3}
-  \item $\mathaccentV {tilde}07E\theta $-codistance, \hyperpage{6}
-  \item $i$-panel, \hyperpage{3}
+  \item $I$-residue, \hyperpage{17}
+  \item $J$-equivalent, \hyperpage{35}
+  \item $J$-gallery, \hyperpage{35}
+  \item $J$-residue, \hyperpage{35}
+  \item $\mathaccentV {tilde}07E\theta $-codistance, \hyperpage{38}
+  \item $\theta $- twisted expression, \hyperpage{12}
+  \item $\theta $-twisted involution, \hyperpage{11}
+  \item $i$-panel, \hyperpage{35}
+  \item $s$-branch, \hyperpage{19}
+  \item $t$-branch, \hyperpage{19}
 
   \indexspace
 
-  \item adjacent, \hyperpage{1}
-  \item apartment, \hyperpage{4}
-  \item associated chamber system, \hyperpage{3}
+  \item acts by multiplication, \hyperpage{12}
+  \item acts by twisted conjugation, \hyperpage{12}
+  \item adjacent, \hyperpage{34}
+  \item antisymmetry, \hyperpage{2}
+  \item apartment, \hyperpage{36}
+  \item associated chamber system, \hyperpage{36}
 
   \indexspace
 
-  \item building, \hyperpage{3}
-  \item building flip, \hyperpage{5}
-  \item building quasi-flip, \hyperpage{5}
+  \item bottom-multiplicative, \hyperpage{21}
+  \item bounded poset, \hyperpage{2}
+  \item Bruhat ordering, \hyperpage{7}
+  \item building, \hyperpage{36}
+  \item building flip, \hyperpage{38}
+  \item building quasi-flip, \hyperpage{38}
 
   \indexspace
 
-  \item chamber system over $I$, \hyperpage{1}
-  \item chambers, \hyperpage{1}
-  \item closed, \hyperpage{2}
-  \item codistance function, \hyperpage{4}
-  \item connected, \hyperpage{2}, \hyperpage{4}
-  \item convex, \hyperpage{4}
-  \item coset chamber system, \hyperpage{2}
+  \item chamber system over $I$, \hyperpage{34}
+  \item chambers, \hyperpage{34}
+  \item closed, \hyperpage{35}
+  \item codistance function, \hyperpage{37}
+  \item connected, \hyperpage{35}, \hyperpage{37}
+  \item convex, \hyperpage{37}
+  \item coset chamber system, \hyperpage{35}
+  \item covers, \hyperpage{2}
+  \item Coxeter graph, \hyperpage{3}
+  \item Coxeter group, \hyperpage{3}
+  \item Coxeter system, \hyperpage{3}
+  \item Coxeter system automorphism, \hyperpage{11}
 
   \indexspace
 
-  \item distance function, \hyperpage{3}
+  \item Deletion Condition, \hyperpage{5}
+  \item descending set, \hyperpage{4}
+  \item diagonal-multiplicative, \hyperpage{21}
+  \item direct product of posets, \hyperpage{2}
+  \item directed poset, \hyperpage{2}
+  \item distance function, \hyperpage{36}
 
   \indexspace
 
-  \item flip-flop system, \hyperpage{6}
+  \item expression, \hyperpage{3}
+  \item expression length, \hyperpage{4}
 
   \indexspace
 
-  \item gallery, \hyperpage{2, 3}, \hyperpage{5}
+  \item flip-flop system, \hyperpage{39}
 
   \indexspace
 
-  \item i-adjacent, \hyperpage{1}
-  \item induced flip-flop system, \hyperpage{6}
+  \item gallery, \hyperpage{35--37}
+  \item geodesic, \hyperpage{16}
+  \item graded poset, \hyperpage{2}
 
   \indexspace
 
-  \item joins, \hyperpage{2}
+  \item Hasse diagram, \hyperpage{2}
 
   \indexspace
 
-  \item length, \hyperpage{2}
+  \item i-adjacent, \hyperpage{34}
+  \item induced flip-flop system, \hyperpage{39}
+  \item interval, \hyperpage{2}
+  \item irreducible, \hyperpage{6}
 
   \indexspace
 
-  \item minimal gallery joining $c$ and $d$, \hyperpage{2}
+  \item joins, \hyperpage{35}
+
+  \indexspace
+
+  \item left descending set, \hyperpage{4}
+  \item left weak ordering, \hyperpage{7}
+  \item length, \hyperpage{4}, \hyperpage{35}
+  \item length function, \hyperpage{4}
+
+  \indexspace
+
+  \item maximal-multiplicative, \hyperpage{21}
+  \item minimal gallery joining $c$ and $d$, \hyperpage{35}
   \item minimal numerical $\mathaccentV {tilde}07E\theta $-codistance, 
-		\hyperpage{6}
+		\hyperpage{38}
 
   \indexspace
 
-  \item numerical $\theta $-codistance, \hyperpage{6}
+  \item non-multiplicative, \hyperpage{21}
+  \item numerical $\theta $-codistance, \hyperpage{38}
 
   \indexspace
 
-  \item opposite, \hyperpage{4, 5}
+  \item open interval, \hyperpage{2}
+  \item opposite, \hyperpage{37}
 
   \indexspace
 
-  \item panel, \hyperpage{3}, \hyperpage{5}
+  \item panel, \hyperpage{36, 37}
+  \item parabolic subgroup, \hyperpage{5}
+  \item partial order, \hyperpage{2}
+  \item poset, \hyperpage{2}
 
   \indexspace
 
-  \item rank, \hyperpage{1}, \hyperpage{3}
-  \item residually connected, \hyperpage{3}
-  \item residue, \hyperpage{3}, \hyperpage{5}
+  \item rank, \hyperpage{3}, \hyperpage{34}, \hyperpage{36}
+  \item rank function, \hyperpage{2}
+  \item rank-$n$-residue, \hyperpage{17}
+  \item reduced expression, \hyperpage{4}
+  \item reduced twisted expression, \hyperpage{12}
+  \item reducible, \hyperpage{6}
+  \item reflection, \hyperpage{4}
+  \item reflexivity, \hyperpage{2}
+  \item residually connected, \hyperpage{35}
+  \item residue, \hyperpage{17}, \hyperpage{36, 37}
+  \item right descending set, \hyperpage{4}
+  \item right weak ordering, \hyperpage{7}
 
   \indexspace
 
-  \item simple, \hyperpage{2}
-  \item spherical, \hyperpage{4}
+  \item set of $\theta $-twisted involutions, \hyperpage{11}
+  \item set of twisted involutions, \hyperpage{11}
+  \item simple, \hyperpage{35}
+  \item spherical, \hyperpage{37}
+  \item subexpression, \hyperpage{3}
 
   \indexspace
 
-  \item thick, \hyperpage{3}
-  \item thin, \hyperpage{3}
-  \item twin apartment, \hyperpage{5}
-  \item twin building of type $(W,S)$, \hyperpage{4}
-  \item type, \hyperpage{3}
+  \item thick, \hyperpage{36}
+  \item thin, \hyperpage{36}
+  \item top-multiplicative, \hyperpage{21}
+  \item transitivity, \hyperpage{2}
+  \item twin apartment, \hyperpage{37}
+  \item twin building of type $(W,S)$, \hyperpage{37}
+  \item twisted expression, \hyperpage{12}
+  \item twisted involution, \hyperpage{11}
+  \item twisted length, \hyperpage{14}
+  \item twisted weak ordering, \hyperpage{15}
+  \item type, \hyperpage{35}
+
+  \indexspace
+
+  \item word problem for groups, \hyperpage{23}
 
 \end{theindex}
