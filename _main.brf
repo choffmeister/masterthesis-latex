@@ -17,7 +17,7 @@
 \backcite {deodhar:bruhat-order}{{9}{1.35}{theorem.1.35}}
 \backcite {denton:coxeter}{{10}{1.37}{theorem.1.37}}
 \backcite {denton:coxeter}{{10}{1.38}{theorem.1.38}}
-\backcite {hultman:comb-twisted-invo}{{11}{2.4}{theorem.2.4}}
+\backcite {hultman:comb-twisted-invo}{{12}{2.4}{theorem.2.4}}
 \backcite {hultman:comb-twisted-invo}{{12}{2.7}{theorem.2.7}}
 \backcite {hultman:comb-twisted-invo}{{14}{2.12}{theorem.2.12}}
 \backcite {hultman:bruhat-order}{{14}{2.14}{theorem.2.14}}
@@ -31,11 +31,11 @@
 \backcite {haas:twoa}{{24}{2.4}{section.2.4}}
 \backcite {brennemann:twoa}{{28}{2.5}{section.2.5}}
 \backcite {haas:twoa}{{28}{2.5}{section.2.5}}
-\backcite {horn:kac-moody}{{37}{4}{chapter.4}}
-\backcite {horn:kac-moody}{{37}{4}{chapter.4}}
-\backcite {buekenhout:diagram-geometry}{{37}{4.3}{theorem.4.3}}
-\backcite {buekenhout:diagram-geometry}{{39}{4.17}{theorem.4.17}}
+\backcite {horn:kac-moody}{{36}{4}{chapter.4}}
+\backcite {horn:kac-moody}{{36}{4}{chapter.4}}
+\backcite {buekenhout:diagram-geometry}{{36}{4.3}{theorem.4.3}}
+\backcite {buekenhout:diagram-geometry}{{38}{4.17}{theorem.4.17}}
+\backcite {buekenhout:diagram-geometry}{{38}{4.19}{theorem.4.19}}
 \backcite {buekenhout:diagram-geometry}{{39}{4.19}{theorem.4.19}}
-\backcite {buekenhout:diagram-geometry}{{40}{4.19}{theorem.4.19}}
-\backcite {horn:kac-moody}{{41}{4.26}{theorem.4.26}}
-\backcite {horn:kac-moody}{{41}{4.28}{theorem.4.28}}
+\backcite {horn:kac-moody}{{40}{4.26}{theorem.4.26}}
+\backcite {horn:kac-moody}{{40}{4.28}{theorem.4.28}}
