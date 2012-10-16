@@ -44,7 +44,7 @@ The steps discussed have been compiled in to an algorithm by \cite[Algorithm 2.4
 	\end{proof}
 \end{lemm}
 
-For all runtime investigations in the paper, we consider $|S|$ to be constant (this is suitable, since $|S|$ is tiny compared to $|\ti{\theta}|$). 
+For all runtime investigations in the paper, we consider $|S|$ and $\ord(st)$ (for all $s,t \in S$ with $\ord(st) < \infty)$ to be constant (this is suitable, since they are tiny compared to $|\ti{\theta}|$). 
 
 \begin{prop}
 	\typedlabel{prop:twoa0-runtime}
@@ -62,19 +62,17 @@ The poset graph is build up from the unique element of rank 0, the neutral eleme
 	This algorithm is based on \ref{algo:twoa0}. It uses the following function to determine, if $w \ul s \in V$ at line~\ref{algo:twoa0-decision} in \ref{algo:twoa0}.
 
 	\begin{algorithmic}[1]
-	\Procedure{CheckIfAlreadyKnown}{$(W,S),w,s,V$}
+	\Procedure{CheckIfAlreadyKnown}{$(W,S),w,s,V,E$}
 		\State $y \gets ws$
 		\State $z \gets \theta(s)y$
-		\If{$z=w$} \label{algo:twoa1-check-one-or-bothsided}
+		\If{$z=w$} \Comment{Explicit element comparison in $W$}
 			\State $x \gets y$
-			\State $t \gets s$
 		\Else
 			\State $x \gets z$
-			\State $t \gets \ul s$
 		\EndIf
 		
-		\ForAll{$(w',k_{w'}) \in V \textbf{ with } k_{w'} = k+1$} \label{algo:twoa1-comp} \Comment{Check if $x$ already known}
-			\If{$x = w'$}
+		\ForAll{$(v,k_{v}) \in V \textbf{ with } k_{v} = k+1$} \label{algo:twoa1-comp} \Comment{Check if $x$ already known}
+			\If{$x = v$} \Comment{Explicit element comparison}
 				\State \textbf{return true}
 			\EndIf
 		\EndFor
@@ -111,22 +109,72 @@ Any algorithm calculating $Wk(\theta)$ must be at least linear in the size of $\
 	\label{fig:optimization-of-twoa1}
 \end{figure}
 
-\begin{lemm}
-	\typedlabel{lemm:twoa1-necessary-condition-for-ws-eq-vt}
+\begin{coro}
+	\typedlabel{coro:twoa1-necessary-condition-for-ws-eq-vt}
 	Let $k \in \nn$ and suppose we are in the sitation described at the beginning of Section \ref{sec:twisted-involutions-algorithms}. Let $\rho_i := \{ w \in \ti{\theta} : \rho(w) = i \}$ and $\rho'_{k+1}$ the set of the already calculated vertices with twisted length $k+1$. If $w \ul s \in \rho'_{k+1}$ for some $w \in \rho_k, s \in S$, say $w \ul s = v \ul t$ with $v \in \rho_k$ and $t \in S \setminus \{s\}$, then $w \ul s = w[\ul t \ul s]^n$ for some $n \in \nn$ with $w[\ul t \ul s]^j \in \rho_0 \cup \ldots \cup \rho_k \cup \rho'_{k+1}$ for $1 \leq j \leq n$.
 
 	\begin{proof}
 		The equality $w \ul s = w[\ul t \ul s]^n$ for some $n \in \nn$ is due to \ref{prop:rank-2-residues-are-convex}. All vertices in this rank-2-residue except $v \ul t$ have a twisted length of $k$ or lower. For $v \ul t$ we supposed it is already known, hence $v \ul t \in \rho'_{k+1}$. Therefore all vertices $w[\ul t \ul s]^j$, $1 \leq j \leq n$ are in $\rho_0 \cup \ldots \cup \rho_k \cup \rho'_{k+1}$.
 	\end{proof}
-\end{lemm}
+\end{coro}
 
 This can be checked effectively. Both, $w$ and $s$ are fixed. Start with $M = \emptyset$. For all already known edges from or to $w$ being labeled with $\ul t \in \ul S \setminus \{\ul s\}$ we do the following: Walk $w[\ul t \ul s]^i$ for $i = 0,1,\ldots$ until $\rho(w[\ul t \ul s]^i) = k + 1$. Note that walking in this case really means walking the graph. All involved vertices and edges have already been calculated. So there is no need for more calculations in $W$ to find $w[\ul t \ul s]^i$. By \ref{prop:rank-2-residues-are-convex} such a path must exist (in a completely calculated graph). But we could be in the case, where the last step from $w[\ul t \ul s]^{i-1}$ to $w[\ul t \ul s]^{i}$ has not been calculated yet. If it is already calculated, then add this element to $M$ by setting $M = M \cup \{ w[\ul t \ul s]^{i} \}$. If not, do not add it to $M$.
 
-Now $M$ contains all already known elements of twisted length $k+1$, satisfying the necessary condition from \ref{lemm:twoa1-necessary-condition-for-ws-eq-vt}. Furthermore $|M| < |S|$. So for each pair $(w,s)$ we have to do at most $|S|-1$ many element comparisons the determine, if $w \ul s$ is new or already known, no matter how many elements of twisted length $k+1$ are already known. This can be used to massively improve \ref{algo:twoa1}:
+Now $M$ contains all already known elements of twisted length $k+1$, satisfying the necessary condition from \ref{coro:twoa1-necessary-condition-for-ws-eq-vt}. Furthermore $|M| < |S|$. So for each pair $(w,s)$ we have to do at most $|S|-1$ many element comparisons the determine, if $w \ul s$ is new or already known, no matter how many elements of twisted length $k+1$ are already known. This can be used to massively improve \ref{algo:twoa1}:
 
 \begin{algo}[TWOA2]
 	\namedlabel{algo:twoa2}
-	This algorithm works exactly like \ref{algo:twoa1} expect for line~\ref{algo:twoa1-comp}: Here we do not iterate over all already calculated vertices with twisted length $k+1$, but just over those, that can be reached by $w[\ul t \ul s]^n$ for some $t \in S \setminus \{s\}$ and $n \in \nn$.
+	This algorithm is based on \ref{algo:twoa0}. It uses the following function to determine, if $w \ul s \in V$ at line~\ref{algo:twoa0-decision} in \ref{algo:twoa0}.
+
+	\begin{algorithmic}[1]
+	\Procedure{CheckIfAlreadyKnown}{$(W,S),w,s,V,E$}
+		\State $y \gets ws$
+		\State $z \gets \theta(s)y$
+		\If{$z=w$} \Comment{Explicit element comparison in $W$}
+			\State $x \gets y$
+		\Else
+			\State $x \gets z$
+		\EndIf
+
+		\ForAll{$t \in S \setminus \{S\}$} \label{algo:twoa2-s-loop}
+			\If{$\ord(st) < \infty$}
+				\State $v \gets w$
+				\State $k \gets 1$
+				\State $(z_0,z_1) \gets (s,t)$
+
+				\While{\textbf{true}} \label{algo:twoa2-height-loop-down} \Comment{Walk $wC_{\{s,t\}} \cap V$ down}
+					\State $e \gets (v_0,v_1,a,l) \in E \textrm{ with } v_1 = v \textrm{ and } a = z_{k \mod 2}$
+
+					\If{$e = \textbf{null}$}
+						\State \textbf{break}
+					\EndIf
+
+					\State $v \gets v_0$
+					\State $k \gets k + 1$
+				\EndWhile
+
+				\While{\textbf{true}} \label{algo:twoa2-height-loop-up} \Comment{Walk $wC_{\{s,t\}} \cap V$ up the other branch}
+					\State $e \gets (v_0,v_1,a,l) \in E \textrm{ with } v_0 = v \textrm{ and } a = z_{k \mod 2}$
+
+					\If{$e = \textbf{null}$}
+						\State \textbf{break}
+					\EndIf
+
+					\State $v \gets v_1$
+					\State $k \gets k - 1$
+				\EndWhile
+
+				\If{k = 0} \Comment{Check if $\rho(v) = \rho(w) + 1$}
+					\If{$x = v$} \Comment{Explicit element comparison in $W$}
+						\State \textbf{return true}
+					\EndIf
+				\EndIf
+			\EndIf
+		\EndFor
+
+		\State \textbf{return false}
+	\EndProcedure
+	\end{algorithmic}
 \end{algo}
 
 \begin{lemm}
@@ -134,7 +182,7 @@ Now $M$ contains all already known elements of twisted length $k+1$, satisfying 
 	\ref{algo:twoa2} is a deterministic algorithm.
 
 	\begin{proof}
-		It terminates since \ref{algo:twoa1} terminates. In comparison to \ref{algo:twoa1} we do not compare $x$ to all already known elements $w'$ with $\rho(w') = k+1$, but just with a few. The soundness of this improvement is due to \ref{lemm:twoa1-necessary-condition-for-ws-eq-vt}.
+		The outer loop (line~\ref{algo:twoa2-s-loop}) is executed $|S|-1$ times. Its body is only called, if $\ord(st)$ is finite. Due to \ref{lemm:max-twisted-circle-height} the both inner while loops (lines~\ref{algo:twoa2-height-loop-down},\ref{algo:twoa2-height-loop-up}) are executed at most $2 \cdot \ord(st)$ times. So \ref{algo:twoa2} terminates. The soundness of this improvement is due to \ref{coro:twoa1-necessary-condition-for-ws-eq-vt}.
 	\end{proof}
 \end{lemm}
 
@@ -143,7 +191,9 @@ Now $M$ contains all already known elements of twisted length $k+1$, satisfying 
 	Let $k \in \nn$, $n = |\{ w \in \ti{\theta} : \rho(w) \leq k \}|$. Then $\ref{algo:twoa2} \in \mathcal{O}(n)$.
 
 	\begin{proof}
-		We can consider the rank of $W$ to be a constant, since it is tiny in comparison to $n$. The loop of \ref{algo:twoa1}, that increased it runtime above linear, was the one in line~\ref{algo:twoa1-comp}. We restricted it to have at most $|S|$ cases, hence it can be considered to have constant runtime, too.
+		Let $D$ be the algorithm to check $w \ul s \in V$. As seen in the proof of \ref{lemm:twoa2-algo}, the execution count for each while loop in $D$ does not exceed
+		$$ (|S|-1) \cdot \max \{ \ord(st) : t \in S \setminus \{s\}, \ord(st) < \infty \}. $$
+		Since we considered $|S|$ and $\ord(st)$ constant we have $D \in \mathcal{O}(1)$ and so with \ref{prop:twoa0-runtime} we have \ref{algo:twoa2} $\in \mathcal{O}(n)$. 
 	\end{proof}
 \end{lemm}
 
