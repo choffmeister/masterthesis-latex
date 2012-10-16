@@ -92,7 +92,7 @@ Now $M$ contains all already known elements of twisted length $k+1$, satisfying 
 
 \begin{algo}[TWOA2]
 	\namedlabel{algo:twoa2}
-	Exactly like \ref{algo:twoa1} expect for line~\ref{algo:twoa1-comp}: Here we do not iterate over all already calculated vertices with twisted length $k+1$, but just over those, that can be reached by $w(\ul s \ul t)^n$ for some $t \in S \setminus \{s\}$ and $n \in \nn$.
+	This algorithm works exactly like \ref{algo:twoa1} expect for line~\ref{algo:twoa1-comp}: Here we do not iterate over all already calculated vertices with twisted length $k+1$, but just over those, that can be reached by $w[\ul t \ul s]^n$ for some $t \in S \setminus \{s\}$ and $n \in \nn$.
 \end{algo}
 
 \begin{lemm}
@@ -154,9 +154,63 @@ Many more explicit element comparisons can be avoided. In some cases we can dedu
 
 We use these restrictions to further improve \ref{algo:twoa2}:
 
+\begin{prop}
+	\typedlabel{prop:twoa3-decision-tree}
+	Let $w \in \ti{\theta}$ with $\rho(w) = k$, $s,t \in S$ be two distinct generators with $m := \ord(st) < \infty$ and $n \in \nn$ the smallest number with $\rho(w[\ul t \ul s]^n) = k+1$. Note that $n$ has to be odd in this case. We define $v := w[\ul t \ul s]^{n-1}$, $h := (n+1)/2$ and
+	\begin{align*}
+		T_1 & = l(w \ul s) - l(w) - 1, \\
+		T_2 & = l(w[\ul t \ul s]^{h-1}) - l(w[\ul t \ul s]^{h-2}) - 1, \\
+		T_3 & = l(w[\ul t \ul s]^{h}) - l(w[\ul t \ul s]^{h-1}) - 1 \textrm{ and} \\
+		T_4 & = l(w[\ul t \ul s]^{2h-1}) - l(w[\ul t \ul s]^{2h-2}) - 1.
+	\end{align*}
+	Then the following decision tree allows to decide of $w \ul t = w \ul s$ or $w \ul t \neq w \ul s$ in many cases without explicit element comparison.
+
+	\begin{enumerate}
+		\item $h=1$:
+			\begin{enumerate}
+				\item $m=2$:
+					\begin{enumerate}
+						\item $T_4=1$:
+							Maybe $v \ul t = w \ul s$. If it is the case, then $T_1 = 1$.
+						\item $T_4=0$:
+							Then $v \ul t \neq w \ul s$.
+					\end{enumerate}
+				\item $m>2$:
+					Then $v \ul t \neq w \ul s$.
+			\end{enumerate}
+		\item $h>1$:
+			\begin{enumerate}
+				\item $T_4=0$:
+					Then $v \ul t = w \ul s$ and $T_1 = T_3 + T_4 - T_2$.
+				\item $(T_2,T_3)=(1,1)$:
+					\begin{enumerate}
+						\item $h=m$: Then $v \ul t = w \ul s$ and $T_1 = 1$.
+						\item $\gcd(h,m)>1$: Maybe $v \ul t = w \ul s$. If it is the case, then $T_1 = 1$.
+						\item $\textrm{else}$: Then $v \ul t \neq w \ul s$.
+					\end{enumerate}
+				\item $(T_2,T_3)=(1,0)$:
+					\begin{enumerate}
+						\item $h=m$: Then $v \ul t = w \ul s$ and $T_1 = 0$.
+						\item $\gcd(h,m)>1$: Maybe $v \ul t = w \ul s$. If it is the case, then $T_1 = 0$.
+						\item $\textrm{else}$: Then $v \ul t \neq w \ul s$.
+					\end{enumerate}
+				\item $(T_2,T_3)=(0,0)$:
+					\begin{enumerate}
+						\item $h=(m+1)/2$: Then $v \ul t = w \ul s$ and $T_1 = 1$.
+						\item $\gcd(h,(m+1)/2)>1$: Maybe $v \ul t = w \ul s$. If it is the case, then $T_1 = 1$.
+						\item $\textrm{else}$: Then $v \ul t \neq w \ul s$.
+					\end{enumerate}
+			\end{enumerate}
+	\end{enumerate}
+
+	\begin{proof}
+		First of all we convince ourselves that this decision tree is complete. This is immediate, since by $h \geq 0$, $m \geq 2$ and \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residues}. Suppose $h=1$. This means $v = w$. In case $v \ul t = w \ul s$, then we have a double edge between $w$ and $w \ul s$. By \ref{coro:double-edges-only-for-ord-2} this is possible only if $m = \ord(st) = 2$ and $T_4 = l(w \ul t) - l(w) - 1 = 1$. Now suppose $h > 1$ and $T_4=0$. By \ref{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle} either $v \ul s \succ v$ or $v \ul t \ul s \prec v \ul t$. Since $h > 1$ we cannot have $v \ul s \succ v$, hence $v \ul t \ul s \prec v \ul t$. Then $v \ul t$ is the unique maximal element in $wC_{\{s,t\}}$ and so $w \ul s = v \ul t$. Now suppose $h > 1$ and $T_4=1$ and furthermore suppose $(T_2,T_3)=(1,1)$ (the other cases are analogue). If $h = m$, then by \ref{lemm:max-twisted-circle-height} $v \ul t$ is again the unique maximal element and $v \ul t = w \ul s$. If $h < m$ then by \ref{coro:rank-2-residue-gcd-n-m} $v \ul t = w \ul s$ is only possible, if $\gcd(h,m) > 1$. In all cases the deduction of $T_1$ is possible with \ref{coro:deduction-of-s-action-in-rank-2-residue}.
+	\end{proof}
+\end{prop}
+
 \begin{algo}[TWOA3]
 	\namedlabel{algo:twoa3}
-	\todo
+	In general this algorithm proceeds like \ref{algo:twoa2}. But instead of comparing $w \ul s$ with the list of all possible already known elements $v \ul t$, it uses the decision tree from \ref{prop:twoa3-decision-tree} to either directly find $v \ul t$ with $v \ul t = w \ul s$ or at least to sort out elements from the list, that cannot be equal to $w \ul s$. The information needed for the decision tree, namely $w, s, t, h, T_2, T_3, T_4$ (cf. \ref{prop:twoa3-decision-tree}), can easily be extracted, when searching for the already calculated elements $v \ul t$ with $\rho(v \ul t) = \rho(w) + 1$. This algorithm then applies the decision tree to each of them to decide, if $w \ul s = v \ul t$, or if $w \ul s \neq v \ul t$ or if explicit element comparison is needed, to get a final answer to this question. We will omit the concrete details and refer to the appendix, where a implementation of this algorithm can be found.
 \end{algo}
 
 \begin{lemm}
@@ -164,7 +218,7 @@ We use these restrictions to further improve \ref{algo:twoa2}:
 	\ref{algo:twoa3} is a deterministic algorithm.
 
 	\begin{proof}
-		\todo
+		By construction \ref{algo:twoa3} has the same loops as \ref{algo:twoa2}, which is an deterministic algorithm. In addition \ref{algo:twoa3} uses the decision tree from \ref{prop:twoa3-decision-tree}. Since the decision tree has no loops, is terminates and we have already proved its correctness. Hence \ref{algo:twoa3} is correct and it terminates.
 	\end{proof}
 \end{lemm}
 
@@ -173,6 +227,6 @@ We use these restrictions to further improve \ref{algo:twoa2}:
 	Let $k \in \nn$, $n = |\{ w \in \ti{\theta} : \rho(w) \leq k \}|$. Then $\ref{algo:twoa3} \in \mathcal{O}(n)$.
 
 	\begin{proof}
-		\todo
+		Since the decision tree has constant runtime the asymptotical runtime of \ref{algo:twoa3} cannot be worse than the asymptotical runtime of \ref{algo:twoa2}.
 	\end{proof}
 \end{lemm}
