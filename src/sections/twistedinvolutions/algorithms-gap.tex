@@ -9,6 +9,7 @@ At first we compare the count of element comparisons needed for our three algori
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}
+		\selectcolormodel{gray}
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa1.txt} \dataTwoaOne
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa2.txt} \dataTwoaTwo
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa3.txt} \dataTwoaThree
@@ -31,6 +32,7 @@ The first observation is the much lower count of needed element comparisons of \
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}
+		\selectcolormodel{gray}
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa1-a.txt} \dataTwoaOne
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa2-a.txt} \dataTwoaTwo
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa3-a.txt} \dataTwoaThree
@@ -51,6 +53,7 @@ The first observation is the much lower count of needed element comparisons of \
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}
+		\selectcolormodel{gray}
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa1-not-a.txt} \dataTwoaOne
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa2-not-a.txt} \dataTwoaTwo
 		\pgfplotstableread[col sep=comma]{resources/data/benchmark-twoa3-not-a.txt} \dataTwoaThree
