@@ -11,11 +11,11 @@
 \indexentry{interval|hyperpage}{1}
 \indexentry{open interval|hyperpage}{1}
 \indexentry{Hasse diagram|hyperpage}{1}
-\indexentry{direct product of posets|hyperpage}{1}
+\indexentry{direct product of posets|hyperpage}{2}
 \indexentry{Coxeter group|hyperpage}{2}
 \indexentry{Coxeter system|hyperpage}{2}
 \indexentry{rank|hyperpage}{2}
-\indexentry{Coxeter graph|hyperpage}{2}
+\indexentry{Coxeter graph|hyperpage}{3}
 \indexentry{expression|hyperpage}{3}
 \indexentry{subexpression|hyperpage}{3}
 \indexentry{expression length|hyperpage}{3}
@@ -26,13 +26,13 @@
 \indexentry{left descending set|hyperpage}{3}
 \indexentry{descending set|hyperpage}{3}
 \indexentry{reflection|hyperpage}{4}
-\indexentry{Deletion Condition|hyperpage}{4}
+\indexentry{Deletion Condition|hyperpage}{5}
 \indexentry{parabolic subgroup|hyperpage}{5}
 \indexentry{irreducible|hyperpage}{5}
 \indexentry{reducible|hyperpage}{5}
 \indexentry{Bruhat ordering|hyperpage}{6}
-\indexentry{right weak ordering|hyperpage}{6}
-\indexentry{left weak ordering|hyperpage}{6}
+\indexentry{right weak ordering|hyperpage}{7}
+\indexentry{left weak ordering|hyperpage}{7}
 \indexentry{Coxeter system automorphism|hyperpage}{11}
 \indexentry{set of $\theta $-twisted involutions|hyperpage}{11}
 \indexentry{set of twisted involutions|hyperpage}{11}
@@ -44,66 +44,66 @@
 \indexentry{twisted expression|hyperpage}{12}
 \indexentry{reduced twisted expression|hyperpage}{12}
 \indexentry{twisted length|hyperpage}{14}
-\indexentry{twisted weak ordering|hyperpage}{15}
-\indexentry{geodesic|hyperpage}{16}
-\indexentry{$I$-residue|hyperpage}{17}
-\indexentry{residue|hyperpage}{17}
-\indexentry{rank-$n$-residue|hyperpage}{17}
+\indexentry{twisted weak ordering|hyperpage}{16}
+\indexentry{geodesic|hyperpage}{17}
+\indexentry{$I$-residue|hyperpage}{18}
+\indexentry{residue|hyperpage}{18}
+\indexentry{rank-$n$-residue|hyperpage}{18}
 \indexentry{$s$-branch|hyperpage}{19}
 \indexentry{$t$-branch|hyperpage}{19}
-\indexentry{non-multiplicative|hyperpage}{20}
-\indexentry{maximal-multiplicative|hyperpage}{20}
-\indexentry{bottom-multiplicative|hyperpage}{20}
-\indexentry{top-multiplicative|hyperpage}{20}
-\indexentry{diagonal-multiplicative|hyperpage}{20}
-\indexentry{word problem for groups|hyperpage}{23}
-\indexentry{3-residually connected|hyperpage}{32}
-\indexentry{chamber system over $I$|hyperpage}{38}
-\indexentry{chambers|hyperpage}{38}
-\indexentry{rank|hyperpage}{38}
-\indexentry{i-adjacent|hyperpage}{38}
-\indexentry{adjacent|hyperpage}{38}
-\indexentry{coset chamber system|hyperpage}{38}
-\indexentry{gallery|hyperpage}{39}
-\indexentry{length|hyperpage}{39}
-\indexentry{joins|hyperpage}{39}
-\indexentry{closed|hyperpage}{39}
-\indexentry{simple|hyperpage}{39}
-\indexentry{minimal gallery joining $c$ and $d$|hyperpage}{39}
-\indexentry{connected|hyperpage}{39}
-\indexentry{$J$-gallery|hyperpage}{39}
-\indexentry{$J$-equivalent|hyperpage}{39}
-\indexentry{$J$-residue|hyperpage}{39}
-\indexentry{type|hyperpage}{39}
-\indexentry{$i$-panel|hyperpage}{39}
-\indexentry{residually connected|hyperpage}{39}
-\indexentry{building|hyperpage}{39}
-\indexentry{distance function|hyperpage}{39}
-\indexentry{rank|hyperpage}{40}
-\indexentry{associated chamber system|hyperpage}{40}
-\indexentry{gallery|hyperpage}{40}
-\indexentry{residue|hyperpage}{40}
-\indexentry{panel|hyperpage}{40}
-\indexentry{thick|hyperpage}{40}
-\indexentry{thin|hyperpage}{40}
-\indexentry{apartment|hyperpage}{40}
-\indexentry{spherical|hyperpage}{41}
-\indexentry{opposite|hyperpage}{41}
-\indexentry{connected|hyperpage}{41}
-\indexentry{convex|hyperpage}{41}
-\indexentry{twin building of type $(W,S)$|hyperpage}{41}
-\indexentry{codistance function|hyperpage}{41}
-\indexentry{gallery|hyperpage}{41}
-\indexentry{residue|hyperpage}{41}
-\indexentry{panel|hyperpage}{41}
-\indexentry{opposite|hyperpage}{41}
-\indexentry{opposite|hyperpage}{41}
-\indexentry{twin apartment|hyperpage}{41}
-\indexentry{building quasi-flip|hyperpage}{42}
-\indexentry{building flip|hyperpage}{42}
-\indexentry{$\mathaccentV {tilde}07E\theta $-codistance|hyperpage}{42}
-\indexentry{numerical $\theta $-codistance|hyperpage}{42}
-\indexentry{proper|hyperpage}{42}
-\indexentry{minimal numerical $\mathaccentV {tilde}07E\theta $-codistance|hyperpage}{42}
-\indexentry{induced flip-flop system|hyperpage}{42}
-\indexentry{flip-flop system|hyperpage}{42}
+\indexentry{non-multiplicative|hyperpage}{21}
+\indexentry{maximal-multiplicative|hyperpage}{21}
+\indexentry{bottom-multiplicative|hyperpage}{21}
+\indexentry{top-multiplicative|hyperpage}{21}
+\indexentry{diagonal-multiplicative|hyperpage}{21}
+\indexentry{word problem for groups|hyperpage}{24}
+\indexentry{3-residually connected|hyperpage}{35}
+\indexentry{chamber system over $I$|hyperpage}{41}
+\indexentry{chambers|hyperpage}{41}
+\indexentry{rank|hyperpage}{41}
+\indexentry{i-adjacent|hyperpage}{41}
+\indexentry{adjacent|hyperpage}{41}
+\indexentry{coset chamber system|hyperpage}{41}
+\indexentry{gallery|hyperpage}{42}
+\indexentry{length|hyperpage}{42}
+\indexentry{joins|hyperpage}{42}
+\indexentry{closed|hyperpage}{42}
+\indexentry{simple|hyperpage}{42}
+\indexentry{minimal gallery joining $c$ and $d$|hyperpage}{42}
+\indexentry{connected|hyperpage}{42}
+\indexentry{$J$-gallery|hyperpage}{42}
+\indexentry{$J$-equivalent|hyperpage}{42}
+\indexentry{$J$-residue|hyperpage}{42}
+\indexentry{type|hyperpage}{42}
+\indexentry{$i$-panel|hyperpage}{42}
+\indexentry{residually connected|hyperpage}{42}
+\indexentry{building|hyperpage}{43}
+\indexentry{distance function|hyperpage}{43}
+\indexentry{rank|hyperpage}{43}
+\indexentry{associated chamber system|hyperpage}{43}
+\indexentry{gallery|hyperpage}{43}
+\indexentry{residue|hyperpage}{43}
+\indexentry{panel|hyperpage}{43}
+\indexentry{thick|hyperpage}{43}
+\indexentry{thin|hyperpage}{43}
+\indexentry{apartment|hyperpage}{43}
+\indexentry{spherical|hyperpage}{44}
+\indexentry{opposite|hyperpage}{44}
+\indexentry{connected|hyperpage}{44}
+\indexentry{convex|hyperpage}{44}
+\indexentry{twin building of type $(W,S)$|hyperpage}{44}
+\indexentry{codistance function|hyperpage}{44}
+\indexentry{gallery|hyperpage}{44}
+\indexentry{residue|hyperpage}{44}
+\indexentry{panel|hyperpage}{44}
+\indexentry{opposite|hyperpage}{44}
+\indexentry{opposite|hyperpage}{44}
+\indexentry{twin apartment|hyperpage}{44}
+\indexentry{building quasi-flip|hyperpage}{45}
+\indexentry{building flip|hyperpage}{45}
+\indexentry{$\mathaccentV {tilde}07E\theta $-codistance|hyperpage}{46}
+\indexentry{numerical $\theta $-codistance|hyperpage}{46}
+\indexentry{proper|hyperpage}{46}
+\indexentry{minimal numerical $\mathaccentV {tilde}07E\theta $-codistance|hyperpage}{46}
+\indexentry{induced flip-flop system|hyperpage}{46}
+\indexentry{flip-flop system|hyperpage}{46}
