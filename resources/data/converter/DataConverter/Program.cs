@@ -34,36 +34,6 @@ namespace DataConverter
                     writer.WriteRecords(benchmarks.Where(n => n.A == 3).OrderBy(n => n.V));
                 }
 
-                using (CsvWriter writer = new CsvWriter(new StreamWriter("benchmark-twoa1-a.txt"), config))
-                {
-                    writer.WriteRecords(benchmarks.Where(n => n.A == 1 && n.W.Contains("A_")).OrderBy(n => n.V));
-                }
-
-                using (CsvWriter writer = new CsvWriter(new StreamWriter("benchmark-twoa2-a.txt"), config))
-                {
-                    writer.WriteRecords(benchmarks.Where(n => n.A == 2 && n.W.Contains("A_")).OrderBy(n => n.V));
-                }
-
-                using (CsvWriter writer = new CsvWriter(new StreamWriter("benchmark-twoa3-a.txt"), config))
-                {
-                    writer.WriteRecords(benchmarks.Where(n => n.A == 3 && n.W.Contains("A_")).OrderBy(n => n.V));
-                }
-
-                using (CsvWriter writer = new CsvWriter(new StreamWriter("benchmark-twoa1-not-a.txt"), config))
-                {
-                    writer.WriteRecords(benchmarks.Where(n => n.A == 1 && !n.W.Contains("A_")).OrderBy(n => n.V));
-                }
-
-                using (CsvWriter writer = new CsvWriter(new StreamWriter("benchmark-twoa2-not-a.txt"), config))
-                {
-                    writer.WriteRecords(benchmarks.Where(n => n.A == 2 && !n.W.Contains("A_")).OrderBy(n => n.V));
-                }
-
-                using (CsvWriter writer = new CsvWriter(new StreamWriter("benchmark-twoa3-not-a.txt"), config))
-                {
-                    writer.WriteRecords(benchmarks.Where(n => n.A == 3 && !n.W.Contains("A_")).OrderBy(n => n.V));
-                }
-
                 using (CsvWriter writer = new CsvWriter(new StreamWriter("benchmark-twoa-combined.txt"), config2))
                 {
                     var records = benchmarks

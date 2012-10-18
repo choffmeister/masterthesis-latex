@@ -14,3 +14,4 @@ D:\ma-latex\resources\data\converter\DataConverter\bin\Release\DataConverter.pdb
 D:\ma-latex\resources\data\converter\DataConverter\bin\Release\CsvHelper.dll
 D:\ma-latex\resources\data\converter\DataConverter\bin\Release\CsvHelper.pdb
 D:\ma-latex\resources\data\converter\DataConverter\bin\Release\CsvHelper.xml
+D:\ma-latex\resources\data\converter\DataConverter\obj\Release\DataConverter.csprojResolveAssemblyReference.cache
