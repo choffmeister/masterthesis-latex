@@ -13,24 +13,24 @@
 %	\end{figure}
 %\end{exam}
 
-In this section we investigate some results and examples, in situations that are less or more specific than the situation from \ref{ques:main}.
+In this section we investigate some results and examples, in situations that are less or more specific than the situation from \ref{defi:3rc}. We fix some notation, namely let $K \subseteq S$ be spherical, $S_1,S_2,S_3 \subseteq S$ have a pairwise non-empty intersection, $S_{ij} = S_i \cap S_j$ and $T = S_1 \cap S_2 \cap S_3$.
 
 \begin{exam}
 	\typedlabel{exam:trivial-counterexample-for-arbitary-sets-of-generators}
 	Let $W = A_3$ and $\theta$ be the Coxeter system autmorphism swapping $s_1$ and $s_3$ and let $w = s_1s_3 = s_3s_1$. We have $e \ul s_1 = s_3 s_1 = w = s_1 s_3 = e \ul s_3$. Hence $w \in eC_{\{s_1\}}$ and $w \in eC_{\{s_3\}}$ but $w \notin eC_{\{s_1\} \cap \{s_1\} \cap \{s_3\}} = eC_\emptyset = \{e\}$.
 \end{exam}
 
-Such a trivial counterexample like in \ref{exam:trivial-counterexample-for-arbitary-sets-of-generators} can not occur in the situation from \ref{ques:main}.
+Such a trivial counterexample like in \ref{exam:trivial-counterexample-for-arbitary-sets-of-generators} can not occur in the situation from \ref{defi:3rc}.
 
 \begin{prop}
-	Consider the situation from \ref{ques:main}. Let $w,v \in \ti{\theta}$ with $\rho(v) - \rho(w) = 1$ and let $v \in w C_{S_{ij}}$ for $1 \leq i < j \leq 3$. Then we have $v \in wC_T$.
+	Let $w,v \in \ti{\theta}$ with $\rho(v) - \rho(w) = 1$ and let $v \in w C_{S_{ij}}$ for $1 \leq i < j \leq 3$. Then we have $v \in wC_T$.
 
 	\begin{proof}
 		By \ref{prop:no-triple-edges} there are at most two (not necessarily distinct) $s,t \in S$ with $w \ul s = v$ and $w \ul t = v$. Each set $S_{12},S_{23},S_{31}$ must at least contain $s$ or $t$, hence $s$ or $t$ is at least in two sets, say $s \in S_{12},S_{23}$. Hence $s \in S_1,S_2,S_3$ and therefore $v \in wC_T$.
 	\end{proof}
 \end{prop}
 
-A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J = wC_{I \cap J}$. If this would be true, \ref{ques:main} could be concluded immediately. Unfortunately it proves to be false. Again, double-edges yield a simple counterexample.
+A property, that is much stronger than \ref{defi:3rc}, reads $wC_I \cap wC_J = wC_{I \cap J}$. If this would be true, \ref{defi:3rc} could be concluded immediately. Unfortunately it proves to be false. Again, double-edges yield a simple counterexample.
 
 \begin{exam}
 	\typedlabel{exam:cap-of-residues}
@@ -38,16 +38,40 @@ A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J 
 \end{exam}
 
 \begin{prop}
-	\typedlabel{prop:s1-in-s2-main-special-case}
-	Consider the situation from \ref{ques:main}. Suppose one set of $S_1,S_2,S_3$ is contained in another. Then
-	$$ \forall \ 1 \leq i < j \leq 3 : v \in w C_{S_{ij}} \quad \Rightarrow \quad v \in w C_T. $$
+	\typedlabel{prop:s1-empty-main-special-case}
+	Suppose one set of $S_1,S_2,S_3$ to be empty. Then \axiomref{3RC} holds.
 
 	\begin{proof}
-		Without loss of generality let $S_1 \subset S_2$. Then we have $S_{12} = S_1$. By this we get the identity
-		$$ T = S_1 \cap S_2 \cap S_3 = S_{12} \cap S_3 = S_1 \cap S_3. $$
-		Hence $v \in w C_T = w C_{S_{31}}$.
+		Let $S_1 = \emptyset$. Then $w_K C_{S_1 \cap S_2} = w_K C_\emptyset = \{ w_K \}$, hence $w = w_K \in w_K C_T$.
 	\end{proof}
 \end{prop}
+
+\begin{prop}
+	\typedlabel{prop:s1-in-s2-main-special-case}
+	Suppose one set of $S_1,S_2,S_3$ is contained in another. Then \axiomref{3RC} holds.
+
+	\begin{proof}
+		Let $S_1 \subseteq S_2$. Then we have $S_{12} = S_1$. By this we get the identity $T = S_1 \cap S_2 \cap S_3 = S_{12} \cap S_3 = S_1 \cap S_3$. Hence $v \in w C_T = w C_{S_{31}}$.
+	\end{proof}
+\end{prop}
+
+\begin{coro}
+	\typedlabel{prop:s1-eq-s-main-special-case}
+	Suppose one set of $S_1,S_2,S_3$ to equal $S$. Then \axiomref{3RC} holds.
+
+	\begin{proof}
+		Let $S_1 = S$. Then $S_2 \subseteq S = S_1$ and so with \ref{prop:s1-in-s2-main-special-case} we are done.
+	\end{proof}
+\end{coro}
+
+\begin{coro}
+	\typedlabel{prop:rank-leq-2-main-special-case}
+	Suppose $|S| \leq 2$. Then $Wk(\theta)$ is 3-residually connected.
+
+	\begin{proof}
+		If one set of $S_1,S_2,S_3$ is empty or equal to $S$ we are done by \ref{prop:s1-empty-main-special-case} and \ref{prop:s1-eq-s-main-special-case}. Else at least two sets of $S_1,S_2,S_3$ must be equal. In this case we are done by \ref{prop:s1-in-s2-main-special-case}.
+	\end{proof}
+\end{coro}
 
 \begin{lemm}
 	\typedlabel{lemm:properties-of-wk-in-reducible-coxeter-groups}
@@ -131,10 +155,10 @@ A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J 
 \end{rema}
 
 \begin{theo}
-	Let $(W,S)$ be a reducible Coxeter system with $S = S' \cup S''$ and $\ord(st) = 2$ whenever $s \in S', t \in S''$ and let $\theta = \id$. Then \ref{eq:main} holds for $(W,S)$ if and only if it holds for $(W_{S'},S')$ and $(W_{S''},S'')$, too.
+	Let $(W,S)$ be a reducible Coxeter system with $S = S' \cup S''$ and $\ord(st) = 2$ whenever $s \in S', t \in S''$ and let $\theta = \id$. Then $Wk(W,\id)$ is 3-residually connected if and only if $Wk(W_{S'},\id)$ and $Wk(W_{S''},\id)$ are 3-residually connected.
 
 	\begin{proof}
-		If \ref{eq:main} holds for $(W,S)$, then it holds for $(W_{S'},S')$ and $(W_{S''},S'')$ in particular. In return suppose \ref{eq:main} to hold for $(W_{S'},S')$ and $(W_{S''},S'')$ and assume we are in the situtation from \ref{ques:main}. For a set $M \subseteq S$ we define $M' := M \cap S'$ and $M'' := M \cap S''$, hence $M = M' \dotcup M''$. This is compatible with our definition of $S_{ij}$ and $T$:
+		If $Wk(W,\id)$ is 3-residually connected, then $Wk(W_{S'},\id)$ and $Wk(W_{S''},\id)$ are so in particular. In return suppose $Wk(W_{S'},\id)$ and $Wk(W_{S''},\id)$ to be 3-residually connected. For a set $M \subseteq S$ we define $M' := M \cap S'$ and $M'' := M \cap S''$, hence $M = M' \dotcup M''$. This is compatible with our definition of $S_{ij}$ and $T$:
 		\begin{align*}
 			S_{ij}	& = S_i \cap S_j = (S'_i \dotcup S''_i) \cap (S'_j \dotcup S''_j) = (S'_i \cap S'_j) \dotcup (S''_i \cap S''_j) = S'_{ij} \dotcup S''_{ij} \\
 			T		& = S_1 \cap S_2 \cap S_3 = (S'_{12} \dotcup S''_{12}) \cap (S'_3 \dotcup S''_3) = (S'_{12} \cap S'_3) \dotcup (S''_{12} \cap S''_3) = T' \dotcup T''
@@ -153,7 +177,7 @@ A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J 
 				& = w_{K'} \ul b'_1 \ldots \ul b'_{n'} = s'_1 \ldots \ul s'_m \ul b'_1 \ldots \ul b'_{n'} \\
 				& = w_{K'} \ul c'_1 \ldots \ul c'_{n'} = s'_1 \ldots \ul s'_m \ul c'_1 \ldots \ul c'_{n'}
 		\end{align*}
-		and so $w' \in w_{K'}C_{T'}$, since \ref{eq:main} holds in $(W_{S'},S')$. Analogue we get $w'' \in w_{K''}C_{T''}$. Hence
+		and so $w' \in w_{K'}C_{T'}$, since \axiomref{3RC} holds in $Wk(W_{S'},\id)$. Analogue we get $w'' \in w_{K''}C_{T''}$. Hence
 		$$ w' = \ul s'_1 \ldots \ul s'_{m'} \ul d'_1 \ldots \ul d'_{l'} \textrm{ and } w'' = \ul s''_1 \ldots \ul s''_{m''} \ul d''_1 \ldots \ul d''_{l''} $$
 		for $d'_i \in T'$ and $d''_i \in T''$. This yields a twisted expression
 		\begin{align*}
@@ -161,6 +185,6 @@ A hypothesis, that is much stronger than \ref{ques:main}, reads $wC_I \cap wC_J 
 				& = \ul s'_1 \ldots \ul s'_{m'} \ul s''_1 \ldots \ul s''_{m''} \ul d'_1 \ldots \ul d'_{l'} \ul d''_1 \ldots \ul d''_{l''} \\
 				& = w_K \ul d'_1 \ldots \ul d'_{l'} \ul d''_1 \ldots \ul d''_{l''}
 		\end{align*}
-		with $d'_i,d''_i \in T' \dotcup T'' = T$. Thus $w \in w_KC_S$.
+		with $d'_i,d''_i \in T' \dotcup T'' = T$. Thus $w \in w_KC_T$.
 	\end{proof}
 \end{theo}

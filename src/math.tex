@@ -15,6 +15,9 @@
 \newtheorem{assu}[theorem]{Assumption}
 
 \newenvironment{axioms}{\begin{itemize}[leftmargin=1.5cm,font=\bfseries]}{\end{itemize}}
+\newcounter{axiomcount}
+\newcommand{\axiomitem}[1]{\item[(#1)] \refstepcounter{axiomcount}\label{axiom:#1}}
+\newcommand{\axiomref}[1]{\hyperref[axiom:#1]{{\normalfont(#1)}}}
 
 \newcommand{\nn}{\mathbb{N}}
 \newcommand{\zz}{\mathbb{Z}}

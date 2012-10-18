@@ -4,9 +4,9 @@
 \begin{defi}
 	A \defword{building} of type $(W,S)$ is a pair $(\mathcal{C}, \delta)$ with a nonempty set $\mathcal{C}$ and a map $\delta : \mathcal{C} \times \mathcal{C} \to W$, called \defword{distance function}, so that for $x,y \in \mathcal C$ and $w = \delta(x,y)$ we have
 	\begin{axioms}
-		\item[(Bu1)] $w = e \iff x = y$;
-		\item[(Bu2)] for $z \in \mathcal C$ with $\delta(y,z) = s \in S$ we have $\delta(x,z) \in \{w,ws\}$, and if in addition $l(ws) = l(w) + 1$ then we have $\delta(x,z) = ws$;
-		\item[(Bu3)] for $s \in S$ there exists a $z \in \mathcal C$ with $\delta(y,z) = s$ and $\delta(x,z) = ws$.
+		\axiomitem{Bu1} $w = e \iff x = y$;
+		\axiomitem{Bu2} for $z \in \mathcal C$ with $\delta(y,z) = s \in S$ we have $\delta(x,z) \in \{w,ws\}$, and if in addition $l(ws) = l(w) + 1$ then we have $\delta(x,z) = ws$;
+		\axiomitem{Bu3} for $s \in S$ there exists a $z \in \mathcal C$ with $\delta(y,z) = s$ and $\delta(x,z) = ws$.
 	\end{axioms}
 \end{defi}
 
