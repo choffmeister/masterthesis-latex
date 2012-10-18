@@ -1,0 +1,38 @@
+%!TEX root = ../../../_main.tex
+\section{Computional testing for 3-residually connectedness}
+\label{sec:3rc-compution-testing}
+
+In section~\ref{sec:twisted-involutions-algorithms} we introduced an effective algorithm to calculate the poset graph for an arbitrary $Wk(\theta)$ until a given maximal twisted length. So the idea is obvious to use these data and simply test for every combination of $K,S_1,S_2,S_3$, if they yield a counterexample to \axiomref{3RC}. If no counterexample can be found we have proved that $Wk(\theta)$ is 3-residually connected. If $(W,S)$ is itself finite, then there is not problem with this approach. For infinite Coxeter systems we cannot calculate the whole poset graph. But there are some infinte ones, that can also be addressed in this way.
+
+\begin{prop}
+	Suppose the parabolic subgroup $W_{S'}$ to be finite for any $S' \subsetneqq S$. Define
+	$$ E := \{ w \in \ti{\theta} : K,S_1,S_2,S_3 \subseteq S, w \in w_K C_{S_{12}} \cap w_K C_{S_{23}} \cap w_K C_{S_{31}}, w \notin w_K C_T \} $$
+	and assume $E \neq \emptyset$, i.e. $Wk(\theta)$ is not 3-residually connected. Then there is a $\rho_E \in \nn_0$ with $\max_{w \in E} \rho(w) \leq \rho_E$.
+
+	\begin{proof}
+		For any counterexample the sets $S_1,S_2,S_3$ cannot equal $S$ by \ref{prop:3rc-special-3}, hence by assumption the the sets $S_1,S_2,S_3$ are spherical. But then the sets $S_{12},S_{23},S_{31}$ as well as $\theta(S_{12}),\theta(S_{23}),\theta(S_{31})$ must be spherical, too. Let $w \in E$, then $w \in W_{\theta(S_{12})} w_K W_{S_{12}}$, hence $l(w) \leq l(w_{\theta(S_{12})}) + l(w_K) + l(w_{S_{12}})$. Since there is only a finite count of proper subsets of $S$, we can choose
+		$$ l_E = \max_{K,S' \subsetneqq S} l(w_K) + 2 \cdot l(w_{S'}) < \infty $$
+		as upper bound for $l(w)$. For all $w' \in \ti{\theta}$ we have $\rho(w') \leq 2 \cdot l(w')$ and so $\rho_E = \lceil l_E/2 \rceil$ is an upper bound for $\rho(w)$.
+	\end{proof}
+\end{prop}
+
+\begin{rema}
+	Note, that this proposition also gives a manual, how to calculate the upper bound, since the length of the longest element in a finite Coxeter group can be easily calculate. There are 4 families of finite Coxeter groups and 6 finite Coxeter groups of exceptional type (cf. \ref{theo:irreducible-finit-coxeter-systems}). The length of the longest element in each of them can be seen in Table~\ref{tab:length-w0}. For more details on how to calculate those values (resp. formulas) see \cite[Section 1.2]{franzsen:automorphisms} and \cite[Section 2.11]{humphreys:coxeter}.
+\end{rema}
+
+\begin{table}
+	\centering
+	\begin{tabular}{|c|cccccccccc|}
+		\hline
+		$W$ & $A_n$ & $B_n$ & $D_n$ & $E_6$ & $E_7$ & $E_8$ & $F_4$ & $H_3$ & $H_4$ & $I_2(m)$ \\
+		\hline
+		$l(w_0)$ & $n(n+1)/2$ & $n^2$ & $n(n-1)$ & $36$ & $63$ & $120$ & $24$ & $15$ & $60$ & $m$ \\
+		\hline
+	\end{tabular}
+	\caption{Length of longest element in finite Coxeter groups}
+	\label{tab:length-w0}	
+\end{table}
+
+\begin{exam}
+	Let $W = \tilde A_2$ with $S = \{s_1, s_2, s_3\}$. Because of symmetry we can calculate $l_E$ with the sets $K = S' = \{s_1,s_2\}$. Then $\langle K \rangle = \langle S' \rangle \cong A_2$, hence the length of the longest word in $\langle K \rangle$ and $\langle S' \rangle$ is $3$. Therefore $l_E = 3 + 2 \cdot 3 = 9$ and $\rho_E = 5$. This means, to validate if $\tilde A_2$ is 3-residually connected, we only need to calculate the poset graph of $Wk(\theta)$ until we have all twisted involutions of twisted length 5.
+\end{exam}

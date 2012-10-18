@@ -13,7 +13,7 @@
 %	\end{figure}
 %\end{exam}
 
-In this section we investigate some results and examples, in special situations. We fix some notation, namely let $K \subseteq S$ be spherical, $S_1,S_2,S_3 \subseteq S$ have a pairwise non-empty intersection, $S_{ij} = S_i \cap S_j$ and $T = S_1 \cap S_2 \cap S_3$.
+In this section we investigate some results and examples, in special situations. We fix some notation, namely let $K \subseteq S$ be spherical, $S_1,S_2,S_3 \subseteq S$ have a pairwise non-empty intersection, $S_{ij} = S_i \cap S_j$, $T = S_1 \cap S_2 \cap S_3$ and $w_K$ denote the longest element in $\langle K \rangle$.
 
 \begin{exam}
 	\typedlabel{exam:trivial-counterexample-for-arbitary-sets-of-generators}
@@ -38,37 +38,29 @@ A property, that is much stronger than \ref{defi:3rc}, reads $wC_I \cap wC_J = w
 \end{exam}
 
 \begin{prop}
-	\typedlabel{prop:s1-empty-main-special-case}
-	Suppose one set of $S_1,S_2,S_3$ to be empty. Then \axiomref{3RC} holds.
+	\typedlabel{prop:3rc-special}
+	Suppose one of the following cases is current for some pairwise distinct $i,j,k \in \{1,2,3\}$:
+	\begin{enumerate}
+		\item \label{prop:3rc-special-1} $S_i = \emptyset$,
+		\item \label{prop:3rc-special-2} $S_i \subseteq S_j$ or
+		\item \label{prop:3rc-special-3} $S_i = S$.
+	\end{enumerate}
+	Then \axiomref{3RC} holds.
 
 	\begin{proof}
-		Let $S_1 = \emptyset$. Then $w_K C_{S_1 \cap S_2} = w_K C_\emptyset = \{ w_K \}$, hence $w = w_K \in w_K C_T$.
+		\begin{enumerate}
+			\item We have $\bigcap_{1 \leq m < n \leq 3} w_K C_{S_{mn}} \subseteq w_K C_{S_{ij}} \subseteq w_K C_{S_{i}} = w_K C_\emptyset = w_K C_T$.
+			\item We have $S_{ij} = S_i$, hence $T = S_i \cap S_j \cap S_k = S_{ij} \cap S_k = S_i \cap S_k = S_{ik}$. Therefore $\bigcap_{1 \leq m < n \leq 3} w_K C_{S_{mn}} \subseteq w_K C_{S_{ik}} = w_K C_T$.
+			\item We have $S_j \subseteq S = S_i$ and so with \ref{prop:3rc-special-2} we are done.
+		\end{enumerate}
 	\end{proof}
 \end{prop}
-
-\begin{prop}
-	\typedlabel{prop:s1-in-s2-main-special-case}
-	Suppose one set of $S_1,S_2,S_3$ is contained in another. Then \axiomref{3RC} holds.
-
-	\begin{proof}
-		Let $S_1 \subseteq S_2$. Then we have $S_{12} = S_1$. By this we get the identity $T = S_1 \cap S_2 \cap S_3 = S_{12} \cap S_3 = S_1 \cap S_3$. Hence $v \in w C_T = w C_{S_{31}}$.
-	\end{proof}
-\end{prop}
-
-\begin{coro}
-	\typedlabel{prop:s1-eq-s-main-special-case}
-	Suppose one set of $S_1,S_2,S_3$ to equal $S$. Then \axiomref{3RC} holds.
-
-	\begin{proof}
-		Let $S_1 = S$. Then $S_2 \subseteq S = S_1$ and so with \ref{prop:s1-in-s2-main-special-case} we are done.
-	\end{proof}
-\end{coro}
 
 \begin{coro}
 	\typedlabel{prop:rank-leq-2-main-special-case}
 	Suppose $|S| \leq 2$. Then $Wk(\theta)$ is 3-residually connected.
 
 	\begin{proof}
-		If one set of $S_1,S_2,S_3$ is empty or equal to $S$ we are done by \ref{prop:s1-empty-main-special-case} and \ref{prop:s1-eq-s-main-special-case}. Else at least two sets of $S_1,S_2,S_3$ must be equal. In this case we are done by \ref{prop:s1-in-s2-main-special-case}.
+		If one set of $S_1,S_2,S_3$ is empty or equal to $S$ we are done by \ref{prop:3rc-special-1} and \ref{prop:3rc-special-3}. Else at least two sets of $S_1,S_2,S_3$ must be equal. In this case we are done by \ref{prop:3rc-special-2}.
 	\end{proof}
 \end{coro}

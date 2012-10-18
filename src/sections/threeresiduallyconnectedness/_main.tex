@@ -8,7 +8,10 @@
 	\begin{axioms}
 		\axiomitem{3RC} $w_K C_{S_{12}} \cap w_K C_{S_{23}} \cap w_K C_{S_{31}} \subseteq w_K C_T$
 	\end{axioms}
-	holds, whereas $w_K$ denotes the longest element in $\langle K \rangle$, $S_{ij} = S_i \cap S_j$ and $T = S_1 \cap S_2 \cap S_3$.
+	holds, whereas $w_K$ denotes the longest element in $\langle K \rangle$, $S_{ij} = S_i \cap S_j$ and $T = S_1 \cap S_2 \cap S_3$. By construction $w_K C_T \subseteq w_K C_{S_{12}} \cap w_K C_{S_{23}} \cap w_K C_{S_{31}}$ always holds. So \axiomref{3RC} is equivalent to
+	\begin{axioms}
+		\axiomitem{3RCa} $w_K C_{S_{12}} \cap w_K C_{S_{23}} \cap w_K C_{S_{31}} = w_K C_T$.
+	\end{axioms}
 \end{defi}
 
 The reader might wonder, why we handle with intersections of sets of generators and not just with arbitrary sets of generators. The reason for that is also the main reason, why $Wk(\theta)$ is less accessible than $\Br(W)$: In $Wk(\theta)$ there is the possibilty for $w \ul s = w \ul t$ for two distinct generators $s,t \in S$. Within the Hasse diagram this situation appears in form of double edges between two vertices. For example, let $W = A_3$ and $\theta$ be the Coxeter system automorphism swapping $s_1$ with $s_3$. Then we have $e \ul s_1 = s_3 s_1 = s_1 s_3 = e \ul s_3$. Double edges can also occur for $\theta = \id$, but in this situation they cannot appear next to the neutral element $e$, since $\theta(s)es = e$ for all $s \in S$, hence $e \ul s = s \neq t = e \ul t$ for all $s,t \in S$ with $s \neq t$. Therefore, if we had written \axiomref{3RC} with arbitrary sets $S_{12},S_{23},S_{31}$, then it would be false immediately for any Coxeter system automorphism, that swaps two commutating generators, as seen in \ref{exam:trivial-counterexample-for-arbitary-sets-of-generators}.
@@ -26,3 +29,4 @@ The following corollary shows us, what distinguishes our special configuration o
 
 \input{src/sections/threeresiduallyconnectedness/specialcases}
 \input{src/sections/threeresiduallyconnectedness/reduciblecase}
+\input{src/sections/threeresiduallyconnectedness/computionaltesting}
