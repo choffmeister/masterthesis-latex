@@ -11,7 +11,7 @@ In section~\ref{sec:twisted-involutions-algorithms} we introduced an effective a
 
 	\begin{proof}
 		For any counterexample the sets $S_1,S_2,S_3$ cannot equal $S$ by \ref{prop:3rc-special-3}, hence by assumption the the sets $S_1,S_2,S_3$ are spherical. But then the sets $S_{12},S_{23},S_{31}$ as well as $\theta(S_{12}),\theta(S_{23}),\theta(S_{31})$ must be spherical, too. Let $w \in E$, then $w \in W_{\theta(S_{12})} w_K W_{S_{12}}$, hence $l(w) \leq l(w_{\theta(S_{12})}) + l(w_K) + l(w_{S_{12}})$. Since there is only a finite count of proper subsets of $S$, we can choose
-		$$ l_E = \max_{K,S' \subsetneqq S} l(w_K) + 2 \cdot l(w_{S'}) < \infty $$
+		$$ l_E = \max_{K,S' \subsetneqq S} l(w_{\theta(S')}) + l(w_K) + l(w_{S'}) \leq \max_{S' \subsetneqq S} 3 \cdot l(w_{S'}) < \infty $$
 		as upper bound for $l(w)$. For all $w' \in \ti{\theta}$ we have $\rho(w') \leq 2 \cdot l(w')$ and so $\rho_E = \lceil l_E/2 \rceil$ is an upper bound for $\rho(w)$.
 	\end{proof}
 \end{prop}
@@ -34,5 +34,5 @@ In section~\ref{sec:twisted-involutions-algorithms} we introduced an effective a
 \end{table}
 
 \begin{exam}
-	Let $W = \tilde A_2$ with $S = \{s_1, s_2, s_3\}$. Because of symmetry we can calculate $l_E$ with the sets $K = S' = \{s_1,s_2\}$. Then $\langle K \rangle = \langle S' \rangle \cong A_2$, hence the length of the longest word in $\langle K \rangle$ and $\langle S' \rangle$ is $3$. Therefore $l_E = 3 + 2 \cdot 3 = 9$ and $\rho_E = 5$. This means, to validate if $\tilde A_2$ is 3-residually connected, we only need to calculate the poset graph of $Wk(\theta)$ until we have all twisted involutions of twisted length 5.
+	Let $W = \tilde A_2$ with $S = \{s_1, s_2, s_3\}$. Because of symmetry we can calculate $l_E$ with the set $S' = \{s_1,s_2\}$. Then $\langle S' \rangle \cong A_2$, hence the length of the longest word in $\langle S' \rangle$ is $3$. Therefore $l_E = 9$ and $\rho_E = 5$. This means, to validate if $\tilde A_2$ is 3-residually connected, we only need to calculate the poset graph of $Wk(\theta)$ until we have all twisted involutions of twisted length 5.
 \end{exam}
