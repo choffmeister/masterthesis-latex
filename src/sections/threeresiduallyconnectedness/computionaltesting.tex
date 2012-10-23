@@ -10,7 +10,7 @@ In section~\ref{sec:twisted-involutions-algorithms} we introduced an effective a
 	and assume $E \neq \emptyset$, i.e. $Wk(\theta)$ is not 3-residually connected. Then there is a $\rho_E \in \nn_0$ with $\max_{w \in E} \rho(w) \leq \rho_E$.
 
 	\begin{proof}
-		For any counterexample the sets $S_1,S_2,S_3$ cannot equal $S$ by \ref{prop:3rc-special-3}, hence by assumption the the sets $S_1,S_2,S_3$ are spherical. But then the sets $S_{12},S_{23},S_{31}$ as well as $\theta(S_{12}),\theta(S_{23}),\theta(S_{31})$ must be spherical, too. Let $w \in E$, then $w \in W_{\theta(S_{12})} w_K W_{S_{12}}$, hence $l(w) \leq l(w_{\theta(S_{12})}) + l(w_K) + l(w_{S_{12}})$. Since there is only a finite count of proper subsets of $S$, we can choose
+		For any counterexample the sets $S_1,S_2,S_3$ cannot equal $S$ by \ref{prop:3rc-special-3}, hence by assumption the sets $S_1,S_2,S_3$ are spherical. But then $S_{12},S_{23},S_{31}$ as well as $\theta(S_{12}),\theta(S_{23}),\theta(S_{31})$ must be spherical, too. Let $w \in E$, then $w \in W_{\theta(S_{12})} w_K W_{S_{12}}$, hence $l(w) \leq l(w_{\theta(S_{12})}) + l(w_K) + l(w_{S_{12}})$. Since there is only a finite count of proper subsets of $S$, we can choose
 		$$ l_E = \max_{K,S' \subsetneqq S} l(w_{\theta(S')}) + l(w_K) + l(w_{S'}) \leq \max_{S' \subsetneqq S} 3 \cdot l(w_{S'}) = 3 \cdot \max_{s \in S} l(w_{S \setminus \{s\}}) < \infty $$
 		as upper bound for $l(w)$. For all $w' \in \ti{\theta}$ we have $\rho(w') \leq 2 \cdot l(w')$ and so $\rho_E = \lceil l_E/2 \rceil$ is an upper bound for $\rho(w)$.
 	\end{proof}
