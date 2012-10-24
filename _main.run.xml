@@ -44,31 +44,30 @@
   <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>_main.aux</file>
-      <file>_main-blx.bib</file>
+      <file>_main.bcf</file>
     </provides>
     <requires type="dynamic">
       <file>_main.bbl</file>
     </requires>
     <requires type="static">
+      <file>blx-dm.def</file>
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
-      <file>alphabetic.bbx</file>
+      <file>numeric.bbx</file>
       <file>standard.bbx</file>
-      <file>alphabetic.cbx</file>
+      <file>numeric.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
     </requires>
   </internal>
-  <external package="biblatex" priority="5" active="0">
-    <generic>bibtex</generic>
+  <external package="biblatex" priority="5" active="1">
+    <generic>biber</generic>
     <cmdline>
-      <binary>bibtex</binary>
-      <option>-min-crossrefs 2</option>
+      <binary>biber</binary>
       <infile>_main</infile>
     </cmdline>
     <input>
-      <file>_main.aux</file>
+      <file>_main.bcf</file>
     </input>
     <output>
       <file>_main.bbl</file>
@@ -77,14 +76,7 @@
       <file>_main.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>_main.aux</file>
-      <file>_main-blx.bib</file>
-    </requires>
-    <requires type="editable">
-      <file>src/bibliography.bib</file>
-    </requires>
-    <requires type="static">
-      <file>biblatex.bst</file>
+      <file>_main.bcf</file>
     </requires>
   </external>
 </requests>

@@ -14,9 +14,7 @@
 	\end{axioms}
 \end{defi}
 
-The reader might wonder, why we handle with intersections of sets of generators and not just with arbitrary sets of generators. The reason for that is also the main reason, why $Wk(\theta)$ is less accessible than $\Br(W)$: In $Wk(\theta)$ there is the possibilty for $w \ul s = w \ul t$ for two distinct generators $s,t \in S$. Within the Hasse diagram this situation appears in form of double edges between two vertices. For example, let $W = A_3$ and $\theta$ be the Coxeter system automorphism swapping $s_1$ with $s_3$. Then we have $e \ul s_1 = s_3 s_1 = s_1 s_3 = e \ul s_3$. Double edges can also occur for $\theta = \id$, but in this situation they cannot appear next to the neutral element $e$, since $\theta(s)es = e$ for all $s \in S$, hence $e \ul s = s \neq t = e \ul t$ for all $s,t \in S$ with $s \neq t$. Therefore, if we had written \axiomref{3RC} with arbitrary sets $S_{12},S_{23},S_{31}$, then it would be false immediately for any Coxeter system automorphism, that swaps two commutating generators, as seen in \ref{exam:trivial-counterexample-for-arbitary-sets-of-generators}.
-
-The following proposition shows us, what distinguishes our special configuration of sets of generators from the arbitrary configuration.
+For arbitrary sets $S_{12},S_{23},S_{31}$ that do not come from pairwise intersections it is easy to find pairs of Coxeter systems and Coxeter system automorphism that do not satisfy the (modified) 3-residually connectedness, as seen in \ref{exam:trivial-counterexample-for-arbitary-sets-of-generators}. The following proposition shows us, what distinguishes our special configuration of sets of generators from the arbitrary configuration.
 
 \begin{prop}
 	\typedlabel{prop:three-sets-pairwise-intersection}
