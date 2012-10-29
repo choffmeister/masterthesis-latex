@@ -4,14 +4,11 @@
 
 \begin{defi}
 	\typedlabel{defi:3rc}
-	Let $(W,S)$ be a Coxeter system and $\theta : W \to W$ an automorphism of $W$ with $\theta^2 = \id$ and $\theta(S) = S$. We call $Wk(\theta)$ \defword{3-residually connected}, if the following holds: For every possible spherical $K \subseteq S$ (i.e. $\langle K \rangle \leq W$ is finite) and every $S_1,S_2,S_3 \subseteq S$ with pairwise non-empty intersection the statement
+	Let $(W,S)$ be a Coxeter system and $\theta : W \to W$ an automorphism of $W$ with $\theta^2 = \id$ and $\theta(S) = S$. We call $Wk(\theta)$ \defword{3-residually connected} if the following holds: For every possible spherical $K \subseteq S$ (i.e. $\langle K \rangle \leq W$ is finite) and every $S_1,S_2,S_3 \subseteq S$ with pairwise non-empty intersection the statement
 	\begin{axioms}
 		\axiomitem{3RC} $w_K C_{S_{12}} \cap w_K C_{S_{23}} \cap w_K C_{S_{31}} \subseteq w_K C_T$
 	\end{axioms}
-	holds, whereas $w_K$ denotes the longest element in $\langle K \rangle$, $S_{ij} = S_i \cap S_j$ and $T = S_1 \cap S_2 \cap S_3$. By construction $w_K C_T \subseteq w_K C_{S_{12}} \cap w_K C_{S_{23}} \cap w_K C_{S_{31}}$ always holds. So \axiomref{3RC} is equivalent to
-	\begin{axioms}
-		\axiomitem{3RCa} $w_K C_{S_{12}} \cap w_K C_{S_{23}} \cap w_K C_{S_{31}} = w_K C_T$.
-	\end{axioms}
+	holds, whereas $w_K$ denotes the longest element in $\langle K \rangle$, $S_{ij} = S_i \cap S_j$ and $T = S_1 \cap S_2 \cap S_3$.
 \end{defi}
 
 For arbitrary sets $S_{12},S_{23},S_{31}$ that do not come from pairwise intersections it is easy to find pairs of Coxeter systems and Coxeter system automorphism that do not satisfy the (modified) 3-residually connectedness, as seen in \ref{exam:trivial-counterexample-for-arbitary-sets-of-generators}. The following proposition shows us, what distinguishes our special configuration of sets of generators from the arbitrary configuration.
