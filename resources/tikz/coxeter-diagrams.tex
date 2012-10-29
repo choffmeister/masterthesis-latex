@@ -223,3 +223,101 @@
     \foreach \source/ \dest /\weight in {a/b/5,b/c/,c/d/,d/e/}
         \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
 \end{tikzpicture}}
+
+\newcommand{\comphyperfourlineone}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}, {(3,0)/d}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/4,b/c/,c/d/5}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfourlinetwo}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}, {(3,0)/d}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/,b/c/5,c/d/}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfourlinethree}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}, {(3,0)/d}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/5,b/c/,c/d/5}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfourlinefour}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,-0.5)/c}, {(2,0.5)/d}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/5,b/c/,b/d/}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfoursquareone}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(1,1)/c}, {(0,1)/d}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/4,b/c/,c/d/,d/a/}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfoursquaretwo}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(1,1)/c}, {(0,1)/d}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/4,b/c/,c/d/4,d/a/}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfoursquarethree}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(1,1)/c}, {(0,1)/d}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/5,b/c/,c/d/4,d/a/}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfoursquarefour}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(1,1)/c}, {(0,1)/d}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/5,b/c/,c/d/,d/a/}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfoursquarefive}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(1,1)/c}, {(0,1)/d}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/5,b/c/,c/d/5,d/a/}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfiveone}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}, {(3,0)/d}, {(4,0)/e}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/4,b/c/,c/d/,d/e/5}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfivetwo}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}, {(3,0)/d}, {(4,0)/e}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/,b/c/,c/d/,d/e/5}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfivethree}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}, {(3,0)/d}, {(4,0)/e}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/5,b/c/,c/d/,d/e/5}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfivefour}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}, {(3,-0.5)/d}, {(3,0.5)/e}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/5,b/c/,c/d/,c/e/}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfivefive}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}, {(1.5,-1)/d}, {(0.5,-1)/e}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/,b/c/,c/d/,d/e/4,e/a/}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
