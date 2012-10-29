@@ -2,7 +2,7 @@
 \section{Introduction to twisted involutions}
 \label{sec:twisted-involutions-introduction}
 
-Twisted involutions generalize the property of being involutive with respect to an involutive automorphism $\theta$. For $\theta = \id$ the set of $\theta$-twisted involutions, denoted by $\ti{\theta}$ coincides with the set of ordinary involutions in $W$ (cf. \ref{exam:id-twisted-involutions}). As we will see the set of this $\theta$-twisted involutions equals the $e$-orbit of a special action, defined in \ref{defi:twisted-operation}. For $\ti{\theta}$ and the mentioned map many properties of ordinary Coxeter groups hold. In particular there is a analogue to the \ref{coro:exchange-condition} and \ref{coro:deletion-condition}.
+Twisted involutions generalize the property of being involutive with respect to an involutory automorphism $\theta$. For $\theta = \id$ the set of $\theta$-twisted involutions, denoted by $\ti{\theta}$ coincides with the set of ordinary involutions in $W$ (cf. \ref{exam:id-twisted-involutions}). As we will see the set of this $\theta$-twisted involutions equals the $e$-orbit of a special action, defined in \ref{defi:twisted-operation}. For $\ti{\theta}$ and the mentioned map many properties of ordinary Coxeter groups hold. In particular there is a analogue to the \ref{coro:exchange-condition} and \ref{coro:deletion-condition}.
 
 \begin{defi}
 	An automorphism $\theta : W \to W$ with $\theta(S) = S$ is called a \defword{Coxeter system automorphism} of $(W,S)$. We always assume $\theta^2 = \id$.
@@ -16,7 +16,7 @@ Twisted involutions generalize the property of being involutive with respect to 
 
 \begin{exam}
 	\typedlabel{exam:id-twisted-involutions}
-	Let $\theta = \id_W$. Then $\theta$ is an Coxeter system automorphism and the set of all $\id$-twisted involutions coincides with the set of all ordinary involutions of $W$.
+	Let $\theta = \id_W$. Then $\theta$ is a Coxeter system automorphism and the set of all $\id$-twisted involutions coincides with the set of all ordinary involutions of $W$.
 \end{exam}
 
 The next example is more helpfull, since it reveals a way to think of $\ti{\theta}$ as a generalization of ordinary Coxeter groups.
@@ -24,7 +24,7 @@ The next example is more helpfull, since it reveals a way to think of $\ti{\thet
 \begin{exam}
 	\typedlabel{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions}
 	\theocite{Example 3.2}{hultman:comb-twisted-invo}
-	Let $\theta$ be a automorphism of $W \times W$ with $\theta : (u,w) \mapsto (w,u)$. Then $\theta$ is an Coxeter system automorphism of the Coxeter system $(W \times W, S \times S)$ and the set of twisted involutions is
+	Let $\theta$ be a automorphism of $W \times W$ with $\theta : (u,w) \mapsto (w,u)$. Then $\theta$ is a Coxeter system automorphism of the Coxeter system $(W \times W, S \times S)$ and the set of twisted involutions is
 	$$ \ti{\theta} = \{ (w,w^{-1}) \in W \times W : w \in W \}. $$
 	This yields a canonical bijection between $\ti{\theta}$ and $W$.
 \end{exam}
@@ -48,7 +48,7 @@ $$ e \ul s \ul t \ul s = s \ul t \ul s = tst \ul s = sts \ul s = t \neq s = tst 
 
 \begin{defi}
 	\typedlabel{defi:twisted-expression}
-	Let $k \in \nn$ and $s_{i} \in S$ for all $1 \leq i \leq k$. Then an expression $e \ul s_1 \ldots \ul s_k$, or just $\ul s_1 \ldots \ul s_k$, is called \defword{$\theta$- twisted expression}. If $\theta$ is clear from the context, we omit $\theta$ and call it \defword{twisted expression}. A twisted expression is called \defword{reduced twisted expression}, if there is no $k' < k$ with $\ul s'_1 \ldots \ul s'_{k'} = \ul s_1 \ldots \ul s_k$.
+	Let $k \in \nn$ and $s_{i} \in S$ for all $1 \leq i \leq k$. Then an expression $e \ul s_1 \ldots \ul s_k$, or just $\ul s_1 \ldots \ul s_k$, is called \defword{$\theta$-twisted expression}. If $\theta$ is clear from the context, we omit $\theta$ and call it \defword{twisted expression}. A twisted expression is called \defword{reduced twisted expression}, if there is no $k' < k$ with $\ul s'_1 \ldots \ul s'_{k'} = \ul s_1 \ldots \ul s_k$.
 \end{defi}
 
 \begin{lemm}
@@ -147,7 +147,7 @@ In the same way, we can use regular expressions to define the length of an eleme
 	The Bruhat ordering, restricted to the set of twisted involutions $\ti{\theta}$, is a graded poset with $\rho$ as rank function. We denote this poset by $\Br(\ti{\theta})$.
 \end{lemm}
 
-We now establish many properties from ordinary Coxeter groups for twisted expressions and $\Br(\ti{\theta})$. As seen in \ref{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions} there is a Coxeter system $(W',S')$ and an Coxeter system automorphism $\theta$ with $\Br(W) \cong \Br(\ti{\theta}(W'))$. So the hope, that many properties can be transfered, is eligible.
+We now establish many properties from ordinary Coxeter groups for twisted expressions and $\Br(\ti{\theta})$. As seen in \ref{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions} there is a Coxeter system $(W',S')$ and an Coxeter system automorphism $\theta$ with $\Br(W) \cong \Br(\ti{\theta}(W'))$. So the hope that many properties can be transfered is eligible.
 
 \begin{lemm}
 	\typedlabel{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}

@@ -2,17 +2,17 @@
 \section{Posets}
 \label{sec:posets}
 
-Posets are sets $M$ with a partial order $\leq$. In particular, there are pairs $(a,b) \in M \times M$ of distinct elements such that neither $a \leq b$ nor $a \geq b$. The following definitions and examples define this mire precisely.
+Posets are sets $M$ with a partial order $\leq$. In particular, there are pairs $(a,b) \in M \times M$ of distinct elements such that neither $a \leq b$ nor $a \geq b$. The following definitions and examples define this more precisely.
 
 \begin{defi}
 	\typedlabel{defi:poset}
-	Let $M$ be a set. A binary relation $\leq$ is called a \defword{partial order} over $M$, if for all $a,b,c \in M$ it satisfies the conditions
+	Let $M$ be a set. A binary relation $\leq$ is called a \defword{partial order} over $M$ if for all $a,b,c \in M$ it satisfies the conditions
 	\begin{enumerate}
 		\item $a \leq a$ (\defword{reflexivity}),
 		\item $a \leq b \wedge b \leq a \Rightarrow a=b$ (\defword{antisymmetry}) and
 		\item $a \leq b \wedge b \leq c \Rightarrow a \leq c$ (\defword{transitivity}).
 	\end{enumerate}
-	In this case $(M,\leq)$ is called a \defword{poset}. If two elements $a \leq b \in M$ are immediate neighbors, i.e. there is no third element $c \in M$ with $a \leq c \leq b$ we say that $b$ \defword{covers} $a$.
+	In this case $(M,\leq)$ is called a \defword{poset}. If two elements $a \leq b \in M$ are immediate neighbors, i.e. there is no third element $c \in M$ with $a < c < b$ we say that $b$ \defword{covers} $a$.
 \end{defi}
 
 \begin{defi}
@@ -20,11 +20,11 @@ Posets are sets $M$ with a partial order $\leq$. In particular, there are pairs 
 \end{defi}
 
 \begin{defi}
-	A poset is called \defword{directed poset}, if for any two elements $a,b \in M$ there is an element $c \in M$ with $a \leq c$ and $b \leq c$. It is called \defword{bounded poset}, if it has a unique minimal and maximal element, denoted by $\hat 0$ and $\hat 1$.
+	A poset is called \defword{directed poset} if for any two elements $a,b \in M$ there is an element $c \in M$ with $a \leq c$ and $b \leq c$. It is called \defword{bounded poset} if it has a unique minimal and maximal element, denoted by $\hat 0$ and $\hat 1$.
 \end{defi}
 
 \begin{defi}
-	Let $(M,\leq)$ be a poset and $a,b \in M$. Then we call $\{ c \in M : a \leq c \leq b \}$ an \defword{interval} and denote it by $[a,b]_\leq$. The set $\{ c \in M : a < c < b \}$ is called an \defword{open interval} and is denoted by $(a,b)_\leq$. In both cases we can omit the $\leq$, if the relation is clear from context.
+	Let $(M,\leq)$ be a poset and $a,b \in M$. Then we call $\{ c \in M : a \leq c \leq b \}$ an \defword{interval} and denote it by $[a,b]_\leq$. The set $\{ c \in M : a < c < b \}$ is called an \defword{open interval} and is denoted by $(a,b)_\leq$. In both cases we can omit the $\leq$-index if the relation is clear from context.
 \end{defi}
 
 \begin{defi}
@@ -38,14 +38,12 @@ Posets are sets $M$ with a partial order $\leq$. In particular, there are pairs 
 	\begin{figure}[ht]
 		\centering
 		\input{resources/tikz/poset-xyz-subsets.tex}
-		\caption{Hasse diagram of the set of all subsets of $\{x,y,z\}$ order by the subset relation}
+		\caption{Hasse diagram of the set of all subsets of $\{x,y,z\}$ ordered by the subset relation}
 		\label{fig:poset-xyz-subsets}
 	\end{figure}
 \end{exam}
 
 \begin{defi}
 	\typedlabel{defi:direct-product-of-posets}
-	Let $(M_i, \leq_i), i = 1,\ldots,n$ be a finite set of posets. We call the poset
-	$$ (M_1 \times \ldots \times M_n,\leq) \textrm{ with } (a_1,\ldots,a_n) \leq (b_1,\ldots,b_n) \iff a_i \leq_i b_i \textrm{ for } i=1,\ldots,n $$
-	a \defword{direct product of posets} and denote it by $(M_n, \leq_n) \times \ldots \times (M_n, \leq_n)$.
+	Let $(M_i, \leq_i), i = 1,\ldots,n$ be a finite set of posets. We call the poset $(M_1 \times \ldots \times M_n,\leq)$ with $(a_1,\ldots,a_n) \leq (b_1,\ldots,b_n)$ iff $a_i \leq_i b_i \textrm{ for } i=1,\ldots,n$ a \defword{direct product of posets} and denote it by $(M_1, \leq_1) \times \ldots \times (M_n, \leq_n)$.
 \end{defi}

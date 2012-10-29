@@ -6,7 +6,7 @@ We now investigate ways to partially order the elements of a Coxeter group. Futh
 
 \begin{defi}
 	\typedlabel{defi:bruhat-ordering}
-	Let $(W,S)$ be a Coxeter system and $T = \cup_{w \in W} wSw^{-1}$ the set of all reflections in $W$. We write $w' \to w$ if there is a $t \in T$ with $w't = w$ and $l(w') < l(w)$. If there is a sequence $w' = w_0 \to w_1 \to \ldots \to w_m = w$ we say $w' < w$. The resulting relation $w' \leq w$ is called \defword{Bruhat ordering}, denoted by $\Br(W)$.
+	Let $(W,S)$ be a Coxeter system and $T = \cup_{w \in W} wSw^{-1}$ the set of all reflections in $W$. We write $w' \to w$ if there is a $t \in T$ with $w't = w$ and $l(w') < l(w)$. If there is a sequence $w' = w_0 \to w_1 \to \ldots \to w_m = w$, we say $w' < w$. The resulting relation $w' \leq w$ is called \defword{Bruhat ordering}, denoted by $\Br(W)$.
 \end{defi}
 
 \begin{lemm}
@@ -19,7 +19,7 @@ We now investigate ways to partially order the elements of a Coxeter group. Futh
 	\end{proof}
 \end{lemm}
 
-What we really want is the Bruhat ordering to be graded with the length function as rank function. By definition we already have $v < w$ iff $l(v) < l(w)$, but its not that obvious that two immediately adjacent elements differ in length by exactly 1. Beforehand let us just mention two other partial orderings, where this property is obvious by definition:
+We now show, that $Br(W)$ is graded. By definition we already have $v < w$ iff $l(v) < l(w)$, but its not that obvious that two immediately adjacent elements differ in length by exactly 1. Beforehand let us just mention two other partial orderings that are graded by definition:
 
 \begin{defi}
 	Let $(W,S)$ be a Coxeter system. The ordering $\leq_R$ defined by $u \leq_R w$ iff $uv = w$ for some $u \in W$ with $l(u) + l(v) = l(w)$ is called the \defword{right weak ordering}. The left-sided version $u \leq_L w$ iff $vu = w$ is called the \defword{left weak ordering}.
@@ -33,19 +33,17 @@ To ensure the Bruhat ordering is graded as well, we need another characterizatio
 	Let $(W,S)$ be a Coxeter system, $u,w \in W$ with $u \leq w$ and $s \in S$. Then $us \leq w$ or $us \leq ws$ or both.
 
 	\begin{proof}
-		We can reduce the proof to the case $u \to w$, i.e. $ut = w$ for a $t \in T$ with $l(v) < l(u)$. Let $s = t$. Then $us \leq w$ and we are done. In case $s \neq t$ there are two alternatives for the lengths. We can have $l(us) = l(u) - 1$ which would mean $us \to u \to w$, so $us \leq w$.
-
-		Assume $l(us) = l(u) + 1$. For the reflection $t' = sts$ we get $(us)t' = ussts = uts = ws$. So we have $us \leq ws$ iff $l(us) < l(ws)$. Suppose this is not the case. Since we have assumed $l(us) = l(u) + 1$ any reduced expression $u = s_1 \cdots s_r$ for $u$ yields a reduced expression $us = s_1 \cdots s_r s$ for $us$. With the \ref{theo:strong-exchange-condition} we can obtain $ws = ust'$ from $us$ by omitting one factor. This omitted factor cannot be $s$ since $s \neq t$. This means $ws = s_1 \cdots \hat s_i \cdots s_r s$ and so $ws = s_1 \cdots \hat s_i \cdots s_r$, contradicting to our assumption $l(u) < l(w)$.
+		We can reduce the proof to the case $u \to w$, i.e. $ut = w$ for a $t \in T$ with $l(v) < l(u)$. Let $s = t$. Then $us \leq w$ and we are done. In case $s \neq t$ there are two alternatives for the lengths. We can have $l(us) = l(u) - 1$ which would mean $us \to u \to w$, so $us \leq w$. So assume $l(us) = l(u) + 1$. For the reflection $t' = sts$ we get $(us)t' = ussts = uts = ws$. So we have $us \leq ws$ iff $l(us) < l(ws)$. Suppose this is not the case. Since we have assumed $l(us) = l(u) + 1$ any reduced expression $u = s_1 \cdots s_r$ for $u$ yields a reduced expression $us = s_1 \cdots s_r s$ for $us$. With the \ref{theo:strong-exchange-condition} we can obtain $ws = ust'$ from $us$ by omitting one factor. This omitted factor cannot be $s$ since $s \neq t$. This means $ws = s_1 \cdots \hat s_i \cdots s_r s$ and so $ws = s_1 \cdots \hat s_i \cdots s_r$, contradicting to our assumption $l(u) < l(w)$.
 	\end{proof}
 \end{prop}
 
 \begin{theo}[Subword property]
 	\namedlabel{theo:bruhat-subexpression-characterization}
 	\theocite{Theorem 5.10}{humphreys:coxeter}
-	Let $(W,S)$ be a Coxeter system and $w \in W$ with a fixed, but arbitrary, reduced expression $w = s_1 \cdots s_r$ and $s_i \in S$. Then $u \leq w$ (in the Bruhat ordering) iff $u$ can be obtained as a subexpression of this reduced expression.
+	Let $(W,S)$ be a Coxeter system and $w \in W$ with a fixed, but arbitrary, reduced expression $w = s_1 \cdots s_r$, $s_i \in S$. Then $u \leq w$ (in the Bruhat ordering) iff $u$ can be obtained as a subexpression of this reduced expression.
 
 	\begin{proof}
-		First we show, that any $w' < w$ occurs as a subexpression. For that we start with the case $w' \to w$, say $w't = w$. We have $l(w') < l(w)$ and hence by \ref{theo:strong-exchange-condition} we get
+		First we show that any $w' < w$ occurs as a subexpression. For that we start with the case $w' \to w$, say $w't = w$. We have $l(w') < l(w)$ and hence by \ref{theo:strong-exchange-condition} we get
 		$$ w' = w'tt = wt = s_1 \cdots \hat s_i \cdots s_r $$
 		for some $i$. This step can be iterated. In return, suppose we have a subexpression $w' = s_{i_1} \cdots s_{i_q}$. We induce on $r = l(w)$. For $r = 0$ we have $w = e$, hence $w' = e$, too and so $w' \leq w$. Now suppose $r > 0$. If $i_q < r$, then $s_{i_1} \cdots s_{i_q}$ is a subexpression of $w s_r = s_1 \cdots s_{r-1}$, too. Since $l(w s_r) = r-1 < r$, we can conclude
 		$$ s_{i_1} \cdots s_{i_q} \leq s_1 \cdots s_{r-1} = w s_r < w $$
@@ -62,7 +60,7 @@ To ensure the Bruhat ordering is graded as well, we need another characterizatio
 	Let $u,w \in W$. Then the interval $[u,w]$ in the Bruhat order $\Br(W)$ is finite.
 
 	\begin{proof}
-		We have $[u,w] \subseteq [e,w]$. All elements $v \in [e,w]$ can be obtained as subexpressions of one fixed reduced expression for $w$. Let $s_1 \ldots s_k = w$ be such an reduced expression. Then there are at most $2^k$ many subexpressions, hence $[u,w]$ is finite.
+		We have $[u,w] \subseteq [e,w]$. All elements $v \in [e,w]$ can be obtained as subexpressions of one fixed reduced expression for $w$. Let $s_1 \ldots s_k = w$ be such a reduced expression. Then there are at most $2^k$ many subexpressions, hence $[u,w]$ is finite.
 	\end{proof}
 \end{coro}
 
@@ -84,10 +82,10 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 	Let $(W,S)$ be a Coxeter system and $u < w$. Then there are elements $w_0,\ldots,w_m \in W$ such that $u = w_0 < w_1 < \ldots < w_m = w$ with $l(w_i) = l(w_{i-1}) + 1$ for $1 \leq i \leq m$.
 
 	\begin{proof}
-		We induce on $r = l(u) + l(w)$. In case $r = 1$ we have $u = e$ and $w = s$ for an $s \in S$ and are done. Conversely suppose $r > 1$. Then there is a reduced expression $w = s_1 \cdots s_r$ for $w$. Lets fix this expression. Then $l(w s_r) < l(w)$. Thanks to \ref{theo:bruhat-subexpression-characterization} there must be a subexpression of $w$ with $u = s_{i_1} \cdots s_{i_q}$ for some $i_1 < \ldots < i_q$. We distinguish between two cases:
+		We induce on $r = l(u) + l(w)$. In case $r = 1$ we have $u = e$ and $w = s$ for a $s \in S$ and are done. Conversely suppose $r > 1$. Then there is a reduced expression $w = s_1 \cdots s_r$ for $w$. Let us fix this expression. Then $l(w s_r) < l(w)$. Thanks to \ref{theo:bruhat-subexpression-characterization} there must be a subexpression of $w$ with $u = s_{i_1} \cdots s_{i_q}$ for some $i_1 < \ldots < i_q$. We distinguish between two cases:
 
 		\begin{description}
-			\item[$u < us$:] If $i_q = r$, then $us = s_{i_1} \cdots s_{i_q} s = s_{i_1} \cdots s_{i_{q-1}}$ which is also a subexpression of $ws$. This yields $u < us \leq ws < w$. Since $l(ws) < r$ there is, by induction, a sequence of the desired form. The last step from $ws$ to $w$ also differs in length by exactly 1, so we are done. If $i_q < r$ then $u$ is itself already a subexpression of $ws$ and we can again find a sequence from $u$ to $ws$ strictly ascending length by 1 in each step and have one last step from $ws$ to $w$ also increasing length by 1.
+			\item[$u < us$:] If $i_q = r$, then $us = s_{i_1} \cdots s_{i_q} s = s_{i_1} \cdots s_{i_{q-1}}$ which is also a subexpression of $ws$. This yields $u < us \leq ws < w$. Since $l(ws) < r$ there is, by induction, a sequence of the desired form. The last step from $ws$ to $w$ also differs in length by exactly 1, so we are done. If $i_q < r$ then $u$ is itself already a subexpression of $ws$ and we can again find a sequence from $u$ to $ws$ strictly ascending in length by 1 in each step and have one last step from $ws$ to $w$ also increasing in length by 1.
 			\item[$us < u$:] Then by induction we can find a sequence from $us$ to $w$, say $us = w_0 < \ldots < w_m = w$, where the lengths of neighbored elements differ by exactly 1. Since $w_0 s = u > us = w_0$ and $w_m s = ws < w = w_m$ there must be a smallest index $i \geq 1$, such that $w_i s < w_i$, which we choose. Suppose $w_i \neq w_{i-1} s$. We have $w_{i-1} < w_{i-1}s \neq w_i$ and due to \ref{lemm:dont-know} we get $w_i < w_i s$. This contradicts to the minimality of $i$. So $w_i = w_{i-1} s$. For all $1 \leq j < i$ we have $w_j \neq w_{j-1} s$, because of $w_j < w_j s$. Again we apply \ref{lemm:dont-know} to receive $w_{j-1} s < w_j s$. Alltogether we can construct a sequence
 			$$ u = w_0 s < w_1 s < \ldots < w_{i-1} s = w_i < w_{i+1} < \ldots w_m = w, $$
 			which matches our assumption. \qedhere
@@ -116,7 +114,7 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 	\begin{proof}
 		We use the alternative subexpression characterization of the Bruhat ordering from \ref{theo:bruhat-subexpression-characterization}.
 		\begin{enumerate}
-			\item Since $s \in D_R(w)$ there exists a reduced expression $w = s_1 \cdots s_r$ with $s_r = s$. Due to $v \leq w$ we can obtain $v$ as a subexpression $v = s_{i_1} \cdots s_{i_q}$ from $w$. If $i_q = r$ then $vs = s_{i_1} \cdots s_{i_q} s = s_{i_1} \cdots s_{i_{q - 1}}$ is also a subexpression of $w$. Else, if $i_q \neq r$ then $v$ is a subexpression of $ws = s_1 \cdots s_{r-1}$ and so $vs$ is again a subexpression of $w = s_1 \cdots s_{r-1} s$. In both cases we get $vs \leq w$.
+			\item Since $s \in D_R(w)$ there exists a reduced expression $w = s_1 \cdots s_r$ with $s_r = s$. Due to $v \leq w$ we can obtain $v$ as a subexpression $v = s_{i_1} \cdots s_{i_q}$ from $w$. If $i_q = r$ then $vs = s_{i_1} \cdots s_{i_q} s = s_{i_1} \cdots s_{i_{q - 1}}$ is also a subexpression of $w$. Else if $i_q \neq r$, then $v$ is a subexpression of $ws = s_1 \cdots s_{r-1}$ and so $vs$ is again a subexpression of $w = s_1 \cdots s_{r-1} s$. In both cases we get $vs \leq w$.
 			\item If we additionally assume $s \in D_R(v)$ then we can always find a reduced expression $w = s_1 \cdots s_r$ with $s_r = s$ having $u = s_{i_1} \cdots s_{i_q}$ as subexpression with $s_{i_q} = s$. This yields $vs = s_{i_1} \cdots s_{i_{q-1}} \leq s_1 \cdots s_{r-1} = ws$. \qedhere
 		\end{enumerate}
 	\end{proof}

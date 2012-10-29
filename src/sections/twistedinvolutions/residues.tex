@@ -2,7 +2,7 @@
 \section{Residues}
 \label{sec:twisted-involutions-residues}
 
-Residues in $Wk(\theta)$ are subsets of $\theta$-twisted involutions, that can be "reached" from a fixed starting point by using just certain $\ul s \in \ul S$ as the following definition specifies.
+Residues in $Wk(\theta)$ are subsets of $\theta$-twisted involutions that can be "reached" from a fixed starting point by using just certain $\ul s \in \ul S$ as the following definition specifies.
 
 \begin{defi}
 	\typedlabel{defi:residue}
@@ -40,7 +40,7 @@ Residues in $Wk(\theta)$ are subsets of $\theta$-twisted involutions, that can b
 	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators. Then there exists a unique element $w_0 \in wC_I$ with $w_0 \preceq w_0 \ul s$ for all $s \in I$.
 
 	\begin{proof}
-		Suppose there is no such element. Then for each $w \in wC_I$ we can find a $s \in I$ with $w' = w \ul s \preceq w$ and $e' \in wC_I$. By repetition of \ref{prop:deletion-property-for-twisted-expressions} we get, that $e \in wC_I$, but $e$ has the property, which we assumed, that no element in $wC_I$ has. Hence there must be at least one such element. Now suppose there are two distinct elements $u,v$ with the desired property. Note that this means, that $u$ and $w$ have no reduced twisted expression ending with some $\ul s \in I$. Let $v$ have a reduced twisted expression $v = \ul s_1 \ldots \ul s_k$. Since $u$ and $v$ are both in $wC_I$ there must be a twisted $v$-expression for $u$
+		Suppose there is no such element. Then for each $w \in wC_I$ we can find a $s \in I$ with $w' = w \ul s \preceq w$ and $e' \in wC_I$. By repetition of \ref{prop:deletion-property-for-twisted-expressions} we get $e \in wC_I$, but $e$ has the property, which we assumed that no element in $wC_I$ has. Hence there must be at least one such element. Now suppose there are two distinct elements $u,v$ with the desired property. Note that this means, that $u$ and $w$ have no reduced twisted expression ending with some $\ul s \in I$. Let $v$ have a reduced twisted expression $v = \ul s_1 \ldots \ul s_k$. Since $u$ and $v$ are both in $wC_I$ there must be a twisted $v$-expression for $u$
 		$$ u = v \ul s_{k+1} \ldots \ul s_{k+l} = \ul s_1 \ldots \ul s_{k+l} $$
 		with $s_n \in I$ for $k+1 \leq n \leq k+l$. This twisted expression cannot be reduced, since it ends with $\ul s_{k+l} \in I$. Then \ref{prop:deletion-property-for-twisted-expressions} yields that this twisted expression contains a reduced twisted subexpression for $u$. It cannot end with $\ul s_n$ for $k+1 \leq n \leq k+l$. Hence, it is a twisted subexpression of $\ul s_1 \ldots \ul s_k = v$, too. So $u \leq v$ by \ref{theo:bruhat-subexpression-characterization}. Because of symmetry we have $v \leq u$ and so $u = v$, contradicting to our assumption $u \neq v$.
 	\end{proof}
@@ -142,12 +142,12 @@ Again, this corollary can be strengthen by insisting on an exclusive or with the
 	Let $s,t \in S$ be two distinct generators and $w \in S$ with $w = min(w,\{s,t\})$. Suppose $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$. Then $wC_{\{s,t\}}$ is either non-, maximal-, bottom-, top- or diagonal-multiplicative. In particular the twisted conjugations and mulitplications are distributed axisymmetrically or pointsymmetrically.
 
 	\begin{proof}
-		If $u$ covers $w$, then there are only two edges and the assumption holds. So suppose $wC_{\{s,t\}}$ contains at least four edges. Due to \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} the actions by multiplication can only occure next to $w$ and $v$. Hence there are $2^4 = 16$ configurations possible. \ref{prop:geodesics-have-same-count-of-multiplicative-steps} wipes out ten out of the 16 configurations. The remaining are those from Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residue}.
+		If $u$ covers $w$, then there are only two edges and the assumption holds. So suppose $wC_{\{s,t\}}$ contains at least four edges. Due to \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} the actions by multiplication can only occur next to $w$ and $v$. Hence there are $2^4 = 16$ configurations possible. \ref{prop:geodesics-have-same-count-of-multiplicative-steps} wipes out ten out of the 16 configurations. The remaining are those from Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residue}.
 	\end{proof}
 \end{lemm}
 
 \begin{exam}
-	In Figure \ref{fig:a4_s1s3-and-a4_s2s4} we see two Hasse diagrams of $Wk(A_4, \id)$. The left one only contains edges with labels $s_1,s_2$, the middle one only edges with labels $s_1,s_3$ and the right one only edges with labels $s_1,s_4$.
+	In Figure \ref{fig:a4_s1s3-and-a4_s2s4} we see three Hasse diagrams of $Wk(A_4, \id)$. The left one only contains edges with labels $s_1,s_2$, the middle one only edges with labels $s_1,s_3$ and the right one only edges with labels $s_1,s_4$.
 	\begin{figure}[ht]
 		\centering
 		\input{resources/tikz/a4_s1s2}

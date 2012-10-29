@@ -2,7 +2,7 @@
 \section{Finite Coxeter groups}
 \label{sec:coxeter-groups-finite}
 
-Coxeter groups can be finite and infinite. A simple example for the former category is the following. Let $S = \{ s \}$. Due to definition it must be $s^2 = e$. So $W$ is isomorph to $\zz_2$ and finite. An example for an infinite Coxeter group can be obtained from $S = \{s,t\}$ with $s^2=t^2=e$ and $(st)^\infty = e$ (so we have no relation between $s$ and $t$). Obviously the element $st$ has infinite order forcing $W$ to be infinite. But there are infinite Coxeter groups without an $\infty$-relation between two generators, as well. An example for this is $W$ obtained from $S=\{s_1,s_2,s_3\}$ with $s_1^2=s_2^2=s_3^2=(s_1 s_2)^3=(s_2 s_3)^3=(s_3 s_1)^3=e$. But how can one decide weather $W$ is finite or not?
+Coxeter groups can be finite and infinite. A simple example for the former category is the following. Let $S = \{ s \}$. Due to definition it must be $s^2 = e$. So $W$ is isomorph to $\zz_2$ and finite. An example for an infinite Coxeter group can be obtained from $S = \{s,t\}$ with $s^2=t^2=e$ and $(st)^\infty = e$ (so we have no relation between $s$ and $t$). Obviously the element $st$ has infinite order forcing $W$ to be infinite. But there are infinite Coxeter groups without a $\infty$-relation, as well. An example for this is $W$ obtained from $S=\{s_1,s_2,s_3\}$ with $s_1^2=s_2^2=s_3^2=(s_1 s_2)^3=(s_2 s_3)^3=(s_3 s_1)^3=e$. But how can one decide whether $W$ is finite or not?
 
 To provide a general answer to this question we fallback to a certain class of Coxeter groups, the irreducible ones.
 
@@ -19,7 +19,7 @@ If a Coxeter system is reducible, then its graph has more than one component and
 	Let $(W,S)$ be a reducible Coxeter system. Then there exists a partition of $S$ into $I,J$ with $(s_i s_j)^2 = e$ whenever $s_i \in I, s_j \in J$ and $W$ is isomorph to the direct product of the two parabolic subgroups $W_I$ and $W_J$.
 \end{prop}
 
-This proposition tells us, that an arbitray Coxeter system is finite iff its irreducible parabolic subgroups are finite. Therefore we can indeed fallback to irreducible Coxeter systems without loss of generality. If we could categorize all irreducible finite Coxeter systems, we could categorize all finite Coxeter systems. This is done by the following theorem:
+This proposition tells us, that an arbitray Coxeter system is finite iff its irreducible parabolic subgroups are finite. Therefore we can indeed fallback to irreducible Coxeter systems without loss of generality. If we could categorize all irreducible finite Coxeter systems, then we could categorize all finite Coxeter systems. This is done by the following theorem:
 
 \begin{figure}
 	\centering
@@ -96,4 +96,4 @@ This proposition tells us, that an arbitray Coxeter system is finite iff its irr
 	The irreducible finite Coxeter systems are exactly the ones in Figure~\ref{fig:finite-coxeter-systems}.
 \end{theo}
 
-This allows us to decide with ease, if a given Coxeter system is finite. Take its irreducible parabolic subgroups and check, if each is of type $A_n$, $B_n$, $D_n$, $E_6$, $E_7$, $E_8$, $F_4$, $H_3$, $H_4$ or $I_2(m)$.
+This allows us to decide with ease whether a given Coxeter system is finite. Take its irreducible parabolic subgroups and check if each is of type $A_n$, $B_n$, $D_n$, $E_6$, $E_7$, $E_8$, $F_4$, $H_3$, $H_4$ or $I_2(m)$.
