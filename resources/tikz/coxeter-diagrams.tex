@@ -318,14 +318,14 @@
 \newcommand{\comphyperfiveone}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
     \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}, {(3,0)/d}, {(4,0)/e}}
         \node[vertex] (\name) at \pos {};
-    \foreach \source/ \dest /\weight in {a/b/4,b/c/,c/d/,d/e/5}
+    \foreach \source/ \dest /\weight in {a/b/,b/c/,c/d/,d/e/5}
         \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
 \end{tikzpicture}}
 
 \newcommand{\comphyperfivetwo}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
     \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}, {(3,0)/d}, {(4,0)/e}}
         \node[vertex] (\name) at \pos {};
-    \foreach \source/ \dest /\weight in {a/b/,b/c/,c/d/,d/e/5}
+    \foreach \source/ \dest /\weight in {a/b/4,b/c/,c/d/,d/e/5}
         \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
 \end{tikzpicture}}
 
