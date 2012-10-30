@@ -90,12 +90,12 @@
         \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
 \end{tikzpicture}}
 
-\newcommand{\Itwom}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+\newcommand{\Itwop}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
     % First we draw the vertices
     \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}}
         \node[vertex] (\name) at \pos {}; %{$\name$};
     % Connect vertices with edges and draw weights
-    \foreach \source/ \dest /\weight in {a/b/m}
+    \foreach \source/ \dest /\weight in {a/b/p}
         \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
 \end{tikzpicture}}
 
@@ -224,6 +224,27 @@
         \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
 \end{tikzpicture}}
 
+\newcommand{\comphyperthreeone}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/p,b/c/}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperthreetwo}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/p,b/c/q}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);  
+\end{tikzpicture}}
+
+\newcommand{\comphyperthreethree}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(0.5,1)/c}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/r,b/c/q,c/a/p}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
 \newcommand{\comphyperfourlineone}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
     \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,0)/c}, {(3,0)/d}}
         \node[vertex] (\name) at \pos {};
@@ -249,6 +270,13 @@
     \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(2,-0.5)/c}, {(2,0.5)/d}}
         \node[vertex] (\name) at \pos {};
     \foreach \source/ \dest /\weight in {a/b/5,b/c/,b/d/}
+        \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
+\end{tikzpicture}}
+
+\newcommand{\comphyperfoursquare}{\begin{tikzpicture}[scale=\cgscale, auto, swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(1,0)/b}, {(1,1)/c}, {(0,1)/d}}
+        \node[vertex] (\name) at \pos {};
+    \foreach \source/ \dest /\weight in {a/b/q,b/c/,c/d/p,d/a/}
         \path[edge] (\source) -- node[weight] {$\weight$} (\dest);
 \end{tikzpicture}}
 

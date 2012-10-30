@@ -1,10 +1,19 @@
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Hasse diagram of the set of all subsets of $\{x,y,z\}$ order by the subset relation}}{5}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces All types of irreducible finite Coxeter systems}}{8}{figure.2.2}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Hasse diagram of $Wk(A_4, \id )$}}{17}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Impossible concave structure of a rank-2-residues}}{20}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Classification of rank-2-residues}}{21}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Hasse diagrams of $Wk(A_4, \id )$ after removing $s_3,s_4$ edges in the left, $s_2,s_4$ edges in the middle and $s_2,s_3$ edges in the right diagram}}{36}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Optimization of \ref {algo:twoa1}}}{37}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Element comparisons needed in TWOA1/2/3 with $\theta = \id $}}{37}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Runtime for TWOA1/2/3 in seconds with $W = A_n$, $\theta = \id $}}{38}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Runtime for TWOA1/2/3 in seconds with $W \not =A_n$, $\theta = \id $}}{39}{figure.3.8}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Hasse diagram of the set of all subsets of $\{x,y,z\}$ ordered by the subset relation}}{2}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces All types of irreducible finite Coxeter systems}}{6}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces All types of affine Coxeter systems}}{7}{figure.1.3}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces All types of compact hyperbolic Coxeter systems of rank 3}}{8}{figure.1.4}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces All compact hyperbolic Coxeter systems of rank 4}}{8}{figure.1.5}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces All compact hyperbolic Coxeter systems of rank 5}}{8}{figure.1.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Hasse diagram of $Wk(A_4, \id )$}}{18}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Impossible concave structure of a rank-2-residues}}{22}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Classification of rank-2-residues}}{23}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Hasse diagrams of $Wk(A_4, \id )$ after removing $s_3,s_4$ edges in the left, $s_2,s_4$ edges in the middle and $s_2,s_3$ edges in the right diagram}}{24}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Optimization of \ref {algo:twoa1}}}{28}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Element comparisons needed for calculating $Wk(\id )$}}{33}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Runtime for calculating $Wk(\id )$}}{34}{figure.2.7}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

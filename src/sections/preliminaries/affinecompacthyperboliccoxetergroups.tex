@@ -9,15 +9,10 @@ Two other important classes of Coxeter systems are the so-called affine and comp
 \end{defi}
 
 \begin{defi}
-	A irreducible Coxeter systems $(W,S)$ is called \defword{compact hyperbolic} if one of the following holds:
-
-	\begin{enumerate}
-		\item $|S| = 3$ and $(W,S)$ is neither finite nor affine.
-		\item $|S| \geq 4$ and $(W,S)$ is one of those from Figure~\ref{fig:compact-hyperbolic-coxeter-systems}.
-	\end{enumerate}
+	A irreducible Coxeter systems $(W,S)$ is called \defword{compact hyperbolic} if it is one of those from the Figures~\ref{fig:compact-hyperbolic-coxeter-systems-3},~\ref{fig:compact-hyperbolic-coxeter-systems-4} or \ref{fig:compact-hyperbolic-coxeter-systems-5}. In this paper the compact hyperbolic Coxeter systems are denoted with $X$, but note that this is not common in literature.
 \end{defi}
 
-For a more informative introduction of affine and compact hyperbolic Coxeter systems refer to \cite[Section 2.5, 6.7 -- 6.9]{humphreys:coxeter}. We use this approach, since we are only interested in them because of the following corollary and lemma.
+For a less arbitrarily introduction of affine and compact hyperbolic Coxeter systems refer to \cite[Section 2.5, 6.7 -- 6.9]{humphreys:coxeter}. We use this approach, since we are only interested in them because of the following corollary and lemma.
 
 \begin{coro}
 	\typedlabel{coro:parabolic-subgroup-finite}
@@ -31,12 +26,13 @@ For a more informative introduction of affine and compact hyperbolic Coxeter sys
 \begin{lemm}
 	The affine and compact hyperbolic Coxeter systems $(W,S)$ are precisely the ones, satisfying the following two conditions:
 	\begin{enumerate}
+		\item $(W,S)$ is infinite.
 		\item $(W,S)$ is irreducible.
 		\item For each $S' \subsetneq S$ the parabolic subgroup $W_{S'}$ is finite.
 	\end{enumerate}
 
 	\begin{proof}
-		Obviously they are irreducible and by \ref{coro:parabolic-subgroup-finite} each proper parabolic subgroup is finite. For a proof that they are the only ones satisfying this see \cite{humphreys:coxeter}, \cite{chein:hyerbolic}.
+		Obviously they are irreducible, by \ref{theo:irreducible-finit-coxeter-systems} they are infinite and by \ref{coro:parabolic-subgroup-finite} each proper parabolic subgroup is finite. For a proof that they are the only ones satisfying this see \cite{humphreys:coxeter}, \cite{chein:hyerbolic}.
 	\end{proof}
 \end{lemm}
 
@@ -59,7 +55,7 @@ For a more informative introduction of affine and compact hyperbolic Coxeter sys
 	\\
 	\vspace*{\cgpadv}
 	\\
-	$\tilde A_n (n \geq 2)$
+	$\tilde A_n$, {\tiny $n \geq 2$}
 	&
 	\tildeAn
 	&
@@ -83,7 +79,7 @@ For a more informative introduction of affine and compact hyperbolic Coxeter sys
 	\\
 	\vspace*{\cgpadv}
 	\\
-	$\tilde B_n (n \geq 3)$
+	$\tilde B_n$, {\tiny $n \geq 3$}
 	&
 	\tildeBn
 	&
@@ -95,7 +91,7 @@ For a more informative introduction of affine and compact hyperbolic Coxeter sys
 	\\
 	\vspace*{\cgpadv}
 	\\
-	$\tilde C_n (n \geq 3)$
+	$\tilde C_n$, {\tiny $n \geq 3$}
 	&
 	\tildeCn
 	&
@@ -107,7 +103,7 @@ For a more informative introduction of affine and compact hyperbolic Coxeter sys
 	\\
 	\vspace*{\cgpadv}
 	\\
-	$\tilde D_n (n \geq 4)$
+	$\tilde D_n$, {\tiny $n \geq 4$}
 	&
 	\tildeDn
 	\end{tabular}
@@ -122,12 +118,42 @@ For a more informative introduction of affine and compact hyperbolic Coxeter sys
 	\tikzstyle{weight} = [font=\small]
 
 	\begin{tabular}{MMcMM}
-		\comphyperfourlineone & \comphyperfoursquareone & \comphyperfiveone \\
-		\comphyperfourlinetwo & \comphyperfoursquaretwo & \comphyperfivetwo \\
-		\comphyperfourlinethree & \comphyperfoursquarethree & \comphyperfivethree \\
-		\comphyperfourlinefour & \comphyperfoursquarefour & \comphyperfivefour \\
-		& \comphyperfoursquarefive & \comphyperfivefive \\
+		$X_3(p)$, {\tiny $7 \leq p < \infty$} & \comphyperthreeone \\ \vspace*{\cgpadv} \\
+		$X_3(p,q)$, {\tiny $4 \leq p < \infty$, $5 \leq q < \infty$} & \comphyperthreetwo \\ \vspace*{\cgpadv} \\
+		$X_3(p,q,r)$, {\tiny $3 \leq p,q < \infty$, $4 \leq r < \infty$} & \comphyperthreethree
 	\end{tabular}
-	\caption{All compact hyperbolic Coxeter systems with rank $\geq 4$}
-	\label{fig:compact-hyperbolic-coxeter-systems}
+	\caption{All types of compact hyperbolic Coxeter systems of rank 3}
+	\label{fig:compact-hyperbolic-coxeter-systems-3}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\tikzstyle{vertex}=[draw,thick,circle,minimum size=2mm,inner sep=0pt]
+	\tikzstyle{edge} = [draw,thick,-]
+	\tikzstyle{weight} = [font=\small]
+
+	\begin{tabular}{MMcMM}
+		$X_4(1)$ & \comphyperfourlineone & \hspace*{\cgpadh} & $X_4(5)$ & \comphyperfoursquareone \\ \vspace*{\cgpadv} \\
+		$X_4(2)$ & \comphyperfourlinetwo & \hspace*{\cgpadh} & $X_4(6)$ & \comphyperfoursquaretwo \\ \vspace*{\cgpadv} \\
+		$X_4(3)$ & \comphyperfourlinethree & \hspace*{\cgpadh} & $X_4(7)$ & \comphyperfoursquarethree \\ \vspace*{\cgpadv} \\
+		$X_4(4)$ & \comphyperfourlinefour & \hspace*{\cgpadh} & $X_4(8)$ & \comphyperfoursquarefour \\ \vspace*{\cgpadv} \\
+		& & & $X_4(9)$ & \comphyperfoursquarefive
+	\end{tabular}
+	\caption{All compact hyperbolic Coxeter systems of rank 4}
+	\label{fig:compact-hyperbolic-coxeter-systems-4}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\tikzstyle{vertex}=[draw,thick,circle,minimum size=2mm,inner sep=0pt]
+	\tikzstyle{edge} = [draw,thick,-]
+	\tikzstyle{weight} = [font=\small]
+
+	\begin{tabular}{MMcMM}
+		$X_5(1)$ & \comphyperfiveone & \hspace*{\cgpadh} & $X_5(4)$ & \comphyperfivefour \\ \vspace*{\cgpadv} \\
+		$X_5(2)$ & \comphyperfivetwo & \hspace*{\cgpadh} & $X_5(5)$ & \comphyperfivefive \\ \vspace*{\cgpadv} \\
+		$X_5(3)$ & \comphyperfivethree
+	\end{tabular}
+	\caption{All compact hyperbolic Coxeter systems of rank 5}
+	\label{fig:compact-hyperbolic-coxeter-systems-5}
 \end{figure}
