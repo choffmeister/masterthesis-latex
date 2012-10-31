@@ -26,7 +26,7 @@
 
   \item bottom-multiplicative, \hyperpage{23}
   \item bounded poset, \hyperpage{1}
-  \item Bruhat ordering, \hyperpage{9}
+  \item Bruhat ordering, \hyperpage{7}
   \item building, \hyperpage{47}
   \item building flip, \hyperpage{49}
   \item building quasi-flip, \hyperpage{49}
@@ -37,7 +37,7 @@
   \item chambers, \hyperpage{45}
   \item closed, \hyperpage{46}
   \item codistance function, \hyperpage{48}
-  \item compact hyperbolic, \hyperpage{6}
+  \item compact hyperbolic, \hyperpage{7}
   \item connected, \hyperpage{46}, \hyperpage{48}
   \item convex, \hyperpage{48}
   \item coset chamber system, \hyperpage{45}
@@ -156,6 +156,6 @@
 
   \indexspace
 
-  \item word problem for groups, \hyperpage{26}
+  \item word problem for groups, \hyperpage{25}
 
 \end{theindex}

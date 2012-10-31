@@ -2,7 +2,7 @@
 \section{Residues}
 \label{sec:twisted-involutions-residues}
 
-Residues in $Wk(\theta)$ are subsets of $\theta$-twisted involutions that can be "reached" from a fixed starting point by using just certain $\ul s \in \ul S$ as the following definition specifies.
+Residues in $Wk(\theta)$ are subsets of $\theta$-twisted involutions that can be ``reached'' from a fixed starting point by using just certain $\ul s \in \ul S$ as the following definition specifies.
 
 \begin{defi}
 	\typedlabel{defi:residue}
@@ -48,14 +48,14 @@ Residues in $Wk(\theta)$ are subsets of $\theta$-twisted involutions that can be
 
 \begin{coro}
 	\typedlabel{coro:residues-have-unique-minimal-element}
-	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators and let $\rho_{min} := \min \{ \rho(v) : v \in wC_I \}$ be the minimal twisted length within the residue $wC_I$. Then there is a unique element $w_{min} \in wC_I$ with $\rho(w_{min}) = \rho_{min}$. We denote this element by $\min(w,I)$.
+	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators and let $k$ be the minimal twisted length within the residue $wC_I$. Then the element $w_0$ from \ref{prop:residues-have-unique-wk-theta-minimal-element} is the only element with twisted length $k$.
 
 	\begin{proof}
-		The minimal rank $\rho_{min}$ exists, since the image of $\rho$ is in $\nn_0$, which is well-ordered, and $wC_I \neq \emptyset$. Suppose we have an element $w_{min}$ with $\rho(w_{min}) = \rho_{min}$. This means, that in particular all $w_{min} \ul s$ with $s \in I$ must be of larger twisted length, i.e. $w_{min} \prec w_{min} \ul s$ for all $s \in I$. With \ref{prop:residues-have-unique-wk-theta-minimal-element} this element must be unique.
+		The minimal twisted length $k$ is well-defined, since the image of $\rho$ is in $\nn_0$, which is well-ordered, and $wC_I \neq \emptyset$. Suppose some element $v \neq w_0$ has twisted length $k$. Then there is a $s \in I$ with $s \in D_R(v)$ and hence $v \ul s \in wC_I$ with $\rho(v \ul s) < \rho(v) = k$. This contradicts to the minimality of $k$. Since at least one element has twisted length $k$ and only $w_0$ is left we are done.
 	\end{proof}
 \end{coro}
 
-We proceed with some properties of rank-2-residues. Our interest in these residues stems from the fact, that their properties are needed later in Section \ref{sec:twisted-involutions-algorithms} to construct an effective algorithm for calculating the twisted weak ordering, i.e. calculating the Hasse diagram of $Wk(W,\theta)$ for arbitrary Coxeter systems $(W,S)$ and Coxeter system automorphisms $\theta$.
+We proceed with some properties of rank-2-residues. Our interest in these residues stems from the fact that their properties are needed later in Section \ref{sec:twisted-involutions-algorithms} to construct an effective algorithm for calculating the twisted weak ordering, i.e. calculating the Hasse diagram of $Wk(W,\theta)$ for arbitrary Coxeter systems $(W,S)$ and Coxeter system automorphisms $\theta$.
 
 \begin{defi}
 	Let $s,t \in S$ be two distinct generators. We define:
@@ -103,7 +103,7 @@ The assertion that \ref{prop:rank-2-residues-are-convex} makes can be thought of
 	\end{proof}
 \end{prop}
 
-Note that this proposition could be strengthen by insisting on an exclusive or, since we cannot have both cases at the same time. By the proof of \ref{prop:no-triple-edges} we see that we cannot have $w \ul s \ul t = w$, since double edges are always twisted conjugations. Hence having $w \ul s \ul t \succ w \ul s \prec w \succ w \ul t$ would contradict to the convexity from \ref{prop:rank-2-residues-are-convex}. The next corollary ensures that multiplicative actions in $Wk(\theta)$ can only occur at the top or bottom end of rank-2-residues. 
+Note that this proposition could be strengthend by insisting on an exclusive or, since we cannot have both cases at the same time. By the proof of \ref{prop:no-triple-edges} we see that we cannot have $w \ul s \ul t = w$, since double edges are always twisted conjugations. Hence having $w \ul s \ul t \succ w \ul s \prec w \succ w \ul t$ would contradict to the convexity from \ref{prop:rank-2-residues-are-convex}. The next corollary ensures that multiplicative actions in $Wk(\theta)$ can only occur at the top or bottom end of rank-2-residues. 
 
 \begin{coro}
 	\typedlabel{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
@@ -114,7 +114,7 @@ Note that this proposition could be strengthen by insisting on an exclusive or, 
 	\end{proof}
 \end{coro}
 
-Again, this corollary can be strengthen by insisting on an exclusive or with the same arguments as before.
+Again, this corollary can be strengthend by insisting on an exclusive or with the same arguments as before.
 
 
 \begin{defi}
@@ -181,22 +181,9 @@ Again, this corollary can be strengthen by insisting on an exclusive or with the
 	Let $w \in S$, $s,t \in S$ be two distinct generators and $m = \ord(st) < \infty$. Then $|wC_{\{s,t\}}| \leq 2m$.
 
 	\begin{proof}
-		Let $w$ be the $Wk$-minimal element and $v$ be the $Wk$-maximal element in our residue. Due to \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residues} there are five different cases we have to consider:
-		\begin{description}
-			\item[Non-multiplicative:] We have $w (\ul s \ul t)^m = (ts)^m w (st)^m = w$.
-			\item[Maximal-multiplicative:] Due to $\theta(s)w = ws$ and $\theta(t)w = wt$ we have
-			$$ w (\ul s \ul t)^{m/2+1} = \theta(\hat t (st)^{m/2-1} \hat s) w (st)^{m/2+1} = w(st)^m = w. $$
-			(\todo \ Show that this situation only occurs for even $m$)
-			\item[Bottom-multiplicative:] Again we are in a case, where $\theta(s)w = ws$ and $\theta(t)w = wt$ hold. Hence we have
-			$$ w (\ul s \ul t)^{(m+1)/2} = \theta(\hat t (st)^{(m-1)/2} \hat s) w (st)^{(m+1)/2} = w(st)^m = w. $$
-			(\todo \ Show that this situation only occurs for odd $m$)
-			\item[Top-multiplicative:] Analogue to the previous case if we start from $u$ instead of $w$.
-			\item[Diagonal-multiplicative:] Suppose $m$ is even. Then we have
-			$$ w (\ul s \ul t)^m = \theta(\underbrace{ts \cdots st}_{m-1} \hat s \underbrace{ts \cdots st}_{m-1} \hat s) w (st)^m = \theta(\underbrace{ts \cdots s}_{m-2} \underbrace{s \cdots st}_{m-2}) w = \ldots = w. $$
-			If $m$ is odd, then we have the completely analogue situation
-			$$ w (\ul s \ul t)^m = \theta(\underbrace{ts \cdots ts}_{m-1} \hat t \underbrace{st \cdots st}_{m-1} \hat s) w (st)^m = \theta(\underbrace{ts \cdots t}_{m-2} \underbrace{t \cdots st}_{m-2}) w = \ldots = w. $$
-		\end{description}
-		So in all cases we have $w (\ul s \ul t)^k = w$ for a $k \leq \ord(st)$ and hence the residue can have at most $2 \cdot \ord(st)$ many distinct elements.
+		Without loss of generality let $w = \min(C,\{s,t\})$. Let $n$ be the smallest number (or $\infty$ if non such number exists) for that $w[\ul s \ul t]^{n} \succ w[\ul s \ul t]^{n+1}$. Then by the convexity from \ref{prop:rank-2-residues-are-convex} we have $|wC_{\{s,t\}}| = 2n$. If $n < m$, then we are done. In return assume $n \geq m$, i.e. $w \prec w \ul s \prec \ldots \prec w[\ul s \ul t]^{m}$. But $w[\ul s \ul t]^{m}$ ends with $stst \cdots$ ($m$-times) and hence by
+		$$ \underbrace{stst \cdots}_{m-\textrm{times}} = \underbrace{tsts \cdots}_{m-\textrm{times}} $$
+		we get $s,t \in D_R(w[\ul s \ul t]^{m})$. So by \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1} we have $w[\ul s \ul t]^{m} \succ w[\ul s \ul t]^{m+1}$, hence $n = m$ and so $|wC_{\{s,t\}}| = 2m$.
 	\end{proof}
 \end{lemm}
 

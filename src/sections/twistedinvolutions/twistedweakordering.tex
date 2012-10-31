@@ -62,7 +62,7 @@ By a diagram of a poset $Wk(\theta)$, we do not just mean the ordinary Hasse dia
 
 \begin{prop}
 	\typedlabel{prop:no-triple-edges}
-	Let $w \in W$ and $w \ul s \succ w$. Then $|\{ t \in S \setminus D_R(w) : w \ul t = w \ul s \}| \in \{1,2\}$.
+	Let $w \in W$ and $w \ul s \succ w$. Then $|\{ t \in S : w \ul t = w \ul s \}| \in \{1,2\}$.
 
 	\begin{proof}
 		Suppose $t \in S \setminus D_R(w)$ with $w \ul t = w \ul s$. Because of the ordinary length either both $\ul s$ and $\ul t$ act by multiplication on $w$, or both act by twisted conjugation on $w$. Suppose they act by multiplication, then $ws = w \ul s = w \ul t = wt$, hence $s = t$. Conversely, assume they act by twisted conjugation. Then $\theta(s) w s = w \ul s = w \ul t = \theta(t)wt$. Because of $\theta(t) w t t = \theta(t) w = \theta(s) w s t$ we have $l(\theta(s) w s t) < l(\theta(s) w s)$ and so by \ref{coro:exchange-condition} there are three possible cases
