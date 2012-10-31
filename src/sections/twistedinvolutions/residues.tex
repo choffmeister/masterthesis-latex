@@ -162,17 +162,18 @@ Again, this corollary can be strengthend by insisting on an exclusive or with th
 
 \begin{coro}
 	\typedlabel{coro:deduction-of-s-action-in-rank-2-residue}
-	Let $w \in \ti{\theta}$ with $\rho(w) = k$, $s,t$ be two distinct generators and $s \notin D_R(w)$. Suppose $w[\ul t \ul s]^{2n-1} = w \ul s$ and suppose $n$ to be the smallest number with this property. Then $w[\ul t \ul s]^{n-1}$ is the minimal element $\min(w,\{s,t\})$ and $w[\ul t \ul s]^{2n-1}$ is the maximal element. Define
+
+	Let $wC_{\{s,t\}}$ be a finite rank-2-residue and suppose $w = \min(C,\{s,t\})$. Let $n \in \nn$ be the smallest number with $w[\ul s \ul t]^{2n} = w$. Define
 	\begin{align*}
-		a_1 & = l(w \ul s) - l(w) - 1, \\
-		a_2 & = l(w[\ul t \ul s]^{n-1}) - l(w[\ul t \ul s]^{n-2}) - 1, \\
-		a_3 & = l(w[\ul t \ul s]^{n}) - l(w[\ul t \ul s]^{n-1}) - 1 \textrm{ and} \\
-		a_4 & = l(w[\ul t \ul s]^{2n-1}) - l(w[\ul t \ul s]^{2n-2}) - 1.
+		a_1 & = l(w \ul s) - l(w), \\
+		a_2 & = l(w[\ul s \ul t]^{n}) - l(w[\ul s \ul t]^{n-1}), \\
+		a_3 & = l(w \ul t) - l(w), \\
+		a_4 & = l(w[\ul t \ul s]^{n}) - l(w[\ul t \ul s]^{n-1}).
 	\end{align*}
-	Note that $a_1,a_2,a_3,a_4 \in \{0,1\}$ contain the information if edges next to the minimal and the maximal element of $wC_{\{s,t\}}$ are twisted conjugations or multiplications. Then each can be deduced from the three remaining ones with the equation $a_1+a_2=a_3+a_4$.
+	Then $a_1 + a_2 = a_3 + a_4$.
 
 	\begin{proof}
-		The minimality of $w[\ul t \ul s]^{n-1}$ and the maximality of $w[\ul t \ul s]^{2n-1}$ is due to \ref{prop:rank-2-residues-are-convex}. The soundness of the equation follows from the symmetric distribution of twisted conjugations and mutipliations from \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residues}.
+		There are two geodesics from $w$ to the unique maximal element in $wC_{\{s,t\}}$. By \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residues} in both geodesics at most the first and last step can be multiplicative and by \ref{prop:geodesics-have-same-count-of-multiplicative-steps} both geodesics must contain the same count of multiplicative steps. The sum $4-a_1-a_2$ is the count of multiplicative steps in the first geodesic while $4-a_3-a_4$ is the count of multiplicative steps in the second geodesic. Hence $4-a_1-a_2 = 4-a_3-a_4 \iff a_1+a_2 = a_3+a_4$.
 	\end{proof}
 \end{coro}
 
