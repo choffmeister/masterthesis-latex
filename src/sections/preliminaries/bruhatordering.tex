@@ -33,6 +33,7 @@ To ensure the Bruhat ordering is graded as well, we need another characterizatio
 	Let $(W,S)$ be a Coxeter system, $u,w \in W$ with $u \leq w$ and $s \in S$. Then $us \leq w$ or $us \leq ws$ or both.
 
 	\begin{proof}
+		\proofcite{Proposition 5.9}{humphreys:coxeter}
 		We can reduce the proof to the case $u \to w$, i.e. $ut = w$ for a $t \in T$ with $l(v) < l(u)$. Let $s = t$. Then $us \leq w$ and we are done. In case $s \neq t$ there are two alternatives for the lengths. We can have $l(us) = l(u) - 1$ which would mean $us \to u \to w$, so $us \leq w$. So assume $l(us) = l(u) + 1$. For the reflection $t' = sts$ we get $(us)t' = ussts = uts = ws$. So we have $us \leq ws$ iff $l(us) < l(ws)$. Suppose this is not the case. Since we have assumed $l(us) = l(u) + 1$ any reduced expression $u = s_1 \cdots s_r$ for $u$ yields a reduced expression $us = s_1 \cdots s_r s$ for $us$. With the \ref{theo:strong-exchange-condition} we can obtain $ws = ust'$ from $us$ by omitting one factor. This omitted factor cannot be $s$ since $s \neq t$. This means $ws = s_1 \cdots \hat s_i \cdots s_r s$ and so $ws = s_1 \cdots \hat s_i \cdots s_r$, contradicting to our assumption $l(u) < l(w)$.
 	\end{proof}
 \end{prop}
@@ -43,6 +44,7 @@ To ensure the Bruhat ordering is graded as well, we need another characterizatio
 	Let $(W,S)$ be a Coxeter system and $w \in W$ with a fixed, but arbitrary, reduced expression $w = s_1 \cdots s_r$, $s_i \in S$. Then $u \leq w$ (in the Bruhat ordering) iff $u$ can be obtained as a subexpression of this reduced expression.
 
 	\begin{proof}
+		\proofcite{Theorem 5.10}{humphreys:coxeter}
 		First we show that any $w' < w$ occurs as a subexpression. For that we start with the case $w' \to w$, say $w't = w$. We have $l(w') < l(w)$ and hence by \ref{theo:strong-exchange-condition} we get
 		$$ w' = w'tt = wt = s_1 \cdots \hat s_i \cdots s_r $$
 		for some $i$. This step can be iterated. In return, suppose we have a subexpression $w' = s_{i_1} \cdots s_{i_q}$. We induce on $r = l(w)$. For $r = 0$ we have $w = e$, hence $w' = e$, too and so $w' \leq w$. Now suppose $r > 0$. If $i_q < r$, then $s_{i_1} \cdots s_{i_q}$ is a subexpression of $w s_r = s_1 \cdots s_{r-1}$, too. Since $l(w s_r) = r-1 < r$, we can conclude
@@ -72,6 +74,7 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 	Let $(W,S)$ be a Coxeter system, $u,w \in W$ with $u < w$ and $l(w) = l(u) + 1$. In case there is a generator $s \in S$ with $u < us$ but $us \neq w$, then both $w < ws$ and $us < ws$.
 
 	\begin{proof}
+		\proofcite{Lemma 5.11}{humphreys:coxeter}
 		Due to \ref{prop:u-leq-w-then-us-leq-w-or-us-leq-ws} we have $us \leq w$ or $us \leq ws$. Since $l(us) = l(w)$ and $us \neq w$ the first case is impossible. So $us \leq ws$ and because of $u \neq w$ already $us < ws$. In turn, $l(w) = l(us) < l(ws)$, forcing $w < ws$.
 	\end{proof}
 \end{lemm}
@@ -82,6 +85,7 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 	Let $(W,S)$ be a Coxeter system and $u < w$. Then there are elements $w_0,\ldots,w_m \in W$ such that $u = w_0 < w_1 < \ldots < w_m = w$ with $l(w_i) = l(w_{i-1}) + 1$ for $1 \leq i \leq m$.
 
 	\begin{proof}
+		\proofcite{Proposition 5.11}{humphreys:coxeter}
 		We induce on $r = l(u) + l(w)$. In case $r = 1$ we have $u = e$ and $w = s$ for a $s \in S$ and are done. Conversely suppose $r > 1$. Then there is a reduced expression $w = s_1 \cdots s_r$ for $w$. Let us fix this expression. Then $l(w s_r) < l(w)$. Thanks to \ref{theo:bruhat-subexpression-characterization} there must be a subexpression of $w$ with $u = s_{i_1} \cdots s_{i_q}$ for some $i_1 < \ldots < i_q$. We distinguish between two cases:
 
 		\begin{description}
@@ -112,6 +116,7 @@ This characterization of the Bruhat ordering is very handy. With it and the foll
 	\end{enumerate}
 
 	\begin{proof}
+		\proofcite{Theorem 1.1}{deodhar:bruhat-order}
 		We use the alternative subexpression characterization of the Bruhat ordering from \ref{theo:bruhat-subexpression-characterization}.
 		\begin{enumerate}
 			\item Since $s \in D_R(w)$ there exists a reduced expression $w = s_1 \cdots s_r$ with $s_r = s$. Due to $v \leq w$ we can obtain $v$ as a subexpression $v = s_{i_1} \cdots s_{i_q}$ from $w$. If $i_q = r$ then $vs = s_{i_1} \cdots s_{i_q} s = s_{i_1} \cdots s_{i_{q - 1}}$ is also a subexpression of $w$. Else if $i_q \neq r$, then $v$ is a subexpression of $ws = s_1 \cdots s_{r-1}$ and so $vs$ is again a subexpression of $w = s_1 \cdots s_{r-1} s$. In both cases we get $vs \leq w$.
@@ -136,6 +141,7 @@ The \ref{theo:lifting-property} seems quite innocent, but when trying to investi
 	The poset $\Br(W)$ is directed.
 
 	\begin{proof}
+		\proofcite{Proposition 7}{denton:coxeter}
 		Let $u,v \in W$. We need to find an element $w \in W$ with $u \leq w$ and $v \leq w$. For that, we induce on $r = l(u) + l(w)$. For $r = 0$ we have $u = v = e$ and can choose $w = e$. So let $r > 0$. Because of symmetry we can assume $l(u) > 0$, hence $u \neq e$ and so there is a $s \in S$ with $us < u$. By induction hypothesis there is a $w \in W$ with $us \leq w$ and  $v \leq w$. Consider two cases:
 
 		\begin{description}
@@ -154,6 +160,7 @@ The \ref{theo:lifting-property} seems quite innocent, but when trying to investi
 	\end{enumerate}
 
 	\begin{proof}
+		\proofcite{Proposition 8}{denton:coxeter}
 		\begin{enumerate}
 			\item Assume there are two elements $u,v \in W $ of maximal rank. Since $\Br(W)$ is directed, there is an element $w \in W$ with $u \leq w$ and $v \leq w$. Because $\Br(W)$ is graded, we have $l(w) > l(u) = l(v)$, contradicting to the maximality of $u$ and $v$.
 			\item We want to show, that $v < w$ for all $v \in W$. For that, we induce on $r = l(v)$. If $r = 0$, then $v = e \leq w$. Let $r > 0$. Then there is a $s \in S$ with $us < u$. By induction, $us \leq w$. Since $s \in D_R(w)$, we have $uss = u \leq w$ by \ref{theo:lifting-property} and are done with our induction. This yields $W = [e,w]$ and since by \ref{coro:bruhat-intervals-are-finite} intervals in the Bruhat order are finite, $W$ is finite, too. \qedhere
