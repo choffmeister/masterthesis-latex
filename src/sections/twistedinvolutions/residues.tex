@@ -56,6 +56,10 @@ Residues in $Wk(\theta)$ are subsets of $\theta$-twisted involutions that can be
 	\end{proof}
 \end{coro}
 
+\begin{defi}
+	We denote the unique minimal element in $wC_I$ from \ref{coro:residues-have-unique-minimal-element} by $\min(w,I)$.
+\end{defi}
+
 We proceed with some properties of rank-2-residues. Our interest in these residues stems from the fact that their properties are needed later in Section \ref{sec:twisted-involutions-algorithms} to construct an effective algorithm for calculating the twisted weak ordering, i.e. calculating the Hasse diagram of $Wk(W,\theta)$ for arbitrary Coxeter systems $(W,S)$ and Coxeter system automorphisms $\theta$.
 
 \begin{defi}
@@ -164,7 +168,7 @@ Again, this corollary can be strengthend by insisting on an exclusive or with th
 \begin{coro}
 	\typedlabel{coro:deduction-of-s-action-in-rank-2-residue}
 
-	Let $wC_{\{s,t\}}$ be a finite rank-2-residue and suppose $w = \min(C,\{s,t\})$. Let $n \in \nn$ be the smallest number with $w[\ul s \ul t]^{2n} = w$. Define
+	Let $wC_{\{s,t\}}$ be a finite rank-2-residue and suppose $w = \min(w,\{s,t\})$. Let $n \in \nn$ be the smallest number with $w[\ul s \ul t]^{2n} = w$. Define
 	\begin{align*}
 		a_1 & = l(w \ul s) - l(w), \\
 		a_2 & = l(w[\ul s \ul t]^{n}) - l(w[\ul s \ul t]^{n-1}), \\
@@ -183,11 +187,63 @@ Again, this corollary can be strengthend by insisting on an exclusive or with th
 	Let $w \in S$, $s,t \in S$ be two distinct generators and $m = \ord(st) < \infty$. Then $|wC_{\{s,t\}}| \leq 2m$.
 
 	\begin{proof}
-		Without loss of generality let $w = \min(C,\{s,t\})$. Let $n$ be the smallest number (or $\infty$ if non such number exists) for that $w[\ul s \ul t]^{n} \succ w[\ul s \ul t]^{n+1}$. Then by the convexity from \ref{prop:rank-2-residues-are-convex} we have $|wC_{\{s,t\}}| = 2n$. If $n < m$, then we are done. In return assume $n \geq m$, i.e. $w \prec w \ul s \prec \ldots \prec w[\ul s \ul t]^{m}$. But $w[\ul s \ul t]^{m}$ ends with $stst \cdots$ ($m$-times) and hence by
+		Without loss of generality let $w = \min(w,\{s,t\})$. Let $n$ be the smallest number (or $\infty$ if non such number exists) for that $w[\ul s \ul t]^{n} \succ w[\ul s \ul t]^{n+1}$. Then by the convexity from \ref{prop:rank-2-residues-are-convex} we have $|wC_{\{s,t\}}| = 2n$. If $n < m$, then we are done. In return assume $n \geq m$, i.e. $w \prec w \ul s \prec \ldots \prec w[\ul s \ul t]^{m}$. But $w[\ul s \ul t]^{m}$ ends with $stst \cdots$ ($m$-times) and hence by
 		$$ \underbrace{stst \cdots}_{m-\textrm{times}} = \underbrace{tsts \cdots}_{m-\textrm{times}} $$
 		we get $s,t \in D_R(w[\ul s \ul t]^{m})$. So by \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1} we have $w[\ul s \ul t]^{m} \succ w[\ul s \ul t]^{m+1}$, hence $n = m$ and so $|wC_{\{s,t\}}| = 2m$.
 	\end{proof}
 \end{lemm}
+
+\begin{lemm}
+	Let $wC_{\{s,t\}}$ be a finite rank-2-residue.
+	\begin{enumerate}
+		\item If the residue is maximal-multiplicative, then $\ord(st) \equiv 0 \mod 2$.
+		\item If the residue is bottom-multiplicative, then $\ord(st) \equiv 1 \mod 2$.
+		\item If the residue is top-multiplicative, then $\ord(st) \equiv 1 \mod 2$. 
+	\end{enumerate}
+
+	\begin{proof}
+		Let $w = \min(w, \{s,t\})$, $v$ be the unique maximal element in the residue and $n$ be the smallest number with $w(\ul s \ul t)^n = w$.
+		\begin{enumerate}
+			\item We have $\theta(s)w = ws$ and $\theta(t)w = wt$. Hence
+			\begin{align*}
+				w & = w(\ul s \ul t)^n = (\theta(s)\theta(t))^{n-2} w (st)^{n-2} stst \\
+				  & = (\theta(s)\theta(t))^{n-3} w (st)^{n-1} stst \\
+				  & = \ldots \\
+				  & = w (st)^{2n-4} stst = w (st)^{2n-2}.
+			\end{align*}
+			Since $2n-2$ is always even the equation chain cannot be true if $\ord(st)$ is odd. Therefore $\ord(st)$ must be even.
+			\item Again we have $\theta(s)w = ws$ and $\theta(t)w = wt$. Hence
+			\begin{align*}
+				w & = w(\ul s \ul t)^n = (\theta(s)\theta(t))^{n-1} w (st)^{n-1} st \\
+				  & = (\theta(s)\theta(t))^{n-2} w (st)^{n} st \\
+				  & = \ldots \\
+				  & = w (st)^{2n-2} st = w (st)^{2n-1}.
+			\end{align*}
+			Since $2n-1$ is always odd with the same argument the equation chain can only be true if $\ord(st)$ is odd.
+			\item This is analogue to the previous case when starting from $v$. \qedhere
+		\end{enumerate}
+	\end{proof}
+\end{lemm}
+
+\begin{coro}
+	\typedlabel{coro:max-rank-2-residue-size-special-cases}
+	Let $wC_{\{s,t\}}$ be a finite rank-2-residue with $m = \ord(st)$.
+	\begin{enumerate}
+		\item If the residue is maximal-multiplicative, then $|wC_{\{s,t\}}| \leq m+2$.
+		\item If the residue is bottom-multiplicative, then $|wC_{\{s,t\}}| \leq m+1$.
+		\item If the residue is top-multiplicative, then $|wC_{\{s,t\}}| \leq m+1$. 
+	\end{enumerate}
+
+	\begin{proof}
+		\begin{enumerate}
+			\item We have an even $m$ and $\theta(s)w = ws$ and $\theta(t)w = wt$. Hence
+			$$ w (\ul s \ul t)^{m/2+1} = (\theta(s)\theta(t))^{m/2-1} w (st)^{m/2-1} stst = w(st)^m = w. $$
+			\item We have an odd $m$ and $\theta(s)w = ws$ and $\theta(t)w = wt$. Hence
+			$$ w (\ul s \ul t)^{(m+1)/2} = (\theta(s)\theta(t))^{(m-1)/2} w (st)^{(m-1)/2} st = w(st)^m = w. $$
+			\item Analogue to the previous case when starting from $v$. \qedhere
+		\end{enumerate}
+	\end{proof}
+\end{coro}
 
 \begin{prop}
 	\typedlabel{prop:rank-2-residue-minimal-k}

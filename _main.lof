@@ -8,9 +8,9 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Impossible concave structure of a rank-2-residues}}{22}{figure.2.2}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Classification of rank-2-residues}}{23}{figure.2.3}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Hasse diagrams of $Wk(A_4, \id )$ after removing $s_3,s_4$ edges in the left, $s_2,s_4$ edges in the middle and $s_2,s_3$ edges in the right diagram}}{24}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Optimization of \ref {algo:twoa1}}}{28}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Element comparisons needed for calculating $Wk(\id )$}}{33}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Runtime for calculating $Wk(\id )$}}{33}{figure.2.7}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Optimization of \ref {algo:twoa1}}}{29}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Element comparisons needed for calculating $Wk(\id )$}}{34}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Runtime for calculating $Wk(\id )$}}{34}{figure.2.7}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
