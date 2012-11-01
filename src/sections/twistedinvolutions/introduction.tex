@@ -60,7 +60,7 @@ $$ e \ul s \ul t \ul s = s \ul t \ul s = tst \ul s = sts \ul s = t \neq s = tst 
 
 	\begin{proof}
 		\proofcite{Lemma 3.4}{hultman:comb-twisted-invo}
-		Suppose $\ul s$ acts by multiplication on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. Conversely, suppose $l(\theta(s)ws) = l(w)$. If $w \ul s = ws$, then we are done. So assume $\theta(s)ws \neq w$. Then $w$ must have a reduced expression beginning with $\theta(s)$ or ending with $s$ (else, we could not have $l(\theta(s)ws) = l(w)$). Without loss of generality suppose that $\theta(s)s_1 \cdots s_k$ is such an expression for $w$. Since $w$ is a $\theta$-twisted involution, i.e. $\theta(w) = w^{-1}$, we have $l(ws) < l(w)$. Since $l(\theta(s)ws) = l(w)$, no reduced expression for $w$ both begins with $\theta(s)$ and ends with $s$ and hence \ref{coro:exchange-condition} yields $ws = s_1 \cdots s_k$, which implies $\theta(s)ws = w$, contradicting to our assumption.
+		We reproduce the proof from loc. cit. here. since it is interesting from a technical point of view. Suppose $\ul s$ acts by multiplication on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. Conversely, suppose $l(\theta(s)ws) = l(w)$. If $w \ul s = ws$, then we are done. So assume $\theta(s)ws \neq w$. Then $w$ must have a reduced expression beginning with $\theta(s)$ or ending with $s$ (else, we could not have $l(\theta(s)ws) = l(w)$). Without loss of generality suppose that $\theta(s)s_1 \cdots s_k$ is such an expression for $w$. Since $w$ is a $\theta$-twisted involution, i.e. $\theta(w) = w^{-1}$, we have $l(ws) < l(w)$. Since $l(\theta(s)ws) = l(w)$, no reduced expression for $w$ both begins with $\theta(s)$ and ends with $s$ and hence \ref{coro:exchange-condition} yields $ws = s_1 \cdots s_k$, which implies $\theta(s)ws = w$, contradicting to our assumption.
 	\end{proof}
 \end{lemm}
 
@@ -152,14 +152,9 @@ We now establish many properties from ordinary Coxeter groups for twisted expres
 	\typedlabel{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}
 	\theocite{Lemma 3.8}{hultman:comb-twisted-invo}
 	Let $w \in \ti{\theta}$ and $s \in S$. Then $\rho(w \ul s) = \rho(w) \pm 1$. In fact it is $\rho(w \ul s) = \rho(w) - 1$ iff $s \in D_R(w)$.
-
-	\begin{proof}
-		\proofcite{Lemma 3.8}{hultman:comb-twisted-invo}
-		Since $\Br(\ti{\theta})$ is graded with rank function $\rho$ and either $w \ul s$ covers $w$ or $w$ covers $w \ul s$ we have $\rho(w \ul s) = \rho(w) \pm 1$. Now suppose $w \ul s < w$. Then we have $\rho(w \ul s) < \rho(w)$ iff $w \ul s < w$ iff $l(w \ul s) < l(w)$ iff $l(ws) < l(w)$ iff $s \in D_R(w)$.
-	\end{proof}
 \end{lemm}
 
-\begin{lemm}[Lifting property 2]
+\begin{lemm}[Lifting property for twisted expressions]
 	\namedlabel{lemm:lifting-property-for-ul-s}
 	\theocite{Lemma 3.9}{hultman:comb-twisted-invo}
 	Let $v,w \in W$ with $v \leq w$. Suppose $s \in S$ with $s \in D_R(w)$. Then
@@ -189,22 +184,17 @@ We now establish many properties from ordinary Coxeter groups for twisted expres
 	Suppose $\ul s_1 \ldots \ul s_k$ is a reduced twisted expression. If $\rho(\ul s_1 \ldots \ul s_k \ul s) < k$ for some $s \in S$, then
 	$\ul s_1 \ldots \ul s_k \ul s = \ul s_1 \ldots \ul{\hat s}_i \ldots \ul s_k$
 	for some $i \in \{1,\ldots,k\}$.
-	
-	\begin{proof}
-		\proofcite{Proposition 3.10}{hultman:comb-twisted-invo}
-		Let $w = s_1 \ldots \ul s_k$ and $v = s_1 \ldots \ul s_k \ul s$. Assume $v \ul s_k \ldots \ul s_{i+1} \ul s_i < v \ul s_k \ldots \ul s_{i+1}$ for all $i$. Then we would get $\rho(v \ul s_k \ldots s_1) < k - k = 0$. Hence there is an index $i$ with $v \ul s_k \ldots \ul s_{i+1} \ul s_i > v \ul s_k \ldots \ul s_{i+1}$ and we choose $i$ maximal with this property. Since $w > v$ we conclude by repetition of \ref{lemm:lifting-property-for-ul-s}, that $w \ul s_k \ldots \ul s_{i+1} \geq v \ul s_k \ldots \ul s_i$. By \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1} we have $\rho(v) = k - 1$ and so $\rho(w \ul s_k \ldots \ul s_{i+1}) = \rho(v \ul s_k \ldots \ul s_i)$. Because $\Br(\ti{\theta})$ is graded with rank function $\rho$, both twisted expresssions must represent the same element. Therefore we have $w \ul s_k \ldots \ul s_{i+1} = v \ul s_k \ldots \ul s_i$ yielding $v = w \ul s_k \ldots \ul s_{i+1} \ul s_i \ldots \ul s_k = \ul s_1 \ul{\hat s}_i \ldots \ul s_k$.
-	\end{proof}
 \end{prop}
 
-\begin{prop}[Deletion property for twisted expressions]
-	\namedlabel{prop:deletion-property-for-twisted-expressions}
+\begin{coro}[Deletion property for twisted expressions]
+	\namedlabel{coro:deletion-property-for-twisted-expressions}
 	\theocite{Proposition 3.11}{hultman:comb-twisted-invo}
 	Let $w = s_1 \ldots \ul s_k$ be a not reduced twisted expression. Then there are two indices $1 \leq i < j \leq k$ such that $w = \ul s_1 \ldots \ul{\hat s}_i \ldots \ul{\hat s}_j \ldots \ul s_k$.
 
 	\begin{proof}
 		Choose $j$ minimal, so we have $\ul s_1 \ldots \ul s_j$ is not reduced. By \ref{prop:exchanged-property-for-twisted-expressions} there is an index $i$ with $\ul s_1 \ldots \ul s_j = s_1 \ldots \ul{\hat s}_i \ldots \ul s_{j-1}$ yielding our hypothesis $w = \ul s_1 \ldots \ul s_j \ldots \ul s_k = \ul s_1 \ldots \ul{\hat s}_i \ldots \ul{\hat s}_j \ldots \ul s_k$.
 	\end{proof}
-\end{prop}
+\end{coro}
 
 When applying the \ref{prop:exchanged-property-for-twisted-expressions} to a twisted expression, there is no hint which $\ul s_i$ can be omitted. Consider the following situation: Let $w \in \ti{\theta}$ and $w \ul s_1 \ldots \ul s_k = w \ul t_1 \ldots \ul t_k$ two reduced twisted expressions. Then in the twisted expression $w \ul s_1 \ldots \ldots \ul s_k \ul t_k$ we can omit the $\ul t_k$ and one other $\ul s$ by \ref{prop:exchanged-property-for-twisted-expressions} and get still the same element. It would be nice, when the second omitted $\ul s$ is one of the $\ul s_i$ in general, but unfortunately this proves to be false:
 
