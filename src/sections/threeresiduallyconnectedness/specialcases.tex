@@ -13,7 +13,7 @@
 %	\end{figure}
 %\end{exam}
 
-In this section we investigate some results and examples, in special situations. We fix some notation, namely let $K \subseteq S$ be spherical, $S_1,S_2,S_3 \subseteq S$ have a pairwise non-empty intersection, $S_{ij} = S_i \cap S_j$, $T = S_1 \cap S_2 \cap S_3$ and $w_K$ denote the longest element in $\langle K \rangle$.
+In this section we investigate some results and examples, in special situations. We fix some notation, namely let $K \subseteq S$ be fixed by $\theta$ and spherical, $S_1,S_2,S_3 \subseteq S$ have a pairwise non-empty intersection, $S_{ij} = S_i \cap S_j$, $T = S_1 \cap S_2 \cap S_3$ and $w_K$ denote the longest element in $\langle K \rangle$.
 
 \begin{exam}
 	\typedlabel{exam:trivial-counterexample-for-arbitary-sets-of-generators}
@@ -74,14 +74,30 @@ A property, that is much stronger than 3-residually connectedness, reads $wC_I \
 	\end{proof}
 \end{coro}
 
+\begin{rema}
+	\typedlabel{rema:rank-leq-4-main-special-case}
+	It might be possible to handle the case $|S| = 4$ in a similar way. Having \ref{prop:3rc-special} in mind there are essentially three configurations left for $S_{12},S_{23},S_{31}$ to consider:
+	\begin{enumerate}
+		\item $S_{12} = \{s_1\}$, $S_{23} = \{s_2\}$, $S_{31} = \{s_3\}$.
+		\item $S_{12} = \{s_1\}$, $S_{23} = \{s_2\}$, $S_{31} = \{s_3,s_4\}$.
+		\item $S_{12} = \{s_1,s_4\}$, $S_{23} = \{s_2,s_4\}$, $S_{31} = \{s_3,s_4\}$.
+	\end{enumerate}
+	The first one is analogue to \ref{prop:rank-leq-3-main-special-case} and so cannot yield a counter example to \axiomref{3RC}.
+\end{rema}
+
 \begin{prop}
 	\typedlabel{prop:intersections-in-k-and-t}
-	The poset $Wk(\id)$ is 3-residually connected if and only if \axiomref{3RC} holds for all pairs $K,S_1,S_2,S_3$ that satisfy $S_{ij} \setminus T \subseteq K$ for $1 \leq i < j \leq 3$.
+	Let $\theta = \id$. Then the poset $Wk(\id)$ is 3-residually connected if and only if \axiomref{3RC} holds for all pairs $K,S_1,S_2,S_3$ that satisfy $S_{ij} \setminus T \subseteq K$ for $1 \leq i < j \leq 3$.
 
 	\begin{proof}
-		If $Wk(\id)$ is 3-residually connected, then \axiomref{3RC} holds for all pairs. In return suppose $Wk(\id)$ not to be 3-residually connected, i.e. there is a $w \in \ti{\theta}$ with $w = s_1 \ldots s_n \in w_K C_{S_{12}} \cap C_{S_{23}} \cap C_{S_{31}}$ and $w \notin w_K C_T$. Since $w \in w_K C_{S_{12}}$ and \ref{lemm:w-reduced-expression-letters-independent} every reduced expression for $w$ (and $s_1 \ldots s_n$ in particular) uses only generators from $K \cup S_{12}$. This is true with the same argument for $K \cup S_{23}$ and $K \cup S_{31}$. Hence
-		$$ s_i \in (K \cup S_{12}) \cap (K \cup S_{23}) \cap (K \cup S_{31}) = K \cup (S_{12} \cap S_{23} \cap S_{31}) = K \cup T $$
-		for $1 \leq i \leq n$. So our counterexample to \axiomref{3RC} is also a counterexample if we replace $S_{ij}$ by $S'_{ij} := S_{ij} \cap (K \cup T)$. But then $S'_{ij} \setminus T = (S_{ij} \cap (K \cup T)) \setminus T \subseteq K$.
+		If $Wk(\id)$ is 3-residually connected, then \axiomref{3RC} holds for all pairs. In return suppose $Wk(\id)$ not to be 3-residually connected, i.e. there is a $w \in \ti{\id}$ with $w = s_1 \ldots s_n \in w_K C_{S_{12}} \cap C_{S_{23}} \cap C_{S_{31}}$ and $w \notin w_K C_T$. Since $w \in w_K C_{S_{12}}$ and \ref{lemm:w-reduced-expression-letters-independent} every reduced expression for $w$ (and $s_1 \ldots s_n$ in particular) uses only generators from $K \cup S_{12}$. This is true with the same argument for $K \cup S_{23}$ and $K \cup S_{31}$. Hence
+		\begin{align*}
+			s_i	& \in (K \cup S_{12}) \cap (K \cup S_{23}) \cap (K \cup S_{31}) = K \cup (S_{12} \cap S_{23} \cap S_{31}) = K \cup T
+		\end{align*}
+		for $1 \leq i \leq n$. So our counterexample to \axiomref{3RC} is also a counterexample if we replace $S_{ij}$ by $S'_{ij} := S_{ij} \cap (K \cup T)$ for $1 \leq i < j \leq 3$. But then
+		\begin{align*}
+			S'_{ij} \setminus T & = [S_{ij} \cap (K \cup T)] \setminus T \subseteq [K \cup T] \setminus T \subseteq K. \qedhere
+		\end{align*}
 	\end{proof}
 \end{prop}
 
