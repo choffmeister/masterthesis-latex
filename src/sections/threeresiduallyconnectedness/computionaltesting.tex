@@ -111,6 +111,6 @@ Now we actually want to calculate the maximum element length over all proper par
 	\end{table}
 
 	\begin{proof}
-		The cases from the table have been proved by a simple algorithm. In the calculated poset graph we iterate over all $K \subseteq S$ and then over all... \todo
+		The cases from the table have been proved by a simple algorithm. In the calculated poset graph we iterate over all combinations of generator sets $K,S_1,S_2,S_3$ (and ignore some trivial combinations for that we already known that they cannot yield a counterexample to \axiomref{3RC}) and then walk the poset graph to extract the residues $w_K C_{S_{ij}}$ and $w_K C_T$. See the appendix for concrete details.
 	\end{proof}
 \end{theo}
