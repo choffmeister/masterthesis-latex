@@ -3,4 +3,25 @@
 \addcontentsline{toc}{chapter}{Introduction}
 \label{sec:introduction}
 
-\todo
+Within this paper we investigate structural properties of the so-called twisted weak ordering $Wk(W,\theta)$. In Chapter~\ref{sec:preliminaries} we establish some well-known definitions and facts on posets, Coxeter systems and the Bruhat ordering. In Chapter~\ref{sec:twisted-involutions} we build up the theory of twisted involutions. For a Coxeter system $(W,S)$ and a involutory Coxeter system automorphism $\theta$ the set of $\theta$-twisted involutions is defined as
+$$ \ti{\theta} := \{ w \in W : \theta(w) = w^{-1} \}. $$
+This set represents some kind of generalization of ordinary Coxeter groups (cf. \ref{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions}). Many properties of Coxeter groups can be transfered to the $\theta$-twisted involutions. Elements $w$ in ordinary Coxeter groups have representations $w = s_1 \ldots s_n$ with involutory generators. There is an analogue construction for $\theta$-twisted involutions, too. Let $\ul S$ be set of symbols with same cardinality as $S$. Then define an action
+$$ w \ul s := \begin{cases}
+	ws & \textrm{if } \theta(s)ws = w, \\
+	\theta(s)ws & \textrm{else}. \\
+\end{cases} $$
+and extend this action to the whole free monoid over $\ul S$ by
+$$w \ul s_1 \ul s_2 \ldots \ul s_k := (\ldots ((w \ul s_1) \ul s_2) \ldots) \ul s_k. $$
+It turns out that every expression $e \ul s_1 \cdots \ul s_n$, called twisted expression, admits a $\theta$-twisted involution and in return that every $\theta$-twisted involution has such an twisted expression representing it. In addition $w \ul s \ul s = w$ holds for any $\theta$-twisted involution $w$ and $\ul s \in \ul S$ just as $w s s = w$ holds for any $w \in W$ and $s \in S$. For these twisted expressions there are analogue versions of the Exchange Condition, the Deletion Condition and the Lifting Property. Also an analogue concept to the length $l$ for elements from Coxeter groups exists for $\theta$-twisted involutions: The twisted length $\rho$ is defined as the smallest possible length of a twisted expression representing a twisted involution.
+
+The Bruhat ordering for $W$ can be restricted to the $\theta$-twisted involutions. This restricted Bruhat ordering has another subposet: The twisted weak ordering. It is by the relation
+$$ v \preceq w \iff w = v \ul s_1 \cdots \ul s_k \wedge k = \rho(w) - \rho(v). $$
+The twisted weak ordering $(\ti{\theta}, \preceq)$ is denoted by $Wk(W,\theta)$. It is the main object of interest in this paper. In order to develop an efficient algorithm to calculate this poset we further inspect structural properties of the poset. The so-called $I$-residues, which are subsets of twisted involutions of type
+$$w C_I := \{ w \ul s_1 \cdots \ul s_n : w \in \ti{\theta}, \ul s_i \in \overline I \subseteq \overline S \} $$
+are investigated for some type of invariants. In particular the $I$-residues with $|I|=2$, the rank-2-residues, have some very useful and interesting constraints for their possible structure. After having investigated their structure in detail we use these results to massively improve a known algorithm for calculating $Wk(W,\theta)$ in Section~\ref{sec:twisted-involutions-algorithms}. Indeed we develop an algorithm that has an asymptotical perfect runtime behavior.
+
+In Chapter~\ref{sec:main-thesis} we address something that is called 3-residually connectedness in this paper. For a set $K \subseteq S$ that is fixed by $\theta$ and three sets $S_1,S_2,S_3 \subseteq S$ we ask if
+$$ w C_{S_1 \cap S_2} \cap w C_{S_2 \cap S_3} \cap w C_{S_3 \cap S_1} \subseteq w C_{S_1 \cap S_2 \cap S_3} $$
+holds. If this holds for all $K,S_1,S_2,S_3$, then we call $Wk(W,\theta)$ 3-residually connnect. In Section~\ref{sec:3rc-special-cases} and Section~\ref{sec:3rc-reducible-case} we investigate some special configurations. Since it refused to be proven in general or at least for certain types of $W$ or $\theta = \id$ we use the $Wk(W,\theta)$-algorithm to programmatically check if 3-residually connectedness holds in Section~\ref{sec:3rc-compution-testing}.
+
+We finish the paper with an excursion to building theory in Chapter~\ref{sec:flipflopsystems}. As it turns out the 3-residually connectedness of $Wk(W,\theta)$ allows to deduce the so-called residually connectedness of so-called flip-flop systems of type $(W,S)$ with flip $\theta$, at least when assuming one additional property for the flip.

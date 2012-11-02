@@ -64,12 +64,11 @@
 \indexentry{rank|hyperpage}{45}
 \indexentry{i-adjacent|hyperpage}{45}
 \indexentry{adjacent|hyperpage}{45}
-\indexentry{coset chamber system|hyperpage}{45}
-\indexentry{gallery|hyperpage}{46}
-\indexentry{length|hyperpage}{46}
-\indexentry{joins|hyperpage}{46}
-\indexentry{closed|hyperpage}{46}
-\indexentry{simple|hyperpage}{46}
+\indexentry{gallery|hyperpage}{45}
+\indexentry{length|hyperpage}{45}
+\indexentry{joins|hyperpage}{45}
+\indexentry{closed|hyperpage}{45}
+\indexentry{simple|hyperpage}{45}
 \indexentry{minimal gallery joining $c$ and $d$|hyperpage}{46}
 \indexentry{connected|hyperpage}{46}
 \indexentry{$J$-gallery|hyperpage}{46}
@@ -80,7 +79,7 @@
 \indexentry{residually connected|hyperpage}{46}
 \indexentry{building|hyperpage}{46}
 \indexentry{distance function|hyperpage}{46}
-\indexentry{rank|hyperpage}{47}
+\indexentry{rank|hyperpage}{46}
 \indexentry{associated chamber system|hyperpage}{47}
 \indexentry{gallery|hyperpage}{47}
 \indexentry{residue|hyperpage}{47}
@@ -88,8 +87,8 @@
 \indexentry{thick|hyperpage}{47}
 \indexentry{thin|hyperpage}{47}
 \indexentry{apartment|hyperpage}{47}
-\indexentry{spherical|hyperpage}{48}
-\indexentry{opposite|hyperpage}{48}
+\indexentry{spherical|hyperpage}{47}
+\indexentry{opposite|hyperpage}{47}
 \indexentry{connected|hyperpage}{48}
 \indexentry{convex|hyperpage}{48}
 \indexentry{twin building of type $(W,S)$|hyperpage}{48}
@@ -102,10 +101,10 @@
 \indexentry{twin apartment|hyperpage}{48}
 \indexentry{building quasi-flip|hyperpage}{49}
 \indexentry{building flip|hyperpage}{49}
-\indexentry{$\theta $-codistance|hyperpage}{50}
-\indexentry{numerical $\theta $-codistance|hyperpage}{50}
-\indexentry{proper|hyperpage}{50}
-\indexentry{minimal numerical $\theta $-codistance|hyperpage}{50}
+\indexentry{$\theta $-codistance|hyperpage}{49}
+\indexentry{numerical $\theta $-codistance|hyperpage}{49}
+\indexentry{proper|hyperpage}{49}
+\indexentry{minimal numerical $\theta $-codistance|hyperpage}{49}
 \indexentry{induced flip-flop system|hyperpage}{50}
 \indexentry{flip-flop system|hyperpage}{50}
 \indexentry{direct descent into $R^\theta $|hyperpage}{50}
@@ -113,6 +112,6 @@
 \indexentry{closure|hyperpage}{50}
 \indexentry{Phan residue|hyperpage}{50}
 \indexentry{minimal Phan residue|hyperpage}{50}
-\indexentry{$K$-homogeneous|hyperpage}{51}
-\indexentry{homogeneous|hyperpage}{51}
-\indexentry{$C'$ inherits connectedness from $C$|hyperpage}{51}
+\indexentry{$K$-homogeneous|hyperpage}{50}
+\indexentry{homogeneous|hyperpage}{50}
+\indexentry{$C'$ inherits connectedness from $C$|hyperpage}{50}
