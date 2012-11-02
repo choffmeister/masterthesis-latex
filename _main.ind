@@ -1,10 +1,12 @@
 \begin{theindex}
 
+  \item $C'$ inherits connectedness from $C$, \hyperpage{51}
   \item $I$-residue, \hyperpage{18}
   \item $J$-equivalent, \hyperpage{46}
   \item $J$-gallery, \hyperpage{46}
   \item $J$-residue, \hyperpage{46}
-  \item $\mathaccentV {tilde}07E\theta $-codistance, \hyperpage{50}
+  \item $K$-homogeneous, \hyperpage{51}
+  \item $\theta $-codistance, \hyperpage{50}
   \item $\theta $-twisted expression, \hyperpage{12}
   \item $\theta $-twisted involution, \hyperpage{11}
   \item $i$-panel, \hyperpage{46}
@@ -36,6 +38,7 @@
   \item chamber system over $I$, \hyperpage{45}
   \item chambers, \hyperpage{45}
   \item closed, \hyperpage{46}
+  \item closure, \hyperpage{50}
   \item codistance function, \hyperpage{48}
   \item compact hyperbolic, \hyperpage{7}
   \item connected, \hyperpage{46}, \hyperpage{48}
@@ -51,6 +54,7 @@
 
   \item descending set, \hyperpage{3}
   \item diagonal-multiplicative, \hyperpage{21}
+  \item direct descent into $R^\theta $, \hyperpage{50}
   \item direct product of posets, \hyperpage{2}
   \item directed poset, \hyperpage{1}
   \item distance function, \hyperpage{47}
@@ -68,11 +72,13 @@
 
   \item gallery, \hyperpage{46--48}
   \item geodesic, \hyperpage{17}
+  \item good, \hyperpage{50}
   \item graded poset, \hyperpage{1}
 
   \indexspace
 
   \item Hasse diagram, \hyperpage{1}
+  \item homogeneous, \hyperpage{51}
 
   \indexspace
 
@@ -96,8 +102,8 @@
 
   \item maximal-multiplicative, \hyperpage{21}
   \item minimal gallery joining $c$ and $d$, \hyperpage{46}
-  \item minimal numerical $\mathaccentV {tilde}07E\theta $-codistance, 
-		\hyperpage{50}
+  \item minimal numerical $\theta $-codistance, \hyperpage{50}
+  \item minimal Phan residue, \hyperpage{51}
 
   \indexspace
 
@@ -114,6 +120,7 @@
   \item panel, \hyperpage{47, 48}
   \item parabolic subgroup, \hyperpage{5}
   \item partial order, \hyperpage{1}
+  \item Phan residue, \hyperpage{51}
   \item poset, \hyperpage{1}
   \item proper, \hyperpage{50}
 
@@ -146,7 +153,7 @@
   \item thin, \hyperpage{47}
   \item top-multiplicative, \hyperpage{21}
   \item transitivity, \hyperpage{1}
-  \item twin apartment, \hyperpage{48}
+  \item twin apartment, \hyperpage{49}
   \item twin building of type $(W,S)$, \hyperpage{48}
   \item twisted expression, \hyperpage{12}
   \item twisted involution, \hyperpage{11}

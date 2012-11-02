@@ -3,44 +3,123 @@
 In this section let $\mathcal C = (\mathcal C_+, \mathcal C_-, \delta^*)$ be a twin building of type $(W,S)$.
 
 \begin{defi}
-	Let $\tilde \theta$ be a permutation of $\mathcal C_+ \cup \mathcal C_-$ satisfying
+	Let $\theta$ be a permutation of $\mathcal C_+ \cup \mathcal C_-$ satisfying
 	\begin{axioms}
-		\axiomitem{Fl1} $\tilde \theta^2 = \id$,
-		\axiomitem{Fl2} $\tilde \theta(\mathcal C_+) = \mathcal C_-$ and
-		\axiomitem{Fl3} for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $x \sim y$ iff $\tilde \theta(x) \sim \tilde \theta(y)$ and $x \opp z$ iff $\tilde \theta(x) \opp \tilde \theta(z)$.
+		\axiomitem{Fl1} $\theta^2 = \id$,
+		\axiomitem{Fl2} $\theta(\mathcal C_+) = \mathcal C_-$ and
+		\axiomitem{Fl3} for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $x \sim y$ iff $\theta(x) \sim \theta(y)$ and $x \opp z$ iff $\theta(x) \opp \theta(z)$.
 	\end{axioms}
-	Then we call $\tilde \theta$ a \defword{building quasi-flip} of $\mathcal{C}$. If in addition
+	Then we call $\theta$ a \defword{building quasi-flip} of $\mathcal{C}$. If in addition
 	\begin{axioms}
-		\axiomitem{Fl3a} for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $\delta_\varepsilon(x,y) = \delta_{-\varepsilon}(\tilde \theta(x),\tilde \theta(y))$ and $\delta^*(x,z) = \delta^*(\tilde \theta(x),\tilde \theta(y))$, 
+		\axiomitem{Fl3a} for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $\delta_\varepsilon(x,y) = \delta_{-\varepsilon}(\theta(x),\theta(y))$ and $\delta^*(x,z) = \delta^*(\theta(x),\theta(y))$, 
 	\end{axioms}
-	then we call $\tilde \theta$ a \defword{building flip} of $\mathcal C$.
+	then we call $\theta$ a \defword{building flip} of $\mathcal C$.
 \end{defi}
 
 So building (quasi-)flips permute the two halfes of a twin building while preserving adjacency and opposition and building flips also flip the distance and preserver the codistance. The next lemma gives a first idea, how building quasi-flips are coherent to the poset $Wk(\theta)$.
 
 \begin{lemm}
 	\theocite{Lemma 2.1.4}{horn:kac-moody}
-	Let $\tilde \theta$ be a building quasi-flip of $\mathcal C$. Then $\tilde \theta$ induces an involutory (i.e. order at most 2) Coxeter system automorphism $\theta$ on $(W,S)$, so that for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $\theta(\delta_\varepsilon(x,y)) = \delta_{-\varepsilon}(\tilde \theta(x), \tilde \theta(y))$ and $\theta(\delta^*(x,z)) = \delta^*(\tilde \theta(x), \tilde \theta(z))$.
+	Let $\theta$ be a building quasi-flip of $\mathcal C$. Then $\theta$ induces an involutory (i.e. order at most 2) Coxeter system automorphism $\tilde \theta$ on $(W,S)$, so that for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $\tilde \theta(\delta_\varepsilon(x,y)) = \delta_{-\varepsilon}(\theta(x), \theta(y))$ and $\tilde \theta(\delta^*(x,z)) = \delta^*(\theta(x), \theta(z))$.
 \end{lemm}
+
+\begin{rema}
+	We will note distinguish between the automorphism $\theta$ in a twin building and its induced automorphism $\tilde \theta$ in the Coxeter system. Instead we will both denote by $\theta$.
+\end{rema}
 
 Of course the coherence between building quasi-flips and $Wk(\theta)$ is not clear by any means, but at least do building quasi-flips admit a Coxeter system and an involutory Coxeter system automorphism, hence every building quasi-flip has a corrosponding twisted weak ordering poset $Wk(W,\theta)$. But there are some definitions left until we have our objects of interest.
 
 \begin{defi}
-	For a chamber $c \in \mathcal C_+ \cup \mathcal C_-$ we call $\delta^{\tilde \theta}(c) := \delta^*(c,\tilde \theta(c))$ the \defword{$\tilde \theta$-codistance} of $c$ and $l^{\tilde \theta}(c) = l(\delta^{\tilde \theta}(c))$ the \defword{numerical $\theta$-codistance} of $c$.
+	For a chamber $c \in \mathcal C_+ \cup \mathcal C_-$ we call $\delta^\theta(c) := \delta^*(c,\theta(c))$ the \defword{$\theta$-codistance} of $c$ and $l^\theta(c) = l(\delta^\theta(c))$ the \defword{numerical $\theta$-codistance} of $c$.
 \end{defi}
 
 \begin{defi}
-	We call a building (quasi-)flip \defword{proper} if there is a chamber $c \in \mathcal{C}_+ \cup \mathcal{C}_-$ with $\delta^{\tilde \theta}(c) = e \iff l^{\tilde \theta}(c) = 0$.
+	We call a building (quasi-)flip \defword{proper} if there is a chamber $c \in \mathcal{C}_+ \cup \mathcal{C}_-$ with $\delta^{\theta}(c) = e \iff l^{\theta}(c) = 0$.
 \end{defi}
 
 \begin{defi}
-	Let $\tilde \theta$ be a building quasi-flip of $\mathcal C$ and let $R \subseteq \mathcal C_+$ be an arbitrary residue. The \defword{minimal numerical $\tilde \theta$-codistance} of $R$ is defined as $\min_{c \in R} l^{\tilde \theta}(c)$.
+	Let $\theta$ be a building quasi-flip of $\mathcal C$ and let $R \subseteq \mathcal C_+$ be an arbitrary residue. The \defword{minimal numerical $\theta$-codistance} of $R$ is defined as $\min_{c \in R} l^{\theta}(c)$.
 \end{defi}
 
-According to the definition of $c_+ \opp d_-$, i.e. $l(\delta^*(c_+,d_-)) = 0$, we can consider the chambers that actually reach the minimal numerical $\tilde \theta$-codistance as those, that are mapped away "as far as possible". In particular if $\min_{c \in R} l^{\tilde \theta}(c) = 0$, this are precisely those chambers, mapped to their opposite.
+According to the definition of $c_+ \opp d_-$, i.e. $l(\delta^*(c_+,d_-)) = 0$, we can consider the chambers that actually reach the minimal numerical $\theta$-codistance as those, that are mapped away ``as far as possible''. In particular if $\min_{c \in R} l^{\theta}(c) = 0$, this are precisely those chambers, mapped to their opposite.
 
 \begin{defi}
-	Let $\tilde \theta$ be a building quasi-flip of $\mathcal C$ and let $R \subseteq \mathcal C_+$ be an arbitrary residue. The (sub)chamber system of all chambers with minimal numerical $\tilde \theta$-codistance
-	$$ R^{\tilde \theta} := \{ c \in R : l^{\tilde \theta}(c) = \min_{d \in R} l^{\tilde \theta}(d) \} $$
-	together with the equivalence relations inherited from $\mathcal C_+$ is called the \defword{induced flip-flop system} on $R$. In case $R = \mathcal C_+$, we call $C^{\tilde \theta} := C_+^{\tilde \theta} = R^{\tilde \theta}$ the \defword{flip-flop system} associated to $\tilde \theta$.
+	Let $\theta$ be a building quasi-flip of $\mathcal C$ and let $R \subseteq \mathcal C_+$ be an arbitrary residue. The (sub)chamber system of all chambers with minimal numerical $\theta$-codistance
+	$$ R^\theta := \{ c \in R : l^\theta(c) = \min_{d \in R} l^\theta(d) \} $$
+	together with the equivalence relations inherited from $\mathcal C_+$ is called the \defword{induced flip-flop system} on $R$. In case $R = \mathcal C_+$, we call $C^\theta := C_+^\theta = R^\theta$ the \defword{flip-flop system} associated to $\theta$.
 \end{defi}
+
+\begin{defi}
+	For a residue $R$ of $\mathcal{C}$ we say that \defword{direct descent into $R^\theta$} is possible if for any chamber $c \in R$ there is a gallery from $c$ to a chamber in $R^\theta$ such that the numerical $\theta$-codistance $l^\theta$ is strictly decreasing along the gallery.
+\end{defi}
+
+\begin{defi}
+	A residue $R$ of $\mathcal{C}$ is called \defword{good} if
+	\begin{enumerate}
+		\item $R$ admits direct descent into $R^\theta$ and
+		\item $R^\theta$ is connected.
+	\end{enumerate}
+\end{defi}
+
+\begin{lemm}
+	\theocite{UNKNOWN}{foobar}
+	\typedlabel{lemm:unique-convex-hull}
+	Assume that all rank-2-residues of $\mathcal C$ are good. Then every $I$-residue of $\mathcal C^\theta$ is contained in excatly one $I$-residue of $\mathcal C_+$.
+\end{lemm}
+
+\begin{defi}
+	For an $I$-residue $R$ of $\mathcal C^\theta$ we call the unqiue $I$-residue of $\mathcal C_+$ containing $R$ from \ref{lemm:unique-convex-hull} its \defword{closure} and denote it by $\overline R$.
+\end{defi}
+
+\begin{rema}
+	Note, that in the case that the corrospondence of $I$-residues in $\mathcal C^\theta$ and $I$-residues in $\mathcal C_+$ is unambiguous, hence in particular if all rank-2-residues are good, then $R = \overline R^\theta$.
+\end{rema}
+
+\begin{defi}
+	A residue $R$ of $\mathcal{C}$ is called a \defword{Phan residue} if $R$ is opposite $\theta(R)$, i.e. for every chamber $c \in R$ there is a chamber $\theta(c') \in \theta(R)$ with $c \opp \theta(c')$. If a Phan residue does not contain any other Phan residue than we call it a \defword{minimal Phan residue}.
+\end{defi}
+
+\begin{defi}
+	A quasi-flip is called \defword{$K$-homogeneous} or just \defword{homogeneous} if all minimal Phan residues are of identical type $K$.
+\end{defi}
+
+\begin{defi}
+	Let $\mathcal C' \subseteq \mathcal C$ be two chamber systems such that the relations in $\mathcal C'$ are obtained by restricting those from $\mathcal C$. If any two chambers $c,d \in \mathcal C'$ are connected by a $J$-gallery in $\mathcal C'$ if and only if they are connected by a $J$-gallery in $\mathcal C$, then we say that \defword{$C'$ inherits connectedness from $C$}.
+\end{defi}
+
+\begin{prop}
+	\theocite{Proposition 4.4.3}{horn:kac-moody}
+	\typedlabel{prop:good-from-rank-2-to-all}
+	Let $\theta$ be a quasi-flip of $\mathcal{C}$ and let all rank-2-residues be good. Then any residue $Q$ is good. In particular $Q^\theta$ is connected.
+\end{prop}
+
+\begin{prop}
+	\theocite{Proposition 4.4.4}{horn:kac-moody}
+	\typedlabel{prop:good-rank-2-conclusion}
+	Let $\theta$ be a quasi-flip of $\mathcal{C}$ and let all rank-2-residues be good. Then
+	\begin{enumerate}
+		\item $\theta$ is $K$-homogeneous for some $K$ and
+		\item $C^\theta$ inherits connectedness from $C_+$.
+	\end{enumerate}
+\end{prop}
+
+The following proposition is a slight variation of \cite[Proposition 4.5.4]{horn:kac-moody}.
+
+\begin{prop}
+	\typedlabel{prop:3rc-to-rc}
+	Let $\theta$ be a quasi-flip of a twin building $\mathcal C$ of type $(W,S)$ and suppose all its rank-2-residues to be good. If $(W,S)$ is 3-residually connected, then the flip-flop system $\mathcal C^\theta$ is residually connected.
+
+	\begin{proof}
+		Let $R_i$ be residues of type $J_i$ for $1 \leq i \leq 3$ such that their pairwise intersection is non-empty. By \ref{lemm:rc-reduction-to-3-residues} it is sufficient to show that $R_{123} = R_1 \cap R_2 \cap R_3$ is non-empty and connected. By the residually connectedness of buildings we have $\overline R_{123} = \overline R_1 \cap \overline R_2 \cap \overline R_3 \neq \emptyset$. We choose a chamber $c \in \overline R_{123}$. By \ref{prop:good-from-rank-2-to-all} we can directly descend from $c$ to $\mathcal C^\theta$ by a $(J_1 \cap J_2)$-gallery. Due to symmetry this is also possible by a $(J_2 \cap J_3)$- and a $(J_3 \cap J_1)$-gallery.
+
+		Denote by $K$ the homogeneity type of $\theta$ (cf. \ref{prop:good-rank-2-conclusion}) and by $w$ the $\theta$-codistance of $c$. Then there are words $w_{ij} \in W_{J_i \cap J_j}$ such that for each there is a directly descending gallery of type $w_{ij}$ from $c$ with $\theta$-codistance $w$ to a chamber with $\theta$-codistance $w_K$. Hence for some well choosen subwords $w'_{ij} \leq w_{ij}$ we have $w = \theta(w'_{ij}) w_K w_{ij}$ with $l(w) = l(\theta(w'_{ij})) + l(w_K) + l(w_{ij})$, i.e. the concatenation of the words admit a reduced expression for $w$. By \theocite{UNKNOWN}{foobar} these subwords are uniquely determined, since every step must have a $\theta$-twisted involution as $\theta$-codistance. But we assumed $Wk(W,\theta)$ to be 3-residually connected and therefore we can choose the $w_{ij}$ from $T := J_1 \cap J_2 \cap J_3$. So we conclude that direct descend from $c$ into $\mathcal C^\theta$ is possible via a gallery of type $w_{ij}$, staying in $\overline R_{123}$. Hence $\overline R_{123} \cap \mathcal C^\theta \neq \emptyset$ and so $R_{123} \neq \emptyset$. Finally \ref{prop:good-from-rank-2-to-all} say that $R_{123} = \overline R_{123}^\theta$ is connected.
+	\end{proof}
+\end{prop}
+
+\begin{coro}
+	Let $\mathcal C$ be a twin building of type $(W,S)$ with a quasi-flip $\theta$ such that all rank-2-residues are good. If $(W,S)$ is of rank $\leq 3$ or if $(W,\theta)$ is from Table~\ref{tab:rc3-wks}, then $\mathcal C^\theta$ is residually connected.
+
+	\begin{proof}
+		By \ref{prop:3rc-to-rc} in combination with \ref{prop:rank-leq-3-main-special-case} and \ref{theo:some-3rc-systems}.
+	\end{proof}
+\end{coro}
