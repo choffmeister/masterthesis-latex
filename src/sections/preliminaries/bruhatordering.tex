@@ -2,7 +2,7 @@
 \section{Bruhat ordering}
 \label{sec:coxeter-groups-bruhat-ordering}
 
-We now investigate ways to partially order the elements of a Coxeter group. Futhermore, this ordering should be compatible with the length function, i.e. for $w,v \in W$ we have $l(w) < l(v)$ whenever $w < v$.
+We now investigate ways to partially order the elements of a Coxeter group. Furthermore, this ordering should be compatible with the length function, i.e. for $w,v \in W$ we have $l(w) < l(v)$ whenever $w < v$.
 
 \begin{defi}
 	\typedlabel{defi:bruhat-ordering}
@@ -19,7 +19,7 @@ We now investigate ways to partially order the elements of a Coxeter group. Futh
 	\end{proof}
 \end{lemm}
 
-We now show, that $Br(W)$ is graded. By definition we already have $v < w$ iff $l(v) < l(w)$, but its not that obvious that two immediately adjacent elements differ in length by exactly 1. Beforehand let us just mention two other partial orderings that are graded by definition:
+We now show that $Br(W)$ is graded. By definition we already have $v < w$ iff $l(v) < l(w)$, but its not that obvious that two immediately adjacent elements differ in length by exactly 1. Beforehand let us just mention two other partial orderings that are graded by definition.
 
 \begin{defi}
 	Let $(W,S)$ be a Coxeter system. The ordering $\leq_R$ defined by $u \leq_R w$ iff $uv = w$ for some $u \in W$ with $l(u) + l(v) = l(w)$ is called the \defword{right weak ordering}. The left-sided version $u \leq_L w$ iff $vu = w$ is called the \defword{left weak ordering}.
@@ -97,20 +97,20 @@ The \ref{theo:lifting-property} seems quite innocent, but when trying to investi
 	The poset $\Br(W)$ is directed.
 \end{prop}
 
-\begin{coro}
-	\typedlabel{coro:bruhat-is-bounded}
+\begin{prop}
+	\typedlabel{prop:bruhat-is-bounded}
 	\theocite{Proposition 8}{denton:coxeter}
 	\begin{enumerate}
 		\item Let $W$ be finite, then there exists an unique element $w_0 \in W$ with $w \leq w_0$ for all $w \in W$.
 		\item If $W$ contains an element $w$, with $D_R(w) = S$, then $W$ is finite and $w$ is the unique element $w_0$.
 	\end{enumerate}
-\end{coro}
+\end{prop}
 
 \begin{coro}
 	Let $(W,S)$ be a finite Coxeter system. Then $\Br(W)$ is graded, directed and bounded.
 
 	\begin{proof}
-		$\Br(W)$ is graded due to \ref{coro:bruhat-ordering-is-graded}, directed due to \ref{prop:bruhat-is-directed} and bounded due to \ref{coro:bruhat-is-bounded}.
+		$\Br(W)$ is graded due to \ref{coro:bruhat-ordering-is-graded}, directed due to \ref{prop:bruhat-is-directed} and bounded due to \ref{prop:bruhat-is-bounded}.
 	\end{proof}
 \end{coro}
 

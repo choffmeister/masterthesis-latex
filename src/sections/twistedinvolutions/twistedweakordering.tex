@@ -8,13 +8,13 @@ In this section we introduce the twisted weak ordering $Wk(\theta)$ on the set $
 	For $v,w \in \ti{\theta}$ we define $v \preceq w$ iff there are $\ul s_1, \ldots, \ul s_k \in \ul S$ with $w = v \ul s_1 \ldots \ul s_k$ and $\rho(v) = \rho(w) - k$. We call the poset $(\ti{\theta},\preceq)$ \defword{twisted weak ordering}, denoted by $Wk(W, \theta)$. When the Coxeter group $W$ is clear from the context, we just write $Wk(\theta)$.
 \end{defi}
 
-\begin{lemm}
+\begin{prop}
 	The poset $Wk(\theta)$ is a graded poset with rank function $\rho$.
 
 	\begin{proof}
 		Follows immediately from the definition of $\preceq$.
 	\end{proof}
-\end{lemm}
+\end{prop}
 
 By a diagram of a poset $Wk(\theta)$, we do not just mean the ordinary Hasse diagram. Suppose $w,v \in Wk(\theta)$ with $w \ul s = v$. We encode the information if $\ul s$ acts as twisted involution or as multiplication on $w$ by drawing either a solid or a dashed edge from $w$ to $v$. Another possible extension is to label (or color) the edges to encode the involved $\ul s$. For simplification of terminology we still just speak of the Hasse diagram of $Wk(\theta)$. The next example shows such a (extended) Hasse diagram.
 
@@ -60,8 +60,8 @@ By a diagram of a poset $Wk(\theta)$, we do not just mean the ordinary Hasse dia
 	\end{proof}
 \end{prop}
 
-\begin{prop}
-	\typedlabel{prop:no-triple-edges}
+\begin{lemm}
+	\typedlabel{lemm:no-triple-edges}
 	Let $w \in W$ and $w \ul s \succ w$. Then $|\{ t \in S : w \ul t = w \ul s \}| \in \{1,2\}$.
 
 	\begin{proof}
@@ -71,17 +71,17 @@ By a diagram of a poset $Wk(\theta)$, we do not just mean the ordinary Hasse dia
 			w s & \Rightarrow \theta(t) = w s w^{-1} \textrm{ or} \\
 			\theta(s) \overline w s & \Rightarrow w = \theta(t) \theta(s) \overline w s, \\
 		\end{cases} $$
-		where $\overline w$ denotes a well choosen subexpression of $w$. The first case is trivial, the second determines $t$ unambiguously. The third case is impossible, since by \ref{coro:exchange-condition} and \ref{rema:exchange-condition-left-sided} we would have a reduced expression for $w$ beginning with $\theta(s)$ or ending with $s$ (or both), yielding $l(\theta(s)ws) \leq l(w)$, which contradicts to $\rho(w \ul s) = \rho(\theta(s)ws) > \rho(w)$. Therefore, there cannot be more than two distinct $s,t \in S \setminus D_R(w)$ with $w \ul s = w \ul t$.
+		where $\overline w$ denotes a well chosen subexpression of $w$. The first case is trivial, the second determines $t$ unambiguously. The third case is impossible, since by \ref{coro:exchange-condition} and \ref{rema:exchange-condition-left-sided} we would have a reduced expression for $w$ beginning with $\theta(s)$ or ending with $s$ (or both), yielding $l(\theta(s)ws) \leq l(w)$, which contradicts to $\rho(w \ul s) = \rho(\theta(s)ws) > \rho(w)$. Therefore, there cannot be more than two distinct $s,t \in S \setminus D_R(w)$ with $w \ul s = w \ul t$.
 	\end{proof}
-\end{prop}
+\end{lemm}
 
-\begin{coro}
-	\typedlabel{coro:double-edges-only-for-ord-2}
+\begin{lemm}
+	\typedlabel{lemm:double-edges-only-for-ord-2}
 	Let $w \in \ti{\theta}$ and $s,t \in S$ be two distinct generators. If $w \ul s = w \ul t$, then $\ord(st) = 2$.
 
 	\begin{proof}
-		By the proof of \ref{prop:no-triple-edges} we see, that $w \ul s = w \ul t$ for two distinct $s,t \in S$ implies that $\theta(t)w = ws$ holds and that $\ul s$ and $\ul t$ act by twisted conjugation on $w$. Since $\theta(w) = w^{-1}$ we also have $\theta(s)w = wt$ by
+		By the proof of \ref{lemm:no-triple-edges} we see that $w \ul s = w \ul t$ for two distinct $s,t \in S$ implies that $\theta(t)w = ws$ holds and that $\ul s$ and $\ul t$ act by twisted conjugation on $w$. Since $\theta(w) = w^{-1}$ we also have $\theta(s)w = wt$ by
 		$$ \theta(t)w = ws \iff \theta(\theta(t)w) = \theta(ws) \iff tw^{-1} = w^{-1} \theta(s) \iff wt = \theta(s)w. $$
-		Hence we have $wts = \theta(s)ws = \theta(t)wt = wst$, yielding $st = ts$ and $\ord(st) = 2$.
+		Hence, we have $wts = \theta(s)ws = \theta(t)wt = wst$, yielding $st = ts$ and $\ord(st) = 2$.
 	\end{proof}
-\end{coro}
+\end{lemm}

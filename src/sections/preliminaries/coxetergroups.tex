@@ -21,14 +21,14 @@ From the definiton we see that Coxeter groups only depend on the cardinality of 
 
 \begin{defi}
 	\typedlabel{defi:coxeter-graph}
-	Let $(W,S)$ be a Coxeter system. Create a graph by adding a vertex for each generator in $S$, say the vertex $v_i$ corrosponds to the generator $s_i$. Let $(s_i s_j)^m = 1$. In case $m = 2$ then $v_i,v_j$ have no connecting edge. In case $m = 3$ they are connected by an unlabed edge. For $m > 3$ they have an connecting edge with label $m$. We call this graph the \defword{Coxeter graph} of our Coxeter system $(W,S)$.
+	Let $(W,S)$ be a Coxeter system. Create a graph by adding a vertex for each generator in $S$, say the vertex $v_i$ corrosponds to the generator $s_i$. Let $(s_i s_j)^m = 1$. In case $m = 2$ then $v_i,v_j$ have no connecting edge. In case $m = 3$ they are connected by an unlabled edge. For $m > 3$ they have a connecting edge with label $m$. We call this graph the \defword{Coxeter graph} of our Coxeter system $(W,S)$.
 \end{defi}
 
 \begin{defi}
 	Let $(W,S)$ be a Coxeter system. For an arbitrary element $w \in W$ we call a product $s_{i_1} \cdots s_{i_n} = w$ of generators $s_{i_1} \ldots s_{i_n} \in S$ an \defword{expression} of $w$. Any expression that can be obtained from $s_{i_1} \cdots s_{i_n}$ by omitting some (or all) generators is called a \defword{subexpression} of $w$.
 \end{defi}
 
-The present relations between the generators of a Coxeter group allow us to rewrite expressions. Hence an element $w \in W$ can have more than one expression. Obviously any element $w \in W$ has infinitly many expressions, since any expression $s_{i_1} \cdots s_{i_n} = w$ can be extended by applying $s_1^2 = 1$ from the right. But there must be a smallest number of generators needed to receive $w$. For example the neutral element $e$ can be expressed by the empty expression. Or each generator $s_i \in S$ can be expressed by itself, but any expression with less factors (i.e. the empty expression) is unequal to $s_i$.
+The present relations between the generators of a Coxeter group allow us to rewrite expressions. Hence, an element $w \in W$ can have more than one expression. Obviously any element $w \in W$ has infinitly many expressions, since any expression $s_{i_1} \cdots s_{i_n} = w$ can be extended by applying $s_1^2 = 1$ from the right. But there must be a smallest number of generators needed to receive $w$. For example the neutral element $e$ can be expressed by the empty expression. Or each generator $s_i \in S$ can be expressed by itself, but any expression with less factors (i.e. the empty expression) is unequal to $s_i$.
 
 \begin{defi}
 	\typedlabel{defi:length-function}
@@ -62,5 +62,5 @@ The next lemma yields some useful identities and relations for the length functi
 \end{lemm}
 
 \begin{rema}
-	Note, that $l(ws) = l(w) \pm 1$ has a left analogue by $l(sw) = l(w^{-1} s) = l(w^{-1}) \pm 1 = l(w) \pm 1$.
+	Note that $l(ws) = l(w) \pm 1$ has a left analogue by $l(sw) = l(w^{-1} s) = l(w^{-1}) \pm 1 = l(w) \pm 1$.
 \end{rema}

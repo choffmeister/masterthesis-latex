@@ -20,7 +20,7 @@ Posets are sets $M$ with a partial order $\leq$. In particular, there are pairs 
 \end{defi}
 
 \begin{defi}
-	A poset is called \defword{directed poset} if for any two elements $a,b \in M$ there is an element $c \in M$ with $a \leq c$ and $b \leq c$. It is called \defword{bounded poset} if it has a unique minimal and maximal element, denoted by $\hat 0$ and $\hat 1$.
+	A poset is called \defword{directed poset} if for any two elements $a,b \in M$ there is an element $c \in M$ with $a \leq c$ and $b \leq c$. It is called \defword{bounded poset} if it has an unique minimal and maximal element, denoted by $\hat 0$ and $\hat 1$.
 \end{defi}
 
 \begin{defi}
@@ -29,11 +29,11 @@ Posets are sets $M$ with a partial order $\leq$. In particular, there are pairs 
 
 \begin{defi}
 	\typedlabel{defi:hasse-diagram}
-	The \defword{Hasse diagram} of the poset $(M,\leq)$ is the graph obtained in the following way: Add a vertex for each element in $M$. Then add a directed edge from vertex $a$ to $b$ whenever $b$ covers $a$.
+	The \defword{Hasse diagram} of the poset $(M,\leq)$ is the graph obtained in the following way: add a vertex for each element in $M$. Then add a directed edge from vertex $a$ to $b$ whenever $b$ covers $a$.
 \end{defi}
 
 \begin{exam}
-	Suppose we have an arbitrary set $M$. Then the powerset $\mathcal P (M)$ can be partially ordered by the subset relation, so $(\mathcal P (M), \subseteq)$ is a poset. Indeed this poset is always graded with the cardinality function as rank function. In Figure \ref{fig:poset-xyz-subsets} we see the Hasse diagram of this poset with $M = \{x,y,z\}$.
+	Suppose we have an arbitrary set $M$. Then the powerset $\mathcal P (M)$ can be partially ordered by the subset relation, so $(\mathcal P (M), \subseteq)$ is a poset. Indeed, this poset is always graded with the cardinality function as rank function. In Figure \ref{fig:poset-xyz-subsets} we see the Hasse diagram of this poset with $M = \{x,y,z\}$.
 
 	\begin{figure}[ht]
 		\centering

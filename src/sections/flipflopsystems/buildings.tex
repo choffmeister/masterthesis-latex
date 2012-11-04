@@ -13,20 +13,20 @@
 For the rest of the subsection let $(\mathcal{C}, \delta)$ always be a building of type $(W,S)$.
 
 \begin{defi}
-	Then cardinality of $S$ is called the \defword{rank} of the building.
+	The cardinality of $S$ is called the \defword{rank} of the building.
 \end{defi}
 
 \begin{defi}
 	For each $s \in S$ we define $c,d \in C$ to be $s$-adjacent if and only iff $\delta(c,d) \in \{e,s\}$. Then $(\mathcal{C}, (\sim_s, s \in S))$ is called the \defword{associated chamber system} to $(\mathcal{C}, \delta)$.
 \end{defi}
 
-\begin{lemm}
-	Then the associated chamber system is a chamber system.
+\begin{prop}
+	The associated chamber system is a chamber system.
 
 	\begin{proof}
 		Let $c,d \in \mathcal{C}$ and $s,t \in S$ with $c \sim_s d$ and $c \sim_t d$. If $c \neq d$, then $\delta(c,d) = s$ and $\delta(c,d) = t$, hence $s = t$.
 	\end{proof}
-\end{lemm}
+\end{prop}
 
 \begin{defi}
 	A \defword{gallery}, \defword{residue} or \defword{panel} in a building is a gallery, residue or panel in the associated chamber system.
@@ -40,15 +40,15 @@ For the rest of the subsection let $(\mathcal{C}, \delta)$ always be a building 
 	\typedlabel{exam:thin-building}
 	For a Coxeter system $(W,S)$ define a map
 	$$ \delta_S : W \times W \to W : (x,y) \mapsto x^{-1}y. $$
-	Then $\delta_S(x,y) = e \iff x = y$. Furthermore for $z \in W$ with $\delta_S(y,z) = s$, i.e. $z = ys$, we have $\delta_S(x,z) = x^{-1}z = x^{-1}ys = \delta(x,y)s$. For $s \in S$ and $x,y \in W$ choose $z = ys$. Then $\delta_S(y,z) = s$ and as before $\delta_S(x,z) = \delta_S(x,y)s$. Hence $(W,\delta_S)$ is a building of type $(W,S)$. More precisely, it is a thin building, since for every $s \in S$ and $x,y \in W$ we have $\delta_S(x,y) = x^{-1}y \in \{e,s\}$ if and only if $x = y$ or $y = xs$, hence there are excatly two chambers $s$-adjacent to $x$.
+	Then $\delta_S(x,y) = e \iff x = y$. Furthermore, for $z \in W$ with $\delta_S(y,z) = s$, i.e. $z = ys$, we have $\delta_S(x,z) = x^{-1}z = x^{-1}ys = \delta(x,y)s$. For $s \in S$ and $x,y \in W$ choose $z = ys$. Then $\delta_S(y,z) = s$ and as before $\delta_S(x,z) = \delta_S(x,y)s$. Hence, $(W,\delta_S)$ is a building of type $(W,S)$. More precisely, it is a thin building, since for every $s \in S$ and $x,y \in W$ we have $\delta_S(x,y) = x^{-1}y \in \{e,s\}$ if and only if $x = y$ or $y = xs$, hence there are excatly two chambers $s$-adjacent to $x$.
 \end{exam}
 
-This example for a thin building of type $(W,S)$ can be indeed called "the" thin building of type $(W,S)$ as the following lemma shows.
+This example for a thin building of type $(W,S)$ can be indeed called ``the'' thin building of type $(W,S)$ as the following lemma shows.
 
-\begin{lemm}
+\begin{theo}
 	\theocite{Theorem 4.2.8}{buekenhout:diagram-geometry}
-	Let $(\mathcal{C}, \delta)$ be a thin. Then it is isometric to the building $(W, \delta_S)$ (cf. \ref{exam:thin-building}).
-\end{lemm}
+	Let $(\mathcal{C}, \delta)$ be thin. Then it is isometric to the building $(W, \delta_S)$ (cf. \ref{exam:thin-building}).
+\end{theo}
 
 \begin{defi}
 	We call a subset $\Sigma \subseteq \mathcal{C}$ an \defword{apartment} if $(\Sigma, \delta|_\Sigma)$ is isometric to $(W,\delta_S)$ from \ref{exam:thin-building}, or equivalent if $(\Sigma, \delta|_\Sigma)$ is thin.
@@ -56,14 +56,14 @@ This example for a thin building of type $(W,S)$ can be indeed called "the" thin
 
 \begin{theo}
 	\theocite{Theorem 11.2.5}{buekenhout:diagram-geometry}
-	For any two chambers $c,d \in \mathcal{C}$ there is an apartment $\Sigma$ with $c,d \in \Sigma$. In particular every building contains at least one apartment.
+	For any two chambers $c,d \in \mathcal{C}$ there is an apartment $\Sigma$ with $c,d \in \Sigma$. In particular, every building contains at least one apartment.
 
 	\begin{proof}
-		The proof for the first statement can be found in \cite[Theorem 11.2.5]{buekenhout:diagram-geometry}. The second is an immediate conclusion of the first, since because of $|S| \geq 1$ and \axiomref{Bu3} every building must at least contain two chambers. And so there is at least one pair of chambers, that has to be contained in an apartment by the first statement.
+		The proof for the first statement can be found in \cite[Theorem 11.2.5]{buekenhout:diagram-geometry}. The second is an immediate conclusion of the first, since because of $|S| \geq 1$ and \axiomref{Bu3} every building must at least contain two chambers. And so there is at least one pair of chambers that has to be contained in an apartment by the first statement.
 	\end{proof}
 \end{theo}
 
-So thin buildings are precisely those, that contain excatly one apparment, i.e. are apartments themself.
+So thin buildings are precisely those that contain excatly one apparment, i.e. are apartments themself.
 
 \begin{defi}
 	The building $(\mathcal{C},\delta)$ is called \defword{spherical} if $W$ is finite. In this case $W$ has a longest element $w_0$ and two chambers $c,d$ are called \defword{opposite} if $\delta(c,d) = w_0$, denoted by $c \opp d$.

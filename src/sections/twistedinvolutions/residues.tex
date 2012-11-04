@@ -15,8 +15,8 @@ Residues in $Wk(\theta)$ are subsets of $\theta$-twisted involutions that can be
 	Let $w \in \ti{\theta}$. Then $wC_\emptyset = \{ w \}$ and $wC_S = \ti{\theta}$.
 \end{exam}
 
-\begin{lemm}
-	\typedlabel{lemm:all-elements-of-one-residue-yield-the-same-residue}
+\begin{prop}
+	\typedlabel{prop:all-elements-of-one-residue-yield-the-same-residue}
 	Let $w \in \ti{\theta}$ and $I \subset S$. If $v \in wC_I$, then $vC_I = wC_I$.
 
 	\begin{proof}
@@ -24,32 +24,32 @@ Residues in $Wk(\theta)$ are subsets of $\theta$-twisted involutions that can be
 		$$ u = w \ul t_1 \ldots \ul t_m = (v \ul s_n \ldots \ul s_1) \ul t_1 \ldots \ul t_m $$
 		and so $u \in vC_I$. This yields $wC_I \subset vC_I$. Since $w \in vC_I$ we can swap $v$ and $w$ to get the other inclusion.
 	\end{proof}
-\end{lemm}
+\end{prop}
 
 \begin{coro}
 	Let $v, w \in \ti{\theta}$ and $I \subset S$. Then either $vC_I \cap wC_I = \emptyset$ or $vC_I = wC_I$.
 
 	\begin{proof}
-		Immediately follows from \ref{lemm:all-elements-of-one-residue-yield-the-same-residue}.
+		Immediately follows from \ref{prop:all-elements-of-one-residue-yield-the-same-residue}.
 	\end{proof}
 \end{coro}
 
-\begin{prop}
-	\typedlabel{prop:residues-have-unique-wk-theta-minimal-element}
+\begin{lemm}
+	\typedlabel{lemm:residues-have-unique-wk-theta-minimal-element}
 	\theocite{Lemma 5.6}{hultman:comb-twisted-invo}
-	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators. Then there exists a unique element $w_0 \in wC_I$ with $w_0 \preceq w_0 \ul s$ for all $s \in I$.
+	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators. Then there exists an unique element $w_0 \in wC_I$ with $w_0 \preceq w_0 \ul s$ for all $s \in I$.
 
 	\begin{proof}
 		\proofcite{Lemma 5.6}{hultman:comb-twisted-invo}
-		We reproduce the proof from loc. cit. here. Suppose there is no such element. Then for each $w \in wC_I$ we can find a $s \in I$ with $w' = w \ul s \preceq w$ and $e' \in wC_I$. By repetition of \ref{coro:deletion-property-for-twisted-expressions} we get $e \in wC_I$, but $e$ has the property, which we assumed that no element in $wC_I$ has. Hence there must be at least one such element. Now suppose there are two distinct elements $u,v$ with the desired property. Note that this means, that $u$ and $w$ have no reduced twisted expression ending with some $\ul s \in I$. Let $v$ have a reduced twisted expression $v = \ul s_1 \ldots \ul s_k$. Since $u$ and $v$ are both in $wC_I$ there must be a twisted $v$-expression for $u$
+		We reproduce the proof from loc. cit. here. Suppose there is no such element. Then for each $w \in wC_I$ we can find a $s \in I$ with $w' = w \ul s \preceq w$ and $e' \in wC_I$. By repetition of \ref{coro:deletion-property-for-twisted-expressions} we get $e \in wC_I$, but $e$ has the property, which we assumed that no element in $wC_I$ has. Hence, there must be at least one such element. Now suppose there are two distinct elements $u,v$ with the desired property. Note that this means that $u$ and $w$ have no reduced twisted expression ending with some $\ul s \in I$. Let $v$ have a reduced twisted expression $v = \ul s_1 \ldots \ul s_k$. Since $u$ and $v$ are both in $wC_I$ there must be a twisted $v$-expression for $u$
 		$$ u = v \ul s_{k+1} \ldots \ul s_{k+l} = \ul s_1 \ldots \ul s_{k+l} $$
 		with $s_n \in I$ for $k+1 \leq n \leq k+l$. This twisted expression cannot be reduced, since it ends with $\ul s_{k+l} \in I$. Then \ref{coro:deletion-property-for-twisted-expressions} yields that this twisted expression contains a reduced twisted subexpression for $u$. It cannot end with $\ul s_n$ for $k+1 \leq n \leq k+l$. Hence, it is a twisted subexpression of $\ul s_1 \ldots \ul s_k = v$, too. So $u \leq v$ by \ref{theo:bruhat-subexpression-characterization}. Because of symmetry we have $v \leq u$ and so $u = v$, contradicting to our assumption $u \neq v$.
 	\end{proof}
-\end{prop}
+\end{lemm}
 
 \begin{coro}
 	\typedlabel{coro:residues-have-unique-minimal-element}
-	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators and let $k$ be the minimal twisted length within the residue $wC_I$. Then the element $w_0$ from \ref{prop:residues-have-unique-wk-theta-minimal-element} is the only element with twisted length $k$.
+	Let $w \in \ti{\theta}$, $I \subseteq S$ be a set of generators and let $k$ be the minimal twisted length within the residue $wC_I$. Then the element $w_0$ from \ref{lemm:residues-have-unique-wk-theta-minimal-element} is the only element with twisted length $k$.
 
 	\begin{proof}
 		The minimal twisted length $k$ is well-defined, since the image of $\rho$ is in $\nn_0$, which is well-ordered, and $wC_I \neq \emptyset$. Suppose some element $v \neq w_0$ has twisted length $k$. Then there is a $s \in I$ with $s \in D_R(v)$ and hence $v \ul s \in wC_I$ with $\rho(v \ul s) < \rho(v) = k$. This contradicts to the minimality of $k$. Since at least one element has twisted length $k$ and only $w_0$ is left we are done.
@@ -71,7 +71,7 @@ We proceed with some properties of rank-2-residues. Our interest in these residu
 	\end{cases}$$
 \end{defi}
 
-This definition allows us to express rank-2-residues differently. Suppose we have an element $w \in \ti{\theta}$ and two distinct generators $s,t \in S$. Thanks to \ref{lemm:all-elements-of-one-residue-yield-the-same-residue} and \ref{coro:residues-have-unique-minimal-element} we can assume, that $w = min(w,\{s,t\})$. Then
+This definition allows us to express rank-2-residues differently. Suppose we have an element $w \in \ti{\theta}$ and two distinct generators $s,t \in S$. Thanks to \ref{prop:all-elements-of-one-residue-yield-the-same-residue} and \ref{coro:residues-have-unique-minimal-element} we can assume that $w = min(w,\{s,t\})$. Then
 $$ wC_{\{s,t\}} = \{ w \} \ \cup \ \{ w [\ul s \ul t]^n : n \in \nn \} \ \cup \ \{ w [\ul t \ul s]^n : n \in \nn \}. $$
 This encourages the following definition.
 
@@ -79,14 +79,14 @@ This encourages the following definition.
 	Let $w \in \ti{\theta}$ and let $s,t \in S$ be two distinct generators. Suppose $w = min(w,\{s,t\})$. Then we call $\{ w [\ul s \ul t]^n : n \in \nn \}$ the \defword{$s$-branch} and $\{ w [\ul t \ul s]^n : n \in \nn \}$ the \defword{$t$-branch} of $wC_{\{s,t\}}$.
 \end{defi}
 
-One question arises immediately: Are the $s$- and the $t$-branch disjoint? With the following propositions, corollaries and lemmas we will get a much better idea of the structure of rank-2-residues and answer this question.
+One question arises immediately: are the $s$- and the $t$-branch disjoint? With the following propositions, corollaries and lemmas we will get a much better idea of the structure of rank-2-residues and answer this question.
 
 \begin{prop}
 	\typedlabel{prop:rank-2-residues-are-convex}
 	Let $w \in \ti{\theta}$ and let $s,t \in S$ be two distinct generators. Without loss of generality suppose $w = \min(w, \{s,t\})$. If there is a $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$, then it is unique with this property in $wC_{\{s,t\}}$. Hence $wC_{\{s,t\}}$ consists of two geodesics from $w$ to $v$ intersecting only in these two elements. Else, the $s$- and $t$-branch are disjoint, strictly ascending in twisted length and of infinite size.
 
 	\begin{proof}
-		Suppose there is a $v$ in the $s$-branch with $v \ul s \prec v$ and $v \ul t \prec v$, say $v = w[\ul s \ul t]^n$ and $n$ is minimal with this property. Because of the uniqueness of a minimal element from \ref{prop:residues-have-unique-wk-theta-minimal-element} we have $w[\ul s \ul t]^{m+1} \prec w[\ul s \ul t]^m$ for all $m \in \nn$ with $n \leq m \leq 2n - 1$. With the same argument we have $w[\ul s \ul t]^{2n} = w$. If no such $v$ exists, then the $s$- and $t$-branch must be disjoint, strictly ascending in twisted length and so of infinite size.
+		Suppose there is a $v$ in the $s$-branch with $v \ul s \prec v$ and $v \ul t \prec v$, say $v = w[\ul s \ul t]^n$ and $n$ is minimal with this property. Because of the uniqueness of a minimal element from \ref{lemm:residues-have-unique-wk-theta-minimal-element} we have $w[\ul s \ul t]^{m+1} \prec w[\ul s \ul t]^m$ for all $m \in \nn$ with $n \leq m \leq 2n - 1$. With the same argument we have $w[\ul s \ul t]^{2n} = w$. If no such $v$ exists, then the $s$- and $t$-branch must be disjoint, strictly ascending in twisted length and so of infinite size.
 	\end{proof}
 \end{prop}
 
@@ -99,23 +99,23 @@ The assertion that \ref{prop:rank-2-residues-are-convex} makes can be thought of
 	\label{fig:concave-rank-2-residue}
 \end{figure}
 
-\begin{prop}
-	\typedlabel{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
+\begin{lemm}
+	\typedlabel{lemm:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
 	Let $w \in S$ and $s,t \in S$ be two distinct generators with $w \ul s \prec w$. If $\ul s$ acts by multiplication on $w$, then $w \ul s \ul t \succ w \ul s$ or $w \ul t \prec w$.
 
 	\begin{proof}
 		Suppose $w \ul s \ul t \prec w \ul s \prec w$, hence $l(w \ul s \ul t) < l(w \ul s) < l(w)$ in particular. If $\ul t$ acts by multiplication on $w \ul s$, then we have $l(w \ul s \ul t) = l(\theta(s)(wt)) = l(w) - 2$. If it acts by twisted conjugation, then we have $l(w \ul s \ul t) = l(\theta(t)\theta(s)(wt)) = l(w) - 3$. In both cases we have $l(wt) < l(w)$, hence $t \in D_R(w)$ and so $w \ul t \prec w$.
 	\end{proof}
-\end{prop}
+\end{lemm}
 
-Note that this proposition could be strengthend by insisting on an exclusive or, since we cannot have both cases at the same time. By the proof of \ref{prop:no-triple-edges} we see that we cannot have $w \ul s \ul t = w$, since double edges are always twisted conjugations. Hence having $w \ul s \ul t \succ w \ul s \prec w \succ w \ul t$ would contradict to the convexity from \ref{prop:rank-2-residues-are-convex}. The next corollary ensures that multiplicative actions in $Wk(\theta)$ can only occur at the top or bottom end of rank-2-residues. 
+Note that this proposition could be strengthend by insisting on an exclusive or, since we cannot have both cases at the same time. By the proof of \ref{lemm:no-triple-edges} we see that we cannot have $w \ul s \ul t = w$, since double edges are always twisted conjugations. Hence having $w \ul s \ul t \succ w \ul s \prec w \succ w \ul t$ would contradict to the convexity from \ref{prop:rank-2-residues-are-convex}. The next corollary ensures that multiplicative actions in $Wk(\theta)$ can only occur at the top or bottom end of rank-2-residues. 
 
 \begin{coro}
 	\typedlabel{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle}
 	Let $w \in S$ and let $s,t \in S$ be two distinct generators and suppose $\ul s$ acts by multiplication on $w$. Then $w$ or $w \ul s$ is the unique minimal or maximal element in $wC_{\{s,t\}}$.
 
 	\begin{proof}
-		Suppose $w$ is not maximal, i.e. $w \ul t \succ w$. Then by \ref{prop:onesided-operations-only-at-top-or-bottom-end-of-twocycle} we have $w \ul s \ul t \succ w \ul s$, hence $w \ul s$ is minimal. Suppose $w$ is not minimal, i.e. $w \ul s \ul t \prec w \ul s$. Then with the same argument we have $w \ul t \prec w$, hence $w$ is maximal. Supposing $w \ul s$ not to be maximal or not to be minimal yields analogue results.
+		Suppose $w$ is not maximal, i.e. $w \ul t \succ w$. Then by \ref{lemm:onesided-operations-only-at-top-or-bottom-end-of-twocycle} we have $w \ul s \ul t \succ w \ul s$, hence $w \ul s$ is minimal. Suppose $w$ is not minimal, i.e. $w \ul s \ul t \prec w \ul s$. Then with the same argument we have $w \ul t \prec w$, hence $w$ is maximal. Supposing $w \ul s$ not to be maximal or not to be minimal yields analogue results.
 	\end{proof}
 \end{coro}
 
@@ -142,14 +142,14 @@ Again, this corollary can be strengthend by insisting on an exclusive or with th
 	\end{figure}
 \end{defi}
 
-\begin{lemm}
-	\typedlabel{lemm:one-both-sided-action-symmetric-in-rank-2-residues}
-	Let $s,t \in S$ be two distinct generators and $w \in S$ with $w = min(w,\{s,t\})$. Suppose $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$. Then $wC_{\{s,t\}}$ is either non-, maximal-, bottom-, top- or diagonal-multiplicative. In particular the twisted conjugations and mulitplications are distributed axisymmetrically or pointsymmetrically.
+\begin{prop}
+	\typedlabel{prop:one-both-sided-action-symmetric-in-rank-2-residues}
+	Let $s,t \in S$ be two distinct generators and $w \in S$ with $w = min(w,\{s,t\})$. Suppose $v \in wC_{\{s,t\}}$ with $v \ul s \prec v$ and $v \ul t \prec v$. Then $wC_{\{s,t\}}$ is either non-, maximal-, bottom-, top- or diagonal-multiplicative. In particular the twisted conjugations and multiplications are distributed axisymmetrically or pointsymmetrically.
 
 	\begin{proof}
-		If $u$ covers $w$, then there are only two edges and the assumption holds. So suppose $wC_{\{s,t\}}$ contains at least four edges. Due to \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} the actions by multiplication can only occur next to $w$ and $v$. Hence there are $2^4 = 16$ configurations possible. \ref{prop:geodesics-have-same-count-of-multiplicative-steps} wipes out ten out of the 16 configurations. The remaining are those from Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residue}.
+		If $u$ covers $w$, then there are only two edges and the assumption holds. So suppose $wC_{\{s,t\}}$ contains at least four edges. Due to \ref{coro:onesided-operations-only-at-top-or-bottom-end-of-twocycle} the actions by multiplication can only occur next to $w$ and $v$. Hence, there are $2^4 = 16$ configurations possible. \ref{prop:geodesics-have-same-count-of-multiplicative-steps} wipes out ten out of the 16 configurations. The remaining are those from Figure \ref{fig:dist-one-bothsided-actions-in-rank-2-residue}.
 	\end{proof}
-\end{lemm}
+\end{prop}
 
 \begin{exam}
 	In Figure \ref{fig:a4_s1s3-and-a4_s2s4} we see three Hasse diagrams of $Wk(A_4, \id)$. The left one only contains edges with labels $s_1,s_2$, the middle one only edges with labels $s_1,s_3$ and the right one only edges with labels $s_1,s_4$.
@@ -165,8 +165,8 @@ Again, this corollary can be strengthend by insisting on an exclusive or with th
 	\end{figure}
 \end{exam}
 
-\begin{coro}
-	\typedlabel{coro:deduction-of-s-action-in-rank-2-residue}
+\begin{prop}
+	\typedlabel{prop:deduction-of-s-action-in-rank-2-residue}
 
 	Let $wC_{\{s,t\}}$ be a finite rank-2-residue and suppose $w = \min(w,\{s,t\})$. Let $n \in \nn$ be the smallest number with $w[\ul s \ul t]^{2n} = w$. Define
 	\begin{align*}
@@ -178,9 +178,9 @@ Again, this corollary can be strengthend by insisting on an exclusive or with th
 	Then $a_1 + a_2 = a_3 + a_4$.
 
 	\begin{proof}
-		There are two geodesics from $w$ to the unique maximal element in $wC_{\{s,t\}}$. By \ref{lemm:one-both-sided-action-symmetric-in-rank-2-residues} in both geodesics at most the first and last step can be multiplicative and by \ref{prop:geodesics-have-same-count-of-multiplicative-steps} both geodesics must contain the same count of multiplicative steps. The sum $4-a_1-a_2$ is the count of multiplicative steps in the first geodesic while $4-a_3-a_4$ is the count of multiplicative steps in the second geodesic. Hence $4-a_1-a_2 = 4-a_3-a_4 \iff a_1+a_2 = a_3+a_4$.
+		There are two geodesics from $w$ to the unique maximal element in $wC_{\{s,t\}}$. By \ref{prop:one-both-sided-action-symmetric-in-rank-2-residues} in both geodesics at most the first and last step can be multiplicative and by \ref{prop:geodesics-have-same-count-of-multiplicative-steps} both geodesics must contain the same count of multiplicative steps. The sum $4-a_1-a_2$ is the count of multiplicative steps in the first geodesic while $4-a_3-a_4$ is the count of multiplicative steps in the second geodesic. Hence, $4-a_1-a_2 = 4-a_3-a_4 \iff a_1+a_2 = a_3+a_4$.
 	\end{proof}
-\end{coro}
+\end{prop}
 
 \begin{lemm}
 	\typedlabel{lemm:max-twisted-circle-height}
@@ -204,7 +204,7 @@ Again, this corollary can be strengthend by insisting on an exclusive or with th
 	\begin{proof}
 		Let $w = \min(w, \{s,t\})$, $v$ be the unique maximal element in the residue and $n$ be the smallest number with $w(\ul s \ul t)^n = w$.
 		\begin{enumerate}
-			\item We have $\theta(s)w = ws$ and $\theta(t)w = wt$. Hence
+			\item We have $\theta(s)w = ws$ and $\theta(t)w = wt$. Hence,
 			\begin{align*}
 				w & = w(\ul s \ul t)^n = (\theta(s)\theta(t))^{n-2} w (st)^{n-2} stst \\
 				  & = (\theta(s)\theta(t))^{n-3} w (st)^{n-1} stst \\
@@ -225,8 +225,8 @@ Again, this corollary can be strengthend by insisting on an exclusive or with th
 	\end{proof}
 \end{lemm}
 
-\begin{coro}
-	\typedlabel{coro:max-rank-2-residue-size-special-cases}
+\begin{lemm}
+	\typedlabel{lemm:max-rank-2-residue-size-special-cases}
 	Let $wC_{\{s,t\}}$ be a finite rank-2-residue with $m = \ord(st)$.
 	\begin{enumerate}
 		\item If the residue is maximal-multiplicative, then $|wC_{\{s,t\}}| \leq m+2$.
@@ -236,14 +236,14 @@ Again, this corollary can be strengthend by insisting on an exclusive or with th
 
 	\begin{proof}
 		\begin{enumerate}
-			\item We have an even $m$ and $\theta(s)w = ws$ and $\theta(t)w = wt$. Hence
+			\item We have an even $m$ and $\theta(s)w = ws$ and $\theta(t)w = wt$. Hence,
 			$$ w (\ul s \ul t)^{m/2+1} = (\theta(s)\theta(t))^{m/2-1} w (st)^{m/2-1} stst = w(st)^m = w. $$
-			\item We have an odd $m$ and $\theta(s)w = ws$ and $\theta(t)w = wt$. Hence
+			\item We have an odd $m$ and $\theta(s)w = ws$ and $\theta(t)w = wt$. Hence,
 			$$ w (\ul s \ul t)^{(m+1)/2} = (\theta(s)\theta(t))^{(m-1)/2} w (st)^{(m-1)/2} st = w(st)^m = w. $$
 			\item Analogue to the previous case when starting from $v$. \qedhere
 		\end{enumerate}
 	\end{proof}
-\end{coro}
+\end{lemm}
 
 \begin{prop}
 	\typedlabel{prop:rank-2-residue-minimal-k}

@@ -2,7 +2,7 @@
 \section{Introduction to twisted involutions}
 \label{sec:twisted-involutions-introduction}
 
-Twisted involutions generalize the property of being involutive with respect to an involutory automorphism $\theta$. For $\theta = \id$ the set of $\theta$-twisted involutions, denoted by $\ti{\theta}$ coincides with the set of ordinary involutions in $W$ (cf. \ref{exam:id-twisted-involutions}). As we will see the set of this $\theta$-twisted involutions equals the $e$-orbit of a special action, defined in \ref{defi:twisted-operation}. For $\ti{\theta}$ and the mentioned map many properties of ordinary Coxeter groups hold. In particular there is a analogue to the \ref{coro:exchange-condition} and \ref{coro:deletion-condition}.
+Twisted involutions generalize the property of being involutive with respect to an involutory automorphism $\theta$. For $\theta = \id$ the set of $\theta$-twisted involutions, denoted by $\ti{\theta}$ coincides with the set of ordinary involutions in $W$ (cf. \ref{exam:id-twisted-involutions}). As we will see the set of this $\theta$-twisted involutions equals the $e$-orbit of a special action, defined in \ref{defi:twisted-operation}. For $\ti{\theta}$ and the mentioned map many properties of ordinary Coxeter groups hold. In particular there is an analogue to the \ref{coro:exchange-condition} and \ref{coro:deletion-condition}.
 
 \begin{defi}
 	An automorphism $\theta : W \to W$ with $\theta(S) = S$ is called a \defword{Coxeter system automorphism} of $(W,S)$. We always assume $\theta^2 = \id$.
@@ -24,7 +24,7 @@ The next example is more helpful, since it reveals a way to think of $\ti{\theta
 \begin{exam}
 	\typedlabel{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions}
 	\theocite{Example 3.2}{hultman:comb-twisted-invo}
-	Let $\theta$ be a automorphism of $W \times W$ with $\theta : (u,w) \mapsto (w,u)$. Then $\theta$ is a Coxeter system automorphism of the Coxeter system $(W \times W, S \times S)$ and the set of twisted involutions is
+	Let $\theta$ be an automorphism of $W \times W$ with $\theta : (u,w) \mapsto (w,u)$. Then $\theta$ is a Coxeter system automorphism of the Coxeter system $(W \times W, S \times S)$ and the set of twisted involutions is
 	$$ \ti{\theta} = \{ (w,w^{-1}) \in W \times W : w \in W \}. $$
 	This yields a canonical bijection between $\ti{\theta}$ and $W$.
 \end{exam}
@@ -41,7 +41,7 @@ The next example is more helpful, since it reveals a way to think of $\ti{\theta
 	If $w \ul s = \theta(s)ws$, then we say $\ul s$ \defword{acts by twisted conjugation} on $w$. Else we say $\ul s$ \defword{acts by multiplication} on $w$.
 \end{defi}
 
-Note that this is no group action. For example let $W$ be a Coxeter group with two generators $s,t$ satisfying $\ord(st) = 3$ and let $\theta = \id$. Then $sts = tst$, but
+Note that this is no group action. For example, let $W$ be a Coxeter group with two generators $s,t$ satisfying $\ord(st) = 3$ and let $\theta = \id$. Then $sts = tst$, but
 $$ e \ul s \ul t \ul s = s \ul t \ul s = tst \ul s = sts \ul s = t \neq s = tst \ul t = sts \ul t = t \ul s \ul t = e \ul t \ul s \ul t. $$
 
 \begin{defi}
@@ -60,7 +60,7 @@ $$ e \ul s \ul t \ul s = s \ul t \ul s = tst \ul s = sts \ul s = t \neq s = tst 
 
 	\begin{proof}
 		\proofcite{Lemma 3.4}{hultman:comb-twisted-invo}
-		We reproduce the proof from loc. cit. here. since it is interesting from a technical point of view. Suppose $\ul s$ acts by multiplication on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. Conversely, suppose $l(\theta(s)ws) = l(w)$. If $w \ul s = ws$, then we are done. So assume $\theta(s)ws \neq w$. Then $w$ must have a reduced expression beginning with $\theta(s)$ or ending with $s$ (else, we could not have $l(\theta(s)ws) = l(w)$). Without loss of generality suppose that $\theta(s)s_1 \cdots s_k$ is such an expression for $w$. Since $w$ is a $\theta$-twisted involution, i.e. $\theta(w) = w^{-1}$, we have $l(ws) < l(w)$. Since $l(\theta(s)ws) = l(w)$, no reduced expression for $w$ both begins with $\theta(s)$ and ends with $s$ and hence \ref{coro:exchange-condition} yields $ws = s_1 \cdots s_k$, which implies $\theta(s)ws = w$, contradicting to our assumption.
+		We reproduce the proof from loc. cit. here., since it is interesting from a technical point of view. Suppose $\ul s$ acts by multiplication on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. Conversely, suppose $l(\theta(s)ws) = l(w)$. If $w \ul s = ws$, then we are done. So assume $\theta(s)ws \neq w$. Then $w$ must have a reduced expression beginning with $\theta(s)$ or ending with $s$ (else, we could not have $l(\theta(s)ws) = l(w)$). Without loss of generality suppose that $\theta(s)s_1 \cdots s_k$ is such an expression for $w$. Since $w$ is a $\theta$-twisted involution, i.e. $\theta(w) = w^{-1}$, we have $l(ws) < l(w)$. Since $l(\theta(s)ws) = l(w)$, no reduced expression for $w$ both begins with $\theta(s)$ and ends with $s$ and hence \ref{coro:exchange-condition} yields $ws = s_1 \cdots s_k$, which implies $\theta(s)ws = w$, contradicting to our assumption.
 	\end{proof}
 \end{lemm}
 
@@ -69,7 +69,7 @@ $$ e \ul s \ul t \ul s = s \ul t \ul s = tst \ul s = sts \ul s = t \neq s = tst 
 	We have $l(ws) < l(w)$ iff $l(w \ul s) < l(w)$.
 
 	\begin{proof}
-		Suppose $\ul s$ acts by multiplication on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $\ul s$ acts by twisted conjugation on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply, that $\ul s$ acts by multiplication on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So $l(w \ul s) = l(\theta(s)ws) < l(w)$. Conversely, suppose $l(w \ul s) < l(w)$. Then \ref{lemm:length-function-properties} says $l(w \ul s) = l(\theta(s)ws) = l(w) - 2$ and so $l(ws) = l(w) - 1$.
+		Suppose $\ul s$ acts by multiplication on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $\ul s$ acts by twisted conjugation on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply that $\ul s$ acts by multiplication on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So $l(w \ul s) = l(\theta(s)ws) < l(w)$. Conversely, suppose $l(w \ul s) < l(w)$. Then \ref{lemm:length-function-properties} says $l(w \ul s) = l(\theta(s)ws) = l(w) - 2$ and so $l(ws) = l(w) - 1$.
 	\end{proof}
 \end{lemm}
 
@@ -90,12 +90,12 @@ $$ e \ul s \ul t \ul s = s \ul t \ul s = tst \ul s = sts \ul s = t \neq s = tst 
 			\theta(s)wss = \theta(s)w & \textrm{if } \theta(s) \theta(s) w ss = \theta(s) w s, \\
 			\theta(s)\theta(s)wss = w & \textrm{else}. \\
 		\end{cases} $$
-		The first option is impossible since $\theta(s) \theta(s) w ss = w$ and we have assumed $\theta(s)ws \neq w$. Hence the only possible cases yield $w \ul s \ul s = w$.
+		The first option is impossible since $\theta(s) \theta(s) w ss = w$ and we have assumed $\theta(s)ws \neq w$. Hence, the only possible cases yield $w \ul s \ul s = w$.
 	\end{proof}
 \end{lemm}
 
 \begin{rema}
-	\ref{lemm:w-ul-ss-eq-w} allows us to to rewrite equations of twisted expressions. For example
+	\ref{lemm:w-ul-ss-eq-w} allows us to rewrite equations of twisted expressions. For example
 	$$ u = w \ul s \iff u \ul s = w \ul s \ul s = w. $$
 	This can be iterated to get
 	$$ u = w \ul s_1 \ldots \ul s_k \iff u \ul s_k \ldots \ul s_1 = w. $$
@@ -131,7 +131,7 @@ A remarkable property of the action from \ref{defi:twisted-operation} is its $e$
 	The set of $\theta$-twisted involutions coincides with the set of all $\theta$-twisted expressions.
 
 	\begin{proof}
-		By \ref{lemm:w-in-ti-iff-w-ul-s-in-ti}, each twisted expression is in $\ti{\theta}$, since $e \in \ti{\theta}$. So let $w \in \ti{\theta}$. If $l(w) = 0$, then $w = e \in \ti{\theta}$. So assume $l(w) = r > 0$ and that we have already proven, that every twisted involution $w' \in \ti{\theta}$ with $\rho(w') < r$ has a twisted expression. If $w$ has a reduced twisted expression ending with $\ul s$, then $w$ also has a reduced expression (in $S$) ending with $s$ and so $l(ws) < l(w)$. With \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we get $l(w \ul s) < l(w)$. By induction $w \ul s$ has a twisted expression and hence $w = (w \ul s) \ul s$ has one, too.
+		By \ref{lemm:w-in-ti-iff-w-ul-s-in-ti}, each twisted expression is in $\ti{\theta}$, since $e \in \ti{\theta}$. So let $w \in \ti{\theta}$. If $l(w) = 0$, then $w = e \in \ti{\theta}$. So assume $l(w) = r > 0$ and that we have already proven that every twisted involution $w' \in \ti{\theta}$ with $\rho(w') < r$ has a twisted expression. If $w$ has a reduced twisted expression ending with $\ul s$, then $w$ also has a reduced expression (in $S$) ending with $s$ and so $l(ws) < l(w)$. With \ref{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w} we get $l(w \ul s) < l(w)$. By induction $w \ul s$ has a twisted expression and hence $w = (w \ul s) \ul s$ has one, too.
 	\end{proof} 
 \end{lemm}
 
@@ -146,7 +146,7 @@ In the same way, we can use regular expressions to define the length of an eleme
 	The Bruhat ordering, restricted to the set of twisted involutions $\ti{\theta}$, is a graded poset with $\rho$ as rank function. We denote this poset by $\Br(\ti{\theta})$.
 \end{lemm}
 
-We now establish many properties from ordinary Coxeter groups for twisted expressions and $\Br(\ti{\theta})$. As seen in \ref{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions} there is a Coxeter system $(W',S')$ and an Coxeter system automorphism $\theta$ with $\Br(W) \cong \Br(\ti{\theta}(W'))$. So the hope that many properties can be transfered is eligible.
+We now establish many properties from ordinary Coxeter groups for twisted expressions and $\Br(\ti{\theta})$. As seen in \ref{exam:bijection-between-coxeter-groups-and-set-of-twisted-involutions} there is a Coxeter system $(W',S')$ and a Coxeter system automorphism $\theta$ with $\Br(W) \cong \Br(\ti{\theta}(W'))$. So the hope that many properties can be transfered is eligible.
 
 \begin{lemm}
 	\typedlabel{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}
@@ -171,9 +171,9 @@ We now establish many properties from ordinary Coxeter groups for twisted expres
 			\item[$v \ul s = vs \wedge w \ul s = \theta(s)ws$:]
 			The first part $v \ul s = vs \leq_{LP} w$ is immediate. Suppose $s \in D_R(v)$. Then $vs \leq_{LP} ws \Rightarrow v = \theta(s)vs \leq ws \Rightarrow v \ul s = vs \leq \theta(s)ws = w \ul s$. 
 			\item[$v \ul s = \theta(s)vs \wedge w \ul s = ws$:]
-			We have $\theta(s)w = ws$ and therefore $\theta(s) \in D_L(w)$. Suppose $s \in D_R(v)$. Then $\theta(s) \in D_R(vs)$ and hence $v \ul s = \theta(s)vs \leq vs \leq_{LP} ws = w \ul s \leq w$. In return suppose $s \notin D_R(v)$. Since $vs \leq_{LP} w$ and $\theta(s) \in D_L(w)$ we can apply the left analogue of \ref{theo:lifting-property} on $vs,w,\theta(s)$ to get $v \ul s = \theta(s)vs \leq_{LP} w$.
+			We have $\theta(s)w = ws$ and therefore $\theta(s) \in D_L(w)$. Suppose $s \in D_R(v)$. Then $\theta(s) \in D_R(vs)$ and hence $v \ul s = \theta(s)vs \leq vs \leq_{LP} ws = w \ul s \leq w$. In return, suppose $s \notin D_R(v)$. Since $vs \leq_{LP} w$ and $\theta(s) \in D_L(w)$ we can apply the left analogue of \ref{theo:lifting-property} on $vs,w,\theta(s)$ to get $v \ul s = \theta(s)vs \leq_{LP} w$.
 			\item[$v \ul s = \theta(s)vs \wedge w \ul s = \theta(s)ws$:]
-			Let $s \in D_R(w)$. Then $vs \leq_{LP} ws$. Since $\theta(s) \in D_L(vs)$ and $\theta(s) \in D_L(ws)$ we can apply the left-sided \ref{theo:lifting-property} to get $v \ul s = \theta(s)vs \leq_{LP} \theta(s)ws = w \ul s \leq w$. In return let $s \notin D_R(w)$. Since $l(\theta(s)ws) = l(w) - 2$ we have $\theta(s) \in D_L(w)$. So we can use the \ref{theo:lifting-property} to get $vs \leq_{LP} w$ and then with the left-sided  \ref{theo:lifting-property} $v \ul s = \theta(s)vs \leq_{LP}$ w. \qedhere
+			Let $s \in D_R(w)$. Then $vs \leq_{LP} ws$. Since $\theta(s) \in D_L(vs)$ and $\theta(s) \in D_L(ws)$ we can apply the left-sided \ref{theo:lifting-property} to get $v \ul s = \theta(s)vs \leq_{LP} \theta(s)ws = w \ul s \leq w$. In return, let $s \notin D_R(w)$. Since $l(\theta(s)ws) = l(w) - 2$ we have $\theta(s) \in D_L(w)$. So we can use the \ref{theo:lifting-property} to get $vs \leq_{LP} w$ and then with the left-sided  \ref{theo:lifting-property} $v \ul s = \theta(s)vs \leq_{LP}$ w. \qedhere
 		\end{description}
 	\end{proof}
 \end{lemm}
@@ -192,13 +192,13 @@ We now establish many properties from ordinary Coxeter groups for twisted expres
 	Let $w = s_1 \ldots \ul s_k$ be a not reduced twisted expression. Then there are two indices $1 \leq i < j \leq k$ such that $w = \ul s_1 \ldots \ul{\hat s}_i \ldots \ul{\hat s}_j \ldots \ul s_k$.
 
 	\begin{proof}
-		Choose $j$ minimal, so we have $\ul s_1 \ldots \ul s_j$ is not reduced. By \ref{prop:exchanged-property-for-twisted-expressions} there is an index $i$ with $\ul s_1 \ldots \ul s_j = s_1 \ldots \ul{\hat s}_i \ldots \ul s_{j-1}$ yielding our hypothesis $w = \ul s_1 \ldots \ul s_j \ldots \ul s_k = \ul s_1 \ldots \ul{\hat s}_i \ldots \ul{\hat s}_j \ldots \ul s_k$.
+		Choose $j$ minimal, so $\ul s_1 \ldots \ul s_j$ is not reduced. By \ref{prop:exchanged-property-for-twisted-expressions} there is an index $i$ with $\ul s_1 \ldots \ul s_j = s_1 \ldots \ul{\hat s}_i \ldots \ul s_{j-1}$ yielding our hypothesis $w = \ul s_1 \ldots \ul s_j \ldots \ul s_k = \ul s_1 \ldots \ul{\hat s}_i \ldots \ul{\hat s}_j \ldots \ul s_k$.
 	\end{proof}
 \end{coro}
 
-When applying the \ref{prop:exchanged-property-for-twisted-expressions} to a twisted expression, there is no hint which $\ul s_i$ can be omitted. Consider the following situation: Let $w \in \ti{\theta}$ and $w \ul s_1 \ldots \ul s_k = w \ul t_1 \ldots \ul t_k$ two reduced twisted expressions. Then in the twisted expression $w \ul s_1 \ldots \ldots \ul s_k \ul t_k$ we can omit the $\ul t_k$ and one other $\ul s$ by \ref{prop:exchanged-property-for-twisted-expressions} and get still the same element. It would be nice, when the second omitted $\ul s$ is one of the $\ul s_i$ in general, but unfortunately this proves to be false:
+When applying the \ref{prop:exchanged-property-for-twisted-expressions} to a twisted expression, there is no hint which $\ul s_i$ can be omitted. Consider the following situation: let $w \in \ti{\theta}$ and $w \ul s_1 \ldots \ul s_k = w \ul t_1 \ldots \ul t_k$ two reduced twisted expressions. Then in the twisted expression $w \ul s_1 \ldots \ldots \ul s_k \ul t_k$ we can omit the $\ul t_k$ and one other $\ul s$ by \ref{prop:exchanged-property-for-twisted-expressions} and get still the same element. It would be nice, when the second omitted $\ul s$ is one of the $\ul s_i$ in general, but unfortunately this proves to be false.
 
 \begin{exam}
 	\typedlabel{exam:wk-prefix-hypothesis}
-	Let $W = A_3$, $\theta = \id$ and $w = \ul s_3$. Then $w \ul s_2 \ul s_1 \ul s_2 = w \ul s_1 \ul s_2 \ul s_3$, but $w \ul s_1 \ul s_2 \ul s_3 \ul s_2 \notin \{ w \ul s_1 \ul s_2, w \ul s_1 \ul s_3, w \ul s_2 \ul s_3 \}$. Hence the omission cannot be choosen after the prefix $w$, but at least $w \ul s_1 \ul s_2 \ul s_3 \ul s_2 = \ul s_1 \ul s_2 \ul s_3$ works, as guaranteed by \ref{prop:exchanged-property-for-twisted-expressions}.
+	Let $W = A_3$, $\theta = \id$ and $w = \ul s_3$. Then $w \ul s_2 \ul s_1 \ul s_2 = w \ul s_1 \ul s_2 \ul s_3$, but $w \ul s_1 \ul s_2 \ul s_3 \ul s_2 \notin \{ w \ul s_1 \ul s_2, w \ul s_1 \ul s_3, w \ul s_2 \ul s_3 \}$. Hence the omission cannot be chosen after the prefix $w$, but at least $w \ul s_1 \ul s_2 \ul s_3 \ul s_2 = \ul s_1 \ul s_2 \ul s_3$ works, as guaranteed by \ref{prop:exchanged-property-for-twisted-expressions}.
 \end{exam}

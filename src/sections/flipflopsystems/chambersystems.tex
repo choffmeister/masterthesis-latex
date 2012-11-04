@@ -3,15 +3,15 @@
 
 \begin{defi}
 	\typedlabel{defi:chamber-system}
-	A \defword{chamber system over $I$} is a pair $\mathcal{C} = (C,(\sim_i, i \in I))$, with a nonempty set $C$, whose members are called \defword{chambers} and a family of equivalence relations $\sim_i$, indexed by $i \in I$, that satisfies the implication
+	A \defword{chamber system over $I$} is a pair $\mathcal{C} = (C,(\sim_i, i \in I))$, with a nonempty set $C$, whose members are called \defword{chambers} and a family of equivalence relations $\sim_i$, indexed by $i \in I$ that satisfies the implication
 	$$ c \sim_i d \wedge c \sim_j d \Rightarrow c = d \vee i = j $$
 	for all $c,d \in C$ and $i,j \in I$. The cardinality $|I|$ is called the \defword{rank} of $\mathcal{C}$. For all chamber systems we will assume that they have finite rank. If for two chambers $c,d$ we have $c \sim_i d$, then $c$ is called \defword{i-adjacent} to $d$ or just \defword{adjacent}.
 \end{defi}
 
-So the main assertion for chamber systems is, that two distinct chambers $c,d \in C$ are at most adjacent by one $i \in I$. For the rest of this section $\mathcal{C} = (C,(\sim_i, i \in I))$ will denote a chamber system.
+So the main assertion for chamber systems is that two distinct chambers $c,d \in C$ are at most adjacent by one $i \in I$. For the rest of this section $\mathcal{C} = (C,(\sim_i, i \in I))$ will denote a chamber system.
 
 \begin{exam}
-	For an arbitrary Coxeter system let $W$ act as set of chambers and for each generator $s \in S$ define a equivalence relation $w \sim_s v$ if and only if either $w = v$ or $ws = v$. That this are really equivalence relations is easy to check. So suppose $w \sim_s v$, $w \sim_t v$ for two distinct generators $s,t \in S$. The assumption $w \neq v$ immediately yields a contradiction by $ws = v = wt \iff s = t$. Hence this is indeed a chamber system.
+	For an arbitrary Coxeter system let $W$ act as set of chambers and for each generator $s \in S$ define an equivalence relation $w \sim_s v$ if and only if either $w = v$ or $ws = v$. That this are really equivalence relations is easy to check. So suppose $w \sim_s v$, $w \sim_t v$ for two distinct generators $s,t \in S$. The assumption $w \neq v$ immediately yields a contradiction by $ws = v = wt \iff s = t$. Hence, this is indeed a chamber system.
 \end{exam}
 
 The previous example is just a special case of a quite general recipe to create chamber systems from groups, the so-called coset chamber systems.
@@ -27,7 +27,7 @@ If two chambers $c,d \in C$ in a chamber system are not adjacent, then there mig
 \end{defi}
 
 \begin{defi}
-	Let $G = (c_0,\ldots,c_k)$ be a gallery and let $J \subset I$ be a subset. If for $1 \leq i \leq k$ there is a $j \in J$ with $c_{i-1} \sim_j c_i$, then we call $G$ a \defword{$J$-gallery}. Two chambers $c,d \in C$, that have a $J$-gallery joining them, are called \defword{$J$-equivalent}, denoted by $c \sim_J d$.
+	Let $G = (c_0,\ldots,c_k)$ be a gallery and let $J \subset I$ be a subset. If for $1 \leq i \leq k$ there is a $j \in J$ with $c_{i-1} \sim_j c_i$, then we call $G$ a \defword{$J$-gallery}. Two chambers $c,d \in C$ that have a $J$-gallery joining them, are called \defword{$J$-equivalent}, denoted by $c \sim_J d$.
 \end{defi}
 
 \begin{defi}
@@ -37,7 +37,7 @@ If two chambers $c,d \in C$ in a chamber system are not adjacent, then there mig
 Note that for any chamber system $(C,(\sim_i, i \in I))$, $c \in C$ and $J \subseteq I$, the chamber system $(R_J(c), (\sim_j, j \in J))$ is connected by construction.
 
 \begin{defi}
-	Let $\mathcal{C}$ be a chamber system over $I$. We call it a \defword{residually connected} chamber system if the following holds: For every $J \subseteq I$ and every family of residues $(R_{I \setminus \{j\}}, j \in J)$ with pairwise nonempty intersection we have
+	Let $\mathcal{C}$ be a chamber system over $I$. We call it a \defword{residually connected} chamber system if the following holds: for every $J \subseteq I$ and every family of residues $(R_{I \setminus \{j\}}, j \in J)$ with pairwise nonempty intersection we have
 	$$ \bigcap_{j \in J} R_{I \setminus \{j\}} = R_{I \setminus J}(c) $$
 	for some $c \in C$.
 \end{defi}

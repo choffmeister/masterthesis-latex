@@ -4,7 +4,7 @@
 
 \begin{defi}
 	\typedlabel{defi:3rc}
-	Let $(W,S)$ be a Coxeter system and $\theta : W \to W$ an automorphism of $W$ with $\theta^2 = \id$ and $\theta(S) = S$. We call $Wk(\theta)$ \defword{3-residually connected} if the following holds: For every possible spherical $K \subseteq S$ with $\theta(K) = K$ and every $S_1,S_2,S_3 \subseteq S$ with pairwise non-empty intersection the statement
+	Let $(W,S)$ be a Coxeter system and $\theta : W \to W$ an automorphism of $W$ with $\theta^2 = \id$ and $\theta(S) = S$. We call $Wk(\theta)$ \defword{3-residually connected} if the following holds: for every possible spherical $K \subseteq S$ with $\theta(K) = K$ and every $S_1,S_2,S_3 \subseteq S$ with pairwise non-empty intersection the statement
 	\begin{axioms}
 		\axiomitem{3RC} $w_K C_{S_{12}} \cap w_K C_{S_{23}} \cap w_K C_{S_{31}} \subseteq w_K C_T$
 	\end{axioms}
@@ -18,7 +18,7 @@ For arbitrary sets $S_{12},S_{23},S_{31}$ that do not come from pairwise interse
 	Let $M$ be a set and $S_{12},S_{23},S_{31} \subseteq M$ three subsets. Then there are three sets $S_1,S_2,S_3 \subseteq M$ with $S_{ij} = S_i \cap S_j$ iff no element $x \in M$ is precisely in two of the sets $S_{ij}$.
 
 	\begin{proof}
-		Let $S_{12},S_{23},S_{31}$ be the pairwise intersection of three sets $S_1,S_2,S_3$. If an element $x \in M$ is in none or in one of the sets $S_i$, then it is in none of the sets $S_{ij}$. If it is in two of the sets $S_i$, say $x \in S_1,S_2$, then $x \in S_{12}$, but $x$ is not in one of the other two $S_{ij}$. If $x$ is in all three $S_i$, then it is in all three $S_{ij}$, too. Hence there is no $x \in M$, that is in precisely two of the sets $S_{ij}$. Conversely, suppose $S_{12},S_{23},S_{31}$ to be arbitrary with the constraint, that there is no element $x \in M$ in precisely two of them. Then we can construct three sets $S_1,S_2,S_3$, whose pairwise intersections coincides with the sets $S_{ij}$ by $x \in S_i \wedge x \in S_j$ iff $x \in S_{ij}$. With this construction and the previous considerations, it is clear that these $S_i$ have the $S_{ij}$ as pairwise intersection. Note that this construction is not unique in general, since when there is a $x \in M$, that is in none of the sets $S_{ij}$, then we could add it to $S_1$, $S_2$ or $S_3$ or just omit it without changing there pairwise intersection.
+		Let $S_{12},S_{23},S_{31}$ be the pairwise intersection of three sets $S_1,S_2,S_3$. If an element $x \in M$ is in none or in one of the sets $S_i$, then it is in none of the sets $S_{ij}$. If it is in two of the sets $S_i$, say $x \in S_1,S_2$, then $x \in S_{12}$, but $x$ is not in one of the other two $S_{ij}$. If $x$ is in all three $S_i$, then it is in all three $S_{ij}$, too. Hence there is no $x \in M$ that is in precisely two of the sets $S_{ij}$. Conversely, suppose $S_{12},S_{23},S_{31}$ to be arbitrary with the constraint that there is no element $x \in M$ in precisely two of them. Then we can construct three sets $S_1,S_2,S_3$, whose pairwise intersections coincides with the sets $S_{ij}$ by $x \in S_i \wedge x \in S_j$ iff $x \in S_{ij}$. With this construction and the previous considerations, it is clear that these $S_i$ have the $S_{ij}$ as pairwise intersection. Note that this construction is not unique in general, since when there is a $x \in M$ that is in none of the sets $S_{ij}$, then we could add it to $S_1$, $S_2$ or $S_3$ or just omit it without changing their pairwise intersection.
 	\end{proof}
 \end{prop}
 
