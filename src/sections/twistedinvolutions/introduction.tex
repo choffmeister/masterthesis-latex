@@ -41,6 +41,10 @@ The next example is more helpful, since it reveals a way to think of $\ti{\theta
 	If $w \ul s = \theta(s)ws$, then we say $\ul s$ \defword{acts by twisted conjugation} on $w$. Else we say $\ul s$ \defword{acts by multiplication} on $w$.
 \end{defi}
 
+\begin{rema}
+	Let $v = s_1 \cdots s_k \in W$. As abuse of notation we will sometimes write $w \ul v$ and define it as $w \ul s_1 \ldots \ul s_k$.
+\end{rema}
+
 Note that this is no group action. For example, let $W$ be a Coxeter group with two generators $s,t$ satisfying $\ord(st) = 3$ and let $\theta = \id$. Then $sts = tst$, but
 $$ e \ul s \ul t \ul s = s \ul t \ul s = tst \ul s = sts \ul s = t \neq s = tst \ul t = sts \ul t = t \ul s \ul t = e \ul t \ul s \ul t. $$
 
@@ -60,13 +64,13 @@ $$ e \ul s \ul t \ul s = s \ul t \ul s = tst \ul s = sts \ul s = t \neq s = tst 
 
 	\begin{proof}
 		\proofcite{Lemma 3.4}{hultman:comb-twisted-invo}
-		We reproduce the proof from loc. cit. here., since it is interesting from a technical point of view. Suppose $\ul s$ acts by multiplication on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. Conversely, suppose $l(\theta(s)ws) = l(w)$. If $w \ul s = ws$, then we are done. So assume $\theta(s)ws \neq w$. Then $w$ must have a reduced expression beginning with $\theta(s)$ or ending with $s$ (else, we could not have $l(\theta(s)ws) = l(w)$). Without loss of generality suppose that $\theta(s)s_1 \cdots s_k$ is such an expression for $w$. Since $w$ is a $\theta$-twisted involution, i.e. $\theta(w) = w^{-1}$, we have $l(ws) < l(w)$. Since $l(\theta(s)ws) = l(w)$, no reduced expression for $w$ both begins with $\theta(s)$ and ends with $s$ and hence \ref{coro:exchange-condition} yields $ws = s_1 \cdots s_k$, which implies $\theta(s)ws = w$, contradicting to our assumption.
+		We reproduce the proof from loc. cit. here., since it is interesting from a technical point of view. Suppose $\ul s$ acts by multiplication on $w$. Then $\theta(s)ws = w$ and so $l(\theta(s)ws) = l(w)$. Conversely, suppose $l(\theta(s)ws) = l(w)$. If $w \ul s = ws$, then we are done. So assume $\theta(s)ws \neq w$. Then $w$ must have a reduced expression beginning with $\theta(s)$ or ending with $s$ (else, we could not have $l(\theta(s)ws) = l(w)$). Without loss of generality suppose that $\theta(s)s_1 \cdots s_k$ is such an expression for $w$. Since $w$ is a $\theta$-twisted involution, i.e.\ $\theta(w) = w^{-1}$, we have $l(ws) < l(w)$. Since $l(\theta(s)ws) = l(w)$, no reduced expression for $w$ both begins with $\theta(s)$ and ends with $s$ and hence \ref{coro:exchange-condition} yields $ws = s_1 \cdots s_k$, which implies $\theta(s)ws = w$, contradicting to our assumption.
 	\end{proof}
 \end{lemm}
 
 \begin{lemm}
 	\typedlabel{lemm:l-ws-lower-l-w-iff-l-w-ul-s-lower-l-w}
-	We have $l(ws) < l(w)$ iff $l(w \ul s) < l(w)$.
+	We have $l(ws) < l(w)$ if and only if $l(w \ul s) < l(w)$.
 
 	\begin{proof}
 		Suppose $\ul s$ acts by multiplication on $w$. Then $w \ul s = ws$ and there is nothing to prove. So suppose $\ul s$ acts by twisted conjugation on $w$. If $l(ws) < l(w)$, then \ref{lemm:length-function-properties} yields $l(ws) + 1 = l(w)$. Assuming $l(w \ul s) = l(\theta(s)ws) = l(w)$ would imply that $\ul s$ acts by multiplication on $w$ due to \ref{lemm:twisted-operation-2}, which is a contradiction. So $l(w \ul s) = l(\theta(s)ws) < l(w)$. Conversely, suppose $l(w \ul s) < l(w)$. Then \ref{lemm:length-function-properties} says $l(w \ul s) = l(\theta(s)ws) = l(w) - 2$ and so $l(ws) = l(w) - 1$.
@@ -78,7 +82,7 @@ $$ e \ul s \ul t \ul s = s \ul t \ul s = tst \ul s = sts \ul s = t \neq s = tst 
 	For all $w \in W$ and $s \in S$ we have $w \ul s \ul s = w$.
 
 	\begin{proof}
-		For $w \ul s$ there are two cases. Suppose $\ul s$ acts by multiplication on $w$, i.e. $\theta(s)ws = w$. For $ws \ul s$ there are again two possible options:
+		For $w \ul s$ there are two cases. Suppose $\ul s$ acts by multiplication on $w$, i.e.\ $\theta(s)ws = w$. For $ws \ul s$ there are again two possible options:
 		$$ ws \ul s = \begin{cases}
 			wss = w & \textrm{if } \theta(s)wss = ws, \\
 			\theta(s)wss = ws & \textrm{else}. \\
@@ -151,7 +155,7 @@ We now establish many properties from ordinary Coxeter groups for twisted expres
 \begin{lemm}
 	\typedlabel{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}
 	\theocite{Lemma 3.8}{hultman:comb-twisted-invo}
-	Let $w \in \ti{\theta}$ and $s \in S$. Then $\rho(w \ul s) = \rho(w) \pm 1$. In fact it is $\rho(w \ul s) = \rho(w) - 1$ iff $s \in D_R(w)$.
+	Let $w \in \ti{\theta}$ and $s \in S$. Then $\rho(w \ul s) = \rho(w) \pm 1$. In fact it is $\rho(w \ul s) = \rho(w) - 1$ if and only if $s \in D_R(w)$.
 \end{lemm}
 
 \begin{lemm}[Lifting Property for twisted expressions]

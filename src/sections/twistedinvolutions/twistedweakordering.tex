@@ -5,7 +5,7 @@
 In this section we introduce the twisted weak ordering $Wk(\theta)$ on the set $\ti{\theta}$ of $\theta$-twisted involutions.
 
 \begin{defi}
-	For $v,w \in \ti{\theta}$ we define $v \preceq w$ iff there are $\ul s_1, \ldots, \ul s_k \in \ul S$ with $w = v \ul s_1 \ldots \ul s_k$ and $\rho(v) = \rho(w) - k$. We call the poset $(\ti{\theta},\preceq)$ \defword{twisted weak ordering}, denoted by $Wk(W, \theta)$. When the Coxeter group $W$ is clear from the context, we just write $Wk(\theta)$.
+	For $v,w \in \ti{\theta}$ we define $v \preceq w$ if and only if there are $\ul s_1, \ldots, \ul s_k \in \ul S$ with $w = v \ul s_1 \ldots \ul s_k$ and $\rho(v) = \rho(w) - k$. We call the poset $(\ti{\theta},\preceq)$ \defword{twisted weak ordering}, denoted by $Wk(W, \theta)$. When the Coxeter group $W$ is clear from the context, we just write $Wk(\theta)$.
 \end{defi}
 
 \begin{prop}
@@ -40,10 +40,10 @@ By a diagram of a poset $Wk(\theta)$, we do not just mean the ordinary Hasse dia
 
 \begin{prop}
 	\typedlabel{prop:w-ul-s-leq-w-iff-s-in-dr-w}
-	For all $w \in \ti{\theta}$ and $s \in S$ we have $w \ul s \prec w$ iff $s \in D_R(w)$ and $w \ul s \succ w$ iff $s \notin D_R(w)$ as well as $w \ul s < w$ iff $s \in D_R(w)$ and $w \ul s > w$ iff $s \notin D_R(w)$.
+	For all $w \in \ti{\theta}$ and $s \in S$ we have $w \ul s \prec w$ if and only if $s \in D_R(w)$ and $w \ul s \succ w$ if and only if $s \notin D_R(w)$ as well as $w \ul s < w$ if and only if $s \in D_R(w)$ and $w \ul s > w$ if and only if $s \notin D_R(w)$.
 
 	\begin{proof}
-		We have $w \ul s \ul s = w$ and $\rho(w \ul s) = \rho(w) - 1$ iff $s \in D_R(w)$ and $\rho(w \ul s) = \rho(w) + 1$ iff $s \notin D_R(w)$ by \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}. By \ref{lemm:wk-subposet-of-br} both statements are true for $\Br(\ti{\theta})$, too.
+		We have $w \ul s \ul s = w$ and $\rho(w \ul s) = \rho(w) - 1$ if and only if $s \in D_R(w)$ and $\rho(w \ul s) = \rho(w) + 1$ if and only if $s \notin D_R(w)$ by \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}. By \ref{lemm:wk-subposet-of-br} both statements are true for $\Br(\ti{\theta})$, too.
 	\end{proof}
 \end{prop}
 

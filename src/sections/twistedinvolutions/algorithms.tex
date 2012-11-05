@@ -2,15 +2,15 @@
 \section{Twisted weak ordering algorithms}
 \label{sec:twisted-involutions-algorithms}
 
-Now we address the problem of calculating $Wk(\theta)$ for an arbitrary Coxeter group $W$, given in form of a set of generating symbols $S = \{s_1, \ldots s_n\}$ and the relations in form of $m_{ij} = \ord(s_i s_j)$. From this input we want to calculate the Hasse diagram, i.e. the vertex set $\ti{\theta}$ and the edges labeled with $\ul s$. Thanks to \ref{lemm:twisted-e-orbit-coincides-with-twisted-involutions} the vertex set can be obtained by walking the $e$-orbit of the action from \ref{defi:twisted-operation}. The only element of twisted length 0 is $e$. Suppose we have already calculated the Hasse diagram until the twisted length $k$, i.e. we know all vertices $w \in \ti{\theta}$ with $\rho(w) \leq k$ and all edges connecting two vertices $u,v$ with $\rho(u) + 1 = \rho(v) \leq k$. Let $\rho_k := \{ w \in \ti{\theta} : \rho(w) = k \}$. Then all vertices in $\rho_{k+1}$ are of the form $w \ul s$ for some $w \in \rho_k, s \in S$. For each $(w,s) \in \rho_k \times S$, we calculate $w \ul s$. If $\rho(w \ul s) = k + 1$ then $w \prec w \ul s$. To avoid having to check the twisted length we use \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}. We already know the set $S_w \subseteq S$ of all generators yielding an edge into $w$. Due to the lemma we have $\rho(w \ul s) = k - 1$ for all $s \in S_w$ and $\rho(w \ul s) = k + 1$ for all $s \in S \setminus S_w$. Hence, we only calculate $w \ul s$ for $s \in S \setminus S_w$ and know $w \prec w \ul s$ without checking the twisted length explicitly. The last problem to solve is the possibility of two different $(w,s),(v,t) \in \rho_k \times S$ with $w \ul s = v \ul t$. To deal with this, we have to compare a potential new twisted involution $w \ul s$ with each element of twisted length $k+1$, already calculated. The concrete problem of comparing two elements in a free presented group, called \defword{word problem for groups}, will not be addressed here. We suppose that whatever computer system is used to implement our algorithm, supplies a suitable way to do that. The only thing to note is that solving the wordproblem is not a cheap operation. Reducing the count of element comparisions is a major demand to any algorithm, calculating $Wk(\theta)$. For a general approach on effective element multiplication in arbitrary Coxeter groups see \cite{casselman:coxeter-multiplication-i,casselman:coxeter-multiplication-ii}.
+Now we address the problem of calculating $Wk(\theta)$ for an arbitrary Coxeter group $W$, given in form of a set of generating symbols $S = \{s_1, \ldots s_n\}$ and the relations in form of $m_{ij} = \ord(s_i s_j)$. From this input we want to calculate the Hasse diagram, i.e.\ the vertex set $\ti{\theta}$ and the edges labeled with $\ul s$. Thanks to \ref{lemm:twisted-e-orbit-coincides-with-twisted-involutions} the vertex set can be obtained by walking the $e$-orbit of the action from \ref{defi:twisted-operation}. The only element of twisted length 0 is $e$. Suppose we have already calculated the Hasse diagram until the twisted length $k$, i.e.\ we know all vertices $w \in \ti{\theta}$ with $\rho(w) \leq k$ and all edges connecting two vertices $u,v$ with $\rho(u) + 1 = \rho(v) \leq k$. Let $\rho_k := \{ w \in \ti{\theta} : \rho(w) = k \}$. Then all vertices in $\rho_{k+1}$ are of the form $w \ul s$ for some $w \in \rho_k, s \in S$. For each $(w,s) \in \rho_k \times S$, we calculate $w \ul s$. If $\rho(w \ul s) = k + 1$ then $w \prec w \ul s$. To avoid having to check the twisted length we use \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1}. We already know the set $S_w \subseteq S$ of all generators yielding an edge into $w$. Due to the lemma we have $\rho(w \ul s) = k - 1$ for all $s \in S_w$ and $\rho(w \ul s) = k + 1$ for all $s \in S \setminus S_w$. Hence, we only calculate $w \ul s$ for $s \in S \setminus S_w$ and know $w \prec w \ul s$ without checking the twisted length explicitly. The last problem to solve is the possibility of two different $(w,s),(v,t) \in \rho_k \times S$ with $w \ul s = v \ul t$. To deal with this, we have to compare a potential new twisted involution $w \ul s$ with each element of twisted length $k+1$, already calculated. The concrete problem of comparing two elements in a free presented group, called \defword{word problem for groups}, will not be addressed here. We suppose that whatever computer system is used to implement our algorithm, supplies a suitable way to do that. The only thing to note is that solving the word problem is not a cheap operation. Reducing the count of element comparisons is a major demand to any algorithm, calculating $Wk(\theta)$. For a general approach on effective element multiplication in arbitrary Coxeter groups see \cite{casselman:coxeter-multiplication-i,casselman:coxeter-multiplication-ii}.
 
 The steps discussed have been compiled into an algorithm by \cite[Algorithm 2.4]{brennemann:twoa} and \cite[Algorithm 3.1.1]{haas:twoa}. We take this as our starting point. Since the runtime is far from being optimal, we use the structural properties of rank-2-residues from Section \ref{sec:twisted-involutions-residues} to improve the algorithm. As we will show these optimizations yield an algorithm with an asymptotical perfect runtime behavior. \ref{algo:twoa1} and its optimizations have essentially the same structure in common. This is shown in \ref{algo:twoa0}.
 
 \begin{algo}[TWOABase]
-	\hfill
+	This algorithm takes a Coxeter system $(W,S)$, an involutory Coxeter system automorphism $\theta$ and an upper bound $k_{max}$ for the maximal twisted length to consider as input. It returns the Hasse diagram of $Wk(W,\theta)$ with vertex set $V$ and the set of directed and labled edges $E$.
 	\namedlabel{algo:twoa0}
 	\begin{algorithmic}[1]
-	\Procedure{TwistedWeakOrderingAlgorithmBase}{$(W,S),k_{max}$} 
+	\Procedure{TwistedWeakOrderingAlgorithmBase}{$(W,S),\theta,k_{max}$} 
 	\State $V \gets \{(e,0)\}$
 	\State $E \gets \{\}$
 
@@ -32,23 +32,23 @@ The steps discussed have been compiled into an algorithm by \cite[Algorithm 2.4]
 \end{algo}
 
 \begin{rema}
-	Note that if $W$ is finite, $k_{max}$ does not have to be evaluated explicitly. When $k$ reaches the maximal twisted length in $Wk(\theta)$, then the only vertex of twisted length $k$ is the unique element $w_0 \in W$ of maximal ordinary length. Since $s \in D_R(w_0)$ for all $s \in S$, there is no $s' \in S$ remaining to calculate $w_0 \ul s'$ for. This condition can be checked to terminate the algorithm without knowing $k_{max}$ before. When $W$ is infinite, there is no maximal element and $\ti{\theta}$ is infinite, too. In this case $k_{max}$ is used to terminate after having calculated a finite part of $Wk(\theta)$.
+	Note that if $W$ is finite, then we can drop $k_{max}$ and instead use another termination condition: when $k$ reaches the maximal twisted length in $Wk(\theta)$, then the only vertex of twisted length $k$ is the unique element $w_0 \in W$ of maximal ordinary length. Since $s \in D_R(w_0)$ for all $s \in S$, there is no $s' \in S$ remaining to calculate $w_0 \ul s'$ for. This condition can be checked to terminate the algorithm without knowing $k_{max}$ before. When $W$ is infinite, there is no maximal element and $\ti{\theta}$ is infinite, too. In this case $k_{max}$ is used to terminate after having calculated a finite part of $Wk(\theta)$.
 \end{rema}
 
 \begin{lemm}
 	\typedlabel{lemm:twoa0-algo}
-	\ref{algo:twoa0} is a deterministic algorithm iff the decision at line~\ref{algo:twoa0-decision} is taken by a deterministic algorithm.
+	\ref{algo:twoa0} is a deterministic algorithm if and only if the decision at line~\ref{algo:twoa0-decision} is taken by a deterministic algorithm.
 
 	\begin{proof}
 		The outer loop (line \ref{algo:twoa0-k-loop}) is strictly ascending in $k \in \{0,\ldots,k_{max}\}$ and so finite. The innermost loop (line \ref{algo:twoa0-s-loop}) is finite since $S$ is finite and the inner loop (line \ref{algo:twoa0-v-loop}) is finite, since $V$ starts as finite set and in each step there are added at most $|V| \cdot |S|$ many new vertices. Therefore the algorithm terminates. The soundness is due to the arguments at the beginning of Section \ref{sec:twisted-involutions-algorithms}.
 	\end{proof}
 \end{lemm}
 
-For all runtime investigations in the paper, we consider $|S|$ and $\ord(st)$ (for all $s,t \in S$ with $\ord(st) < \infty)$ to be constant. This is suitable, since they are tiny compared to $|\ti{\theta}|$. 
+When investigating the asymptotic runtime behavior of our algorithms, we will describe them relative to $k_{max}$ and $n := |\{ w \in \ti{\theta} : \rho(w) \leq k_{max} \}|$ while assuming $\mathcal{O}(|S|) = 1$ and $\mathcal{O}(\ord(st)) = 1$ for all $s,t \in S$ with $\ord(st) < \infty$. We justify this by the fact that the runtime cannot be better than linear in $\mathcal{O}(n)$ (since this is the size of the vertex set $V$ produced by our algorithms) and, moreover, $|S|$ and $\ord(st)$ are tiny in comparison.
 
 \begin{prop}
 	\typedlabel{prop:twoa0-runtime}
-	Let $A$ be a concrete algorithm instance of \ref{algo:twoa0}. By this we mean an algorithm $A$ that has the form of \ref{algo:twoa0} together with an algorithm $D$ to decide $w \ul s \in V$ at line~\ref{algo:twoa0-decision}. Then for $k = k_{max}$ and $n = \{ w \in \ti{\theta} : \rho(w) \leq k \}$ we have $A \in \mathcal{O}(n \cdot D)$.
+	Let $A$ be a concrete algorithm instance of \ref{algo:twoa0}. By this we mean an algorithm $A$ that has the form of \ref{algo:twoa0} together with an algorithm $D$ to decide $w \ul s \in V$ at line~\ref{algo:twoa0-decision}. Then for $k = k_{max}$ and $n = |\{ w \in \ti{\theta} : \rho(w) \leq k \}|$ we have $A \in \mathcal{O}(n \cdot D)$.
 
 	\begin{proof}
 		The body of the inner loop (line \ref{algo:twoa0-v-loop}) is executed precisely $n$ times and the body contains of $D$ and some instructions with constant runtime.
@@ -64,7 +64,7 @@ The poset graph is build up from the unique element of rank 0, the neutral eleme
 	This algorithm is based on \ref{algo:twoa0}. It uses the following function to determine if $w \ul s \in V$ at line~\ref{algo:twoa0-decision} in \ref{algo:twoa0}.
 
 	\begin{algorithmic}[1]
-	\Procedure{CheckIfAlreadyKnown}{$(W,S),w,s,V,E$}
+	\Procedure{CheckIfAlreadyKnown}{$(W,S),\theta,w,s,V,E$}
 		\State $y \gets ws$
 		\State $z \gets \theta(s)y$
 		\If{$z=w$} \Comment{Explicit element comparison in $W$}
@@ -102,7 +102,7 @@ The poset graph is build up from the unique element of rank 0, the neutral eleme
 	\end{proof}
 \end{lemm}
 
-Any algorithm calculating $Wk(\theta)$ must be at least linear in the size of $\ti{\theta}$ (since this is the size of the vertice result set). Our goal is to improve \ref{algo:twoa1} so that we get an algorithm in $\mathcal{O}(|\ti{\theta}|)$, i.e. an asymptotical perfect algorithm for calculating $Wk(\theta)$. As already seen the element comparison of a potential new element with all already known elements of same twisted length (\ref{algo:twoa1} at line~\ref{algo:twoa1-comp}) is the bottleneck. Here the rank-2-residues become key. Suppose we have a $w \in \ti{\theta}$ with $\rho(w) = k$ and $s \in S$. In \ref{algo:twoa1} we would now check if $w \ul s$ is a new vertex or if we already calculated it by comparing it with all already known vertices of twisted length $k + 1$. Assume we have already calculated it. This means there is another twisted involution $v$ with $\rho(v) = k$ and another generator $t \in S$ with $v \ul t = w \ul s$. With \ref{prop:rank-2-residues-are-convex} $w \ul s$ is the unique element of maximal twisted length in the rank-2-residue $wC_{\{s,t\}}$. This yields a necessary condition for $w \ul s$ to be equal to an already known vertex, allowing us to replace the ineffective search all method in \ref{algo:twoa1} at line~\ref{algo:twoa1-comp}.
+Any algorithm calculating $Wk(\theta)$ must be at least linear in the size $n$of the resulting vertice set. Our goal is to improve \ref{algo:twoa1} so that we get an algorithm in $\mathcal{O}(n)$, i.e.\ an asymptotical perfect algorithm for calculating $Wk(\theta)$. As already seen the element comparison of a potential new element with all already known elements of same twisted length (\ref{algo:twoa1} at line~\ref{algo:twoa1-comp}) is the bottleneck. Here the rank-2-residues become key. Suppose we have a $w \in \ti{\theta}$ with $\rho(w) = k$ and $s \in S$. In \ref{algo:twoa1} we would now check if $w \ul s$ is a new vertex or if we already calculated it by comparing it with all already known vertices of twisted length $k + 1$. Assume we have already calculated it. This means there is another twisted involution $v$ with $\rho(v) = k$ and another generator $t \in S$ with $v \ul t = w \ul s$. With \ref{prop:rank-2-residues-are-convex} $w \ul s$ is the unique element of maximal twisted length in the rank-2-residue $wC_{\{s,t\}}$. This yields a necessary condition for $w \ul s$ to be equal to an already known vertex, allowing us to replace the ineffective search all method in \ref{algo:twoa1} at line~\ref{algo:twoa1-comp}.
 
 \begin{figure}[ht]
 	\centering
@@ -129,7 +129,7 @@ Now $M$ contains all already known elements of twisted length $k+1$, satisfying 
 	This algorithm is based on \ref{algo:twoa0}. It uses the following function to determine if $w \ul s \in V$ at line~\ref{algo:twoa0-decision} in \ref{algo:twoa0}.
 
 	\begin{algorithmic}[1]
-	\Procedure{CheckIfAlreadyKnown}{$(W,S),w,s,V,E$}
+	\Procedure{CheckIfAlreadyKnown}{$(W,S),\theta,w,s,V,E$}
 		\State $y \gets ws$
 		\State $z \gets \theta(s)y$
 		\If{$z=w$} \Comment{Explicit element comparison in $W$}
@@ -184,7 +184,7 @@ Now $M$ contains all already known elements of twisted length $k+1$, satisfying 
 	\ref{algo:twoa2} is a deterministic algorithm.
 
 	\begin{proof}
-		The outer loop (line~\ref{algo:twoa2-s-loop}) is executed $|S|-1$ times. Its body is only called if $\ord(st)$ is finite. Due to \ref{lemm:max-twisted-circle-height} the both inner while loops (lines~\ref{algo:twoa2-height-loop-down},\ref{algo:twoa2-height-loop-up}) are executed at most $2 \cdot \ord(st)$ times. So \ref{algo:twoa2} terminates. The soundness of this improvement is due to \ref{prop:twoa1-necessary-condition-for-ws-eq-vt}.
+		The outer loop (line~\ref{algo:twoa2-s-loop}) is executed $|S|-1$ times. Its body is only called if $\ord(st)$ is finite. Due to \ref{lemm:max-twisted-circle-height} both inner while loops (lines~\ref{algo:twoa2-height-loop-down},\ref{algo:twoa2-height-loop-up}) are executed at most $2 \cdot \ord(st)$ times. So \ref{algo:twoa2} terminates. The soundness of this improvement is due to \ref{prop:twoa1-necessary-condition-for-ws-eq-vt}.
 	\end{proof}
 \end{lemm}
 
@@ -249,7 +249,7 @@ We use these restrictions to further improve \ref{algo:twoa2}:
 		a_3 & = l(w[\ul t \ul s]^{h}) - l(w[\ul t \ul s]^{h-1}) - 1 \textrm{ and} \\
 		a_4 & = l(w[\ul t \ul s]^{2h-1}) - l(w[\ul t \ul s]^{2h-2}) - 1.
 	\end{align*}
-	Then the following decision tree allows to decide of $w \ul t = w \ul s$ or $w \ul t \neq w \ul s$ in many cases without explicit element comparison.
+	Then the following decision tree allows to decide if $v \ul t = w \ul s$ or not in many cases.
 
 	\begin{enumerate}
 		\item $h=1$:

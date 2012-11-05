@@ -28,7 +28,7 @@ From the definiton we see that Coxeter groups only depend on the cardinality of 
 	Let $(W,S)$ be a Coxeter system. For an arbitrary element $w \in W$ we call a product $s_{i_1} \cdots s_{i_n} = w$ of generators $s_{i_1} \ldots s_{i_n} \in S$ an \defword{expression} of $w$. Any expression that can be obtained from $s_{i_1} \cdots s_{i_n}$ by omitting some (or all) generators is called a \defword{subexpression} of $w$.
 \end{defi}
 
-The present relations between the generators of a Coxeter group allow us to rewrite expressions. Hence, an element $w \in W$ can have more than one expression. Obviously any element $w \in W$ has infinitly many expressions, since any expression $s_{i_1} \cdots s_{i_n} = w$ can be extended by applying $s_1^2 = 1$ from the right. But there must be a smallest number of generators needed to receive $w$. For example the neutral element $e$ can be expressed by the empty expression. Or each generator $s_i \in S$ can be expressed by itself, but any expression with less factors (i.e. the empty expression) is unequal to $s_i$.
+The present relations between the generators of a Coxeter group allow us to rewrite expressions. Hence, an element $w \in W$ can have more than one expression. Obviously any element $w \in W$ has infinitly many expressions, since any expression $s_{i_1} \cdots s_{i_n} = w$ can be extended by applying $s_1^2 = 1$ from the right. But there must be a smallest number of generators needed to receive $w$. For example the neutral element $e$ can be expressed by the empty expression. Or each generator $s_i \in S$ can be expressed by itself, but any expression with less factors (i.e.\ the empty expression) is unequal to $s_i$.
 
 \begin{defi}
 	\typedlabel{defi:length-function}
@@ -53,8 +53,8 @@ The next lemma yields some useful identities and relations for the length functi
 	Let $(W,S)$ be a Coxeter system, $s \in S$, $u, w \in W$ and $l : W \to \nn$ the length function. Then
 	\begin{enumerate}
 		\item $l(w) = l(w^{-1})$,
-		\item $l(w) = 0$ iff $w = e$,
-		\item $l(w) = 1$ iff $w \in S$,
+		\item $l(w) = 0 \iff w = e$,
+		\item $l(w) = 1 \iff w \in S$,
 		\item $l(uw) \leq l(u) + l(w)$,
 		\item $l(uw) \geq l(u) - l(w)$ and
 		\item $l(ws) = l(w) \pm 1$.

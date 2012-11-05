@@ -7,7 +7,7 @@ In this section let $\mathcal C = (\mathcal C_+, \mathcal C_-, \delta^*)$ be a t
 	\begin{axioms}
 		\axiomitem{Fl1} $\theta^2 = \id$,
 		\axiomitem{Fl2} $\theta(\mathcal C_+) = \mathcal C_-$ and
-		\axiomitem{Fl3} for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $x \sim y$ iff $\theta(x) \sim \theta(y)$ and $x \opp z$ iff $\theta(x) \opp \theta(z)$.
+		\axiomitem{Fl3} for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $x \sim y \iff \theta(x) \sim \theta(y)$ and $x \opp z \iff \theta(x) \opp \theta(z)$.
 	\end{axioms}
 	Then we call $\theta$ a \defword{building quasi-flip} of $\mathcal{C}$. If in addition
 	\begin{axioms}
@@ -20,7 +20,7 @@ So building (quasi-)flips permute the two halfes of a twin building while preser
 
 \begin{lemm}
 	\theocite{Lemma 2.1.4}{horn:kac-moody}
-	Let $\theta$ be a building quasi-flip of $\mathcal C$. Then $\theta$ induces an involutory (i.e. order at most 2) Coxeter system automorphism $\tilde \theta$ on $(W,S)$, so that for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $\tilde \theta(\delta_\varepsilon(x,y)) = \delta_{-\varepsilon}(\theta(x), \theta(y))$ and $\tilde \theta(\delta^*(x,z)) = \delta^*(\theta(x), \theta(z))$.
+	Let $\theta$ be a building quasi-flip of $\mathcal C$. Then $\theta$ induces an involutory (i.e.\ order at most 2) Coxeter system automorphism $\tilde \theta$ on $(W,S)$, so that for $\varepsilon \in \{+,-\}, x,y \in \mathcal C_+$ and $z \in \mathcal C_-$ we have $\tilde \theta(\delta_\varepsilon(x,y)) = \delta_{-\varepsilon}(\theta(x), \theta(y))$ and $\tilde \theta(\delta^*(x,z)) = \delta^*(\theta(x), \theta(z))$.
 \end{lemm}
 
 \begin{rema}
@@ -41,7 +41,7 @@ Of course the coherence between building quasi-flips and $Wk(\theta)$ is not cle
 	Let $\theta$ be a building quasi-flip of $\mathcal C$ and let $R \subseteq \mathcal C_+$ be an arbitrary residue. The \defword{minimal numerical $\theta$-codistance} of $R$ is defined as $\min_{c \in R} l^{\theta}(c)$.
 \end{defi}
 
-According to the definition of $c_+ \opp d_-$, i.e. $l(\delta^*(c_+,d_-)) = 0$, we can consider the chambers that actually reach the minimal numerical $\theta$-codistance as those that are mapped away ``as far as possible''. In particular, if $\min_{c \in R} l^{\theta}(c) = 0$, these are precisely those chambers, mapped to their opposite.
+According to the definition of $c_+ \opp d_-$, i.e.\ $l(\delta^*(c_+,d_-)) = 0$, we can consider the chambers that actually reach the minimal numerical $\theta$-codistance as those that are mapped away ``as far as possible''. In particular, if $\min_{c \in R} l^{\theta}(c) = 0$, these are precisely those chambers, mapped to their opposite.
 
 \begin{defi}
 	Let $\theta$ be a building quasi-flip of $\mathcal C$ and let $R \subseteq \mathcal C_+$ be an arbitrary residue. The (sub)chamber system of all chambers with minimal numerical $\theta$-codistance
@@ -61,10 +61,19 @@ According to the definition of $c_+ \opp d_-$, i.e. $l(\delta^*(c_+,d_-)) = 0$, 
 	\end{enumerate}
 \end{defi}
 
+\begin{prop}
+	\theocite{Proposition 5.8}{gramlich:kac-moody}
+	\typedlabel{prop:good-from-rank-2-to-all}
+	Let $\theta$ be a quasi-flip of $\mathcal{C}$ and let all rank-2-residues be good. Then any residue $Q$ is good. In particular, $Q^\theta$ is connected.
+\end{prop}
+
 \begin{lemm}
-	\theocite{UNKNOWN}{foobar}
 	\typedlabel{lemm:unique-convex-hull}
-	Assume that all rank-2-residues of $\mathcal C$ are good. Then every $I$-residue of $\mathcal C^\theta$ is contained in excatly one $I$-residue of $\mathcal C_+$.
+	Suppose that all rank-2-residues of $\mathcal C$ are good. Then every $I$-residue of $\mathcal C^\theta$ is contained in a unique $I$-residue of $\mathcal C$, and every $I$-residue of $C$ intersecting $C^\theta$ non-trivially contains a unique $I$-residue of $C^\theta$.
+
+	\begin{proof}
+		By \ref{prop:good-from-rank-2-to-all} every residue is good. If $R$ be an $I$-residue of $C^\theta$, then since $C^\theta$ is just a chamber subsystem of $C$ two chambers in $C^\theta$ are $s$-adjacent of and only if they are $s$-adjacent in $C$. Hence, clearly there is a unique $I$-residue of $C$ containing $R$. In return, let $R$ be an $I$-residue of $C$ intersecting $C^\theta$ non-trivially. Then $R^\theta = R \cap C^\theta$ and so $R^\theta$ is the unique $I$-residue of $C^\theta$ contained in $R$.
+	\end{proof}
 \end{lemm}
 
 \begin{defi}
@@ -76,7 +85,7 @@ According to the definition of $c_+ \opp d_-$, i.e. $l(\delta^*(c_+,d_-)) = 0$, 
 \end{rema}
 
 \begin{defi}
-	A residue $R$ of $\mathcal{C}$ is called a \defword{Phan residue} if $R$ is opposite to $\theta(R)$, i.e. for every chamber $c \in R$ there is a chamber $\theta(c') \in \theta(R)$ with $c \opp \theta(c')$. If a Phan residue does not contain any other Phan residue, then we call it a \defword{minimal Phan residue}.
+	A residue $R$ of $\mathcal{C}$ is called a \defword{Phan residue} if $R$ is opposite to $\theta(R)$, i.e.\ for every chamber $c \in R$ there is a chamber $\theta(c') \in \theta(R)$ with $c \opp \theta(c')$. If a Phan residue does not contain any other Phan residue, then we call it a \defword{minimal Phan residue}.
 \end{defi}
 
 \begin{defi}
@@ -87,11 +96,14 @@ According to the definition of $c_+ \opp d_-$, i.e. $l(\delta^*(c_+,d_-)) = 0$, 
 	Let $\mathcal C' \subseteq \mathcal C$ be two chamber systems such that the relations in $\mathcal C'$ are obtained by restricting those from $\mathcal C$. If any two chambers $c,d \in \mathcal C'$ are connected by a $J$-gallery in $\mathcal C'$ if and only if they are connected by a $J$-gallery in $\mathcal C$, then we say that \defword{$C'$ inherits connectedness from $C$}.
 \end{defi}
 
-\begin{prop}
-	\theocite{Proposition 4.4.3}{horn:kac-moody}
-	\typedlabel{prop:good-from-rank-2-to-all}
-	Let $\theta$ be a quasi-flip of $\mathcal{C}$ and let all rank-2-residues be good. Then any residue $Q$ is good. In particular, $Q^\theta$ is connected.
-\end{prop}
+\begin{defi}
+	A quasi-flip of C is called \defword{good} if it satisfies all of the following:
+	\begin{enumerate}
+		\item all rank-2-residues are good,
+		\item $\theta$ is $K$-homogeneous for some $K \subseteq S$ and
+		\item for any chamber $c$ with $\delta^\theta(c) = w$ we have: if $s \in S$ satisfies $w_K \preceq w \ul s \prec w$, then there is a chamber $c' \in R_{\{s\}}(c)$ such that $\delta^\theta(c') = w \ul s$.
+	\end{enumerate}
+\end{defi}
 
 \begin{prop}
 	\theocite{Proposition 4.4.4}{horn:kac-moody}
@@ -103,21 +115,35 @@ According to the definition of $c_+ \opp d_-$, i.e. $l(\delta^*(c_+,d_-)) = 0$, 
 	\end{enumerate}
 \end{prop}
 
+\begin{defi}
+	Let $w \in W$. We say a gallery $G = (c_0, \ldots, c_k)$ to be of \defword{type} $v$, if the following holds: if $c_0$ and $c_1$ are in the same $s_1$-panel, $c_1$ and $c_2$ in the same $s_2$-panel and so on, then $s_1 \cdots s_k = v$.
+\end{defi}
+
+\begin{lemm}
+	\typedlabel{lemm:good-quasi-flip-galleries}
+	Let $\theta$ be a good quasi-flip and let $c$ be a chamber with $\delta^\theta(c)=w$. If there exists a word $s_1 \cdots s_n = v \in W$ such that $w_K \ul s_1 \ldots \ul s_k = w $ and $\rho(w) = \rho(w_K) + k$, then there exists a gallery of type $v$ from $c$ to some chamber $d$ in $C^\theta$.
+
+	\begin{proof}
+		We induce on $k = l(v)$. If $k = 0$, i.e.\ $v = e$, then $w = w_K$ and we are done. So suppose $k > 0$, say $v$ has a reduced expression $v = s_1 \cdots s_k$. Then $w_K \preceq w \ul s_k \prec w$. Hence, there is a chamber $c' \in R_{\{s_k\}}(c)$ with $\delta^\theta(c') = w' = w \ul s_k$. But since $w' \ul s_{k-1} \ldots \ul s_1 = w \ul s_k \ldots \ul s_1 = w_K$. By induction there is a gallery of type $s_1 \ldots s_{k-1}$ from $c'$ to $d'$ in $C^\theta$. Hence, there is a gallery of type $v$ from $c$ over $c'$ to $d'$.
+	\end{proof}
+\end{lemm}
+
 The following proposition is a slight variation of \cite[Proposition 4.5.4]{horn:kac-moody}.
 
 \begin{lemm}
 	\typedlabel{lemm:3rc-to-rc}
-	Let $\theta$ be a quasi-flip of a twin building $\mathcal C$ of type $(W,S)$ and suppose all its rank-2-residues to be good. If $(W,S)$ is 3-residually connected, then the flip-flop system $\mathcal C^\theta$ is residually connected.
+	Let $\theta$ be a good quasi-flip of a twin building $\mathcal C$ of type $(W,S)$. If $(W,S)$ is 3-residually connected, then the flip-flop system $\mathcal C^\theta$ is residually connected.
 
 	\begin{proof}
 		Let $R_i$ be residues of type $J_i$ for $1 \leq i \leq 3$ such that their pairwise intersection is non-empty. By \ref{lemm:rc-reduction-to-3-residues} it is sufficient to show that $R_{123} = R_1 \cap R_2 \cap R_3$ is non-empty and connected. By the residually connectedness of buildings we have $\overline R_{123} = \overline R_1 \cap \overline R_2 \cap \overline R_3 \neq \emptyset$. We choose a chamber $c \in \overline R_{123}$. By \ref{prop:good-from-rank-2-to-all} we can directly descend from $c$ to $\mathcal C^\theta$ by a $(J_1 \cap J_2)$-gallery. Due to symmetry this is also possible by a $(J_2 \cap J_3)$- and a $(J_3 \cap J_1)$-gallery.
 
-		Denote by $K$ the homogeneity type of $\theta$ (cf. \ref{prop:good-rank-2-conclusion}) and by $w$ the $\theta$-codistance of $c$. Then there are words $w_{ij} \in W_{J_i \cap J_j}$ such that for each there is a directly descending gallery of type $w_{ij}$ from $c$ with $\theta$-codistance $w$ to a chamber with $\theta$-codistance $w_K$. Hence, for some well chosen subwords $w'_{ij} \leq w_{ij}$ we have $w = \theta(w'_{ij}) w_K w_{ij}$ with $l(w) = l(\theta(w'_{ij})) + l(w_K) + l(w_{ij})$, i.e. the concatenation of the words admit a reduced expression for $w$. By \theocite{UNKNOWN}{foobar} these subwords are uniquely determined, since every step must have a $\theta$-twisted involution as $\theta$-codistance. But we assumed $Wk(W,\theta)$ to be 3-residually connected and therefore we can choose the $w_{ij}$ from $T := J_1 \cap J_2 \cap J_3$. So we conclude that direct descend from $c$ into $\mathcal C^\theta$ is possible via a gallery of type $w_{ij}$, staying in $\overline R_{123}$. Hence, $\overline R_{123} \cap \mathcal C^\theta \neq \emptyset$ and so $R_{123} \neq \emptyset$. Finally, \ref{prop:good-from-rank-2-to-all} says that $R_{123} = \overline R_{123}^\theta$ is connected.
+		Denote by $K$ the homogeneity type of $\theta$ and by $w$ the $\theta$-codistance of $c$. Then there are words $w_{ij} \in W_{J_i \cap J_j}$ such that for each there is a directly descending gallery of type $w_{ij}$ from $c$ with $\theta$-codistance $w$ to a chamber with $\theta$-codistance $w_K$.
+		Hence, we have $w = w_K \ul w_{ij}$ in each case. But we assumed $Wk(W,\theta)$ to be 3-residually connected and therefore we can choose the $w_{ij}$ from $T := J_1 \cap J_2 \cap J_3$. So by \ref{lemm:good-quasi-flip-galleries} we conclude that direct descend from $c$ into $\mathcal C^\theta$ is possible via a gallery of type $w_{ij}$, staying in $\overline R_{123}$. Hence, $\overline R_{123} \cap \mathcal C^\theta \neq \emptyset$ and so $R_{123} \neq \emptyset$. Finally, \ref{prop:good-from-rank-2-to-all} says that $R_{123} = \overline R_{123}^\theta$ is connected.
 	\end{proof}
 \end{lemm}
 
 \begin{coro}
-	Let $\mathcal C$ be a twin building of type $(W,S)$ with a quasi-flip $\theta$ such that all rank-2-residues are good. If $(W,S)$ is of rank $\leq 3$ or if $(W,\theta)$ is from Table~\ref{tab:rc3-wks}, then $\mathcal C^\theta$ is residually connected.
+	Let $\mathcal C$ be a twin building of type $(W,S)$ with a good quasi-flip $\theta$. If $(W,S)$ is of rank $\leq 3$ or if $(W,\theta)$ is from Table~\ref{tab:rc3-wks}, then $\mathcal C^\theta$ is residually connected.
 
 	\begin{proof}
 		By \ref{lemm:3rc-to-rc} in combination with \ref{lemm:rank-leq-3-main-special-case} and \ref{theo:some-3rc-systems}.

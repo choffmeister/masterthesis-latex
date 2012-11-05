@@ -7,7 +7,7 @@ In section~\ref{sec:twisted-involutions-algorithms} we introduced an effective a
 \begin{lemm}
 	Suppose the parabolic subgroup $W_{S'}$ to be finite for any $S' \subsetneqq S$. Define
 	$$ E := \{ w \in \ti{\theta} : K,S_1,S_2,S_3 \subseteq S, w \in w_K C_{S_{12}} \cap w_K C_{S_{23}} \cap w_K C_{S_{31}}, w \notin w_K C_T \} $$
-	and assume $E \neq \emptyset$, i.e. $Wk(\theta)$ is not 3-residually connected. Then there is a $\rho_E \in \nn_0$ with $\max_{w \in E} \rho(w) \leq \rho_E$.
+	and assume $E \neq \emptyset$, i.e.\ $Wk(\theta)$ is not 3-residually connected. Then there is a $\rho_E \in \nn_0$ with $\max_{w \in E} \rho(w) \leq \rho_E$.
 
 	\begin{proof}
 		For any counterexample the sets $S_1,S_2,S_3$ cannot be equal to $S$ by \ref{prop:3rc-special-3}, hence by assumption the sets $S_1,S_2,S_3$ are spherical. But then $S_{12},S_{23},S_{31}$ as well as $\theta(S_{12}),\theta(S_{23}),\theta(S_{31})$ must be spherical, too. Let $w \in E$, then $w \in W_{\theta(S_{12})} w_K W_{S_{12}}$, hence $l(w) \leq l(w_{\theta(S_{12})}) + l(w_K) + l(w_{S_{12}})$. Since there is only a finite count of proper subsets of $S$, we can choose
@@ -45,7 +45,7 @@ In section~\ref{sec:twisted-involutions-algorithms} we introduced an effective a
 	Let $W = \tilde A_2$ with $S = \{s_1, s_2, s_3\}$. Because of symmetry we can calculate $l_E$ with the set $S' = \{s_1,s_2\}$. Then $\langle S' \rangle \cong A_2$, hence the length of the longest word in $\langle S' \rangle$ is $3$. Therefore $l_E = \rho_E = 9$. Hence, to validate if $\tilde A_2$ is 3-residually connected, we only need to calculate the poset graph of $Wk(\theta)$ until we have all twisted involutions of twisted length 9.
 \end{exam}
 
-Now we actually want to calculate the maximum element length over all proper parabolic subgroups for some Coxeter groups, where this value is finite. Table~\ref{tab:parabolic-max-length} shows the results for some interesting one, e.g. the affine Coxeter groups. In order to simplify notation in the table we sometimes does not properly distinguish between certain cases, i.e. we use types like $B_{n-3}$ without insisting on $n \geq 5$. For $n=3$ we would have $B_0$. In this case, we will consider this type as invalid possibility. For $n=4$ we would have $B_1$, which is not defined either. But in this case we will consider this type to equal $A_1$ which seems suitable.
+Now we actually want to calculate the maximum element length over all proper parabolic subgroups for some Coxeter groups, where this value is finite. Table~\ref{tab:parabolic-max-length} shows the results for some interesting one, e.g.\ the affine Coxeter groups. In order to simplify notation in the table we sometimes does not properly distinguish between certain cases, i.e.\ we use types like $B_{n-3}$ without insisting on $n \geq 5$. For $n=3$ we would have $B_0$. In this case, we will consider this type as invalid possibility. For $n=4$ we would have $B_1$, which is not defined either. But in this case we will consider this type to equal $A_1$ which seems suitable.
 
 \begin{table}[ht]
 	\centering

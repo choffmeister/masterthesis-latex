@@ -2,7 +2,7 @@
 \section{Implementing the twisted weak ordering algorithms}
 \label{sec:implementing-twisted-involutions-algorithms}
 
-In this section we will look at a concrete implementation of the algorithm \ref{algo:twoa1} from \cite{brennemann:twoa} and \cite{haas:twoa} and of the improved versions \ref{algo:twoa2} and \ref{algo:twoa3} that we have just introduced. The source codes of the test implementations can be found in the appendix, Section~\ref{sec:sourcecodes}. They are written in \cite{gap}, using the \cite{gap:io} package for reading and writing the results to hard disk. It supplies a powerful programming language and can handle with free represented groups, in particular it allows comparisons of elements in such groups. The following algorithm benchmarks have been executed on a computer running Debian Linux in Verion~6.0.5 with an Intel\textsuperscript{\textregistered}~Core\textsuperscript{\texttrademark}~i7-965 CPU (4 cores at 3.2 GHz) and 8 GiB RAM. Note that our implementations do not support multithreading.
+In this section we will look at a concrete implementation of the algorithm \ref{algo:twoa1} from \cite{brennemann:twoa} and \cite{haas:twoa} and of the improved versions \ref{algo:twoa2} and \ref{algo:twoa3} that we have just introduced. The source codes of the test implementations can be found in the appendix, Section~\ref{sec:sourcecodes}. They are written in \cite{gap}, using the \cite{gap:io} package for reading and writing the results to hard disk. It supplies a powerful programming language and can handle with finitely represented groups (at least the most ones we need in this paper), in particular it allows comparisons of elements in such groups. The following algorithm benchmarks have been executed on a computer running Debian Linux in Verion~6.0.5 with an Intel\textsuperscript{\textregistered}~Core\textsuperscript{\texttrademark}~i7-965 CPU (4 cores at 3.2 GHz) and 8 GiB RAM. Note that our implementations do not support multithreading.
 
 At first we compare the count of element comparisons needed for our three algorithms. For this we calculate $Wk(W,\id)$ for a selection of finite Coxeter systems and count the comparisons. In Figure~\ref{fig:twoa123-element-comparisons} we see the count of needed element comparisons plotted against the size of the set of $\id$-twisted involutions.
 
@@ -23,7 +23,7 @@ At first we compare the count of element comparisons needed for our three algori
 			\addlegendentry{TWOA3}
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Element comparisons needed for calculating $Wk(\id)$}
+	\caption{Element comparisons needed for calculating $Wk(\id)$ (cf. Tables~\ref{tab:benchmark-twoa1}, \ref{tab:benchmark-twoa2} and \ref{tab:benchmark-twoa3})}
 	\label{fig:twoa123-element-comparisons}
 \end{figure}
 
@@ -46,6 +46,6 @@ The first observation is the much lower count of needed element comparisons of \
 			\addlegendentry{TWOA3}
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Runtime for calculating $Wk(\id)$}
+	\caption{Runtime for calculating $Wk(\id)$ (cf. Tables~\ref{tab:benchmark-twoa1}, \ref{tab:benchmark-twoa2} and \ref{tab:benchmark-twoa3})}
 	\label{fig:twoa123-runtime}
 \end{figure}

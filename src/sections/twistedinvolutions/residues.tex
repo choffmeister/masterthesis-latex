@@ -60,7 +60,7 @@ Residues in $Wk(\theta)$ are subsets of $\theta$-twisted involutions that can be
 	We denote the unique minimal element in $wC_I$ from \ref{coro:residues-have-unique-minimal-element} by $\min(w,I)$.
 \end{defi}
 
-We proceed with some properties of rank-2-residues. Our interest in these residues stems from the fact that their properties are needed later in Section \ref{sec:twisted-involutions-algorithms} to construct an effective algorithm for calculating the twisted weak ordering, i.e. calculating the Hasse diagram of $Wk(W,\theta)$ for arbitrary Coxeter systems $(W,S)$ and Coxeter system automorphisms $\theta$.
+We proceed with some properties of rank-2-residues. Our interest in these residues stems from the fact that their properties are needed later in Section \ref{sec:twisted-involutions-algorithms} to construct an effective algorithm for calculating the twisted weak ordering, i.e.\ calculating the Hasse diagram of $Wk(W,\theta)$ for arbitrary Coxeter systems $(W,S)$ and Coxeter system automorphisms $\theta$.
 
 \begin{defi}
 	Let $s,t \in S$ be two distinct generators. We define:
@@ -115,7 +115,7 @@ Note that this proposition could be strengthend by insisting on an exclusive or,
 	Let $w \in S$ and let $s,t \in S$ be two distinct generators and suppose $\ul s$ acts by multiplication on $w$. Then $w$ or $w \ul s$ is the unique minimal or maximal element in $wC_{\{s,t\}}$.
 
 	\begin{proof}
-		Suppose $w$ is not maximal, i.e. $w \ul t \succ w$. Then by \ref{lemm:onesided-operations-only-at-top-or-bottom-end-of-twocycle} we have $w \ul s \ul t \succ w \ul s$, hence $w \ul s$ is minimal. Suppose $w$ is not minimal, i.e. $w \ul s \ul t \prec w \ul s$. Then with the same argument we have $w \ul t \prec w$, hence $w$ is maximal. Supposing $w \ul s$ not to be maximal or not to be minimal yields analogue results.
+		Suppose $w$ is not maximal, i.e.\ $w \ul t \succ w$. Then by \ref{lemm:onesided-operations-only-at-top-or-bottom-end-of-twocycle} we have $w \ul s \ul t \succ w \ul s$, hence $w \ul s$ is minimal. Suppose $w$ is not minimal, i.e.\ $w \ul s \ul t \prec w \ul s$. Then with the same argument we have $w \ul t \prec w$, hence $w$ is maximal. Supposing $w \ul s$ not to be maximal or not to be minimal yields analogue results.
 	\end{proof}
 \end{coro}
 
@@ -187,7 +187,7 @@ Again, this corollary can be strengthend by insisting on an exclusive or with th
 	Let $w \in S$, $s,t \in S$ be two distinct generators and $m = \ord(st) < \infty$. Then $|wC_{\{s,t\}}| \leq 2m$.
 
 	\begin{proof}
-		Without loss of generality let $w = \min(w,\{s,t\})$. Let $n$ be the smallest number (or $\infty$ if non such number exists) for that $w[\ul s \ul t]^{n} \succ w[\ul s \ul t]^{n+1}$. Then by the convexity from \ref{prop:rank-2-residues-are-convex} we have $|wC_{\{s,t\}}| = 2n$. If $n < m$, then we are done. In return assume $n \geq m$, i.e. $w \prec w \ul s \prec \ldots \prec w[\ul s \ul t]^{m}$. But $w[\ul s \ul t]^{m}$ ends with $stst \cdots$ ($m$-times) and hence by
+		Without loss of generality let $w = \min(w,\{s,t\})$. Let $n$ be the smallest number (or $\infty$ if non such number exists) for that $w[\ul s \ul t]^{n} \succ w[\ul s \ul t]^{n+1}$. Then by the convexity from \ref{prop:rank-2-residues-are-convex} we have $|wC_{\{s,t\}}| = 2n$. If $n < m$, then we are done. In return assume $n \geq m$, i.e.\ $w \prec w \ul s \prec \ldots \prec w[\ul s \ul t]^{m}$. But $w[\ul s \ul t]^{m}$ ends with $stst \cdots$ ($m$-times) and hence by
 		$$ \underbrace{stst \cdots}_{m-\textrm{times}} = \underbrace{tsts \cdots}_{m-\textrm{times}} $$
 		we get $s,t \in D_R(w[\ul s \ul t]^{m})$. So by \ref{lemm:rho-w-ul-s-minus-rho-w-differs-by-1} we have $w[\ul s \ul t]^{m} \succ w[\ul s \ul t]^{m+1}$, hence $n = m$ and so $|wC_{\{s,t\}}| = 2m$.
 	\end{proof}

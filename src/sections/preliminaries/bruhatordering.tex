@@ -2,7 +2,7 @@
 \section{Bruhat ordering}
 \label{sec:coxeter-groups-bruhat-ordering}
 
-We now investigate ways to partially order the elements of a Coxeter group. Furthermore, this ordering should be compatible with the length function, i.e. for $w,v \in W$ we have $l(w) < l(v)$ whenever $w < v$.
+We now investigate ways to partially order the elements of a Coxeter group. Furthermore, this ordering should be compatible with the length function, i.e.\ for $w,v \in W$ we have $l(w) < l(v)$ whenever $w < v$.
 
 \begin{defi}
 	\typedlabel{defi:bruhat-ordering}
@@ -19,10 +19,10 @@ We now investigate ways to partially order the elements of a Coxeter group. Furt
 	\end{proof}
 \end{lemm}
 
-We now show that $Br(W)$ is graded. By definition we already have $v < w$ iff $l(v) < l(w)$, but its not that obvious that two immediately adjacent elements differ in length by exactly 1. Beforehand let us just mention two other partial orderings that are graded by definition.
+We now show that $Br(W)$ is graded. By definition we already have $v < w$ if and only if $l(v) < l(w)$, but its not that obvious that two immediately adjacent elements differ in length by exactly 1. Beforehand let us just mention two other partial orderings that are graded by definition.
 
 \begin{defi}
-	Let $(W,S)$ be a Coxeter system. The ordering $\leq_R$ defined by $u \leq_R w$ iff $uv = w$ for some $u \in W$ with $l(u) + l(v) = l(w)$ is called the \defword{right weak ordering}. The left-sided version $u \leq_L w$ iff $vu = w$ is called the \defword{left weak ordering}.
+	Let $(W,S)$ be a Coxeter system. The ordering $\leq_R$ defined by $u \leq_R w$ if and only if $uv = w$ for some $u \in W$ with $l(u) + l(v) = l(w)$ is called the \defword{right weak ordering}. The left-sided version $u \leq_L w$ if and only if $vu = w$ is called the \defword{left weak ordering}.
 \end{defi}
 
 To ensure the Bruhat ordering is graded as well, we need another characterization of the Bruhat ordering in terms of subexpressions.
@@ -36,7 +36,7 @@ To ensure the Bruhat ordering is graded as well, we need another characterizatio
 \begin{theo}[Subword property]
 	\namedlabel{theo:bruhat-subexpression-characterization}
 	\theocite{Theorem 5.10}{humphreys:coxeter}
-	Let $(W,S)$ be a Coxeter system and $w \in W$ with a fixed, but arbitrary, reduced expression $w = s_1 \cdots s_r$, $s_i \in S$. Then $u \leq w$ (in the Bruhat ordering) iff $u$ can be obtained as a subexpression of this reduced expression.
+	Let $(W,S)$ be a Coxeter system and $w \in W$ with a fixed, but arbitrary, reduced expression $w = s_1 \cdots s_r$, $s_i \in S$. Then $u \leq w$ (in the Bruhat ordering) if and only if $u$ can be obtained as a subexpression of this reduced expression.
 \end{theo}
 
 \begin{coro}
