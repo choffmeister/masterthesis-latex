@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bcf:controlfile version="2.0" xmlns:bcf="https://sourceforge.net/projects/biblatex">
+<bcf:controlfile version="2.1" xmlns:bcf="https://sourceforge.net/projects/biblatex">
   <!-- BIBER OPTIONS -->
   <bcf:options component="biber" type="global">
     <bcf:option type="singlevalued">
@@ -143,16 +143,6 @@
       <bcf:value>0</bcf:value>
     </bcf:option>
   </bcf:options>
-  <!-- DISPLAYMODES -->
-  <bcf:displaymodes type="global">
-    <bcf:displaymode>
-      <bcf:dtarget>*</bcf:dtarget>
-      <bcf:dmode order="1">original</bcf:dmode>
-      <bcf:dmode order="2">romanised</bcf:dmode>
-      <bcf:dmode order="3">uniform</bcf:dmode>
-      <bcf:dmode order="4">translated</bcf:dmode>
-    </bcf:displaymode>
-  </bcf:displaymodes>
   <!-- SOURCEMAP -->
   <bcf:sourcemap>
     <bcf:maps datatype="bibtex" driver_defaults="1">
@@ -680,7 +670,7 @@
       <bcf:entrytype>thesis</bcf:entrytype>
       <bcf:entrytype>unpublished</bcf:entrytype>
       <bcf:entrytype>video</bcf:entrytype>
-      <bcf:entrytype>xdata</bcf:entrytype>
+      <bcf:entrytype skip_output="true">xdata</bcf:entrytype>
     </bcf:entrytypes>
     <bcf:fields>
       <bcf:field fieldtype="field" datatype="integer">day</bcf:field>
@@ -832,10 +822,10 @@
       <bcf:field fieldtype="field" datatype="verbatim">doi</bcf:field>
       <bcf:field fieldtype="field" datatype="verbatim">eprint</bcf:field>
       <bcf:field fieldtype="field" datatype="verbatim">file</bcf:field>
-      <bcf:field fieldtype="field" datatype="verbatim">url</bcf:field>
       <bcf:field fieldtype="field" datatype="verbatim">verba</bcf:field>
       <bcf:field fieldtype="field" datatype="verbatim">verbb</bcf:field>
       <bcf:field fieldtype="field" datatype="verbatim">verbc</bcf:field>
+      <bcf:field fieldtype="field" datatype="uri">url</bcf:field>
       <bcf:field fieldtype="field" datatype="csv">keywords</bcf:field>
       <bcf:field fieldtype="field" datatype="csv" skip_output="true">options</bcf:field>
       <bcf:field fieldtype="field" datatype="range">pages</bcf:field>
@@ -1863,147 +1853,4 @@
       </bcf:constraint>
     </bcf:constraints>
     <bcf:constraints>
-      <bcf:entrytype>misc</bcf:entrytype>
-      <bcf:constraint type="mandatory">
-        <bcf:field>title</bcf:field>
-      </bcf:constraint>
-    </bcf:constraints>
-    <bcf:constraints>
-      <bcf:entrytype>online</bcf:entrytype>
-      <bcf:constraint type="mandatory">
-        <bcf:field>title</bcf:field>
-        <bcf:field>url</bcf:field>
-      </bcf:constraint>
-    </bcf:constraints>
-    <bcf:constraints>
-      <bcf:entrytype>patent</bcf:entrytype>
-      <bcf:constraint type="mandatory">
-        <bcf:field>author</bcf:field>
-        <bcf:field>title</bcf:field>
-        <bcf:field>number</bcf:field>
-      </bcf:constraint>
-    </bcf:constraints>
-    <bcf:constraints>
-      <bcf:entrytype>periodical</bcf:entrytype>
-      <bcf:constraint type="mandatory">
-        <bcf:field>editor</bcf:field>
-        <bcf:field>title</bcf:field>
-      </bcf:constraint>
-    </bcf:constraints>
-    <bcf:constraints>
-      <bcf:entrytype>proceedings</bcf:entrytype>
-      <bcf:entrytype>mvproceedings</bcf:entrytype>
-      <bcf:constraint type="mandatory">
-        <bcf:field>editor</bcf:field>
-        <bcf:field>title</bcf:field>
-      </bcf:constraint>
-    </bcf:constraints>
-    <bcf:constraints>
-      <bcf:entrytype>inproceedings</bcf:entrytype>
-      <bcf:constraint type="mandatory">
-        <bcf:field>author</bcf:field>
-        <bcf:field>editor</bcf:field>
-        <bcf:field>title</bcf:field>
-        <bcf:field>booktitle</bcf:field>
-      </bcf:constraint>
-    </bcf:constraints>
-    <bcf:constraints>
-      <bcf:entrytype>report</bcf:entrytype>
-      <bcf:constraint type="mandatory">
-        <bcf:field>author</bcf:field>
-        <bcf:field>title</bcf:field>
-        <bcf:field>type</bcf:field>
-        <bcf:field>institution</bcf:field>
-      </bcf:constraint>
-    </bcf:constraints>
-    <bcf:constraints>
-      <bcf:entrytype>thesis</bcf:entrytype>
-      <bcf:constraint type="mandatory">
-        <bcf:field>author</bcf:field>
-        <bcf:field>title</bcf:field>
-        <bcf:field>type</bcf:field>
-        <bcf:field>institution</bcf:field>
-      </bcf:constraint>
-    </bcf:constraints>
-    <bcf:constraints>
-      <bcf:entrytype>unpublished</bcf:entrytype>
-      <bcf:constraint type="mandatory">
-        <bcf:field>author</bcf:field>
-        <bcf:field>title</bcf:field>
-      </bcf:constraint>
-    </bcf:constraints>
-    <bcf:constraints>
-      <bcf:constraint type="data" datatype="isbn">
-        <bcf:field>isbn</bcf:field>
-      </bcf:constraint>
-      <bcf:constraint type="data" datatype="issn">
-        <bcf:field>issn</bcf:field>
-      </bcf:constraint>
-      <bcf:constraint type="data" datatype="ismn">
-        <bcf:field>ismn</bcf:field>
-      </bcf:constraint>
-      <bcf:constraint type="data" datatype="date">
-        <bcf:field>date</bcf:field>
-        <bcf:field>eventdate</bcf:field>
-        <bcf:field>origdate</bcf:field>
-        <bcf:field>urldate</bcf:field>
-      </bcf:constraint>
-      <bcf:constraint type="data" datatype="pattern" pattern="(?:sf|sm|sn|pf|pm|pn|pp)">
-        <bcf:field>gender</bcf:field>
-      </bcf:constraint>
-    </bcf:constraints>
-  </bcf:datamodel>
-  <!-- CITATION DATA -->
-  <!-- SECTION 0 -->
-  <bcf:bibdata section="0">
-  </bcf:bibdata>
-  <bcf:section number="0">
-    <bcf:citekey order="1">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="2">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="3">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="4">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="5">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="6">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="7">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="8">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="9">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="10">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="11">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="12">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="13">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="14">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="15">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="16">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="17">deodhar:bruhat-order</bcf:citekey>
-    <bcf:citekey order="18">denton:coxeter</bcf:citekey>
-    <bcf:citekey order="19">denton:coxeter</bcf:citekey>
-    <bcf:citekey order="20">hultman:comb-twisted-invo</bcf:citekey>
-    <bcf:citekey order="21">hultman:comb-twisted-invo</bcf:citekey>
-    <bcf:citekey order="22">hultman:comb-twisted-invo</bcf:citekey>
-    <bcf:citekey order="23">hultman:bruhat-order</bcf:citekey>
-    <bcf:citekey order="24">hultman:comb-twisted-invo</bcf:citekey>
-    <bcf:citekey order="25">hultman:comb-twisted-invo</bcf:citekey>
-    <bcf:citekey order="26">hultman:comb-twisted-invo</bcf:citekey>
-    <bcf:citekey order="27">hultman:comb-twisted-invo</bcf:citekey>
-    <bcf:citekey order="28">hultman:comb-twisted-invo</bcf:citekey>
-    <bcf:citekey order="29">casselman:coxeter-multiplication-i</bcf:citekey>
-    <bcf:citekey order="29">casselman:coxeter-multiplication-ii</bcf:citekey>
-    <bcf:citekey order="30">brennemann:twoa</bcf:citekey>
-    <bcf:citekey order="31">haas:twoa</bcf:citekey>
-    <bcf:citekey order="32">brennemann:twoa</bcf:citekey>
-    <bcf:citekey order="33">haas:twoa</bcf:citekey>
-    <bcf:citekey order="34">gap</bcf:citekey>
-    <bcf:citekey order="35">gap:io</bcf:citekey>
-    <bcf:citekey order="36">franzsen:automorphisms</bcf:citekey>
-    <bcf:citekey order="37">humphreys:coxeter</bcf:citekey>
-    <bcf:citekey order="38">horn:kac-moody</bcf:citekey>
-    <bcf:citekey order="39">horn:kac-moody</bcf:citekey>
-    <bcf:citekey order="40">buekenhout:diagram-geometry</bcf:citekey>
-    <bcf:citekey order="41">buekenhout:diagram-geometry</bcf:citekey>
-    <bcf:citekey order="42">buekenhout:diagram-geometry</bcf:citekey>
-    <bcf:citekey order="43">buekenhout:diagram-geometry</bcf:citekey>
-    <bcf:citekey order="44">buekenhout:diagram-geometry</bcf:citekey>
-    <bcf:citekey order="45">horn:kac-moody</bcf:citekey>
-    <bcf:citekey order="46">horn:kac-moody</bcf:citekey>
-  </bcf:section>
-</bcf:controlfile>
+      <bcf:entrytype>misc
