@@ -5,12 +5,12 @@
 \contentsline {figure}{\numberline {1.4}{\ignorespaces All types of compact hyperbolic Coxeter systems}}{8}{figure.1.4}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Hasse diagram of $Wk(A_4, \id )$}}{16}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Impossible concave structure of a rank-2-residues}}{20}{figure.2.2}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Impossible concave structure of a rank-2-residues}}{19}{figure.2.2}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Classification of rank-2-residues}}{21}{figure.2.3}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Hasse diagrams of $Wk(A_4, \id )$ after removing $s_3,s_4$ edges in the left, $s_2,s_4$ edges in the middle and $s_2,s_3$ edges in the right diagram}}{22}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Optimization of \ref {algo:twoa1}}}{27}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Element comparisons needed for calculating $Wk(\id )$ (cf. Tables\nobreakspace {}\ref {tab:benchmark-twoa1}, \ref {tab:benchmark-twoa2} and \ref {tab:benchmark-twoa3})}}{32}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Runtime for calculating $Wk(\id )$ (cf. Tables\nobreakspace {}\ref {tab:benchmark-twoa1}, \ref {tab:benchmark-twoa2} and \ref {tab:benchmark-twoa3})}}{33}{figure.2.7}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Optimization of \ref {algo:twoa1}}}{26}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Element comparisons needed for calculating $Wk(\id )$ (cf. Tables\nobreakspace {}\ref {tab:benchmark-twoa1}, \ref {tab:benchmark-twoa2} and \ref {tab:benchmark-twoa3})}}{31}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Runtime for calculating $Wk(\id )$ (cf. Tables\nobreakspace {}\ref {tab:benchmark-twoa1}, \ref {tab:benchmark-twoa2} and \ref {tab:benchmark-twoa3})}}{32}{figure.2.7}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

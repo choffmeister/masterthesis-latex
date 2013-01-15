@@ -11,11 +11,11 @@
 \indexentry{interval|hyperpage}{1}
 \indexentry{open interval|hyperpage}{1}
 \indexentry{Hasse diagram|hyperpage}{1}
-\indexentry{direct product of posets|hyperpage}{2}
+\indexentry{direct product of posets|hyperpage}{1}
 \indexentry{Coxeter group|hyperpage}{2}
 \indexentry{Coxeter system|hyperpage}{2}
 \indexentry{rank|hyperpage}{2}
-\indexentry{Coxeter graph|hyperpage}{3}
+\indexentry{Coxeter graph|hyperpage}{2}
 \indexentry{expression|hyperpage}{3}
 \indexentry{subexpression|hyperpage}{3}
 \indexentry{expression length|hyperpage}{3}
@@ -30,10 +30,10 @@
 \indexentry{irreducible|hyperpage}{5}
 \indexentry{reducible|hyperpage}{5}
 \indexentry{affine|hyperpage}{6}
-\indexentry{compact hyperbolic|hyperpage}{7}
+\indexentry{compact hyperbolic|hyperpage}{6}
 \indexentry{Bruhat ordering|hyperpage}{7}
-\indexentry{right weak ordering|hyperpage}{9}
-\indexentry{left weak ordering|hyperpage}{9}
+\indexentry{right weak ordering|hyperpage}{7}
+\indexentry{left weak ordering|hyperpage}{7}
 \indexentry{Coxeter system automorphism|hyperpage}{11}
 \indexentry{set of $\theta $-twisted involutions|hyperpage}{11}
 \indexentry{set of twisted involutions|hyperpage}{11}
@@ -45,11 +45,11 @@
 \indexentry{twisted expression|hyperpage}{12}
 \indexentry{reduced twisted expression|hyperpage}{12}
 \indexentry{twisted length|hyperpage}{14}
-\indexentry{twisted weak ordering|hyperpage}{16}
-\indexentry{geodesic|hyperpage}{17}
-\indexentry{$I$-residue|hyperpage}{18}
-\indexentry{residue|hyperpage}{18}
-\indexentry{rank-$n$-residue|hyperpage}{18}
+\indexentry{twisted weak ordering|hyperpage}{15}
+\indexentry{geodesic|hyperpage}{16}
+\indexentry{$I$-residue|hyperpage}{17}
+\indexentry{residue|hyperpage}{17}
+\indexentry{rank-$n$-residue|hyperpage}{17}
 \indexentry{$s$-branch|hyperpage}{19}
 \indexentry{$t$-branch|hyperpage}{19}
 \indexentry{non-multiplicative|hyperpage}{21}
@@ -58,62 +58,62 @@
 \indexentry{top-multiplicative|hyperpage}{21}
 \indexentry{diagonal-multiplicative|hyperpage}{21}
 \indexentry{word problem for groups|hyperpage}{24}
-\indexentry{3-residually connected|hyperpage}{35}
-\indexentry{chamber system over $I$|hyperpage}{45}
-\indexentry{chambers|hyperpage}{45}
-\indexentry{rank|hyperpage}{45}
-\indexentry{i-adjacent|hyperpage}{45}
-\indexentry{adjacent|hyperpage}{45}
+\indexentry{3-residually connected|hyperpage}{33}
+\indexentry{chamber system over $I$|hyperpage}{43}
+\indexentry{chambers|hyperpage}{43}
+\indexentry{rank|hyperpage}{43}
+\indexentry{i-adjacent|hyperpage}{43}
+\indexentry{adjacent|hyperpage}{43}
+\indexentry{gallery|hyperpage}{43}
+\indexentry{length|hyperpage}{43}
+\indexentry{joins|hyperpage}{43}
+\indexentry{closed|hyperpage}{43}
+\indexentry{simple|hyperpage}{43}
+\indexentry{minimal gallery joining $c$ and $d$|hyperpage}{43}
+\indexentry{connected|hyperpage}{44}
+\indexentry{$J$-gallery|hyperpage}{44}
+\indexentry{$J$-equivalent|hyperpage}{44}
+\indexentry{$J$-residue|hyperpage}{44}
+\indexentry{type|hyperpage}{44}
+\indexentry{$i$-panel|hyperpage}{44}
+\indexentry{residually connected|hyperpage}{44}
+\indexentry{building|hyperpage}{44}
+\indexentry{distance function|hyperpage}{44}
+\indexentry{rank|hyperpage}{44}
+\indexentry{associated chamber system|hyperpage}{44}
 \indexentry{gallery|hyperpage}{45}
-\indexentry{length|hyperpage}{45}
-\indexentry{joins|hyperpage}{45}
-\indexentry{closed|hyperpage}{45}
-\indexentry{simple|hyperpage}{45}
-\indexentry{minimal gallery joining $c$ and $d$|hyperpage}{46}
-\indexentry{connected|hyperpage}{46}
-\indexentry{$J$-gallery|hyperpage}{46}
-\indexentry{$J$-equivalent|hyperpage}{46}
-\indexentry{$J$-residue|hyperpage}{46}
-\indexentry{type|hyperpage}{46}
-\indexentry{$i$-panel|hyperpage}{46}
-\indexentry{residually connected|hyperpage}{46}
-\indexentry{building|hyperpage}{46}
-\indexentry{distance function|hyperpage}{46}
-\indexentry{rank|hyperpage}{46}
-\indexentry{associated chamber system|hyperpage}{47}
-\indexentry{gallery|hyperpage}{47}
-\indexentry{residue|hyperpage}{47}
-\indexentry{panel|hyperpage}{47}
-\indexentry{thick|hyperpage}{47}
-\indexentry{thin|hyperpage}{47}
-\indexentry{apartment|hyperpage}{47}
-\indexentry{spherical|hyperpage}{47}
-\indexentry{opposite|hyperpage}{47}
-\indexentry{connected|hyperpage}{48}
-\indexentry{convex|hyperpage}{48}
-\indexentry{twin building of type $(W,S)$|hyperpage}{48}
-\indexentry{codistance function|hyperpage}{48}
-\indexentry{gallery|hyperpage}{48}
-\indexentry{residue|hyperpage}{48}
-\indexentry{panel|hyperpage}{48}
-\indexentry{opposite|hyperpage}{48}
-\indexentry{opposite|hyperpage}{48}
-\indexentry{twin apartment|hyperpage}{48}
-\indexentry{building quasi-flip|hyperpage}{49}
-\indexentry{building flip|hyperpage}{49}
-\indexentry{$\theta $-codistance|hyperpage}{49}
-\indexentry{numerical $\theta $-codistance|hyperpage}{49}
-\indexentry{proper|hyperpage}{49}
-\indexentry{minimal numerical $\theta $-codistance|hyperpage}{49}
-\indexentry{induced flip-flop system|hyperpage}{50}
-\indexentry{flip-flop system|hyperpage}{50}
-\indexentry{direct descent into $R^\theta $|hyperpage}{50}
-\indexentry{good|hyperpage}{50}
-\indexentry{closure|hyperpage}{50}
-\indexentry{Phan residue|hyperpage}{50}
-\indexentry{minimal Phan residue|hyperpage}{50}
-\indexentry{$K$-homogeneous|hyperpage}{50}
-\indexentry{homogeneous|hyperpage}{50}
-\indexentry{$C'$ inherits connectedness from $C$|hyperpage}{50}
-\indexentry{good|hyperpage}{51}
-\indexentry{type|hyperpage}{51}
+\indexentry{residue|hyperpage}{45}
+\indexentry{panel|hyperpage}{45}
+\indexentry{thick|hyperpage}{45}
+\indexentry{thin|hyperpage}{45}
+\indexentry{apartment|hyperpage}{45}
+\indexentry{spherical|hyperpage}{45}
+\indexentry{opposite|hyperpage}{45}
+\indexentry{connected|hyperpage}{45}
+\indexentry{convex|hyperpage}{45}
+\indexentry{twin building of type $(W,S)$|hyperpage}{46}
+\indexentry{codistance function|hyperpage}{46}
+\indexentry{gallery|hyperpage}{46}
+\indexentry{residue|hyperpage}{46}
+\indexentry{panel|hyperpage}{46}
+\indexentry{opposite|hyperpage}{46}
+\indexentry{opposite|hyperpage}{46}
+\indexentry{twin apartment|hyperpage}{46}
+\indexentry{building quasi-flip|hyperpage}{47}
+\indexentry{building flip|hyperpage}{47}
+\indexentry{$\theta $-codistance|hyperpage}{47}
+\indexentry{numerical $\theta $-codistance|hyperpage}{47}
+\indexentry{proper|hyperpage}{47}
+\indexentry{minimal numerical $\theta $-codistance|hyperpage}{47}
+\indexentry{induced flip-flop system|hyperpage}{47}
+\indexentry{flip-flop system|hyperpage}{47}
+\indexentry{direct descent into $R^\theta $|hyperpage}{48}
+\indexentry{good|hyperpage}{48}
+\indexentry{closure|hyperpage}{48}
+\indexentry{Phan residue|hyperpage}{48}
+\indexentry{minimal Phan residue|hyperpage}{48}
+\indexentry{$K$-homogeneous|hyperpage}{48}
+\indexentry{homogeneous|hyperpage}{48}
+\indexentry{$C'$ inherits connectedness from $C$|hyperpage}{48}
+\indexentry{good|hyperpage}{48}
+\indexentry{type|hyperpage}{49}
